@@ -1,0 +1,964 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ProbModelXML formatVersion="0.2.0">
+  <ProbNet type="MID">
+    <Comment showWhenOpeningNetwork="false"><![CDATA[<<Double click to add/modify comment>>]]></Comment>
+    <DecisionCriteria>
+      <Criterion name="cost" />
+      <Criterion name="effectiveness" />
+    </DecisionCriteria>
+    <TimeUnit unit="YEAR" Value="1.0" />
+    <AdditionalProperties />
+    <Variables>
+      <Variable name="Age" timeSlice="0" type="numeric" role="chance">
+        <Coordinates x="516" y="22" />
+        <Unit />
+        <Precision>1.0</Precision>
+        <Thresholds>
+          <Threshold value="0.0" belongsTo="right" />
+          <Threshold value="Infinity" belongsTo="right" />
+        </Thresholds>
+      </Variable>
+      <Variable name="State" timeSlice="0" type="finiteStates" role="chance">
+        <Coordinates x="316" y="193" />
+        <States>
+          <State name="dead" />
+          <State name="CD4 lt 7" />
+          <State name="CD4 8_15" />
+          <State name="CD4 gt 15" />
+        </States>
+      </Variable>
+      <Variable name="State" timeSlice="1" type="finiteStates" role="chance">
+        <Coordinates x="853" y="193" />
+        <States>
+          <State name="dead" />
+          <State name="CD4 lt 7" />
+          <State name="CD4 8_15" />
+          <State name="CD4 gt 15" />
+        </States>
+      </Variable>
+      <Variable name="Death" timeSlice="1" type="finiteStates" role="chance">
+        <Comment><![CDATA[<html>
+  <head>
+    
+  </head>
+  <body>
+    <p style="margin-top: 0">
+      Whether the patient dies in this cycle
+    </p>
+  </body>
+</html>]]></Comment>
+        <Coordinates x="501" y="302" />
+        <States>
+          <State name="no" />
+          <State name="yes" />
+        </States>
+      </Variable>
+      <Variable name="Transition" timeSlice="1" type="finiteStates" role="chance">
+        <Comment><![CDATA[<html>
+  <head>
+    
+  </head>
+  <body>
+    <p style="margin-top: 0">
+      Transition between live states, either from &quot;CD4% gt= 16&quot; to &quot;8le CD4% le 
+      15&quot;, or from
+    </p>
+    <p style="margin-top: 0">
+      &quot;8le CD4% le 15&quot; to &quot;CD4% le 7&quot;
+    </p>
+  </body>
+</html>]]></Comment>
+        <Coordinates x="669" y="298" />
+        <States>
+          <State name="no" />
+          <State name="yes" />
+        </States>
+      </Variable>
+      <Variable name="Age at state entry" timeSlice="0" type="numeric" role="chance">
+        <Coordinates x="562" y="123" />
+        <Unit />
+        <Precision>0.1</Precision>
+        <Thresholds>
+          <Threshold value="0.0" belongsTo="right" />
+          <Threshold value="Infinity" belongsTo="right" />
+        </Thresholds>
+      </Variable>
+      <Variable name="Time in state" timeSlice="0" type="numeric" role="chance">
+        <Coordinates x="669" y="62" />
+        <Unit />
+        <Precision>0.1</Precision>
+        <Thresholds>
+          <Threshold value="0.0" belongsTo="right" />
+          <Threshold value="Infinity" belongsTo="right" />
+        </Thresholds>
+      </Variable>
+      <Variable name="Time in state" timeSlice="1" type="numeric" role="chance">
+        <Coordinates x="901" y="62" />
+        <Unit />
+        <Precision>0.1</Precision>
+        <Thresholds>
+          <Threshold value="0.0" belongsTo="right" />
+          <Threshold value="Infinity" belongsTo="right" />
+        </Thresholds>
+      </Variable>
+      <Variable name="Age" timeSlice="1" type="numeric" role="chance">
+        <Coordinates x="933" y="22" />
+        <Unit />
+        <Precision>1.0</Precision>
+        <Thresholds>
+          <Threshold value="0.0" belongsTo="right" />
+          <Threshold value="Infinity" belongsTo="right" />
+        </Thresholds>
+      </Variable>
+      <Variable name="CD4 gt 15" timeSlice="0" type="finiteStates" role="chance">
+        <Coordinates x="139" y="249" />
+        <States>
+          <State name="no" />
+          <State name="yes" />
+        </States>
+      </Variable>
+      <Variable name="CD4 8_15" timeSlice="0" type="finiteStates" role="chance">
+        <Coordinates x="235" y="309" />
+        <States>
+          <State name="no" />
+          <State name="yes" />
+        </States>
+      </Variable>
+      <Variable name="AIDS" timeSlice="0" type="finiteStates" role="chance">
+        <Coordinates x="419" y="340" />
+        <States>
+          <State name="no" />
+          <State name="yes" />
+        </States>
+      </Variable>
+      <Variable name="Therapy" type="finiteStates" role="decision">
+        <Coordinates x="91" y="34" />
+        <States>
+          <State name="placebo" />
+          <State name="cotrimoxazole" />
+        </States>
+      </Variable>
+      <Variable name="Inpatient costs" timeSlice="0" type="numeric" role="utility">
+        <Coordinates x="86" y="362" />
+        <Unit>months</Unit>
+        <Precision>0.01</Precision>
+        <Criterion name="cost" />
+      </Variable>
+      <Variable name="Outpatient costs" timeSlice="0" type="numeric" role="utility">
+        <Coordinates x="159" y="403" />
+        <Unit>months</Unit>
+        <Precision>0.01</Precision>
+        <Criterion name="cost" />
+      </Variable>
+      <Variable name="QALYs" timeSlice="0" type="numeric" role="utility">
+        <Coordinates x="430" y="404" />
+        <Unit />
+        <Precision>0.01</Precision>
+        <Criterion name="effectiveness" />
+      </Variable>
+      <Variable name="Drug costs" timeSlice="0" type="numeric" role="utility">
+        <Coordinates x="313" y="403" />
+        <Unit>months</Unit>
+        <Precision>0.01</Precision>
+        <Criterion name="cost" />
+      </Variable>
+      <Variable name="HIV test cost" type="numeric" role="utility">
+        <Coordinates x="87" y="452" />
+        <Unit />
+        <Precision>0.01</Precision>
+        <Criterion name="cost" />
+      </Variable>
+    </Variables>
+    <Links>
+      <Link directed="true">
+        <Variable name="Age" timeSlice="0" />
+        <Variable name="Drug costs" timeSlice="0" />
+      </Link>
+      <Link directed="true">
+        <Variable name="Age" timeSlice="0" />
+        <Variable name="Age at state entry" timeSlice="0" />
+      </Link>
+      <Link directed="true">
+        <Variable name="Age" timeSlice="0" />
+        <Variable name="Age" timeSlice="1" />
+      </Link>
+      <Link directed="true">
+        <Variable name="Age" timeSlice="0" />
+        <Variable name="Inpatient costs" timeSlice="0" />
+      </Link>
+      <Link directed="true">
+        <Variable name="Age" timeSlice="0" />
+        <Variable name="Outpatient costs" timeSlice="0" />
+      </Link>
+      <Link directed="true">
+        <Variable name="State" timeSlice="0" />
+        <Variable name="State" timeSlice="1" />
+      </Link>
+      <Link directed="true">
+        <Variable name="State" timeSlice="0" />
+        <Variable name="Drug costs" timeSlice="0" />
+      </Link>
+      <Link directed="true">
+        <Variable name="State" timeSlice="0" />
+        <Variable name="Transition" timeSlice="1" />
+      </Link>
+      <Link directed="true">
+        <Variable name="State" timeSlice="0" />
+        <Variable name="Death" timeSlice="1" />
+      </Link>
+      <Link directed="true">
+        <Variable name="State" timeSlice="0" />
+        <Variable name="CD4 gt 15" timeSlice="0" />
+      </Link>
+      <Link directed="true">
+        <Variable name="State" timeSlice="0" />
+        <Variable name="CD4 8_15" timeSlice="0" />
+      </Link>
+      <Link directed="true">
+        <Variable name="State" timeSlice="0" />
+        <Variable name="AIDS" timeSlice="0" />
+      </Link>
+      <Link directed="true">
+        <Variable name="State" timeSlice="0" />
+        <Variable name="QALYs" timeSlice="0" />
+      </Link>
+      <Link directed="true">
+        <Variable name="State" timeSlice="0" />
+        <Variable name="Inpatient costs" timeSlice="0" />
+      </Link>
+      <Link directed="true">
+        <Variable name="State" timeSlice="0" />
+        <Variable name="Outpatient costs" timeSlice="0" />
+      </Link>
+      <Link directed="true">
+        <Variable name="Death" timeSlice="1" />
+        <Variable name="State" timeSlice="1" />
+      </Link>
+      <Link directed="true">
+        <Variable name="Transition" timeSlice="1" />
+        <Variable name="Time in state" timeSlice="1" />
+      </Link>
+      <Link directed="true">
+        <Variable name="Transition" timeSlice="1" />
+        <Variable name="State" timeSlice="1" />
+      </Link>
+      <Link directed="true">
+        <Variable name="Age at state entry" timeSlice="0" />
+        <Variable name="Death" timeSlice="1" />
+      </Link>
+      <Link directed="true">
+        <Variable name="Age at state entry" timeSlice="0" />
+        <Variable name="Transition" timeSlice="1" />
+      </Link>
+      <Link directed="true">
+        <Variable name="Time in state" timeSlice="0" />
+        <Variable name="Transition" timeSlice="1" />
+      </Link>
+      <Link directed="true">
+        <Variable name="Time in state" timeSlice="0" />
+        <Variable name="Time in state" timeSlice="1" />
+      </Link>
+      <Link directed="true">
+        <Variable name="Time in state" timeSlice="0" />
+        <Variable name="Age at state entry" timeSlice="0" />
+      </Link>
+      <Link directed="true">
+        <Variable name="CD4 gt 15" timeSlice="0" />
+        <Variable name="Inpatient costs" timeSlice="0" />
+      </Link>
+      <Link directed="true">
+        <Variable name="CD4 gt 15" timeSlice="0" />
+        <Variable name="Outpatient costs" timeSlice="0" />
+      </Link>
+      <Link directed="true">
+        <Variable name="CD4 8_15" timeSlice="0" />
+        <Variable name="Outpatient costs" timeSlice="0" />
+      </Link>
+      <Link directed="true">
+        <Variable name="CD4 8_15" timeSlice="0" />
+        <Variable name="Inpatient costs" timeSlice="0" />
+      </Link>
+      <Link directed="true">
+        <Variable name="AIDS" timeSlice="0" />
+        <Variable name="QALYs" timeSlice="0" />
+      </Link>
+      <Link directed="true">
+        <Variable name="Therapy" />
+        <Variable name="Drug costs" timeSlice="0" />
+      </Link>
+      <Link directed="true">
+        <Variable name="Therapy" />
+        <Variable name="Death" timeSlice="1" />
+      </Link>
+      <Link directed="true">
+        <Variable name="Therapy" />
+        <Variable name="Transition" timeSlice="1" />
+      </Link>
+      <Link directed="true">
+        <Variable name="Therapy" />
+        <Variable name="Inpatient costs" timeSlice="0" />
+      </Link>
+      <Link directed="true">
+        <Variable name="Therapy" />
+        <Variable name="Outpatient costs" timeSlice="0" />
+      </Link>
+    </Links>
+    <Potentials>
+      <Potential type="Delta" role="conditionalProbability">
+        <Variables>
+          <Variable name="Age" timeSlice="0" />
+        </Variables>
+        <NumericValue>4.4</NumericValue>
+      </Potential>
+      <Potential type="Table" role="conditionalProbability">
+        <Variables>
+          <Variable name="State" timeSlice="0" />
+        </Variables>
+        <Values>0.0 0.28 0.41 0.31</Values>
+      </Potential>
+      <Potential type="Tree/ADD" role="conditionalProbability">
+        <Variables>
+          <Variable name="State" timeSlice="1" />
+          <Variable name="State" timeSlice="0" />
+          <Variable name="Death" timeSlice="1" />
+          <Variable name="Transition" timeSlice="1" />
+        </Variables>
+        <TopVariable name="Death" timeSlice="1" />
+        <Branches>
+          <Branch>
+            <States>
+              <State name="yes" />
+            </States>
+            <Potential type="Delta">
+              <Variables>
+                <Variable name="State" timeSlice="1" />
+              </Variables>
+              <State>dead</State>
+            </Potential>
+          </Branch>
+          <Branch>
+            <States>
+              <State name="no" />
+            </States>
+            <Potential type="Tree/ADD">
+              <Variables>
+                <Variable name="State" timeSlice="1" />
+                <Variable name="State" timeSlice="0" />
+                <Variable name="Transition" timeSlice="1" />
+              </Variables>
+              <TopVariable name="State" timeSlice="0" />
+              <Branches>
+                <Branch>
+                  <States>
+                    <State name="CD4 gt 15" />
+                  </States>
+                  <Potential type="Tree/ADD">
+                    <Variables>
+                      <Variable name="State" timeSlice="1" />
+                      <Variable name="Transition" timeSlice="1" />
+                    </Variables>
+                    <TopVariable name="Transition" timeSlice="1" />
+                    <Branches>
+                      <Branch>
+                        <States>
+                          <State name="yes" />
+                        </States>
+                        <Potential type="Delta">
+                          <Variables>
+                            <Variable name="State" timeSlice="1" />
+                          </Variables>
+                          <State>CD4 8_15</State>
+                        </Potential>
+                      </Branch>
+                      <Branch>
+                        <States>
+                          <State name="no" />
+                        </States>
+                        <Potential type="Delta">
+                          <Variables>
+                            <Variable name="State" timeSlice="1" />
+                          </Variables>
+                          <State>CD4 gt 15</State>
+                        </Potential>
+                      </Branch>
+                    </Branches>
+                  </Potential>
+                </Branch>
+                <Branch>
+                  <States>
+                    <State name="CD4 8_15" />
+                  </States>
+                  <Potential type="Tree/ADD">
+                    <Variables>
+                      <Variable name="State" timeSlice="1" />
+                      <Variable name="Transition" timeSlice="1" />
+                    </Variables>
+                    <TopVariable name="Transition" timeSlice="1" />
+                    <Branches>
+                      <Branch>
+                        <States>
+                          <State name="yes" />
+                        </States>
+                        <Potential type="Delta">
+                          <Variables>
+                            <Variable name="State" timeSlice="1" />
+                          </Variables>
+                          <State>CD4 lt 7</State>
+                        </Potential>
+                      </Branch>
+                      <Branch>
+                        <States>
+                          <State name="no" />
+                        </States>
+                        <Potential type="Delta">
+                          <Variables>
+                            <Variable name="State" timeSlice="1" />
+                          </Variables>
+                          <State>CD4 8_15</State>
+                        </Potential>
+                      </Branch>
+                    </Branches>
+                  </Potential>
+                </Branch>
+                <Branch>
+                  <States>
+                    <State name="CD4 lt 7" />
+                  </States>
+                  <Potential type="Delta">
+                    <Variables>
+                      <Variable name="State" timeSlice="1" />
+                    </Variables>
+                    <State>CD4 lt 7</State>
+                  </Potential>
+                </Branch>
+                <Branch>
+                  <States>
+                    <State name="dead" />
+                  </States>
+                  <Potential type="Delta">
+                    <Variables>
+                      <Variable name="State" timeSlice="1" />
+                    </Variables>
+                    <State>dead</State>
+                  </Potential>
+                </Branch>
+              </Branches>
+            </Potential>
+          </Branch>
+        </Branches>
+      </Potential>
+      <Potential type="Tree/ADD" role="conditionalProbability">
+        <Variables>
+          <Variable name="Death" timeSlice="1" />
+          <Variable name="Therapy" />
+          <Variable name="Age at state entry" timeSlice="0" />
+          <Variable name="State" timeSlice="0" />
+        </Variables>
+        <TopVariable name="State" timeSlice="0" />
+        <Branches>
+          <Branch>
+            <States>
+              <State name="CD4 gt 15" />
+            </States>
+            <Potential type="Hazard (Exponential)">
+              <Variables>
+                <Variable name="Death" timeSlice="1" />
+                <Variable name="Therapy" />
+                <Variable name="Age at state entry" timeSlice="0" />
+              </Variables>
+              <Coefficients>-0.3585501 2.637442 4.720511 -3.519218</Coefficients>
+              <Covariates>
+                <Covariate>Therapy</Covariate>
+                <Covariate>pow(Age at state entry [0], -2)</Covariate>
+                <Covariate>log(Age at state entry [0])*pow(Age at state entry [0], -2)</Covariate>
+                <Covariate>Constant</Covariate>
+              </Covariates>
+              <CholeskyDecomposition>0.59352031 -0.17617614 0.88169172 0.35993202 1.2301276 4.6632451 -0.26766007 -0.46401478 -0.48976182 0.28867513</CholeskyDecomposition>
+            </Potential>
+          </Branch>
+          <Branch>
+            <States>
+              <State name="CD4 8_15" />
+            </States>
+            <Potential type="Hazard (Exponential)">
+              <Variables>
+                <Variable name="Death" timeSlice="1" />
+                <Variable name="Therapy" />
+                <Variable name="Age at state entry" timeSlice="0" />
+              </Variables>
+              <Coefficients>-0.8930643 2.316634 0.909742 -1.749674</Coefficients>
+              <Covariates>
+                <Covariate>Therapy</Covariate>
+                <Covariate>pow(Age at state entry [0], -2)</Covariate>
+                <Covariate>log(Age at state entry [0])*pow(Age at state entry [0], -2)</Covariate>
+                <Covariate>Constant</Covariate>
+              </Covariates>
+              <CholeskyDecomposition>0.29177767 -0.08810586 0.47725385 0.27391333 -0.126138 2.1393011 -0.1168873 -0.11684537 -0.22394475 0.13867504</CholeskyDecomposition>
+            </Potential>
+          </Branch>
+          <Branch>
+            <States>
+              <State name="CD4 lt 7" />
+            </States>
+            <Potential type="Hazard (Exponential)">
+              <Variables>
+                <Variable name="Death" timeSlice="1" />
+                <Variable name="Therapy" />
+                <Variable name="Age at state entry" timeSlice="0" />
+              </Variables>
+              <Coefficients>-0.3880509 -2.190085 0.570776 1.993137</Coefficients>
+              <Covariates>
+                <Covariate>Therapy</Covariate>
+                <Covariate>pow(Age at state entry [0], 0.5)</Covariate>
+                <Covariate>log(Age at state entry [0])*pow(Age at state entry [0], 0.5)</Covariate>
+                <Covariate>Constant</Covariate>
+              </Covariates>
+              <CholeskyDecomposition>0.221093248 -0.07116627 1.3169049 0.2144879 -0.35787986 0.03579147 -0.1632051 -1.5492362 -0.15282252 0.10846523</CholeskyDecomposition>
+            </Potential>
+          </Branch>
+          <Branch>
+            <States>
+              <State name="dead" />
+            </States>
+            <Potential type="Delta">
+              <Variables>
+                <Variable name="Death" timeSlice="1" />
+              </Variables>
+              <State>yes</State>
+            </Potential>
+          </Branch>
+        </Branches>
+      </Potential>
+      <Potential type="Tree/ADD" role="conditionalProbability">
+        <Variables>
+          <Variable name="Transition" timeSlice="1" />
+          <Variable name="State" timeSlice="0" />
+          <Variable name="Therapy" />
+          <Variable name="Age at state entry" timeSlice="0" />
+          <Variable name="Time in state" timeSlice="0" />
+        </Variables>
+        <TopVariable name="State" timeSlice="0" />
+        <Branches>
+          <Branch>
+            <States>
+              <State name="CD4 gt 15" />
+            </States>
+            <Potential type="Hazard (Weibull)">
+              <Variables>
+                <Variable name="Transition" timeSlice="1" />
+                <Variable name="Therapy" />
+                <Variable name="Age at state entry" timeSlice="0" />
+                <Variable name="Time in state" timeSlice="0" />
+              </Variables>
+              <TimeVariable name="Time in state" timeSlice="0" />
+              <Coefficients>-0.0423109 -0.0048306 0.002097 -1.166541 0.3757164</Coefficients>
+              <Covariates>
+                <Covariate>Therapy</Covariate>
+                <Covariate>pow(Age at state entry [0],3)</Covariate>
+                <Covariate>log(Age at state entry [0])*pow(Age at state entry [0],3)</Covariate>
+                <Covariate>Constant</Covariate>
+                <Covariate>Gamma</Covariate>
+              </Covariates>
+              <CholeskyDecomposition>0.27899508 1.2434E-4 0.00395932 -6.294E-5 -0.00157693 9.367E-5 -0.14229343 -0.11751682 -0.0868085 0.15098115 -0.00502279 -0.0101035 0.01208705 -0.04780706 0.10478579</CholeskyDecomposition>
+            </Potential>
+          </Branch>
+          <Branch>
+            <States>
+              <State name="CD4 8_15" />
+            </States>
+            <Potential type="Hazard (Weibull)">
+              <Variables>
+                <Variable name="Transition" timeSlice="1" />
+                <Variable name="Therapy" />
+                <Variable name="Age at state entry" timeSlice="0" />
+                <Variable name="Time in state" timeSlice="0" />
+              </Variables>
+              <TimeVariable name="Time in state" timeSlice="0" />
+              <Coefficients>-0.2095943 1.850767 -1.835127 -3.247295 0.3985953</Coefficients>
+              <Covariates>
+                <Covariate>Therapy</Covariate>
+                <Covariate>pow(Age at state entry [0], 0.5)</Covariate>
+                <Covariate>log(Age at state entry [0])</Covariate>
+                <Covariate>Constant</Covariate>
+                <Covariate>Gamma</Covariate>
+              </Covariates>
+              <CholeskyDecomposition>0.30374714 0.03874702 1.1064705 -0.02155184 -1.1834496 0.19467846 -0.21218304 -0.74709324 -0.28828786 0.16456268 -0.00346081 0.00817123 0.00486365 -0.05077406 0.11600885</CholeskyDecomposition>
+            </Potential>
+          </Branch>
+          <Branch>
+            <States>
+              <State name="CD4 lt 7" />
+            </States>
+            <Potential type="Delta">
+              <Variables>
+                <Variable name="Transition" timeSlice="1" />
+              </Variables>
+              <State>no</State>
+            </Potential>
+          </Branch>
+          <Branch>
+            <States>
+              <State name="dead" />
+            </States>
+            <Potential type="Delta">
+              <Variables>
+                <Variable name="Transition" timeSlice="1" />
+              </Variables>
+              <State>no</State>
+            </Potential>
+          </Branch>
+        </Branches>
+      </Potential>
+      <Potential type="Linear combination" role="conditionalProbability">
+        <Variables>
+          <Variable name="Age at state entry" timeSlice="0" />
+          <Variable name="Age" timeSlice="0" />
+          <Variable name="Time in state" timeSlice="0" />
+        </Variables>
+        <Coefficients>0.0 1.0 -1.0</Coefficients>
+        <Covariates>
+          <Covariate>Constant</Covariate>
+          <Covariate>Age [0]</Covariate>
+          <Covariate>Time in state [0]</Covariate>
+        </Covariates>
+      </Potential>
+      <Potential type="Delta" role="conditionalProbability">
+        <Variables>
+          <Variable name="Time in state" timeSlice="0" />
+        </Variables>
+        <NumericValue>0.0</NumericValue>
+      </Potential>
+      <Potential type="Tree/ADD" role="conditionalProbability">
+        <Variables>
+          <Variable name="Time in state" timeSlice="1" />
+          <Variable name="Time in state" timeSlice="0" />
+          <Variable name="Transition" timeSlice="1" />
+        </Variables>
+        <TopVariable name="Transition" timeSlice="1" />
+        <Branches>
+          <Branch>
+            <States>
+              <State name="yes" />
+            </States>
+            <Potential type="Delta">
+              <Variables>
+                <Variable name="Time in state" timeSlice="1" />
+              </Variables>
+              <NumericValue>0.0</NumericValue>
+            </Potential>
+          </Branch>
+          <Branch>
+            <States>
+              <State name="no" />
+            </States>
+            <Potential type="CycleLengthShift">
+              <Variables>
+                <Variable name="Time in state" timeSlice="1" />
+                <Variable name="Time in state" timeSlice="0" />
+              </Variables>
+            </Potential>
+          </Branch>
+        </Branches>
+      </Potential>
+      <Potential type="CycleLengthShift" role="conditionalProbability">
+        <Variables>
+          <Variable name="Age" timeSlice="1" />
+          <Variable name="Age" timeSlice="0" />
+        </Variables>
+      </Potential>
+      <Potential type="Tree/ADD" role="conditionalProbability">
+        <Variables>
+          <Variable name="CD4 gt 15" timeSlice="0" />
+          <Variable name="State" timeSlice="0" />
+        </Variables>
+        <TopVariable name="State" timeSlice="0" />
+        <Branches>
+          <Branch>
+            <States>
+              <State name="dead" />
+              <State name="CD4 lt 7" />
+              <State name="CD4 8_15" />
+            </States>
+            <Potential type="Table">
+              <Variables>
+                <Variable name="CD4 gt 15" timeSlice="0" />
+              </Variables>
+              <Values>1.0 0.0</Values>
+            </Potential>
+          </Branch>
+          <Branch>
+            <States>
+              <State name="CD4 gt 15" />
+            </States>
+            <Potential type="Table">
+              <Variables>
+                <Variable name="CD4 gt 15" timeSlice="0" />
+              </Variables>
+              <Values>0.0 1.0</Values>
+            </Potential>
+          </Branch>
+        </Branches>
+      </Potential>
+      <Potential type="Tree/ADD" role="conditionalProbability">
+        <Variables>
+          <Variable name="CD4 8_15" timeSlice="0" />
+          <Variable name="State" timeSlice="0" />
+        </Variables>
+        <TopVariable name="State" timeSlice="0" />
+        <Branches>
+          <Branch>
+            <States>
+              <State name="dead" />
+              <State name="CD4 lt 7" />
+              <State name="CD4 gt 15" />
+            </States>
+            <Potential type="Table">
+              <Variables>
+                <Variable name="CD4 8_15" timeSlice="0" />
+              </Variables>
+              <Values>1.0 0.0</Values>
+            </Potential>
+          </Branch>
+          <Branch>
+            <States>
+              <State name="CD4 8_15" />
+            </States>
+            <Potential type="Table">
+              <Variables>
+                <Variable name="CD4 8_15" timeSlice="0" />
+              </Variables>
+              <Values>0.0 1.0</Values>
+            </Potential>
+          </Branch>
+        </Branches>
+      </Potential>
+      <Potential type="Table" role="conditionalProbability">
+        <Variables>
+          <Variable name="AIDS" timeSlice="0" />
+          <Variable name="State" timeSlice="0" />
+        </Variables>
+        <Values>1.0 0.0 0.65 0.35 0.53 0.47 0.65 0.35</Values>
+      </Potential>
+      <Potential type="Tree/ADD" role="utility">
+        <UtilityVariable name="Inpatient costs" timeSlice="0" />
+        <Variables>
+          <Variable name="Therapy" />
+          <Variable name="CD4 gt 15" timeSlice="0" />
+          <Variable name="CD4 8_15" timeSlice="0" />
+          <Variable name="Age" timeSlice="0" />
+          <Variable name="State" timeSlice="0" />
+        </Variables>
+        <TopVariable name="State" timeSlice="0" />
+        <Branches>
+          <Branch>
+            <States>
+              <State name="CD4 lt 7" />
+              <State name="CD4 8_15" />
+              <State name="CD4 gt 15" />
+            </States>
+            <Potential type="Exponential">
+              <UtilityVariable name="Inpatient costs" timeSlice="0" />
+              <Variables>
+                <Variable name="Therapy" />
+                <Variable name="CD4 gt 15" timeSlice="0" />
+                <Variable name="CD4 8_15" timeSlice="0" />
+                <Variable name="Age" timeSlice="0" />
+              </Variables>
+              <Coefficients>-0.0016163 -0.9416483 -1.226022 -0.8080182 4.016486</Coefficients>
+              <Covariates>
+                <Covariate>Age [0]*12</Covariate>
+                <Covariate>CD4 8_15 [0]</Covariate>
+                <Covariate>CD4 gt 15 [0]</Covariate>
+                <Covariate>Therapy</Covariate>
+                <Covariate>Constant</Covariate>
+              </Covariates>
+              <CholeskyDecomposition>0.00281565 0.08772529 0.26416448 -0.00621522 0.16645271 0.30221003 0.04639391 -0.01378772 0.00238245 0.24023323 -0.27476562 -0.15214939 -0.05415598 -0.13158383 0.11847359</CholeskyDecomposition>
+            </Potential>
+          </Branch>
+          <Branch>
+            <States>
+              <State name="dead" />
+            </States>
+            <Potential type="Table">
+              <UtilityVariable name="Inpatient costs" timeSlice="0" />
+              <Values>0.0</Values>
+            </Potential>
+          </Branch>
+        </Branches>
+      </Potential>
+      <Potential type="Tree/ADD" role="utility">
+        <UtilityVariable name="Outpatient costs" timeSlice="0" />
+        <Variables>
+          <Variable name="Therapy" />
+          <Variable name="CD4 gt 15" timeSlice="0" />
+          <Variable name="CD4 8_15" timeSlice="0" />
+          <Variable name="Age" timeSlice="0" />
+          <Variable name="State" timeSlice="0" />
+        </Variables>
+        <TopVariable name="State" timeSlice="0" />
+        <Branches>
+          <Branch>
+            <States>
+              <State name="CD4 lt 7" />
+              <State name="CD4 8_15" />
+              <State name="CD4 gt 15" />
+            </States>
+            <Potential type="Exponential">
+              <UtilityVariable name="Outpatient costs" timeSlice="0" />
+              <Variables>
+                <Variable name="Therapy" />
+                <Variable name="CD4 gt 15" timeSlice="0" />
+                <Variable name="CD4 8_15" timeSlice="0" />
+                <Variable name="Age" timeSlice="0" />
+              </Variables>
+              <Coefficients>-5.999E-4 0.0095913 -0.0572336 -0.0215848 3.025844</Coefficients>
+              <Covariates>
+                <Covariate>Age [0]*12</Covariate>
+                <Covariate>CD4 8_15 [0]</Covariate>
+                <Covariate>CD4 gt 15 [0]</Covariate>
+                <Covariate>Therapy</Covariate>
+                <Covariate>Constant</Covariate>
+              </Covariates>
+              <CholeskyDecomposition>2.3336E-4 -0.02010857 0.03065613 0.0075411 0.00753585 0.01946795 -0.01901889 0.00793382 -0.00370549 0.0175396 -0.0120352 -0.01290483 -0.0072482 -0.00630034 0.00844629</CholeskyDecomposition>
+            </Potential>
+          </Branch>
+          <Branch>
+            <States>
+              <State name="dead" />
+            </States>
+            <Potential type="Table">
+              <UtilityVariable name="Outpatient costs" timeSlice="0" />
+              <Values>0.0</Values>
+            </Potential>
+          </Branch>
+        </Branches>
+      </Potential>
+      <Potential type="Tree/ADD" role="utility">
+        <UtilityVariable name="QALYs" timeSlice="0" />
+        <Variables>
+          <Variable name="AIDS" timeSlice="0" />
+          <Variable name="State" timeSlice="0" />
+        </Variables>
+        <TopVariable name="State" timeSlice="0" />
+        <Branches>
+          <Branch>
+            <States>
+              <State name="CD4 lt 7" />
+              <State name="CD4 8_15" />
+              <State name="CD4 gt 15" />
+            </States>
+            <Potential type="Table">
+              <UtilityVariable name="QALYs" timeSlice="0" />
+              <Variables>
+                <Variable name="AIDS" timeSlice="0" />
+              </Variables>
+              <Values>0.818 0.702</Values>
+            </Potential>
+          </Branch>
+          <Branch>
+            <States>
+              <State name="dead" />
+            </States>
+            <Potential type="Table">
+              <UtilityVariable name="QALYs" timeSlice="0" />
+              <Values>0.0</Values>
+            </Potential>
+          </Branch>
+        </Branches>
+      </Potential>
+      <Potential type="Tree/ADD" role="utility">
+        <UtilityVariable name="Drug costs" timeSlice="0" />
+        <Variables>
+          <Variable name="State" timeSlice="0" />
+          <Variable name="Age" timeSlice="0" />
+          <Variable name="Therapy" />
+        </Variables>
+        <TopVariable name="State" timeSlice="0" />
+        <Branches>
+          <Branch>
+            <States>
+              <State name="CD4 lt 7" />
+              <State name="CD4 8_15" />
+              <State name="CD4 gt 15" />
+            </States>
+            <Potential type="Tree/ADD">
+              <UtilityVariable name="Drug costs" timeSlice="0" />
+              <Variables>
+                <Variable name="Age" timeSlice="0" />
+                <Variable name="Therapy" />
+                <Variable name="Drug costs" timeSlice="0" />
+              </Variables>
+              <TopVariable name="Age" timeSlice="0" />
+              <Branches>
+                <Branch>
+                  <Thresholds>
+                    <Threshold value="0.0" belongsTo="right" />
+                    <Threshold value="5.0" belongsTo="left" />
+                  </Thresholds>
+                  <Potential type="Table">
+                    <UtilityVariable name="Drug costs" timeSlice="0" />
+                    <Variables>
+                      <Variable name="Therapy" />
+                    </Variables>
+                    <Values>0.0 0.0043</Values>
+                  </Potential>
+                </Branch>
+                <Branch>
+                  <Thresholds>
+                    <Threshold value="5.0" belongsTo="left" />
+                    <Threshold value="Infinity" belongsTo="right" />
+                  </Thresholds>
+                  <Potential type="Table">
+                    <UtilityVariable name="Drug costs" timeSlice="0" />
+                    <Variables>
+                      <Variable name="Therapy" />
+                    </Variables>
+                    <Values>0.0 0.0086</Values>
+                  </Potential>
+                </Branch>
+              </Branches>
+            </Potential>
+          </Branch>
+          <Branch>
+            <States>
+              <State name="dead" />
+            </States>
+            <Potential type="Table">
+              <UtilityVariable name="Drug costs" timeSlice="0" />
+              <Values>0.0</Values>
+            </Potential>
+          </Branch>
+        </Branches>
+      </Potential>
+      <Potential type="Table" role="utility">
+        <UtilityVariable name="HIV test cost" />
+        <Values>15.4</Values>
+      </Potential>
+    </Potentials>
+  </ProbNet>
+  <InferenceOptions>
+    <MulticriteriaOptions>
+      <SelectedAnalysisType>COST_EFFECTIVENESS</SelectedAnalysisType>
+      <Unicriterion>
+        <Scales>
+          <Scale Criterion="cost" Value="1.0" />
+          <Scale Criterion="effectiveness" Value="1.0" />
+        </Scales>
+      </Unicriterion>
+      <CostEffectiveness>
+        <CE_Criteria>
+          <CE_Criterion Criterion="cost" Value="Cost" />
+          <CE_Criterion Criterion="effectiveness" Value="Effectiveness" />
+        </CE_Criteria>
+      </CostEffectiveness>
+    </MulticriteriaOptions>
+    <TemporalOptions>
+      <Slices>20</Slices>
+      <Transition>BEGINNING</Transition>
+      <DiscountRates>
+        <DiscountRate Criterion="cost" value="0.0" unit="YEAR" />
+        <DiscountRate Criterion="effectiveness" value="0.0" unit="YEAR" />
+      </DiscountRates>
+    </TemporalOptions>
+  </InferenceOptions>
+</ProbModelXML>

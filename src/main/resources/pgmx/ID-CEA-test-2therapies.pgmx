@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ProbModelXML formatVersion="0.2.0">
+  <ProbNet type="InfluenceDiagram">
+    <DecisionCriteria>
+      <Criterion name="cost" unit="€" />
+      <Criterion name="effectiveness" unit="QALY" />
+    </DecisionCriteria>
+    <AdditionalProperties>
+      <Property name="Version" value="1.0" />
+      <Property name="VisualPrecision" value="0.0" />
+      <Property name="KindOfGraph" value="directed" />
+    </AdditionalProperties>
+    <Variables>
+      <Variable name="Disease" type="finiteStates" role="chance">
+        <Coordinates x="131" y="57" />
+        <AdditionalProperties>
+          <Property name="Relevance" value="7.0" />
+          <Property name="Title" value="X" />
+        </AdditionalProperties>
+        <States>
+          <State name="absent" />
+          <State name="present" />
+        </States>
+      </Variable>
+      <Variable name="Test" type="finiteStates" role="chance">
+        <Coordinates x="329" y="147" />
+        <AdditionalProperties>
+          <Property name="Relevance" value="7.0" />
+          <Property name="Title" value="Y" />
+        </AdditionalProperties>
+        <States>
+          <State name="not-performed" />
+          <State name="negative" />
+          <State name="positive" />
+        </States>
+      </Variable>
+      <Variable name="Therapy" type="finiteStates" role="decision">
+        <Coordinates x="372" y="265" />
+        <AdditionalProperties>
+          <Property name="Relevance" value="7.0" />
+          <Property name="Title" value="D" />
+        </AdditionalProperties>
+        <States>
+          <State name="no" />
+          <State name="therapy 1" />
+          <State name="therapy 2" />
+        </States>
+      </Variable>
+      <Variable name="Dec:Test" type="finiteStates" role="decision">
+        <Coordinates x="562" y="68" />
+        <AdditionalProperties>
+          <Property name="Relevance" value="7.0" />
+          <Property name="Title" value="T" />
+        </AdditionalProperties>
+        <States>
+          <State name="no" />
+          <State name="yes" />
+        </States>
+      </Variable>
+      <Variable name="Cost of therapy" type="numeric" role="utility">
+        <Coordinates x="486" y="373" />
+        <Unit />
+        <Precision>1.0</Precision>
+        <Criterion name="cost" />
+      </Variable>
+      <Variable name="Cost of test" type="numeric" role="utility">
+        <Coordinates x="653" y="163" />
+        <Unit />
+        <Precision>1.0</Precision>
+        <Criterion name="cost" />
+      </Variable>
+      <Variable name="Effectiveness" type="numeric" role="utility">
+        <Coordinates x="205" y="377" />
+        <Unit />
+        <Precision>0.1</Precision>
+        <Criterion name="effectiveness" />
+      </Variable>
+    </Variables>
+    <Links>
+      <Link directed="true">
+        <Variable name="Disease" />
+        <Variable name="Test" />
+      </Link>
+      <Link directed="true">
+        <Variable name="Disease" />
+        <Variable name="Effectiveness" />
+      </Link>
+      <Link directed="true">
+        <Variable name="Test" />
+        <Variable name="Therapy" />
+      </Link>
+      <Link directed="true">
+        <Variable name="Therapy" />
+        <Variable name="Cost of therapy" />
+      </Link>
+      <Link directed="true">
+        <Variable name="Therapy" />
+        <Variable name="Effectiveness" />
+      </Link>
+      <Link directed="true">
+        <Variable name="Dec:Test" />
+        <Variable name="Therapy" />
+      </Link>
+      <Link directed="true">
+        <Variable name="Dec:Test" />
+        <Variable name="Test" />
+      </Link>
+      <Link directed="true">
+        <Variable name="Dec:Test" />
+        <Variable name="Cost of test" />
+      </Link>
+    </Links>
+    <Potentials>
+      <Potential type="Table" role="conditionalProbability">
+        <Variables>
+          <Variable name="Disease" />
+        </Variables>
+        <Values>0.86 0.14</Values>
+        <UncertainValues>
+          <Value distribution="Complement">1.0</Value>
+          <Value distribution="Beta" name="prevalence">14.0 86.0</Value>
+        </UncertainValues>
+      </Potential>
+      <Potential type="Table" role="conditionalProbability">
+        <Variables>
+          <Variable name="Test" />
+          <Variable name="Dec:Test" />
+          <Variable name="Disease" />
+        </Variables>
+        <Values>1.0 0.0 0.0 0.0 0.93 0.06999999999999995 1.0 0.0 0.0 0.0 0.09999999999999998 0.9</Values>
+        <UncertainValues>
+          <Value />
+          <Value />
+          <Value />
+          <Value distribution="Exact">0.0</Value>
+          <Value distribution="Beta" name="specificity">93.0 7.0</Value>
+          <Value distribution="Complement">1.0</Value>
+          <Value />
+          <Value />
+          <Value />
+          <Value distribution="Exact">0.0</Value>
+          <Value distribution="Complement">1.0</Value>
+          <Value distribution="Beta" name="sensitivity">90.0 10.0</Value>
+        </UncertainValues>
+      </Potential>
+      <Potential type="Table" role="utility">
+        <UtilityVariable name="Cost of therapy" />
+        <Variables>
+          <Variable name="Therapy" />
+        </Variables>
+        <Values>0.0 20000.0 70000.0</Values>
+        <UncertainValues>
+          <Value />
+          <Value distribution="Gamma-mv" name="cost of therapy 1">20000.0 4000.0</Value>
+          <Value distribution="Gamma-mv" name="cost of therapy 2">70000.0 14000.0</Value>
+        </UncertainValues>
+      </Potential>
+      <Potential type="Table" role="utility">
+        <UtilityVariable name="Cost of test" />
+        <Variables>
+          <Variable name="Dec:Test" />
+        </Variables>
+        <Values>0.0 150.0</Values>
+        <UncertainValues>
+          <Value />
+          <Value distribution="Gamma-mv">150.0 30.0</Value>
+        </UncertainValues>
+      </Potential>
+      <Potential type="Table" role="utility">
+        <UtilityVariable name="Effectiveness" />
+        <Variables>
+          <Variable name="Disease" />
+          <Variable name="Therapy" />
+        </Variables>
+        <Values>10.0 1.2 9.9 4.0 9.3 6.5</Values>
+      </Potential>
+    </Potentials>
+  </ProbNet>
+  <InferenceOptions>
+    <MulticriteriaOptions>
+      <SelectedAnalysisType>UNICRITERION</SelectedAnalysisType>
+      <Unicriterion>
+        <Unit>€</Unit>
+        <Scales>
+          <Scale Criterion="cost" Value="-1.0" />
+          <Scale Criterion="effectiveness" Value="30000.0" />
+        </Scales>
+      </Unicriterion>
+      <CostEffectiveness>
+        <Scales>
+          <Scale Criterion="cost" Value="1.0" />
+          <Scale Criterion="effectiveness" Value="1.0" />
+        </Scales>
+        <CE_Criteria>
+          <CE_Criterion Criterion="cost" Value="Cost" />
+          <CE_Criterion Criterion="effectiveness" Value="Effectiveness" />
+        </CE_Criteria>
+      </CostEffectiveness>
+    </MulticriteriaOptions>
+  </InferenceOptions>
+</ProbModelXML>

@@ -1,0 +1,322 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ProbModelXML formatVersion="0.2.0">
+  <ProbNet type="DAN">
+    <DecisionCriteria>
+      <Criterion name="---" unit="---" />
+    </DecisionCriteria>
+    <AdditionalProperties />
+    <Variables>
+      <Variable name="Symptom" type="finiteStates" role="chance">
+        <Coordinates x="663" y="55" />
+        <AlwaysObserved />
+        <States>
+          <State name="absent" />
+          <State name="present" />
+        </States>
+      </Variable>
+      <Variable name="Disease" type="finiteStates" role="chance">
+        <Coordinates x="884" y="28" />
+        <States>
+          <State name="absent" />
+          <State name="present" />
+        </States>
+      </Variable>
+      <Variable name="Therapy" type="finiteStates" role="decision">
+        <Coordinates x="700" y="482" />
+        <States>
+          <State name="no" />
+          <State name="yes" />
+        </States>
+      </Variable>
+      <Variable name="Quality of life" type="numeric" role="utility">
+        <Coordinates x="762" y="539" />
+        <Unit />
+        <Precision>0.0</Precision>
+        <Criterion name="---" />
+      </Variable>
+      <Variable name="Test Result 0" type="finiteStates" role="chance">
+        <Coordinates x="217" y="220" />
+        <States>
+          <State name="negative" />
+          <State name="positive" />
+        </States>
+      </Variable>
+      <Variable name="Dec: Test 0" type="finiteStates" role="decision">
+        <Coordinates x="150" y="87" />
+        <States>
+          <State name="no" />
+          <State name="yes" />
+        </States>
+      </Variable>
+      <Variable name="Cost of test 0" type="numeric" role="utility">
+        <Coordinates x="87" y="261" />
+        <Unit />
+        <Precision>0.0</Precision>
+        <Criterion name="---" />
+      </Variable>
+      <Variable name="Test Result 1" type="finiteStates" role="chance">
+        <Coordinates x="429" y="217" />
+        <States>
+          <State name="negative" />
+          <State name="positive" />
+        </States>
+      </Variable>
+      <Variable name="Dec: Test 1" type="finiteStates" role="decision">
+        <Coordinates x="379" y="139" />
+        <States>
+          <State name="no" />
+          <State name="yes" />
+        </States>
+      </Variable>
+      <Variable name="Cost of test 1" type="numeric" role="utility">
+        <Coordinates x="321" y="306" />
+        <Unit />
+        <Precision>0.0</Precision>
+        <Criterion name="---" />
+      </Variable>
+      <Variable name="Test Result 2" type="finiteStates" role="chance">
+        <Coordinates x="726" y="245" />
+        <States>
+          <State name="negative" />
+          <State name="positive" />
+        </States>
+      </Variable>
+      <Variable name="Dec: Test 2" type="finiteStates" role="decision">
+        <Coordinates x="646" y="182" />
+        <States>
+          <State name="no" />
+          <State name="yes" />
+        </States>
+      </Variable>
+      <Variable name="Cost of test 2" type="numeric" role="utility">
+        <Coordinates x="593" y="305" />
+        <Unit />
+        <Precision>0.0</Precision>
+        <Criterion name="---" />
+      </Variable>
+      <Variable name="Test Result 3" type="finiteStates" role="chance">
+        <Coordinates x="919" y="248" />
+        <States>
+          <State name="negative" />
+          <State name="positive" />
+        </States>
+      </Variable>
+      <Variable name="Dec: Test 3" type="finiteStates" role="decision">
+        <Coordinates x="989" y="179" />
+        <States>
+          <State name="no" />
+          <State name="yes" />
+        </States>
+      </Variable>
+      <Variable name="Cost of test 3" type="numeric" role="utility">
+        <Coordinates x="1016" y="299" />
+        <Unit />
+        <Precision>0.0</Precision>
+        <Criterion name="---" />
+      </Variable>
+    </Variables>
+    <Links>
+      <Link directed="true">
+        <Variable name="Disease" />
+        <Variable name="Symptom" />
+      </Link>
+      <Link directed="true">
+        <Variable name="Disease" />
+        <Variable name="Test Result 0" />
+      </Link>
+      <Link directed="true">
+        <Variable name="Disease" />
+        <Variable name="Test Result 1" />
+      </Link>
+      <Link directed="true">
+        <Variable name="Disease" />
+        <Variable name="Test Result 2" />
+      </Link>
+      <Link directed="true">
+        <Variable name="Disease" />
+        <Variable name="Test Result 3" />
+      </Link>
+      <Link directed="true">
+        <Variable name="Disease" />
+        <Variable name="Quality of life" />
+      </Link>
+      <Link directed="true">
+        <Variable name="Therapy" />
+        <Variable name="Quality of life" />
+      </Link>
+      <Link directed="true">
+        <Variable name="Dec: Test 0" />
+        <Variable name="Test Result 0" />
+        <Potential type="Table" role="linkRestriction">
+          <Variables>
+            <Variable name="Dec: Test 0" />
+            <Variable name="Test Result 0" />
+          </Variables>
+          <Values>0.0 1.0 0.0 1.0</Values>
+        </Potential>
+        <RevelationCondition>
+          <State name="yes" />
+        </RevelationCondition>
+      </Link>
+      <Link directed="true">
+        <Variable name="Dec: Test 0" />
+        <Variable name="Cost of test 0" />
+      </Link>
+      <Link directed="true">
+        <Variable name="Dec: Test 1" />
+        <Variable name="Test Result 1" />
+        <Potential type="Table" role="linkRestriction">
+          <Variables>
+            <Variable name="Dec: Test 1" />
+            <Variable name="Test Result 1" />
+          </Variables>
+          <Values>0.0 1.0 0.0 1.0</Values>
+        </Potential>
+        <RevelationCondition>
+          <State name="yes" />
+        </RevelationCondition>
+      </Link>
+      <Link directed="true">
+        <Variable name="Dec: Test 1" />
+        <Variable name="Cost of test 1" />
+      </Link>
+      <Link directed="true">
+        <Variable name="Dec: Test 2" />
+        <Variable name="Test Result 2" />
+        <Potential type="Table" role="linkRestriction">
+          <Variables>
+            <Variable name="Dec: Test 2" />
+            <Variable name="Test Result 2" />
+          </Variables>
+          <Values>0.0 1.0 0.0 1.0</Values>
+        </Potential>
+        <RevelationCondition>
+          <State name="yes" />
+        </RevelationCondition>
+      </Link>
+      <Link directed="true">
+        <Variable name="Dec: Test 2" />
+        <Variable name="Cost of test 2" />
+      </Link>
+      <Link directed="true">
+        <Variable name="Dec: Test 3" />
+        <Variable name="Test Result 3" />
+        <Potential type="Table" role="linkRestriction">
+          <Variables>
+            <Variable name="Dec: Test 3" />
+            <Variable name="Test Result 3" />
+          </Variables>
+          <Values>0.0 1.0 0.0 1.0</Values>
+        </Potential>
+        <RevelationCondition>
+          <State name="yes" />
+        </RevelationCondition>
+      </Link>
+      <Link directed="true">
+        <Variable name="Dec: Test 3" />
+        <Variable name="Cost of test 3" />
+      </Link>
+    </Links>
+    <Potentials>
+      <Potential type="Table" role="conditionalProbability">
+        <Variables>
+          <Variable name="Symptom" />
+          <Variable name="Disease" />
+        </Variables>
+        <Values>0.96 0.04 0.1 0.9</Values>
+      </Potential>
+      <Potential type="Table" role="conditionalProbability">
+        <Variables>
+          <Variable name="Disease" />
+        </Variables>
+        <Values>0.86 0.14</Values>
+      </Potential>
+      <Potential type="Table" role="utility">
+        <UtilityVariable name="Quality of life" />
+        <Variables>
+          <Variable name="Disease" />
+          <Variable name="Therapy" />
+        </Variables>
+        <Values>10.0 3.0 9.0 8.0</Values>
+      </Potential>
+      <Potential type="Table" role="conditionalProbability">
+        <Variables>
+          <Variable name="Test Result 0" />
+          <Variable name="Dec: Test 0" />
+          <Variable name="Disease" />
+        </Variables>
+        <Values>0.0 0.0 0.97 0.03 0.0 0.0 0.09 0.91</Values>
+      </Potential>
+      <Potential type="Table" role="utility">
+        <UtilityVariable name="Cost of test 0" />
+        <Variables>
+          <Variable name="Dec: Test 0" />
+        </Variables>
+        <Values>0.0 -0.25</Values>
+      </Potential>
+      <Potential type="Table" role="conditionalProbability">
+        <Variables>
+          <Variable name="Test Result 1" />
+          <Variable name="Dec: Test 1" />
+          <Variable name="Disease" />
+        </Variables>
+        <Values>0.0 0.0 0.98 0.02 0.0 0.0 0.05 0.95</Values>
+      </Potential>
+      <Potential type="Table" role="utility">
+        <UtilityVariable name="Cost of test 1" />
+        <Variables>
+          <Variable name="Dec: Test 1" />
+        </Variables>
+        <Values>0.0 -0.3</Values>
+      </Potential>
+      <Potential type="Table" role="conditionalProbability">
+        <Variables>
+          <Variable name="Test Result 2" />
+          <Variable name="Dec: Test 2" />
+          <Variable name="Disease" />
+        </Variables>
+        <Values>0.0 0.0 0.95 0.05 0.0 0.0 0.08 0.92</Values>
+      </Potential>
+      <Potential type="Table" role="utility">
+        <UtilityVariable name="Cost of test 2" />
+        <Variables>
+          <Variable name="Dec: Test 2" />
+        </Variables>
+        <Values>0.0 -0.1</Values>
+      </Potential>
+      <Potential type="Table" role="conditionalProbability">
+        <Variables>
+          <Variable name="Test Result 3" />
+          <Variable name="Dec: Test 3" />
+          <Variable name="Disease" />
+        </Variables>
+        <Values>0.0 0.0 0.99 0.01 0.0 0.0 0.03 0.97</Values>
+      </Potential>
+      <Potential type="Table" role="utility">
+        <UtilityVariable name="Cost of test 3" />
+        <Variables>
+          <Variable name="Dec: Test 3" />
+        </Variables>
+        <Values>0.0 -0.6</Values>
+      </Potential>
+    </Potentials>
+  </ProbNet>
+  <InferenceOptions>
+    <MulticriteriaOptions>
+      <SelectedAnalysisType>UNICRITERION</SelectedAnalysisType>
+      <Unicriterion>
+        <Scales>
+          <Scale Criterion="---" Value="1.0" />
+        </Scales>
+      </Unicriterion>
+      <CostEffectiveness>
+        <Scales>
+          <Scale Criterion="---" Value="1.0" />
+        </Scales>
+        <CE_Criteria>
+          <CE_Criterion Criterion="---" Value="Cost" />
+        </CE_Criteria>
+      </CostEffectiveness>
+    </MulticriteriaOptions>
+  </InferenceOptions>
+</ProbModelXML>

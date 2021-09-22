@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ProbModelXML formatVersion="0.2.0">
+  <ProbNet type="DAN">
+    <Comment showWhenOpeningNetwork="false"><![CDATA[<<Double click to add/modify comment>>]]></Comment>
+    <DecisionCriteria>
+      <Criterion name="---" unit="---" />
+    </DecisionCriteria>
+    <Properties />
+    <Variables>
+      <Variable name="D" type="finiteStates" role="decision">
+        <Coordinates x="578" y="183" />
+        <States>
+          <State name="no" />
+          <State name="yes" />
+        </States>
+      </Variable>
+      <Variable name="U" type="numeric" role="utility">
+        <Coordinates x="586" y="272" />
+        <Unit />
+        <Precision>0.01</Precision>
+        <Criterion name="---" />
+      </Variable>
+      <Variable name="U1" type="numeric" role="utility">
+        <Coordinates x="837" y="261" />
+        <Unit />
+        <Precision>0.01</Precision>
+        <Criterion name="---" />
+      </Variable>
+      <Variable name="U2" type="numeric" role="utility">
+        <Coordinates x="721" y="385" />
+        <Unit />
+        <Precision>0.01</Precision>
+        <Criterion name="---" />
+      </Variable>
+    </Variables>
+    <Links>
+      <Link directed="true">
+        <Variable name="D" />
+        <Variable name="U" />
+      </Link>
+      <Link directed="true">
+        <Variable name="U" />
+        <Variable name="U2" />
+      </Link>
+      <Link directed="true">
+        <Variable name="U1" />
+        <Variable name="U2" />
+      </Link>
+    </Links>
+    <Potentials>
+      <Potential type="Table" role="conditionalProbability">
+        <UtilityVariable name="U" />
+        <Variables>
+          <Variable name="D" />
+        </Variables>
+        <Values>2.0 5.0</Values>
+      </Potential>
+      <Potential type="Table" role="conditionalProbability">
+        <UtilityVariable name="U1" />
+        <Values>3.0</Values>
+      </Potential>
+      <Potential type="Product" role="conditionalProbability">
+        <UtilityVariable name="U2" />
+        <Variables>
+          <Variable name="U" />
+          <Variable name="U1" />
+        </Variables>
+      </Potential>
+    </Potentials>
+  </ProbNet>
+  <InferenceOptions>
+    <MulticriteriaOptions>
+      <SelectedAnalysisType>UNICRITERION</SelectedAnalysisType>
+      <Unicriterion>
+        <Scales>
+          <Scale Criterion="---" Value="1.0" />
+        </Scales>
+      </Unicriterion>
+      <CostEffectiveness>
+        <Scales>
+          <Scale Criterion="---" Value="1.0" />
+        </Scales>
+        <CE_Criteria>
+          <CE_Criterion Criterion="---" Value="Cost" />
+        </CE_Criteria>
+      </CostEffectiveness>
+    </MulticriteriaOptions>
+  </InferenceOptions>
+</ProbModelXML>

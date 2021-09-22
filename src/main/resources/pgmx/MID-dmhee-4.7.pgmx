@@ -1,0 +1,410 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ProbModelXML formatVersion="0.2.0">
+  <ProbNet type="MID">
+    <DecisionCriteria>
+      <Criterion name="cost" />
+      <Criterion name="effectiveness" />
+    </DecisionCriteria>
+    <TimeUnit unit="YEAR" Value="1.0" />
+    <AdditionalProperties />
+    <Variables>
+      <Variable name="State" timeSlice="0" type="finiteStates" role="chance">
+        <Comment><![CDATA[<html>
+  <head>
+    
+  </head>
+  <body>
+    <p style="margin-top: 0">
+      Health state of the VIH patient: State A (200&lt;cd4 cells/mm3&lt;500); State 
+      B (cd4&lt;200); State C (AIDs); Death
+    </p>
+  </body>
+</html>]]></Comment>
+        <Coordinates x="199" y="256" />
+        <States>
+          <State name="Dead" />
+          <State name="State C" />
+          <State name="State B" />
+          <State name="State A" />
+        </States>
+      </Variable>
+      <Variable name="State" timeSlice="1" type="finiteStates" role="chance">
+        <Coordinates x="624" y="256" />
+        <States>
+          <State name="Dead" />
+          <State name="State C" />
+          <State name="State B" />
+          <State name="State A" />
+        </States>
+      </Variable>
+      <Variable name="Time in treatment" timeSlice="0" type="numeric" role="chance">
+        <Coordinates x="220" y="172" />
+        <Unit />
+        <Precision>1.0</Precision>
+        <Thresholds>
+          <Threshold value="0.0" belongsTo="right" />
+          <Threshold value="Infinity" belongsTo="right" />
+        </Thresholds>
+      </Variable>
+      <Variable name="Time in treatment" timeSlice="1" type="numeric" role="chance">
+        <Coordinates x="571" y="172" />
+        <Unit />
+        <Precision>1.0</Precision>
+        <Thresholds>
+          <Threshold value="0.0" belongsTo="right" />
+          <Threshold value="Infinity" belongsTo="right" />
+        </Thresholds>
+      </Variable>
+      <Variable name="Therapy type" type="finiteStates" role="decision">
+        <Coordinates x="354" y="57" />
+        <States>
+          <State name="combination therapy" />
+          <State name="monotherapy" />
+        </States>
+      </Variable>
+      <Variable name="Drug cost" timeSlice="0" type="numeric" role="utility">
+        <Coordinates x="354" y="318" />
+        <Unit />
+        <Precision>0.01</Precision>
+        <Criterion name="cost" />
+      </Variable>
+      <Variable name="Life years" timeSlice="0" type="numeric" role="utility">
+        <Coordinates x="127" y="370" />
+        <Unit />
+        <Precision>0.01</Precision>
+        <Criterion name="effectiveness" />
+      </Variable>
+      <Variable name="Direct medical cost" timeSlice="0" type="numeric" role="utility">
+        <Coordinates x="313" y="363" />
+        <Unit />
+        <Precision>0.01</Precision>
+        <Criterion name="cost" />
+      </Variable>
+      <Variable name="Community care cost" timeSlice="0" type="numeric" role="utility">
+        <Coordinates x="201" y="407" />
+        <Unit />
+        <Precision>0.01</Precision>
+        <Criterion name="cost" />
+      </Variable>
+    </Variables>
+    <Links>
+      <Link directed="true">
+        <Variable name="State" timeSlice="0" />
+        <Variable name="State" timeSlice="1" />
+      </Link>
+      <Link directed="true">
+        <Variable name="State" timeSlice="0" />
+        <Variable name="Life years" timeSlice="0" />
+      </Link>
+      <Link directed="true">
+        <Variable name="State" timeSlice="0" />
+        <Variable name="Direct medical cost" timeSlice="0" />
+      </Link>
+      <Link directed="true">
+        <Variable name="State" timeSlice="0" />
+        <Variable name="Community care cost" timeSlice="0" />
+      </Link>
+      <Link directed="true">
+        <Variable name="State" timeSlice="0" />
+        <Variable name="Drug cost" timeSlice="0" />
+      </Link>
+      <Link directed="true">
+        <Variable name="Time in treatment" timeSlice="0" />
+        <Variable name="State" timeSlice="1" />
+      </Link>
+      <Link directed="true">
+        <Variable name="Time in treatment" timeSlice="0" />
+        <Variable name="Time in treatment" timeSlice="1" />
+      </Link>
+      <Link directed="true">
+        <Variable name="Time in treatment" timeSlice="0" />
+        <Variable name="Drug cost" timeSlice="0" />
+      </Link>
+      <Link directed="true">
+        <Variable name="Therapy type" />
+        <Variable name="State" timeSlice="1" />
+      </Link>
+      <Link directed="true">
+        <Variable name="Therapy type" />
+        <Variable name="Drug cost" timeSlice="0" />
+      </Link>
+    </Links>
+    <Potentials>
+      <Potential type="Table" role="conditionalProbability">
+        <Variables>
+          <Variable name="State" timeSlice="0" />
+        </Variables>
+        <Values>0.0 0.0 0.0 1.0</Values>
+      </Potential>
+      <Potential type="Tree/ADD" role="conditionalProbability">
+        <Variables>
+          <Variable name="State" timeSlice="1" />
+          <Variable name="State" timeSlice="0" />
+          <Variable name="Time in treatment" timeSlice="0" />
+          <Variable name="Therapy type" />
+        </Variables>
+        <TopVariable name="Therapy type" />
+        <Branches>
+          <Branch>
+            <States>
+              <State name="monotherapy" />
+            </States>
+            <Potential type="Table">
+              <Variables>
+                <Variable name="State" timeSlice="1" />
+                <Variable name="State" timeSlice="0" />
+              </Variables>
+              <Values>1.0 0.0 0.0 0.0 0.2498570612 0.7501429388 0.0 0.0 0.01192368839427663 0.4069952305246423 0.581081081081081 0.0 0.00980392156862745 0.06689734717416378 0.20184544405997693 0.7214532871972318</Values>
+              <UncertainValues>
+                <Value />
+                <Value />
+                <Value />
+                <Value />
+                <Value distribution="Dirichlet">437.0</Value>
+                <Value distribution="Dirichlet">1312.0</Value>
+                <Value distribution="Exact">0.0</Value>
+                <Value distribution="Exact">0.0</Value>
+                <Value distribution="Dirichlet">15.0</Value>
+                <Value distribution="Dirichlet">512.0</Value>
+                <Value distribution="Dirichlet">731.0</Value>
+                <Value distribution="Exact">0.0</Value>
+                <Value distribution="Dirichlet">17.0</Value>
+                <Value distribution="Dirichlet">116.0</Value>
+                <Value distribution="Dirichlet">350.0</Value>
+                <Value distribution="Dirichlet">1251.0</Value>
+              </UncertainValues>
+            </Potential>
+          </Branch>
+          <Branch>
+            <States>
+              <State name="combination therapy" />
+            </States>
+            <Potential type="Tree/ADD">
+              <Variables>
+                <Variable name="State" timeSlice="1" />
+                <Variable name="State" timeSlice="0" />
+                <Variable name="Time in treatment" timeSlice="0" />
+              </Variables>
+              <TopVariable name="Time in treatment" timeSlice="0" />
+              <Branches>
+                <Branch>
+                  <Thresholds>
+                    <Threshold value="0.0" belongsTo="right" />
+                    <Threshold value="2.0" belongsTo="right" />
+                  </Thresholds>
+                  <Potential type="Table">
+                    <Variables>
+                      <Variable name="State" timeSlice="1" />
+                      <Variable name="State" timeSlice="0" />
+                    </Variables>
+                    <Values>1.0 0.0 0.0 0.0 0.12725 0.87275 0.0 0.0 0.006108 0.207163 0.786729 0.0 0.00509 0.034103 0.102818 0.857989</Values>
+                  </Potential>
+                </Branch>
+                <Branch>
+                  <Thresholds>
+                    <Threshold value="2.0" belongsTo="right" />
+                    <Threshold value="Infinity" belongsTo="right" />
+                  </Thresholds>
+                  <Potential type="Table">
+                    <Variables>
+                      <Variable name="State" timeSlice="1" />
+                      <Variable name="State" timeSlice="0" />
+                    </Variables>
+                    <Values>1.0 0.0 0.0 0.0 0.2498570611778159 0.7501429388221841 0.0 0.0 0.01192368839427663 0.4069952305246423 0.581081081081081 0.0 0.00980392156862745 0.06689734717416378 0.20184544405997693 0.7214532871972318</Values>
+                    <UncertainValues>
+                      <Value />
+                      <Value />
+                      <Value />
+                      <Value />
+                      <Value distribution="Dirichlet">437.0</Value>
+                      <Value distribution="Dirichlet">1312.0</Value>
+                      <Value distribution="Exact">0.0</Value>
+                      <Value distribution="Exact">0.0</Value>
+                      <Value distribution="Dirichlet">15.0</Value>
+                      <Value distribution="Dirichlet">512.0</Value>
+                      <Value distribution="Dirichlet">731.0</Value>
+                      <Value distribution="Exact">0.0</Value>
+                      <Value distribution="Dirichlet">17.0</Value>
+                      <Value distribution="Dirichlet">116.0</Value>
+                      <Value distribution="Dirichlet">350.0</Value>
+                      <Value distribution="Dirichlet">1251.0</Value>
+                    </UncertainValues>
+                  </Potential>
+                </Branch>
+              </Branches>
+            </Potential>
+          </Branch>
+        </Branches>
+      </Potential>
+      <Potential type="Delta" role="conditionalProbability">
+        <Variables>
+          <Variable name="Time in treatment" timeSlice="0" />
+        </Variables>
+        <NumericValue>0.0</NumericValue>
+      </Potential>
+      <Potential type="CycleLengthShift" role="conditionalProbability">
+        <Variables>
+          <Variable name="Time in treatment" timeSlice="1" />
+          <Variable name="Time in treatment" timeSlice="0" />
+        </Variables>
+      </Potential>
+      <Potential type="Tree/ADD" role="utility">
+        <UtilityVariable name="Drug cost" timeSlice="0" />
+        <Variables>
+          <Variable name="Time in treatment" timeSlice="0" />
+          <Variable name="Therapy type" />
+          <Variable name="State" timeSlice="0" />
+        </Variables>
+        <TopVariable name="State" timeSlice="0" />
+        <Branches>
+          <Branch>
+            <States>
+              <State name="State C" />
+              <State name="State B" />
+              <State name="State A" />
+            </States>
+            <Potential type="Tree/ADD">
+              <UtilityVariable name="Drug cost" timeSlice="0" />
+              <Variables>
+                <Variable name="Time in treatment" timeSlice="0" />
+                <Variable name="Therapy type" />
+              </Variables>
+              <TopVariable name="Therapy type" />
+              <Branches>
+                <Branch>
+                  <States>
+                    <State name="combination therapy" />
+                  </States>
+                  <Potential type="Tree/ADD">
+                    <UtilityVariable name="Drug cost" timeSlice="0" />
+                    <TopVariable name="Time in treatment" timeSlice="0" />
+                    <Branches>
+                      <Branch>
+                        <Thresholds>
+                          <Threshold value="0.0" belongsTo="right" />
+                          <Threshold value="2.0" belongsTo="left" />
+                        </Thresholds>
+                        <Potential type="Table">
+                          <UtilityVariable name="Drug cost" timeSlice="0" />
+                          <Values>4364.5</Values>
+                        </Potential>
+                      </Branch>
+                      <Branch>
+                        <Thresholds>
+                          <Threshold value="2.0" belongsTo="left" />
+                          <Threshold value="Infinity" belongsTo="right" />
+                        </Thresholds>
+                        <Potential type="Table">
+                          <UtilityVariable name="Drug cost" timeSlice="0" />
+                          <Values>2278.0</Values>
+                        </Potential>
+                      </Branch>
+                    </Branches>
+                  </Potential>
+                </Branch>
+                <Branch>
+                  <States>
+                    <State name="monotherapy" />
+                  </States>
+                  <Potential type="Table">
+                    <UtilityVariable name="Drug cost" timeSlice="0" />
+                    <Values>2278.0</Values>
+                  </Potential>
+                </Branch>
+              </Branches>
+            </Potential>
+          </Branch>
+          <Branch>
+            <States>
+              <State name="Dead" />
+            </States>
+            <Potential type="Table">
+              <UtilityVariable name="Drug cost" timeSlice="0" />
+              <Values>0.0</Values>
+            </Potential>
+          </Branch>
+        </Branches>
+      </Potential>
+      <Potential type="Tree/ADD" role="utility">
+        <UtilityVariable name="Life years" timeSlice="0" />
+        <Variables>
+          <Variable name="State" timeSlice="0" />
+        </Variables>
+        <TopVariable name="State" timeSlice="0" />
+        <Branches>
+          <Branch>
+            <States>
+              <State name="State C" />
+              <State name="State B" />
+              <State name="State A" />
+            </States>
+            <Potential type="Table">
+              <UtilityVariable name="Life years" timeSlice="0" />
+              <Values>1.0</Values>
+            </Potential>
+          </Branch>
+          <Branch>
+            <States>
+              <State name="Dead" />
+            </States>
+            <Potential type="Table">
+              <UtilityVariable name="Life years" timeSlice="0" />
+              <Values>0.0</Values>
+            </Potential>
+          </Branch>
+        </Branches>
+      </Potential>
+      <Potential type="Table" role="utility">
+        <UtilityVariable name="Direct medical cost" timeSlice="0" />
+        <Variables>
+          <Variable name="State" timeSlice="0" />
+        </Variables>
+        <Values>0.0 6948.0 1774.0 1701.0</Values>
+        <UncertainValues>
+          <Value />
+          <Value distribution="Gamma-mv">6948.0 6948.0</Value>
+          <Value distribution="Gamma-mv">1774.0 1774.0</Value>
+          <Value distribution="Gamma-mv">1701.0 1701.0</Value>
+        </UncertainValues>
+      </Potential>
+      <Potential type="Table" role="utility">
+        <UtilityVariable name="Community care cost" timeSlice="0" />
+        <Variables>
+          <Variable name="State" timeSlice="0" />
+        </Variables>
+        <Values>0.0 2059.0 1278.0 1055.0</Values>
+        <UncertainValues>
+          <Value />
+          <Value distribution="Gamma-mv">2059.0 2059.0</Value>
+          <Value distribution="Gamma-mv">1278.0 1278.0</Value>
+          <Value distribution="Gamma-mv">1055.0 1055.0</Value>
+        </UncertainValues>
+      </Potential>
+    </Potentials>
+  </ProbNet>
+  <InferenceOptions>
+    <MulticriteriaOptions>
+      <SelectedAnalysisType>COST_EFFECTIVENESS</SelectedAnalysisType>
+      <Unicriterion>
+        <Scales>
+          <Scale Criterion="cost" Value="1.0" />
+          <Scale Criterion="effectiveness" Value="1.0" />
+        </Scales>
+      </Unicriterion>
+      <CostEffectiveness>
+        <CE_Criteria>
+          <CE_Criterion Criterion="cost" Value="Cost" />
+          <CE_Criterion Criterion="effectiveness" Value="Effectiveness" />
+        </CE_Criteria>
+      </CostEffectiveness>
+    </MulticriteriaOptions>
+    <TemporalOptions>
+      <Slices>20</Slices>
+      <Transition>BEGINNING</Transition>
+      <DiscountRates>
+        <DiscountRate Criterion="cost" value="0.0" unit="YEAR" />
+        <DiscountRate Criterion="effectiveness" value="0.0" unit="YEAR" />
+      </DiscountRates>
+    </TemporalOptions>
+  </InferenceOptions>
+</ProbModelXML>

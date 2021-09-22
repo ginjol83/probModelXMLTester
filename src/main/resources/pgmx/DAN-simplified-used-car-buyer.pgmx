@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ProbModelXML formatVersion="0.2.0">
+  <ProbNet type="DAN">
+    <Comment showWhenOpeningNetwork="true"><![CDATA[<html>
+  <head>
+    
+  </head>
+  <body>
+    <p style="margin-top: 0">
+      &quot;The used car buyer problem&quot;
+    </p>
+    <p style="margin-top: 0">
+      
+    </p>
+    <p style="margin-top: 0">
+      It was first proposed in:
+    </p>
+    <p style="margin-top: 0">
+      
+    </p>
+    <p style="margin-top: 0">
+      R. A. Howard, &#8220;The used car buyer&quot;, in <i>Readings on the 
+      Principles and Applications of Decision Analysis</i> (R. A. Howard and 
+      J. E. Matheson, eds.), pp. 689&#8211;718, Menlo Park, CA: Strategic De-
+    </p>
+    <p style="margin-top: 0">
+      cisions Group, 1984.
+    </p>
+    <p style="margin-top: 0">
+      
+    </p>
+    <p style="margin-top: 0">
+      And it has been described in many papers. It is described in Shenoy 
+      (2000) as follows:
+    </p>
+    <p style="margin-top: 0">
+      &quot;Joe is considering buying a used car from a dealer for $1000. The 
+      market price of similar cars with no defects is $1100. Joe is uncertain 
+      whether the particular car he is considering is a &quot;peach&quot; or a &quot;lemon&quot;. 
+      Of the 10 major subsystems in the car, a peach has a serious defect in 
+      only one subsystem, whereas a lemon has a serious defect in six 
+      subsystems. The probability that the used car under consideration is a 
+      lemon is 0.2. The cost of repairing one defect is $40, and the cost of 
+      repairing six defects is $200.
+    </p>
+    <p style="margin-top: 0">
+      
+    </p>
+    <p style="margin-top: 0">
+      For an additional $60, Joe can buy the car from the dealer with an 
+      &quot;anti-lemon guarantee&quot;. The anti-lemon guarantee will normally pay for 
+      50% of the repair cost, but if the car is a lemon, then the guarantee 
+      will pay 100% of the repair cost.
+    </p>
+    <p style="margin-top: 0">
+      
+    </p>
+    <p style="margin-top: 0">
+      Before buying the car, Joe has the option of having the car examined by 
+      a mechanic for an hour. In this time period, the mechanic offers three 
+      alternatives, t1 , t2 , and t3 as follows:
+    </p>
+    <p style="margin-top: 0">
+      
+    </p>
+    <p style="margin-top: 0">
+      t1 : Test the steering subsystem alone at a cost of $9;
+    </p>
+    <p style="margin-top: 0">
+      t2 : Test the fuel and electrical subsystems for a total cost of $13;
+    </p>
+    <p style="margin-top: 0">
+      t3 : Do a two-test sequence in which Joe can authorize a second test 
+      after the result of the first test is known. In this alternative, the 
+      mechanic will first test the transmission subsystem at a cost of $10 and 
+      report the results to Joe. If Joe approves, the mechanic will then 
+      proceed to test the di?erential subsystem at an additional cost of $4.
+    </p>
+    <p style="margin-top: 0">
+      
+    </p>
+    <p style="margin-top: 0">
+      All tests are guaranteed to find a defect in the subsystems if a defect 
+      exists. We assume that Joe's utility for profit is linear in dollars.&quot;
+    </p>
+    <p style="margin-top: 0">
+      
+    </p>
+    <p style="margin-top: 0">
+      We have adopted the probabilities used in Smith et al. (1993) and Qi et 
+      al. (1994).
+    </p>
+  </body>
+</html>]]></Comment>
+    <Variables>
+      <Variable name="Car's Condition" type="finiteStates" role="chance">
+        <Comment><![CDATA[<html>
+  <head>
+    
+  </head>
+  <body>
+    <p style="margin-top: 0">
+      Whether the car is a &quot;peach&quot; or a &quot;lemon&quot;.
+    </p>
+  </body>
+</html>]]></Comment>
+        <Coordinates x="335" y="56" />
+        <AdditionalProperties>
+          <Property name="Relevance" value="7.0" />
+        </AdditionalProperties>
+        <States>
+          <State name="lemon" />
+          <State name="peach" />
+        </States>
+      </Variable>
+      <Variable name="First Result" type="finiteStates" role="chance">
+        <Coordinates x="165" y="254" />
+        <AdditionalProperties>
+          <Property name="Relevance" value="7.0" />
+        </AdditionalProperties>
+        <States>
+          <State name="no result" />
+          <State name="no defect" />
+          <State name="one defect" />
+          <State name="two defects" />
+        </States>
+      </Variable>
+      <Variable name="Dec: Purchase" type="finiteStates" role="decision">
+        <Comment><![CDATA[<html>
+  <head>
+    
+  </head>
+  <body>
+    <p style="margin-top: 0">
+      Decision over whether to purchase the car or not and with or without 
+      guarantee.
+    </p>
+  </body>
+</html>]]></Comment>
+        <Coordinates x="822" y="141" />
+        <AdditionalProperties>
+          <Property name="Relevance" value="7.0" />
+        </AdditionalProperties>
+        <States>
+          <State name="do not buy" />
+          <State name="buy without guarantee" />
+          <State name="buy with guarantee" />
+        </States>
+      </Variable>
+      <Variable name="Dec: First Test" type="finiteStates" role="decision">
+        <Comment><![CDATA[<html>
+  <head>
+    
+  </head>
+  <body>
+    <p style="margin-top: 0">
+      Decision over what test to do first (if any).
+    </p>
+  </body>
+</html>]]></Comment>
+        <Coordinates x="137" y="143" />
+        <AdditionalProperties>
+          <Property name="Relevance" value="7.0" />
+        </AdditionalProperties>
+        <States>
+          <State name="no test" />
+          <State name="fuel-electrical" />
+          <State name="transmission" />
+          <State name="steering" />
+        </States>
+      </Variable>
+      <Variable name="Cost: First test" type="numeric" role="utility">
+        <Coordinates x="104" y="354" />
+        <Unit />
+        <Precision>0.01</Precision>
+      </Variable>
+      <Variable name="Buy-sell difference" type="numeric" role="utility">
+        <Coordinates x="1053" y="308" />
+        <Unit />
+        <Precision>0.01</Precision>
+      </Variable>
+      <Variable name="Cost: Guarantee" type="numeric" role="utility">
+        <Coordinates x="637" y="364" />
+        <Unit />
+        <Precision>0.01</Precision>
+      </Variable>
+      <Variable name="Cost: Repair" type="numeric" role="utility">
+        <Coordinates x="821" y="336" />
+        <Unit />
+        <Precision>0.01</Precision>
+      </Variable>
+    </Variables>
+    <Links>
+      <Link directed="true">
+        <Variable name="Car's Condition" />
+        <Variable name="First Result" />
+        <Potential type="Table" role="linkRestriction">
+          <Variables>
+            <Variable name="Car's Condition" />
+            <Variable name="First Result" />
+          </Variables>
+          <Values>1.0 1.0 1.0 1.0 1.0 1.0 1.0 0.0</Values>
+        </Potential>
+      </Link>
+      <Link directed="true">
+        <Variable name="Car's Condition" />
+        <Variable name="Cost: Repair" />
+      </Link>
+      <Link directed="true">
+        <Variable name="Dec: Purchase" />
+        <Variable name="Cost: Guarantee" />
+      </Link>
+      <Link directed="true">
+        <Variable name="Dec: Purchase" />
+        <Variable name="Buy-sell difference" />
+      </Link>
+      <Link directed="true">
+        <Variable name="Dec: Purchase" />
+        <Variable name="Cost: Repair" />
+      </Link>
+      <Link directed="true">
+        <Variable name="Dec: First Test" />
+        <Variable name="First Result" />
+        <Potential type="Table" role="linkRestriction">
+          <Variables>
+            <Variable name="Dec: First Test" />
+            <Variable name="First Result" />
+          </Variables>
+          <Values>1.0 0.0 0.0 0.0 0.0 1.0 1.0 1.0 0.0 1.0 1.0 1.0 0.0 1.0 0.0 0.0</Values>
+        </Potential>
+        <RevelationCondition>
+          <State name="steering" />
+          <State name="transmission" />
+          <State name="fuel-electrical" />
+        </RevelationCondition>
+      </Link>
+      <Link directed="true">
+        <Variable name="Dec: First Test" />
+        <Variable name="Cost: First test" />
+      </Link>
+      <Link directed="true">
+        <Variable name="Dec: First Test" />
+        <Variable name="Dec: Purchase" />
+      </Link>
+    </Links>
+    <Potentials>
+      <Potential type="Table" role="conditionalProbability">
+        <Variables>
+          <Variable name="Car's Condition" />
+        </Variables>
+        <Values>0.2 0.8</Values>
+      </Potential>
+      <Potential type="Table" role="conditionalProbability">
+        <Variables>
+          <Variable name="First Result" />
+          <Variable name="Car's Condition" />
+          <Variable name="Dec: First Test" />
+        </Variables>
+        <Values>1.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 0.13 0.53 0.34 0.0 0.8 0.2 0.0 0.0 0.4 0.6 0.0 0.0 0.9 0.1 0.0 0.0 0.4 0.6 0.0 0.0 0.9 0.1 0.0</Values>
+      </Potential>
+      <Potential type="Table" role="utility">
+        <UtilityVariable name="Cost: First test" />
+        <Variables>
+          <Variable name="Dec: First Test" />
+        </Variables>
+        <Values>0.0 -13.0 -10.0 -9.0</Values>
+      </Potential>
+      <Potential type="Table" role="utility">
+        <UtilityVariable name="Buy-sell difference" />
+        <Variables>
+          <Variable name="Dec: Purchase" />
+        </Variables>
+        <Values>0.0 100.0 100.0</Values>
+      </Potential>
+      <Potential type="Table" role="utility">
+        <UtilityVariable name="Cost: Guarantee" />
+        <Variables>
+          <Variable name="Dec: Purchase" />
+        </Variables>
+        <Values>0.0 0.0 -60.0</Values>
+      </Potential>
+      <Potential type="Table" role="utility">
+        <UtilityVariable name="Cost: Repair" />
+        <Variables>
+          <Variable name="Car's Condition" />
+          <Variable name="Dec: Purchase" />
+        </Variables>
+        <Values>0.0 0.0 -200.0 -40.0 0.0 -20.0</Values>
+      </Potential>
+    </Potentials>
+    <AdditionalProperties>
+      <Property name="Version" value="1.0" />
+      <Property name="VisualPrecision" value="0.0" />
+      <Property name="KindOfGraph" value="directed" />
+    </AdditionalProperties>
+  </ProbNet>
+</ProbModelXML>

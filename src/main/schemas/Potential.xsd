@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema attributeFormDefault="unqualified"
+	elementFormDefault="qualified"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	
+	<!-- included xsd files -->
+	<xs:include schemaLocation="Variable.xsd" />
+	
+	<!-- complexType definition -->
+	<xs:complexType name="Potential">
+		<xs:all>
+			<xs:element name="Subpotentials" minOccurs="0"  maxOccurs="unbounded"/>
+			<xs:element name="Model" minOccurs="0"  maxOccurs="unbounded"/>
+			<xs:element name="UtilityVariable" minOccurs="0" maxOccurs="unbounded" >
+				<xs:complexType>
+						<xs:attribute name="name" type="xs:string" />
+						<xs:attribute name="timeSlice" type="xs:string" />
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="Comment" minOccurs="0" maxOccurs="1" />
+			<xs:element name="Variables" minOccurs="0" maxOccurs="unbounded">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="Variable" minOccurs="0"  maxOccurs="unbounded" type="Variable" /> 
+						<xs:element name="Model" minOccurs="0"  maxOccurs="unbounded"/> 
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="State" minOccurs="0" maxOccurs="unbounded" /><!--  only with Delta Potential in this potential type is mandatory-->
+			<xs:element name="Variable" minOccurs="0" maxOccurs="1" type="Variable" /><!--  only with Delta Potential in this potential type is mandatory-->
+			<xs:element name="NumericParameter" minOccurs="0" maxOccurs="1" /><!--  only with Delta Potential in this potential type is mandatory-->
+			<xs:element name="AdditionalProperties" minOccurs="0" maxOccurs="1" />
+			<xs:element name="Values" minOccurs="0" maxOccurs="1" />			
+			<xs:element name="TopVariable" minOccurs="0" maxOccurs="1" />
+			<xs:element name="UncertainValues" minOccurs="0" maxOccurs="1" />
+			<xs:element name="NumericValue" minOccurs="0" maxOccurs="1" />
+			<xs:element name="Branches" minOccurs="0" maxOccurs="1" />
+			<xs:element name="Parameters" minOccurs="0" maxOccurs="1" /><!--  only with Probability Table Potential in this potential type is mandatory-->
+			<xs:element name="UncertParameters" minOccurs="0" maxOccurs="1" /><!--  only with Probability Table Potential in this potential type is mandatory-->
+			<xs:element name="Function" minOccurs="0" maxOccurs="1" /><!--  only with Functional Potential in this potential type -->
+			<xs:element name="CholeskyMatrix" minOccurs="0" maxOccurs="1" /><!--  only with Functional Potential in this potential type -->
+			<xs:element name="Coefficients" minOccurs="0" maxOccurs="1" /><!--  only with Logistic Functions (specification point 5.6) in this potential type -->
+			<xs:element name="Covariates" minOccurs="0" maxOccurs="unbounded"><!--  only with Functional Potential in this potential type -->
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="Covariate"  minOccurs="0" maxOccurs="unbounded"  />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="CovarianceMatrix" minOccurs="0" maxOccurs="1" /><!--  only with Functional Potential in this potential type -->
+		</xs:all>
+		<xs:attribute name="type" type="xs:string" />
+		<xs:attribute name="distribution" type="xs:string" />
+		<xs:attribute name="role" type="xs:string" />
+	</xs:complexType>
+</xs:schema>
+

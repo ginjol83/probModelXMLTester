@@ -1,0 +1,361 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ProbModelXML formatVersion="0.2.0">
+  <ProbNet type="DAN">
+    <Comment showWhenOpeningNetwork="true"><![CDATA[<html>
+  <head>
+    
+  </head>
+  <body>
+    <p style="margin-top: 0">
+      This problem was proposed by Demirer and Shenoy (2006) and implemented 
+      as a DAN in OpenMarkov by Caroline K&#246;nig, who added the variable <i>Symptom</i> 
+      as an example of an always-observed variable. Revised by Javier D&#237;ez in 
+      November 2015.
+    </p>
+    <p style="margin-top: 0">
+      
+    </p>
+    <p style="margin-top: 0">
+      <b>References</b>
+    </p>
+    <p style="margin-top: 0">
+      
+    </p>
+    <p style="margin-top: 0">
+      R. Demirer and P. P. Shenoy. Sequential valuation networks for 
+      asymmetric decision problems. <i>European Journal of Operational Research</i>, 
+      169 (2006) 286&#8211;309.
+    </p>
+    <p style="margin-top: 0">
+      
+    </p>
+    C. L. K&#246;nig. <strong><a href="http://www.cisiad.uned.es/tesis/master-thesis-CKonig.php?lang=en">Representing 
+    Asymmetric Decision Problems with Decision Analysis Networks.</a></strong> 
+    Dept. Artificial Intelligence. UNED, Madrid, Spain, 2012.
+
+    <p style="margin-top: 0">
+      
+    </p>
+    <p style="margin-top: 0">
+      <b>Description of the problem</b>
+    </p>
+    <p style="margin-top: 0">
+      
+    </p>
+    <p style="margin-top: 0">
+      Demirer and Shenoy described it as followed:
+    </p>
+    <p style="margin-top: 0">
+      
+    </p>
+    <p style="margin-top: 0">
+      &quot;Consider a physician who is trying to diagnose whether or not a patient 
+      is suffering from Diabetes. Diabetes has two symptoms [signs], glucose 
+      in urine, and glucose in blood. Assume we have a Bayes net model for the 
+      three variables&#8212;Diabetes (D), glucose in blood (B) and glucose in urine 
+      (U)&#8212;in which the joint distribution for the three variables P(D, B, U) 
+      factors into three conditionals, P(D), P(B | D), and P(U | D, B). 
+      Furthermore, assume that D has two states, d for Diabetes is present, 
+      and ~d for Diabetes is absent, U has two states, u for elevated glucose 
+      levels in urine, and ~u for normal glucose level in urine, and B has two 
+      states, b for elevated glucose levels in blood, and ~b for normal 
+      glucose level in blood. The physician first decides (FT) whether to 
+      order a urine test (ut) or a blood test (bt) or neither (nt). After the 
+      physician has made this decision and observed the results (if any), she 
+      next has to decide whether or not to order a second test (ST). The 
+      choices available for the second test decision depend on the decision 
+      made at FT. If FT = bt, then the choices for ST are either ut or nt. If 
+      FT = ut, then the choices for ST are either bt or nt. Finally, after the 
+      physician has observed the results of the second test (if any), she then 
+      has to decide whether to treat the patient for Diabetes or not. As 
+      described so far, one model of the problem has three chance variables, 
+      D, U, B, and three decision variables FT (first test), ST (second test), 
+      and TD (treat for Diabetes).&quot;
+    </p>
+  </body>
+</html>]]></Comment>
+    <DecisionCriteria>
+      <Criterion name="Cost" unit="€" />
+      <Criterion name="Effectiveness" unit="QALY" />
+    </DecisionCriteria>
+    <AdditionalProperties />
+    <Variables>
+      <Variable name="Urine test result" type="finiteStates" role="chance">
+        <Coordinates x="572" y="256" />
+        <States>
+          <State name="negative" />
+          <State name="positive" />
+        </States>
+      </Variable>
+      <Variable name="Symptom" type="finiteStates" role="chance">
+        <Comment><![CDATA[<html>
+  <head>
+    
+  </head>
+  <body>
+    <p style="margin-top: 0">
+      Whether the patient has the symptom.
+    </p>
+  </body>
+</html>]]></Comment>
+        <Coordinates x="258" y="87" />
+        <AlwaysObserved />
+        <States>
+          <State name="absent" />
+          <State name="present" />
+        </States>
+      </Variable>
+      <Variable name="Diabetes" type="finiteStates" role="chance">
+        <Comment><![CDATA[<html>
+  <head>
+    
+  </head>
+  <body>
+    <p style="margin-top: 0">
+      Whether the patient has diabetes.
+    </p>
+  </body>
+</html>]]></Comment>
+        <Coordinates x="387" y="36" />
+        <States>
+          <State name="absent" />
+          <State name="present" />
+        </States>
+      </Variable>
+      <Variable name="Blood test result" type="finiteStates" role="chance">
+        <Coordinates x="319" y="245" />
+        <States>
+          <State name="negative" />
+          <State name="positive" />
+        </States>
+      </Variable>
+      <Variable name="Dec: Blood Test" type="finiteStates" role="decision">
+        <Comment><![CDATA[<html>
+  <head>
+    
+  </head>
+  <body>
+    <p style="margin-top: 0">
+      Whether to do the blood test or not.
+    </p>
+  </body>
+</html>]]></Comment>
+        <Coordinates x="168" y="175" />
+        <States>
+          <State name="no" />
+          <State name="yes" />
+        </States>
+      </Variable>
+      <Variable name="Dec: Urine test" type="finiteStates" role="decision">
+        <Comment><![CDATA[<html>
+  <head>
+    
+  </head>
+  <body>
+    <p style="margin-top: 0">
+      Whether to do the urine test or not.
+    </p>
+  </body>
+</html>]]></Comment>
+        <Coordinates x="607" y="166" />
+        <States>
+          <State name="no" />
+          <State name="yes" />
+        </States>
+      </Variable>
+      <Variable name="Therapy" type="finiteStates" role="decision">
+        <Comment><![CDATA[<html>
+  <head>
+    
+  </head>
+  <body>
+    <p style="margin-top: 0">
+      Whether to do apply the diabetes therpy to the patient or not.
+    </p>
+  </body>
+</html>]]></Comment>
+        <Coordinates x="303" y="352" />
+        <States>
+          <State name="no" />
+          <State name="yes" />
+        </States>
+      </Variable>
+      <Variable name="Cost of blood test" type="numeric" role="utility">
+        <Coordinates x="120" y="242" />
+        <Unit />
+        <Precision>0.0</Precision>
+        <Criterion name="Cost" />
+      </Variable>
+      <Variable name="Cost of urine test" type="numeric" role="utility">
+        <Coordinates x="738" y="254" />
+        <Unit />
+        <Precision>0.01</Precision>
+        <Criterion name="Cost" />
+      </Variable>
+      <Variable name="Quality of life" type="numeric" role="utility">
+        <Coordinates x="454" y="424" />
+        <Unit />
+        <Precision>0.01</Precision>
+        <Criterion name="Effectiveness" />
+      </Variable>
+      <Variable name="Cost of therapy" type="numeric" role="utility">
+        <Coordinates x="228" y="421" />
+        <Unit />
+        <Precision>0.01</Precision>
+        <Criterion name="Cost" />
+      </Variable>
+    </Variables>
+    <Links>
+      <Link directed="true">
+        <Variable name="Diabetes" />
+        <Variable name="Symptom" />
+      </Link>
+      <Link directed="true">
+        <Variable name="Diabetes" />
+        <Variable name="Urine test result" />
+      </Link>
+      <Link directed="true">
+        <Variable name="Diabetes" />
+        <Variable name="Blood test result" />
+      </Link>
+      <Link directed="true">
+        <Variable name="Diabetes" />
+        <Variable name="Quality of life" />
+      </Link>
+      <Link directed="true">
+        <Variable name="Dec: Blood Test" />
+        <Variable name="Blood test result" />
+        <Potential type="Table" role="linkRestriction">
+          <Variables>
+            <Variable name="Dec: Blood Test" />
+            <Variable name="Blood test result" />
+          </Variables>
+          <Values>0.0 1.0 0.0 1.0</Values>
+        </Potential>
+        <RevelationCondition>
+          <State name="yes" />
+        </RevelationCondition>
+      </Link>
+      <Link directed="true">
+        <Variable name="Dec: Blood Test" />
+        <Variable name="Therapy" />
+      </Link>
+      <Link directed="true">
+        <Variable name="Dec: Blood Test" />
+        <Variable name="Cost of blood test" />
+      </Link>
+      <Link directed="true">
+        <Variable name="Dec: Urine test" />
+        <Variable name="Urine test result" />
+        <Potential type="Table" role="linkRestriction">
+          <Variables>
+            <Variable name="Dec: Urine test" />
+            <Variable name="Urine test result" />
+          </Variables>
+          <Values>0.0 1.0 0.0 1.0</Values>
+        </Potential>
+        <RevelationCondition>
+          <State name="yes" />
+        </RevelationCondition>
+      </Link>
+      <Link directed="true">
+        <Variable name="Dec: Urine test" />
+        <Variable name="Therapy" />
+      </Link>
+      <Link directed="true">
+        <Variable name="Dec: Urine test" />
+        <Variable name="Cost of urine test" />
+      </Link>
+      <Link directed="true">
+        <Variable name="Therapy" />
+        <Variable name="Quality of life" />
+      </Link>
+      <Link directed="true">
+        <Variable name="Therapy" />
+        <Variable name="Cost of therapy" />
+      </Link>
+    </Links>
+    <Potentials>
+      <Potential type="Table" role="conditionalProbability">
+        <Variables>
+          <Variable name="Urine test result" />
+          <Variable name="Dec: Urine test" />
+          <Variable name="Diabetes" />
+        </Variables>
+        <Values>0.0 0.0 0.99 0.01 0.0 0.0 0.03 0.97</Values>
+      </Potential>
+      <Potential type="Table" role="conditionalProbability">
+        <Variables>
+          <Variable name="Symptom" />
+          <Variable name="Diabetes" />
+        </Variables>
+        <Values>0.99 0.01 0.15 0.85</Values>
+      </Potential>
+      <Potential type="Table" role="conditionalProbability">
+        <Variables>
+          <Variable name="Diabetes" />
+        </Variables>
+        <Values>0.93 0.07</Values>
+      </Potential>
+      <Potential type="Table" role="conditionalProbability">
+        <Variables>
+          <Variable name="Blood test result" />
+          <Variable name="Dec: Blood Test" />
+          <Variable name="Diabetes" />
+        </Variables>
+        <Values>0.0 0.0 0.98 0.02 0.0 0.0 0.04 0.96</Values>
+      </Potential>
+      <Potential type="Table" role="utility">
+        <UtilityVariable name="Cost of blood test" />
+        <Variables>
+          <Variable name="Dec: Blood Test" />
+        </Variables>
+        <Values>0.0 15.0</Values>
+      </Potential>
+      <Potential type="Table" role="utility">
+        <UtilityVariable name="Cost of urine test" />
+        <Variables>
+          <Variable name="Dec: Urine test" />
+        </Variables>
+        <Values>0.0 10.0</Values>
+      </Potential>
+      <Potential type="Table" role="utility">
+        <UtilityVariable name="Quality of life" />
+        <Variables>
+          <Variable name="Diabetes" />
+          <Variable name="Therapy" />
+        </Variables>
+        <Values>10.0 3.0 9.0 8.0</Values>
+      </Potential>
+      <Potential type="Table" role="utility">
+        <UtilityVariable name="Cost of therapy" />
+        <Variables>
+          <Variable name="Therapy" />
+        </Variables>
+        <Values>0.0 3000.0</Values>
+      </Potential>
+    </Potentials>
+  </ProbNet>
+  <InferenceOptions>
+    <MulticriteriaOptions>
+      <SelectedAnalysisType>COST_EFFECTIVENESS</SelectedAnalysisType>
+      <Unicriterion>
+        <Unit>QALY</Unit>
+        <Scales>
+          <Scale Criterion="Cost" Value="1.0" />
+          <Scale Criterion="Effectiveness" Value="1.0" />
+        </Scales>
+      </Unicriterion>
+      <CostEffectiveness>
+        <Scales>
+          <Scale Criterion="Cost" Value="1.0" />
+          <Scale Criterion="Effectiveness" Value="1.0" />
+        </Scales>
+        <CE_Criteria>
+          <CE_Criterion Criterion="Cost" Value="Cost" />
+          <CE_Criterion Criterion="Effectiveness" Value="Effectiveness" />
+        </CE_Criteria>
+      </CostEffectiveness>
+    </MulticriteriaOptions>
+  </InferenceOptions>
+</ProbModelXML>

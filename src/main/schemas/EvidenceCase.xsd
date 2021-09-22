@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema attributeFormDefault="unqualified"
+	elementFormDefault="qualified"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	
+	<!-- complexType definition -->
+	<xs:complexType name="EvidenceCase">
+		<xs:sequence>
+			<xs:element name="Finding" minOccurs="0" maxOccurs="unbounded" />
+		</xs:sequence>
+		<xs:attribute name="variable" type="xs:string" />
+		<xs:attribute name="state" type="xs:string" />
+		<xs:attribute name="stateIndex" type="xs:integer" use="optional" />
+		<xs:attribute name="numericParameter" type="xs:int" use="optional" />
+	</xs:complexType>
+</xs:schema>

@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema attributeFormDefault="unqualified"
+	elementFormDefault="qualified"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	version="1.1">
+
+	<!-- Sympletypes definition -->
+	<xs:include schemaLocation="declarations.xsd" />
+	<xs:include schemaLocation="Agent.xsd" />
+	<xs:include schemaLocation="Constraint.xsd" />
+	<xs:include schemaLocation="Criterion.xsd" />
+	<xs:include schemaLocation="Property.xsd" />
+	<xs:include schemaLocation="AdditionalProperties.xsd" />
+	<xs:include schemaLocation="Variable.xsd" />
+	<xs:include schemaLocation="Link.xsd" />
+	<xs:include schemaLocation="Potential.xsd" />
+	<xs:include schemaLocation="States.xsd" />
+	<xs:include schemaLocation="EvidenceCase.xsd" />
+	<xs:include schemaLocation="Argument.xsd" />
+	<xs:include schemaLocation="EliminationOrder.xsd" />
+	
+	<!-- Body -->
+	<xs:element name="ProbModelXML">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="ProbNet" minOccurs="0" maxOccurs="1">
+					<xs:complexType>
+						<xs:all>
+							<xs:element name="AdditionalConstraints" minOccurs="0" maxOccurs="1">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="Constraint" minOccurs="1" maxOccurs="unbounded" type="Constraint" />
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="Comment" minOccurs="0" maxOccurs="1">
+								<xs:complexType mixed="true">
+									<xs:attribute name="openAtStartUp" type="xs:boolean" use="optional" />
+									<xs:attribute name="showWhenOpeningNetwork" type="xs:boolean" use="optional" />
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="DecisionCriteria" minOccurs="0" maxOccurs="1">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="Criterion" minOccurs="1" maxOccurs="unbounded" type="Criterion" />
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="TimeUnit"  minOccurs="0" > 
+								<xs:complexType>
+									<xs:attribute name="unit" type="xs:string" />
+									<xs:attribute name="Value" type="xs:double" />
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="AdditionalProperties" minOccurs="0" maxOccurs="1" type="AdditionalProperties" />
+							<xs:element name="Agents" minOccurs="0" maxOccurs="1">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="Agent" minOccurs="2" maxOccurs="unbounded" type="Agent" />
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="Language" minOccurs="0" maxOccurs="1" />
+							<xs:element name="Variables">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="Variable" minOccurs="0" maxOccurs="unbounded" type="Variable" />
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="Links" minOccurs="0" maxOccurs="1">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="Link" minOccurs="1" maxOccurs="unbounded" type="Link" />
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="Potentials" >
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="Potential" minOccurs="0" maxOccurs="unbounded" type="Potential" />
+									</xs:sequence>
+								</xs:complexType> 
+							</xs:element>
+							
+							<xs:element name="Properties" minOccurs="0" maxOccurs="1">
+							<xs:complexType>
+									<xs:sequence>
+										<xs:element name="Property" minOccurs="0" maxOccurs="unbounded" type="Property" />
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							
+						</xs:all>
+						<xs:attribute name="type" type="networkType" />
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="InferenceOptions" minOccurs="0" maxOccurs="1">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="MulticriteriaOptions" minOccurs="0" maxOccurs="unbounded" />
+							<xs:element name="TemporalOptions" minOccurs="0" maxOccurs="unbounded" />
+							<xs:element name="Horizon" minOccurs="0" maxOccurs="unbounded" />
+							<xs:element name="DiscountRate" minOccurs="0" maxOccurs="unbounded" > 
+								<xs:complexType>
+									<xs:attribute name="numTimeUnits" type="xs:int" />
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="EliminationOrder" minOccurs="0" maxOccurs="unbounded" type="EliminationOrder"/>
+							<xs:element name="Algorithm" minOccurs="0" maxOccurs="unbounded">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="EliminationOrder" minOccurs="0" maxOccurs="unbounded" type="EliminationOrder"/>
+										<xs:element name="Argument" minOccurs="0" maxOccurs="unbounded" type="Argument"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="Policies" minOccurs="0" maxOccurs="1">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="Potential" minOccurs="1" maxOccurs="unbounded" type="Potential" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="Evidence" minOccurs="0" maxOccurs="1" >
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="EvidenceCase" minOccurs="0" maxOccurs="unbounded" type="EvidenceCase" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+			<xs:attribute name="formatVersion" type="xs:string" />
+		</xs:complexType>
+	</xs:element>
+	
+</xs:schema>
+

@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ProbModelXML formatVersion="0.2.0">
+  <ProbNet type="DAN">
+    <Variables>
+      <Variable name="Disease" type="finiteStates" role="chance" isInput="false">
+        <Coordinates x="113" y="55" />
+        <AdditionalProperties>
+          <Property name="Relevance" value="7.0" />
+          <Property name="Title" value="X" />
+        </AdditionalProperties>
+        <Unit />
+        <Precision>0.01</Precision>
+        <States>
+          <State name="absent" />
+          <State name="present" />
+        </States>
+      </Variable>
+      <Variable name="Result of test" type="finiteStates" role="chance" isInput="false">
+        <Coordinates x="257" y="154" />
+        <AdditionalProperties>
+          <Property name="Relevance" value="7.0" />
+          <Property name="Title" value="Y" />
+        </AdditionalProperties>
+        <Unit />
+        <Precision>0.01</Precision>
+        <States>
+          <State name="negative" />
+          <State name="positive" />
+        </States>
+      </Variable>
+      <Variable name="Therapy" type="finiteStates" role="decision" isInput="false">
+        <Coordinates x="320" y="254" />
+        <AdditionalProperties>
+          <Property name="Relevance" value="7.0" />
+          <Property name="Title" value="D" />
+        </AdditionalProperties>
+        <Unit />
+        <Precision>0.01</Precision>
+        <States>
+          <State name="no therapy" />
+          <State name="therapy 1" />
+          <State name="therapy 2" />
+        </States>
+      </Variable>
+      <Variable name="Do test?" type="finiteStates" role="decision" isInput="false">
+        <Coordinates x="406" y="60" />
+        <AdditionalProperties>
+          <Property name="Relevance" value="7.0" />
+          <Property name="Title" value="T" />
+        </AdditionalProperties>
+        <Unit />
+        <Precision>0.01</Precision>
+        <States>
+          <State name="no" />
+          <State name="yes" />
+        </States>
+      </Variable>
+      <Variable name="Effectiveness" type="numeric" role="utility" isInput="false">
+        <Coordinates x="175" y="349" />
+        <AdditionalProperties>
+          <Property name="Relevance" value="7.0" />
+          <Property name="Precision" value="2.0" />
+          <Property name="Max" value="1.0" />
+          <Property name="Title" value="U" />
+          <Property name="Min" value="0.0" />
+        </AdditionalProperties>
+        <Unit />
+        <Precision>0.1</Precision>
+        <Criterion name="effectiveness" />
+        <States>
+          <State name="" />
+        </States>
+      </Variable>
+      <Variable name="Cost of test" type="numeric" role="utility" isInput="false">
+        <Coordinates x="521" y="154" />
+        <AdditionalProperties>
+          <Property name="Relevance" value="7.0" />
+          <Property name="Precision" value="2.0" />
+          <Property name="Max" value="1.0" />
+          <Property name="Title" value="C" />
+          <Property name="Min" value="0.0" />
+        </AdditionalProperties>
+        <Unit />
+        <Precision>2.0</Precision>
+        <Criterion name="cost" />
+        <States>
+          <State name="" />
+        </States>
+      </Variable>
+      <Variable name="Cost of therapy" type="numeric" role="utility" isInput="false">
+        <Coordinates x="452" y="348" />
+        <Unit />
+        <Precision>0.01</Precision>
+        <Criterion name="cost" />
+        <States>
+          <State name="" />
+        </States>
+      </Variable>
+    </Variables>
+    <Links>
+      <Link directed="true">
+        <Variable name="Disease" />
+        <Variable name="Effectiveness" />
+      </Link>
+      <Link directed="true">
+        <Variable name="Disease" />
+        <Variable name="Result of test" />
+      </Link>
+      <Link directed="true">
+        <Variable name="Therapy" />
+        <Variable name="Effectiveness" />
+      </Link>
+      <Link directed="true">
+        <Variable name="Therapy" />
+        <Variable name="Cost of therapy" />
+      </Link>
+      <Link directed="true">
+        <Variable name="Do test?" />
+        <Variable name="Result of test" />
+        <Potential type="Table" role="linkRestriction">
+          <Variables>
+            <Variable name="Do test?" />
+            <Variable name="Result of test" />
+          </Variables>
+          <Values>0.0 1.0 0.0 1.0</Values>
+        </Potential>
+        <RevelationCondition>
+          <State name="yes" />
+        </RevelationCondition>
+      </Link>
+      <Link directed="true">
+        <Variable name="Do test?" />
+        <Variable name="Cost of test" />
+      </Link>
+    </Links>
+    <Potentials>
+      <Potential type="Table" role="conditionalProbability">
+        <Variables>
+          <Variable name="Disease" />
+        </Variables>
+        <Values>0.86 0.14</Values>
+      </Potential>
+      <Potential type="Table" role="conditionalProbability">
+        <Variables>
+          <Variable name="Result of test" />
+          <Variable name="Do test?" />
+          <Variable name="Disease" />
+        </Variables>
+        <Values>0.0 0.0 0.93 0.07 0.0 0.0 0.1 0.9</Values>
+      </Potential>
+      <Potential type="Table" role="utility">
+        <UtilityVariable name="Effectiveness" />
+        <Variables>
+          <Variable name="Disease" />
+          <Variable name="Therapy" />
+        </Variables>
+        <Values>10.0 1.2 9.9 4.0 9.3 6.5</Values>
+      </Potential>
+      <Potential type="Table" role="utility">
+        <UtilityVariable name="Cost of test" />
+        <Variables>
+          <Variable name="Do test?" />
+        </Variables>
+        <Values>0.0 150.0</Values>
+      </Potential>
+      <Potential type="Table" role="utility">
+        <UtilityVariable name="Cost of therapy" />
+        <Variables>
+          <Variable name="Therapy" />
+        </Variables>
+        <Values>0.0 20000.0 70000.0</Values>
+      </Potential>
+    </Potentials>
+    <DecisionCriteria>
+      <Criterion name="cost" />
+      <Criterion name="effectiveness" />
+    </DecisionCriteria>
+    <AdditionalProperties>
+      <Property name="VisualPrecision" value="0.0" />
+      <Property name="KindOfGraph" value="directed" />
+      <Property name="Version" value="1.0" />
+    </AdditionalProperties>
+  </ProbNet>
+</ProbModelXML>

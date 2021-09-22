@@ -1,0 +1,1916 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ProbModelXML formatVersion="0.2.0">
+  <ProbNet type="BayesianNetwork">
+    <Variables>
+      <Variable name="alcoholism" type="finiteStates" role="chance" isInput="false">
+        <Coordinates x="342" y="157" />
+        <AdditionalProperties>
+          <Property name="Relevance" value="7.0" />
+          <Property name="Title" value="alcoholism" />
+        </AdditionalProperties>
+        <Precision>0.01</Precision>
+        <States>
+          <State name="absent" />
+          <State name="present" />
+        </States>
+      </Variable>
+      <Variable name="vh_amn" type="finiteStates" role="chance" isInput="false">
+        <Coordinates x="155" y="156" />
+        <AdditionalProperties>
+          <Property name="Relevance" value="7.0" />
+          <Property name="Title" value="vh_amn" />
+        </AdditionalProperties>
+        <Precision>0.01</Precision>
+        <States>
+          <State name="absent" />
+          <State name="present" />
+        </States>
+      </Variable>
+      <Variable name="hepatotoxic" type="finiteStates" role="chance" isInput="false">
+        <Coordinates x="872" y="144" />
+        <AdditionalProperties>
+          <Property name="Relevance" value="7.0" />
+          <Property name="Title" value="hepatotoxic" />
+        </AdditionalProperties>
+        <Precision>0.01</Precision>
+        <States>
+          <State name="absent" />
+          <State name="present" />
+        </States>
+      </Variable>
+      <Variable name="THepatitis" type="finiteStates" role="chance" isInput="false">
+        <Coordinates x="812" y="248" />
+        <AdditionalProperties>
+          <Property name="Relevance" value="9.0" />
+          <Property name="Title" value="THepatitis" />
+        </AdditionalProperties>
+        <Precision>0.01</Precision>
+        <States>
+          <State name="absent" />
+          <State name="present" />
+        </States>
+      </Variable>
+      <Variable name="hospital" type="finiteStates" role="chance" isInput="false">
+        <Coordinates x="143" y="34" />
+        <AdditionalProperties>
+          <Property name="Relevance" value="7.0" />
+          <Property name="Title" value="hospital" />
+        </AdditionalProperties>
+        <Precision>0.01</Precision>
+        <States>
+          <State name="absent" />
+          <State name="present" />
+        </States>
+      </Variable>
+      <Variable name="surgery" type="finiteStates" role="chance" isInput="false">
+        <Coordinates x="342" y="19" />
+        <AdditionalProperties>
+          <Property name="Relevance" value="7.0" />
+          <Property name="Title" value="surgery" />
+        </AdditionalProperties>
+        <Precision>0.01</Precision>
+        <States>
+          <State name="absent" />
+          <State name="present" />
+        </States>
+      </Variable>
+      <Variable name="gallstones" type="finiteStates" role="chance" isInput="false">
+        <Coordinates x="648" y="33" />
+        <AdditionalProperties>
+          <Property name="Relevance" value="7.0" />
+          <Property name="Title" value="gallstones" />
+        </AdditionalProperties>
+        <Precision>0.01</Precision>
+        <States>
+          <State name="absent" />
+          <State name="present" />
+        </States>
+      </Variable>
+      <Variable name="choledocholithotomy" type="finiteStates" role="chance" isInput="false">
+        <Coordinates x="503" y="17" />
+        <AdditionalProperties>
+          <Property name="Relevance" value="7.0" />
+          <Property name="Title" value="choledocholithotomy" />
+        </AdditionalProperties>
+        <Precision>0.01</Precision>
+        <States>
+          <State name="absent" />
+          <State name="present" />
+        </States>
+      </Variable>
+      <Variable name="injections" type="finiteStates" role="chance" isInput="false">
+        <Coordinates x="294" y="116" />
+        <AdditionalProperties>
+          <Property name="Relevance" value="7.0" />
+          <Property name="Title" value="injections" />
+        </AdditionalProperties>
+        <Precision>0.01</Precision>
+        <States>
+          <State name="absent" />
+          <State name="present" />
+        </States>
+      </Variable>
+      <Variable name="transfusion" type="finiteStates" role="chance" isInput="false">
+        <Coordinates x="201" y="108" />
+        <AdditionalProperties>
+          <Property name="Relevance" value="7.0" />
+          <Property name="Title" value="transfusion" />
+        </AdditionalProperties>
+        <Precision>0.01</Precision>
+        <States>
+          <State name="absent" />
+          <State name="present" />
+        </States>
+      </Variable>
+      <Variable name="ChHepatitis" type="finiteStates" role="chance" isInput="false">
+        <Coordinates x="216" y="235" />
+        <AdditionalProperties>
+          <Property name="Relevance" value="10.0" />
+          <Property name="Title" value="ChHepatitis" />
+        </AdditionalProperties>
+        <Precision>0.01</Precision>
+        <States>
+          <State name="absent" />
+          <State name="persist" />
+          <State name="active" />
+        </States>
+      </Variable>
+      <Variable name="sex" type="finiteStates" role="chance" isInput="false">
+        <Coordinates x="637" y="167" />
+        <AdditionalProperties>
+          <Property name="Relevance" value="7.0" />
+          <Property name="Title" value="sex" />
+        </AdditionalProperties>
+        <Precision>0.01</Precision>
+        <States>
+          <State name="male" />
+          <State name="female" />
+        </States>
+      </Variable>
+      <Variable name="age" type="finiteStates" role="chance" isInput="false">
+        <Coordinates x="772" y="192" />
+        <AdditionalProperties>
+          <Property name="Relevance" value="7.0" />
+          <Property name="Title" value="age" />
+        </AdditionalProperties>
+        <Precision>0.01</Precision>
+        <States>
+          <State name="age0_30" />
+          <State name="age31_50" />
+          <State name="age51_65" />
+          <State name="age65_100" />
+        </States>
+      </Variable>
+      <Variable name="PBC" type="finiteStates" role="chance" isInput="false">
+        <Coordinates x="639" y="255" />
+        <AdditionalProperties>
+          <Property name="Relevance" value="10.0" />
+          <Property name="Title" value="PBC" />
+        </AdditionalProperties>
+        <Precision>0.01</Precision>
+        <States>
+          <State name="absent" />
+          <State name="present" />
+        </States>
+      </Variable>
+      <Variable name="fibrosis" type="finiteStates" role="chance" isInput="false">
+        <Coordinates x="356" y="195" />
+        <AdditionalProperties>
+          <Property name="Relevance" value="9.0" />
+          <Property name="Title" value="fibrosis" />
+        </AdditionalProperties>
+        <Precision>0.01</Precision>
+        <States>
+          <State name="absent" />
+          <State name="present" />
+        </States>
+      </Variable>
+      <Variable name="diabetes" type="finiteStates" role="chance" isInput="false">
+        <Coordinates x="65" y="144" />
+        <AdditionalProperties>
+          <Property name="Relevance" value="7.0" />
+          <Property name="Title" value="diabetes" />
+        </AdditionalProperties>
+        <Precision>0.01</Precision>
+        <States>
+          <State name="absent" />
+          <State name="present" />
+        </States>
+      </Variable>
+      <Variable name="obesity" type="finiteStates" role="chance" isInput="false">
+        <Coordinates x="66" y="227" />
+        <AdditionalProperties>
+          <Property name="Relevance" value="7.0" />
+          <Property name="Title" value="obesity" />
+        </AdditionalProperties>
+        <Precision>0.01</Precision>
+        <States>
+          <State name="absent" />
+          <State name="present" />
+        </States>
+      </Variable>
+      <Variable name="Steatosis" type="finiteStates" role="chance" isInput="false">
+        <Coordinates x="86" y="293" />
+        <AdditionalProperties>
+          <Property name="Relevance" value="9.0" />
+          <Property name="Title" value="Steatosis" />
+        </AdditionalProperties>
+        <Precision>0.01</Precision>
+        <States>
+          <State name="absent" />
+          <State name="present" />
+        </States>
+      </Variable>
+      <Variable name="Cirrhosis" type="finiteStates" role="chance" isInput="false">
+        <Coordinates x="449" y="221" />
+        <AdditionalProperties>
+          <Property name="Relevance" value="10.0" />
+          <Property name="Title" value="Cirrhosis" />
+        </AdditionalProperties>
+        <Precision>0.01</Precision>
+        <States>
+          <State name="absent" />
+          <State name="compens" />
+          <State name="decompens" />
+        </States>
+      </Variable>
+      <Variable name="Hyperbilirubinemia" type="finiteStates" role="chance" isInput="false">
+        <Coordinates x="749" y="312" />
+        <AdditionalProperties>
+          <Property name="Relevance" value="10.0" />
+          <Property name="Title" value="Hyperbilirubinemia" />
+        </AdditionalProperties>
+        <Precision>0.01</Precision>
+        <States>
+          <State name="absent" />
+          <State name="present" />
+        </States>
+      </Variable>
+      <Variable name="triglycerides" type="finiteStates" role="chance" isInput="false">
+        <Coordinates x="52" y="336" />
+        <AdditionalProperties>
+          <Property name="Relevance" value="7.0" />
+          <Property name="Title" value="triglycerides" />
+        </AdditionalProperties>
+        <Precision>0.01</Precision>
+        <States>
+          <State name="a1_0" />
+          <State name="a3_2" />
+          <State name="a17_4" />
+        </States>
+      </Variable>
+      <Variable name="RHepatitis" type="finiteStates" role="chance" isInput="false">
+        <Coordinates x="943" y="209" />
+        <AdditionalProperties>
+          <Property name="Relevance" value="9.0" />
+          <Property name="Title" value="RHepatitis" />
+        </AdditionalProperties>
+        <Precision>0.01</Precision>
+        <States>
+          <State name="absent" />
+          <State name="present" />
+        </States>
+      </Variable>
+      <Variable name="fatigue" type="finiteStates" role="chance" isInput="false">
+        <Coordinates x="314" y="418" />
+        <AdditionalProperties>
+          <Property name="Relevance" value="7.0" />
+          <Property name="Title" value="fatigue" />
+        </AdditionalProperties>
+        <Precision>0.01</Precision>
+        <States>
+          <State name="absent" />
+          <State name="present" />
+        </States>
+      </Variable>
+      <Variable name="bilirubin" type="finiteStates" role="chance" isInput="false">
+        <Coordinates x="833" y="396" />
+        <AdditionalProperties>
+          <Property name="Relevance" value="7.0" />
+          <Property name="Title" value="bilirubin" />
+        </AdditionalProperties>
+        <Precision>0.01</Precision>
+        <States>
+          <State name="a1_0" />
+          <State name="a7_2" />
+          <State name="a19_8" />
+          <State name="a40_20" />
+        </States>
+      </Variable>
+      <Variable name="itching" type="finiteStates" role="chance" isInput="false">
+        <Coordinates x="783" y="454" />
+        <AdditionalProperties>
+          <Property name="Relevance" value="7.0" />
+          <Property name="Title" value="itching" />
+        </AdditionalProperties>
+        <Precision>0.01</Precision>
+        <States>
+          <State name="absent" />
+          <State name="present" />
+        </States>
+      </Variable>
+      <Variable name="upper_pain" type="finiteStates" role="chance" isInput="false">
+        <Coordinates x="625" y="127" />
+        <AdditionalProperties>
+          <Property name="Relevance" value="7.0" />
+          <Property name="Title" value="upper_pain" />
+        </AdditionalProperties>
+        <Precision>0.01</Precision>
+        <States>
+          <State name="absent" />
+          <State name="present" />
+        </States>
+      </Variable>
+      <Variable name="fat" type="finiteStates" role="chance" isInput="false">
+        <Coordinates x="518" y="94" />
+        <AdditionalProperties>
+          <Property name="Relevance" value="7.0" />
+          <Property name="Title" value="fat" />
+        </AdditionalProperties>
+        <Precision>0.01</Precision>
+        <States>
+          <State name="absent" />
+          <State name="present" />
+        </States>
+      </Variable>
+      <Variable name="pain_ruq" type="finiteStates" role="chance" isInput="false">
+        <Coordinates x="322" y="288" />
+        <AdditionalProperties>
+          <Property name="Relevance" value="7.0" />
+          <Property name="Title" value="pain_ruq" />
+        </AdditionalProperties>
+        <Precision>0.01</Precision>
+        <States>
+          <State name="absent" />
+          <State name="present" />
+        </States>
+      </Variable>
+      <Variable name="pressure_ruq" type="finiteStates" role="chance" isInput="false">
+        <Coordinates x="438" y="344" />
+        <AdditionalProperties>
+          <Property name="Relevance" value="7.0" />
+          <Property name="Title" value="pressure_ruq" />
+        </AdditionalProperties>
+        <Precision>0.01</Precision>
+        <States>
+          <State name="absent" />
+          <State name="present" />
+        </States>
+      </Variable>
+      <Variable name="phosphatase" type="finiteStates" role="chance" isInput="false">
+        <Coordinates x="605" y="450" />
+        <AdditionalProperties>
+          <Property name="Relevance" value="7.0" />
+          <Property name="Title" value="phosphatase" />
+        </AdditionalProperties>
+        <Precision>0.01</Precision>
+        <States>
+          <State name="a239_0" />
+          <State name="a699_240" />
+          <State name="a1499_700" />
+          <State name="a7392_1500" />
+        </States>
+      </Variable>
+      <Variable name="jaundice" type="finiteStates" role="chance" isInput="false">
+        <Coordinates x="931" y="482" />
+        <AdditionalProperties>
+          <Property name="Relevance" value="7.0" />
+          <Property name="Title" value="jaundice" />
+        </AdditionalProperties>
+        <Precision>0.01</Precision>
+        <States>
+          <State name="absent" />
+          <State name="present" />
+        </States>
+      </Variable>
+      <Variable name="ama" type="finiteStates" role="chance" isInput="false">
+        <Coordinates x="730" y="479" />
+        <AdditionalProperties>
+          <Property name="Relevance" value="7.0" />
+          <Property name="Title" value="ama" />
+        </AdditionalProperties>
+        <Precision>0.01</Precision>
+        <States>
+          <State name="absent" />
+          <State name="present" />
+        </States>
+      </Variable>
+      <Variable name="le_cells" type="finiteStates" role="chance" isInput="false">
+        <Coordinates x="820" y="103" />
+        <AdditionalProperties>
+          <Property name="Relevance" value="7.0" />
+          <Property name="Title" value="le_cells" />
+        </AdditionalProperties>
+        <Precision>0.01</Precision>
+        <States>
+          <State name="absent" />
+          <State name="present" />
+        </States>
+      </Variable>
+      <Variable name="pain" type="finiteStates" role="chance" isInput="false">
+        <Coordinates x="806" y="592" />
+        <AdditionalProperties>
+          <Property name="Relevance" value="7.0" />
+          <Property name="Title" value="pain" />
+        </AdditionalProperties>
+        <Precision>0.01</Precision>
+        <States>
+          <State name="absent" />
+          <State name="present" />
+        </States>
+      </Variable>
+      <Variable name="proteins" type="finiteStates" role="chance" isInput="false">
+        <Coordinates x="660" y="395" />
+        <AdditionalProperties>
+          <Property name="Relevance" value="7.0" />
+          <Property name="Title" value="proteins" />
+        </AdditionalProperties>
+        <Precision>0.01</Precision>
+        <States>
+          <State name="a5_2" />
+          <State name="a10_6" />
+        </States>
+      </Variable>
+      <Variable name="edema" type="finiteStates" role="chance" isInput="false">
+        <Coordinates x="377" y="491" />
+        <AdditionalProperties>
+          <Property name="Relevance" value="7.0" />
+          <Property name="Title" value="edema" />
+        </AdditionalProperties>
+        <Precision>0.01</Precision>
+        <States>
+          <State name="absent" />
+          <State name="present" />
+        </States>
+      </Variable>
+      <Variable name="platelet" type="finiteStates" role="chance" isInput="false">
+        <Coordinates x="410" y="416" />
+        <AdditionalProperties>
+          <Property name="Relevance" value="7.0" />
+          <Property name="Title" value="platelet" />
+        </AdditionalProperties>
+        <Precision>0.01</Precision>
+        <States>
+          <State name="a99_0" />
+          <State name="a149_100" />
+          <State name="a299_150" />
+          <State name="a597_300" />
+        </States>
+      </Variable>
+      <Variable name="inr" type="finiteStates" role="chance" isInput="false">
+        <Coordinates x="368" y="373" />
+        <AdditionalProperties>
+          <Property name="Relevance" value="7.0" />
+          <Property name="Title" value="inr" />
+        </AdditionalProperties>
+        <Precision>0.01</Precision>
+        <States>
+          <State name="a69_0" />
+          <State name="a109_70" />
+          <State name="a200_110" />
+        </States>
+      </Variable>
+      <Variable name="bleeding" type="finiteStates" role="chance" isInput="false">
+        <Coordinates x="503" y="466" />
+        <AdditionalProperties>
+          <Property name="Relevance" value="7.0" />
+          <Property name="Title" value="bleeding" />
+        </AdditionalProperties>
+        <Precision>0.01</Precision>
+        <States>
+          <State name="absent" />
+          <State name="present" />
+        </States>
+      </Variable>
+      <Variable name="flatulence" type="finiteStates" role="chance" isInput="false">
+        <Coordinates x="730" y="135" />
+        <AdditionalProperties>
+          <Property name="Relevance" value="7.0" />
+          <Property name="Title" value="flatulence" />
+        </AdditionalProperties>
+        <Precision>0.01</Precision>
+        <States>
+          <State name="absent" />
+          <State name="present" />
+        </States>
+      </Variable>
+      <Variable name="alcohol" type="finiteStates" role="chance" isInput="false">
+        <Coordinates x="400" y="555" />
+        <AdditionalProperties>
+          <Property name="Relevance" value="7.0" />
+          <Property name="Title" value="alcohol" />
+        </AdditionalProperties>
+        <Precision>0.01</Precision>
+        <States>
+          <State name="absent" />
+          <State name="present" />
+        </States>
+      </Variable>
+      <Variable name="encephalopathy" type="finiteStates" role="chance" isInput="false">
+        <Coordinates x="284" y="465" />
+        <AdditionalProperties>
+          <Property name="Relevance" value="7.0" />
+          <Property name="Title" value="encephalopathy" />
+        </AdditionalProperties>
+        <Precision>0.01</Precision>
+        <States>
+          <State name="absent" />
+          <State name="present" />
+        </States>
+      </Variable>
+      <Variable name="urea" type="finiteStates" role="chance" isInput="false">
+        <Coordinates x="220" y="519" />
+        <AdditionalProperties>
+          <Property name="Relevance" value="7.0" />
+          <Property name="Title" value="urea" />
+        </AdditionalProperties>
+        <Precision>0.01</Precision>
+        <States>
+          <State name="a39_0" />
+          <State name="a49_40" />
+          <State name="a165_50" />
+        </States>
+      </Variable>
+      <Variable name="ascites" type="finiteStates" role="chance" isInput="false">
+        <Coordinates x="664" y="506" />
+        <AdditionalProperties>
+          <Property name="Relevance" value="7.0" />
+          <Property name="Title" value="ascites" />
+        </AdditionalProperties>
+        <Precision>0.01</Precision>
+        <States>
+          <State name="absent" />
+          <State name="present" />
+        </States>
+      </Variable>
+      <Variable name="hepatomegaly" type="finiteStates" role="chance" isInput="false">
+        <Coordinates x="868" y="350" />
+        <AdditionalProperties>
+          <Property name="Relevance" value="7.0" />
+          <Property name="Title" value="hepatomegaly" />
+        </AdditionalProperties>
+        <Precision>0.01</Precision>
+        <States>
+          <State name="absent" />
+          <State name="present" />
+        </States>
+      </Variable>
+      <Variable name="hepatalgia" type="finiteStates" role="chance" isInput="false">
+        <Coordinates x="947" y="399" />
+        <AdditionalProperties>
+          <Property name="Relevance" value="7.0" />
+          <Property name="Title" value="hepatalgia" />
+        </AdditionalProperties>
+        <Precision>0.01</Precision>
+        <States>
+          <State name="absent" />
+          <State name="present" />
+        </States>
+      </Variable>
+      <Variable name="density" type="finiteStates" role="chance" isInput="false">
+        <Coordinates x="330" y="531" />
+        <AdditionalProperties>
+          <Property name="Relevance" value="7.0" />
+          <Property name="Title" value="density" />
+        </AdditionalProperties>
+        <Precision>0.01</Precision>
+        <States>
+          <State name="absent" />
+          <State name="present" />
+        </States>
+      </Variable>
+      <Variable name="ESR" type="finiteStates" role="chance" isInput="false">
+        <Coordinates x="507" y="401" />
+        <AdditionalProperties>
+          <Property name="Relevance" value="7.0" />
+          <Property name="Title" value="ESR" />
+        </AdditionalProperties>
+        <Precision>0.01</Precision>
+        <States>
+          <State name="a14_0" />
+          <State name="a49_15" />
+          <State name="a200_50" />
+        </States>
+      </Variable>
+      <Variable name="alt" type="finiteStates" role="chance" isInput="false">
+        <Coordinates x="261" y="423" />
+        <AdditionalProperties>
+          <Property name="Relevance" value="7.0" />
+          <Property name="Title" value="alt" />
+        </AdditionalProperties>
+        <Precision>0.01</Precision>
+        <States>
+          <State name="a34_0" />
+          <State name="a99_35" />
+          <State name="a199_100" />
+          <State name="a850_200" />
+        </States>
+      </Variable>
+      <Variable name="ast" type="finiteStates" role="chance" isInput="false">
+        <Coordinates x="198" y="412" />
+        <AdditionalProperties>
+          <Property name="Relevance" value="7.0" />
+          <Property name="Title" value="ast" />
+        </AdditionalProperties>
+        <Precision>0.01</Precision>
+        <States>
+          <State name="a39_0" />
+          <State name="a149_40" />
+          <State name="a399_150" />
+          <State name="a700_400" />
+        </States>
+      </Variable>
+      <Variable name="amylase" type="finiteStates" role="chance" isInput="false">
+        <Coordinates x="488" y="65" />
+        <AdditionalProperties>
+          <Property name="Relevance" value="7.0" />
+          <Property name="Title" value="amylase" />
+        </AdditionalProperties>
+        <Precision>0.01</Precision>
+        <States>
+          <State name="a299_0" />
+          <State name="a499_300" />
+          <State name="a1400_500" />
+        </States>
+      </Variable>
+      <Variable name="ggtp" type="finiteStates" role="chance" isInput="false">
+        <Coordinates x="742" y="396" />
+        <AdditionalProperties>
+          <Property name="Relevance" value="7.0" />
+          <Property name="Title" value="ggtp" />
+        </AdditionalProperties>
+        <Precision>0.01</Precision>
+        <States>
+          <State name="a9_0" />
+          <State name="a29_10" />
+          <State name="a69_30" />
+          <State name="a640_70" />
+        </States>
+      </Variable>
+      <Variable name="cholesterol" type="finiteStates" role="chance" isInput="false">
+        <Coordinates x="600" y="342" />
+        <AdditionalProperties>
+          <Property name="Relevance" value="7.0" />
+          <Property name="Title" value="cholesterol" />
+        </AdditionalProperties>
+        <Precision>0.01</Precision>
+        <States>
+          <State name="a239_0" />
+          <State name="a349_240" />
+          <State name="a999_350" />
+        </States>
+      </Variable>
+      <Variable name="hbsag" type="finiteStates" role="chance" isInput="false">
+        <Coordinates x="61" y="461" />
+        <AdditionalProperties>
+          <Property name="Relevance" value="7.0" />
+          <Property name="Title" value="hbsag" />
+        </AdditionalProperties>
+        <Precision>0.01</Precision>
+        <States>
+          <State name="absent" />
+          <State name="present" />
+        </States>
+      </Variable>
+      <Variable name="hbsag_anti" type="finiteStates" role="chance" isInput="false">
+        <Coordinates x="148" y="438" />
+        <AdditionalProperties>
+          <Property name="Relevance" value="7.0" />
+          <Property name="Title" value="hbsag_anti" />
+        </AdditionalProperties>
+        <Precision>0.01</Precision>
+        <States>
+          <State name="absent" />
+          <State name="present" />
+        </States>
+      </Variable>
+      <Variable name="anorexia" type="finiteStates" role="chance" isInput="false">
+        <Coordinates x="955" y="303" />
+        <AdditionalProperties>
+          <Property name="Relevance" value="7.0" />
+          <Property name="Title" value="anorexia" />
+        </AdditionalProperties>
+        <Precision>0.01</Precision>
+        <States>
+          <State name="absent" />
+          <State name="present" />
+        </States>
+      </Variable>
+      <Variable name="nausea" type="finiteStates" role="chance" isInput="false">
+        <Coordinates x="974" y="271" />
+        <AdditionalProperties>
+          <Property name="Relevance" value="7.0" />
+          <Property name="Title" value="nausea" />
+        </AdditionalProperties>
+        <Precision>0.01</Precision>
+        <States>
+          <State name="absent" />
+          <State name="present" />
+        </States>
+      </Variable>
+      <Variable name="spleen" type="finiteStates" role="chance" isInput="false">
+        <Coordinates x="478" y="535" />
+        <AdditionalProperties>
+          <Property name="Relevance" value="7.0" />
+          <Property name="Title" value="spleen" />
+        </AdditionalProperties>
+        <Precision>0.01</Precision>
+        <States>
+          <State name="absent" />
+          <State name="present" />
+        </States>
+      </Variable>
+      <Variable name="consciousness" type="finiteStates" role="chance" isInput="false">
+        <Coordinates x="263" y="565" />
+        <AdditionalProperties>
+          <Property name="Relevance" value="7.0" />
+          <Property name="Title" value="consciousness" />
+        </AdditionalProperties>
+        <Precision>0.01</Precision>
+        <States>
+          <State name="absent" />
+          <State name="present" />
+        </States>
+      </Variable>
+      <Variable name="spiders" type="finiteStates" role="chance" isInput="false">
+        <Coordinates x="644" y="565" />
+        <AdditionalProperties>
+          <Property name="Relevance" value="7.0" />
+          <Property name="Title" value="spiders" />
+        </AdditionalProperties>
+        <Precision>0.01</Precision>
+        <States>
+          <State name="absent" />
+          <State name="present" />
+        </States>
+      </Variable>
+      <Variable name="skin" type="finiteStates" role="chance" isInput="false">
+        <Coordinates x="913" y="516" />
+        <AdditionalProperties>
+          <Property name="Relevance" value="7.0" />
+          <Property name="Title" value="skin" />
+        </AdditionalProperties>
+        <Precision>0.01</Precision>
+        <States>
+          <State name="absent" />
+          <State name="present" />
+        </States>
+      </Variable>
+      <Variable name="albumin" type="finiteStates" role="chance" isInput="false">
+        <Coordinates x="579" y="398" />
+        <AdditionalProperties>
+          <Property name="Relevance" value="7.0" />
+          <Property name="Title" value="albumin" />
+        </AdditionalProperties>
+        <Precision>0.01</Precision>
+        <States>
+          <State name="a29_0" />
+          <State name="a49_30" />
+          <State name="a70_50" />
+        </States>
+      </Variable>
+      <Variable name="edge" type="finiteStates" role="chance" isInput="false">
+        <Coordinates x="445" y="490" />
+        <AdditionalProperties>
+          <Property name="Relevance" value="7.0" />
+          <Property name="Title" value="edge" />
+        </AdditionalProperties>
+        <Precision>0.01</Precision>
+        <States>
+          <State name="absent" />
+          <State name="present" />
+        </States>
+      </Variable>
+      <Variable name="irregular_liver" type="finiteStates" role="chance" isInput="false">
+        <Coordinates x="562" y="506" />
+        <AdditionalProperties>
+          <Property name="Relevance" value="7.0" />
+          <Property name="Title" value="irregular_liver" />
+        </AdditionalProperties>
+        <Precision>0.01</Precision>
+        <States>
+          <State name="absent" />
+          <State name="present" />
+        </States>
+      </Variable>
+      <Variable name="hbc_anti" type="finiteStates" role="chance" isInput="false">
+        <Coordinates x="187" y="493" />
+        <AdditionalProperties>
+          <Property name="Relevance" value="7.0" />
+          <Property name="Title" value="hbc_anti" />
+        </AdditionalProperties>
+        <Precision>0.01</Precision>
+        <States>
+          <State name="absent" />
+          <State name="present" />
+        </States>
+      </Variable>
+      <Variable name="hcv_anti" type="finiteStates" role="chance" isInput="false">
+        <Coordinates x="105" y="492" />
+        <AdditionalProperties>
+          <Property name="Relevance" value="7.0" />
+          <Property name="Title" value="hcv_anti" />
+        </AdditionalProperties>
+        <Precision>0.01</Precision>
+        <States>
+          <State name="absent" />
+          <State name="present" />
+        </States>
+      </Variable>
+      <Variable name="joints" type="finiteStates" role="chance" isInput="false">
+        <Coordinates x="717" y="592" />
+        <AdditionalProperties>
+          <Property name="Relevance" value="7.0" />
+          <Property name="Title" value="joints" />
+        </AdditionalProperties>
+        <Precision>0.01</Precision>
+        <States>
+          <State name="absent" />
+          <State name="present" />
+        </States>
+      </Variable>
+      <Variable name="palms" type="finiteStates" role="chance" isInput="false">
+        <Coordinates x="366" y="444" />
+        <AdditionalProperties>
+          <Property name="Relevance" value="7.0" />
+          <Property name="Title" value="palms" />
+        </AdditionalProperties>
+        <Precision>0.01</Precision>
+        <States>
+          <State name="absent" />
+          <State name="present" />
+        </States>
+      </Variable>
+      <Variable name="hbeag" type="finiteStates" role="chance" isInput="false">
+        <Coordinates x="46" y="407" />
+        <AdditionalProperties>
+          <Property name="Relevance" value="7.0" />
+          <Property name="Title" value="hbeag" />
+        </AdditionalProperties>
+        <Precision>0.01</Precision>
+        <States>
+          <State name="absent" />
+          <State name="present" />
+        </States>
+      </Variable>
+      <Variable name="jaund_symptoms" type="finiteStates" role="chance" isInput="false">
+        <Coordinates x="807" y="505" />
+        <AdditionalProperties>
+          <Property name="Relevance" value="7.0" />
+          <Property name="Title" value="jaund_symptoms" />
+        </AdditionalProperties>
+        <Precision>0.01</Precision>
+        <States>
+          <State name="absent" />
+          <State name="present" />
+        </States>
+      </Variable>
+      <Variable name="carcinoma" type="finiteStates" role="chance" isInput="false">
+        <Coordinates x="499" y="282" />
+        <AdditionalProperties>
+          <Property name="Relevance" value="9.0" />
+          <Property name="Title" value="carcinoma" />
+        </AdditionalProperties>
+        <Precision>0.01</Precision>
+        <States>
+          <State name="absent" />
+          <State name="present" />
+        </States>
+      </Variable>
+    </Variables>
+    <Links>
+      <Link directed="true">
+        <Variable name="alcoholism" />
+        <Variable name="THepatitis" />
+      </Link>
+      <Link directed="true">
+        <Variable name="alcoholism" />
+        <Variable name="Steatosis" />
+      </Link>
+      <Link directed="true">
+        <Variable name="vh_amn" />
+        <Variable name="ChHepatitis" />
+      </Link>
+      <Link directed="true">
+        <Variable name="vh_amn" />
+        <Variable name="hbsag" />
+      </Link>
+      <Link directed="true">
+        <Variable name="vh_amn" />
+        <Variable name="hbsag_anti" />
+      </Link>
+      <Link directed="true">
+        <Variable name="vh_amn" />
+        <Variable name="hbc_anti" />
+      </Link>
+      <Link directed="true">
+        <Variable name="vh_amn" />
+        <Variable name="hcv_anti" />
+      </Link>
+      <Link directed="true">
+        <Variable name="vh_amn" />
+        <Variable name="hbeag" />
+      </Link>
+      <Link directed="true">
+        <Variable name="hepatotoxic" />
+        <Variable name="THepatitis" />
+      </Link>
+      <Link directed="true">
+        <Variable name="hepatotoxic" />
+        <Variable name="hepatomegaly" />
+      </Link>
+      <Link directed="true">
+        <Variable name="THepatitis" />
+        <Variable name="fatigue" />
+      </Link>
+      <Link directed="true">
+        <Variable name="THepatitis" />
+        <Variable name="phosphatase" />
+      </Link>
+      <Link directed="true">
+        <Variable name="THepatitis" />
+        <Variable name="inr" />
+      </Link>
+      <Link directed="true">
+        <Variable name="THepatitis" />
+        <Variable name="hepatomegaly" />
+      </Link>
+      <Link directed="true">
+        <Variable name="THepatitis" />
+        <Variable name="alt" />
+      </Link>
+      <Link directed="true">
+        <Variable name="THepatitis" />
+        <Variable name="ast" />
+      </Link>
+      <Link directed="true">
+        <Variable name="THepatitis" />
+        <Variable name="ggtp" />
+      </Link>
+      <Link directed="true">
+        <Variable name="THepatitis" />
+        <Variable name="anorexia" />
+      </Link>
+      <Link directed="true">
+        <Variable name="THepatitis" />
+        <Variable name="nausea" />
+      </Link>
+      <Link directed="true">
+        <Variable name="hospital" />
+        <Variable name="injections" />
+      </Link>
+      <Link directed="true">
+        <Variable name="hospital" />
+        <Variable name="transfusion" />
+      </Link>
+      <Link directed="true">
+        <Variable name="surgery" />
+        <Variable name="injections" />
+      </Link>
+      <Link directed="true">
+        <Variable name="surgery" />
+        <Variable name="transfusion" />
+      </Link>
+      <Link directed="true">
+        <Variable name="gallstones" />
+        <Variable name="choledocholithotomy" />
+      </Link>
+      <Link directed="true">
+        <Variable name="gallstones" />
+        <Variable name="upper_pain" />
+      </Link>
+      <Link directed="true">
+        <Variable name="gallstones" />
+        <Variable name="fat" />
+      </Link>
+      <Link directed="true">
+        <Variable name="gallstones" />
+        <Variable name="pressure_ruq" />
+      </Link>
+      <Link directed="true">
+        <Variable name="gallstones" />
+        <Variable name="flatulence" />
+      </Link>
+      <Link directed="true">
+        <Variable name="gallstones" />
+        <Variable name="amylase" />
+      </Link>
+      <Link directed="true">
+        <Variable name="choledocholithotomy" />
+        <Variable name="injections" />
+      </Link>
+      <Link directed="true">
+        <Variable name="choledocholithotomy" />
+        <Variable name="transfusion" />
+      </Link>
+      <Link directed="true">
+        <Variable name="injections" />
+        <Variable name="ChHepatitis" />
+      </Link>
+      <Link directed="true">
+        <Variable name="injections" />
+        <Variable name="PBC" />
+      </Link>
+      <Link directed="true">
+        <Variable name="transfusion" />
+        <Variable name="ChHepatitis" />
+      </Link>
+      <Link directed="true">
+        <Variable name="ChHepatitis" />
+        <Variable name="fibrosis" />
+      </Link>
+      <Link directed="true">
+        <Variable name="ChHepatitis" />
+        <Variable name="fatigue" />
+      </Link>
+      <Link directed="true">
+        <Variable name="ChHepatitis" />
+        <Variable name="phosphatase" />
+      </Link>
+      <Link directed="true">
+        <Variable name="ChHepatitis" />
+        <Variable name="inr" />
+      </Link>
+      <Link directed="true">
+        <Variable name="ChHepatitis" />
+        <Variable name="ESR" />
+      </Link>
+      <Link directed="true">
+        <Variable name="ChHepatitis" />
+        <Variable name="alt" />
+      </Link>
+      <Link directed="true">
+        <Variable name="ChHepatitis" />
+        <Variable name="ast" />
+      </Link>
+      <Link directed="true">
+        <Variable name="ChHepatitis" />
+        <Variable name="ggtp" />
+      </Link>
+      <Link directed="true">
+        <Variable name="ChHepatitis" />
+        <Variable name="cholesterol" />
+      </Link>
+      <Link directed="true">
+        <Variable name="ChHepatitis" />
+        <Variable name="hbsag" />
+      </Link>
+      <Link directed="true">
+        <Variable name="ChHepatitis" />
+        <Variable name="hbsag_anti" />
+      </Link>
+      <Link directed="true">
+        <Variable name="ChHepatitis" />
+        <Variable name="hbc_anti" />
+      </Link>
+      <Link directed="true">
+        <Variable name="ChHepatitis" />
+        <Variable name="hcv_anti" />
+      </Link>
+      <Link directed="true">
+        <Variable name="ChHepatitis" />
+        <Variable name="hbeag" />
+      </Link>
+      <Link directed="true">
+        <Variable name="sex" />
+        <Variable name="PBC" />
+      </Link>
+      <Link directed="true">
+        <Variable name="sex" />
+        <Variable name="Hyperbilirubinemia" />
+      </Link>
+      <Link directed="true">
+        <Variable name="age" />
+        <Variable name="PBC" />
+      </Link>
+      <Link directed="true">
+        <Variable name="age" />
+        <Variable name="Hyperbilirubinemia" />
+      </Link>
+      <Link directed="true">
+        <Variable name="PBC" />
+        <Variable name="bilirubin" />
+      </Link>
+      <Link directed="true">
+        <Variable name="PBC" />
+        <Variable name="pressure_ruq" />
+      </Link>
+      <Link directed="true">
+        <Variable name="PBC" />
+        <Variable name="ama" />
+      </Link>
+      <Link directed="true">
+        <Variable name="PBC" />
+        <Variable name="le_cells" />
+      </Link>
+      <Link directed="true">
+        <Variable name="PBC" />
+        <Variable name="ESR" />
+      </Link>
+      <Link directed="true">
+        <Variable name="PBC" />
+        <Variable name="ggtp" />
+      </Link>
+      <Link directed="true">
+        <Variable name="PBC" />
+        <Variable name="cholesterol" />
+      </Link>
+      <Link directed="true">
+        <Variable name="PBC" />
+        <Variable name="carcinoma" />
+      </Link>
+      <Link directed="true">
+        <Variable name="fibrosis" />
+        <Variable name="Cirrhosis" />
+      </Link>
+      <Link directed="true">
+        <Variable name="diabetes" />
+        <Variable name="obesity" />
+      </Link>
+      <Link directed="true">
+        <Variable name="obesity" />
+        <Variable name="Steatosis" />
+      </Link>
+      <Link directed="true">
+        <Variable name="Steatosis" />
+        <Variable name="Cirrhosis" />
+      </Link>
+      <Link directed="true">
+        <Variable name="Steatosis" />
+        <Variable name="triglycerides" />
+      </Link>
+      <Link directed="true">
+        <Variable name="Steatosis" />
+        <Variable name="pain_ruq" />
+      </Link>
+      <Link directed="true">
+        <Variable name="Steatosis" />
+        <Variable name="hepatomegaly" />
+      </Link>
+      <Link directed="true">
+        <Variable name="Steatosis" />
+        <Variable name="ESR" />
+      </Link>
+      <Link directed="true">
+        <Variable name="Steatosis" />
+        <Variable name="alt" />
+      </Link>
+      <Link directed="true">
+        <Variable name="Steatosis" />
+        <Variable name="ast" />
+      </Link>
+      <Link directed="true">
+        <Variable name="Steatosis" />
+        <Variable name="ggtp" />
+      </Link>
+      <Link directed="true">
+        <Variable name="Steatosis" />
+        <Variable name="cholesterol" />
+      </Link>
+      <Link directed="true">
+        <Variable name="Cirrhosis" />
+        <Variable name="bilirubin" />
+      </Link>
+      <Link directed="true">
+        <Variable name="Cirrhosis" />
+        <Variable name="pressure_ruq" />
+      </Link>
+      <Link directed="true">
+        <Variable name="Cirrhosis" />
+        <Variable name="phosphatase" />
+      </Link>
+      <Link directed="true">
+        <Variable name="Cirrhosis" />
+        <Variable name="proteins" />
+      </Link>
+      <Link directed="true">
+        <Variable name="Cirrhosis" />
+        <Variable name="edema" />
+      </Link>
+      <Link directed="true">
+        <Variable name="Cirrhosis" />
+        <Variable name="platelet" />
+      </Link>
+      <Link directed="true">
+        <Variable name="Cirrhosis" />
+        <Variable name="inr" />
+      </Link>
+      <Link directed="true">
+        <Variable name="Cirrhosis" />
+        <Variable name="alcohol" />
+      </Link>
+      <Link directed="true">
+        <Variable name="Cirrhosis" />
+        <Variable name="encephalopathy" />
+      </Link>
+      <Link directed="true">
+        <Variable name="Cirrhosis" />
+        <Variable name="ascites" />
+      </Link>
+      <Link directed="true">
+        <Variable name="Cirrhosis" />
+        <Variable name="alt" />
+      </Link>
+      <Link directed="true">
+        <Variable name="Cirrhosis" />
+        <Variable name="ast" />
+      </Link>
+      <Link directed="true">
+        <Variable name="Cirrhosis" />
+        <Variable name="spleen" />
+      </Link>
+      <Link directed="true">
+        <Variable name="Cirrhosis" />
+        <Variable name="albumin" />
+      </Link>
+      <Link directed="true">
+        <Variable name="Cirrhosis" />
+        <Variable name="edge" />
+      </Link>
+      <Link directed="true">
+        <Variable name="Cirrhosis" />
+        <Variable name="irregular_liver" />
+      </Link>
+      <Link directed="true">
+        <Variable name="Cirrhosis" />
+        <Variable name="carcinoma" />
+      </Link>
+      <Link directed="true">
+        <Variable name="Hyperbilirubinemia" />
+        <Variable name="bilirubin" />
+      </Link>
+      <Link directed="true">
+        <Variable name="Hyperbilirubinemia" />
+        <Variable name="pain_ruq" />
+      </Link>
+      <Link directed="true">
+        <Variable name="Hyperbilirubinemia" />
+        <Variable name="inr" />
+      </Link>
+      <Link directed="true">
+        <Variable name="Hyperbilirubinemia" />
+        <Variable name="hepatomegaly" />
+      </Link>
+      <Link directed="true">
+        <Variable name="Hyperbilirubinemia" />
+        <Variable name="ESR" />
+      </Link>
+      <Link directed="true">
+        <Variable name="Hyperbilirubinemia" />
+        <Variable name="ggtp" />
+      </Link>
+      <Link directed="true">
+        <Variable name="RHepatitis" />
+        <Variable name="fatigue" />
+      </Link>
+      <Link directed="true">
+        <Variable name="RHepatitis" />
+        <Variable name="phosphatase" />
+      </Link>
+      <Link directed="true">
+        <Variable name="RHepatitis" />
+        <Variable name="hepatomegaly" />
+      </Link>
+      <Link directed="true">
+        <Variable name="RHepatitis" />
+        <Variable name="alt" />
+      </Link>
+      <Link directed="true">
+        <Variable name="RHepatitis" />
+        <Variable name="ast" />
+      </Link>
+      <Link directed="true">
+        <Variable name="RHepatitis" />
+        <Variable name="ggtp" />
+      </Link>
+      <Link directed="true">
+        <Variable name="RHepatitis" />
+        <Variable name="anorexia" />
+      </Link>
+      <Link directed="true">
+        <Variable name="RHepatitis" />
+        <Variable name="nausea" />
+      </Link>
+      <Link directed="true">
+        <Variable name="bilirubin" />
+        <Variable name="itching" />
+      </Link>
+      <Link directed="true">
+        <Variable name="bilirubin" />
+        <Variable name="jaundice" />
+      </Link>
+      <Link directed="true">
+        <Variable name="bilirubin" />
+        <Variable name="skin" />
+      </Link>
+      <Link directed="true">
+        <Variable name="bilirubin" />
+        <Variable name="jaund_symptoms" />
+      </Link>
+      <Link directed="true">
+        <Variable name="fat" />
+        <Variable name="pain_ruq" />
+      </Link>
+      <Link directed="true">
+        <Variable name="ama" />
+        <Variable name="pain" />
+      </Link>
+      <Link directed="true">
+        <Variable name="ama" />
+        <Variable name="joints" />
+      </Link>
+      <Link directed="true">
+        <Variable name="le_cells" />
+        <Variable name="pain" />
+      </Link>
+      <Link directed="true">
+        <Variable name="platelet" />
+        <Variable name="bleeding" />
+      </Link>
+      <Link directed="true">
+        <Variable name="inr" />
+        <Variable name="bleeding" />
+      </Link>
+      <Link directed="true">
+        <Variable name="inr" />
+        <Variable name="palms" />
+      </Link>
+      <Link directed="true">
+        <Variable name="bleeding" />
+        <Variable name="spiders" />
+      </Link>
+      <Link directed="true">
+        <Variable name="encephalopathy" />
+        <Variable name="urea" />
+      </Link>
+      <Link directed="true">
+        <Variable name="encephalopathy" />
+        <Variable name="density" />
+      </Link>
+      <Link directed="true">
+        <Variable name="encephalopathy" />
+        <Variable name="consciousness" />
+      </Link>
+      <Link directed="true">
+        <Variable name="ascites" />
+        <Variable name="spiders" />
+      </Link>
+      <Link directed="true">
+        <Variable name="hepatomegaly" />
+        <Variable name="hepatalgia" />
+      </Link>
+    </Links>
+    <Potentials>
+      <Potential type="Table" role="conditionalProbability">
+        <Variables>
+          <Variable name="alcoholism" />
+        </Variables>
+        <Values>0.86409156 0.13590844</Values>
+      </Potential>
+      <Potential type="Table" role="conditionalProbability">
+        <Variables>
+          <Variable name="vh_amn" />
+        </Variables>
+        <Values>0.82689557 0.17310443</Values>
+      </Potential>
+      <Potential type="Table" role="conditionalProbability">
+        <Variables>
+          <Variable name="hepatotoxic" />
+        </Variables>
+        <Values>0.91845494 0.08154506</Values>
+      </Potential>
+      <Potential type="Table" role="conditionalProbability">
+        <Variables>
+          <Variable name="THepatitis" />
+          <Variable name="hepatotoxic" />
+          <Variable name="alcoholism" />
+        </Variables>
+        <Values>0.9673913 0.0326087 0.99808061 0.00191939 0.91111111 0.08888889 0.8 0.2</Values>
+      </Potential>
+      <Potential type="Table" role="conditionalProbability">
+        <Variables>
+          <Variable name="hospital" />
+        </Variables>
+        <Values>0.46494993 0.53505007</Values>
+      </Potential>
+      <Potential type="Table" role="conditionalProbability">
+        <Variables>
+          <Variable name="surgery" />
+        </Variables>
+        <Values>0.57653791 0.42346209</Values>
+      </Potential>
+      <Potential type="Table" role="conditionalProbability">
+        <Variables>
+          <Variable name="gallstones" />
+        </Variables>
+        <Values>0.84692418 0.15307582</Values>
+      </Potential>
+      <Potential type="Table" role="conditionalProbability">
+        <Variables>
+          <Variable name="choledocholithotomy" />
+          <Variable name="gallstones" />
+        </Variables>
+        <Values>0.96283784 0.03716216 0.28971963 0.71028037</Values>
+      </Potential>
+      <Potential type="Table" role="conditionalProbability">
+        <Variables>
+          <Variable name="injections" />
+          <Variable name="hospital" />
+          <Variable name="surgery" />
+          <Variable name="choledocholithotomy" />
+        </Variables>
+        <Values>0.9352518 0.0647482 0.51818182 0.48181818 0.76666667 0.23333333 0.28415301 0.71584699 0.98901099 0.01098901 0.16666667 0.83333333 0.625 0.375 0.2 0.8</Values>
+      </Potential>
+      <Potential type="Table" role="conditionalProbability">
+        <Variables>
+          <Variable name="transfusion" />
+          <Variable name="hospital" />
+          <Variable name="surgery" />
+          <Variable name="choledocholithotomy" />
+        </Variables>
+        <Values>0.98920863 0.01079137 0.88181818 0.11818182 0.7 0.3 0.71038251 0.28961749 0.98901099 0.01098901 0.83333333 0.16666667 0.875 0.125 0.66666667 0.33333333</Values>
+      </Potential>
+      <Potential type="Table" role="conditionalProbability">
+        <Variables>
+          <Variable name="ChHepatitis" />
+          <Variable name="transfusion" />
+          <Variable name="vh_amn" />
+          <Variable name="injections" />
+        </Variables>
+        <Values>0.81547619 0.05357143 0.13095238 0.82608696 0.04347826 0.13043478 0.62 0.14 0.24 0.23076923 0.30769231 0.46153846 0.91715976 0.00591716 0.07692308 0.88 0.06 0.06 0.794871797948718 0.05128205051282051 0.1538461515384615 0.7853403178534032 0.005235600052356001 0.20942408209424082</Values>
+      </Potential>
+      <Potential type="Table" role="conditionalProbability">
+        <Variables>
+          <Variable name="sex" />
+        </Variables>
+        <Values>0.40200286 0.59799714</Values>
+      </Potential>
+      <Potential type="Table" role="conditionalProbability">
+        <Variables>
+          <Variable name="age" />
+        </Variables>
+        <Values>0.13733905862660944 0.3977110160228899 0.387696706123033 0.0772532192274678</Values>
+      </Potential>
+      <Potential type="Table" role="conditionalProbability">
+        <Variables>
+          <Variable name="PBC" />
+          <Variable name="injections" />
+          <Variable name="sex" />
+          <Variable name="age" />
+        </Variables>
+        <Values>0.99804305 0.00195695 0.99236641 0.00763359 0.85714286 0.14285714 0.90909091 0.09090909 0.975 0.025 0.79166667 0.20833333 0.58947368 0.41052632 0.13924051 0.86075949 0.92957746 0.07042254 0.86956522 0.13043478 0.43902439 0.56097561 0.17894737 0.82105263 0.75 0.25 0.54545455 0.45454545 0.57142857 0.42857143 0.19047619 0.80952381</Values>
+      </Potential>
+      <Potential type="Table" role="conditionalProbability">
+        <Variables>
+          <Variable name="fibrosis" />
+          <Variable name="ChHepatitis" />
+        </Variables>
+        <Values>0.999 0.001 0.9 0.1 0.6 0.4</Values>
+      </Potential>
+      <Potential type="Table" role="conditionalProbability">
+        <Variables>
+          <Variable name="diabetes" />
+        </Variables>
+        <Values>0.96423462 0.03576538</Values>
+      </Potential>
+      <Potential type="Table" role="conditionalProbability">
+        <Variables>
+          <Variable name="obesity" />
+          <Variable name="diabetes" />
+        </Variables>
+        <Values>0.93768546 0.06231454 0.76 0.24</Values>
+      </Potential>
+      <Potential type="Table" role="conditionalProbability">
+        <Variables>
+          <Variable name="Steatosis" />
+          <Variable name="obesity" />
+          <Variable name="alcoholism" />
+        </Variables>
+        <Values>0.93650794 0.06349206 0.81081081 0.18918919 0.76190476 0.23809524 0.63636364 0.36363636</Values>
+      </Potential>
+      <Potential type="Table" role="conditionalProbability">
+        <Variables>
+          <Variable name="Cirrhosis" />
+          <Variable name="fibrosis" />
+          <Variable name="Steatosis" />
+        </Variables>
+        <Values>0.998 0.001 0.001 0.02 0.49 0.49 0.4 0.3 0.3 0.01 0.64 0.35</Values>
+      </Potential>
+      <Potential type="Table" role="conditionalProbability">
+        <Variables>
+          <Variable name="Hyperbilirubinemia" />
+          <Variable name="age" />
+          <Variable name="sex" />
+        </Variables>
+        <Values>0.546875 0.453125 0.92307692 0.07692308 0.9787234 0.0212766 0.9947644 0.0052356 0.78125 0.21875 0.95402299 0.04597701 0.98870056 0.01129944 0.997151 0.002849</Values>
+      </Potential>
+      <Potential type="Table" role="conditionalProbability">
+        <Variables>
+          <Variable name="triglycerides" />
+          <Variable name="Steatosis" />
+        </Variables>
+        <Values>0.94462025 0.03164557 0.02373418 0.65671642 0.1641791 0.17910448</Values>
+      </Potential>
+      <Potential type="Table" role="conditionalProbability">
+        <Variables>
+          <Variable name="RHepatitis" />
+        </Variables>
+        <Values>0.97567954 0.02432046</Values>
+      </Potential>
+      <Potential type="Table" role="conditionalProbability">
+        <Variables>
+          <Variable name="fatigue" />
+          <Variable name="ChHepatitis" />
+          <Variable name="THepatitis" />
+          <Variable name="RHepatitis" />
+        </Variables>
+        <Values>0.46401515 0.53598485 0.47222222 0.52777778 0.3956044 0.6043956 0.33333333 0.66666667 0.40677966 0.59322034 0.375 0.625 0.29411765 0.70588235 0.41071429 0.58928571 0.37634409 0.62365591 0.38461538 0.61538462 0.39285714 0.60714286 0.36363636 0.63636364</Values>
+      </Potential>
+      <Potential type="Table" role="conditionalProbability">
+        <Variables>
+          <Variable name="bilirubin" />
+          <Variable name="Hyperbilirubinemia" />
+          <Variable name="PBC" />
+          <Variable name="Cirrhosis" />
+        </Variables>
+        <Values>0.8503649514963505 0.13503649864963502 0.0109489098905109 0.003649639963503601 0.46263345 0.53380783 0.00177936 0.00177936 0.38214286 0.40357143 0.16785714 0.04642857 0.40562249 0.42168675 0.13654618 0.03614458 0.8038585280385853 0.160771701607717 0.0032154300321543 0.0321543403215434 0.47368421 0.42857143 0.07518797 0.02255639 0.4166666658333334 0.39682539603174605 0.14682539853174603 0.03968253960317461 0.4268292657317074 0.40853658591463415 0.12804877871951223 0.036585369634146304 0.44827586448275863 0.3965517239655172 0.13793103137931031 0.017241380172413803 0.4198895 0.43646409 0.1160221 0.02762431 0.40306122 0.42346939 0.1377551 0.03571429 0.40769231 0.42307692 0.13846154 0.03076923</Values>
+      </Potential>
+      <Potential type="Table" role="conditionalProbability">
+        <Variables>
+          <Variable name="itching" />
+          <Variable name="bilirubin" />
+        </Variables>
+        <Values>0.66666667 0.33333333 0.4375 0.5625 0.34482759 0.65517241 0.125 0.875</Values>
+      </Potential>
+      <Potential type="Table" role="conditionalProbability">
+        <Variables>
+          <Variable name="upper_pain" />
+          <Variable name="gallstones" />
+        </Variables>
+        <Values>0.61317568 0.38682432 0.58878505 0.41121495</Values>
+      </Potential>
+      <Potential type="Table" role="conditionalProbability">
+        <Variables>
+          <Variable name="fat" />
+          <Variable name="gallstones" />
+        </Variables>
+        <Values>0.71959459 0.28040541 0.82242991 0.17757009</Values>
+      </Potential>
+      <Potential type="Table" role="conditionalProbability">
+        <Variables>
+          <Variable name="pain_ruq" />
+          <Variable name="fat" />
+          <Variable name="Steatosis" />
+          <Variable name="Hyperbilirubinemia" />
+        </Variables>
+        <Values>0.62616822 0.37383178 0.43918919 0.56081081 0.60869565 0.39130435 0.33333333 0.66666667 0.825 0.175 0.4375 0.5625 0.53846154 0.46153846 0.38888889 0.61111111</Values>
+      </Potential>
+      <Potential type="Table" role="conditionalProbability">
+        <Variables>
+          <Variable name="pressure_ruq" />
+          <Variable name="gallstones" />
+          <Variable name="PBC" />
+          <Variable name="Cirrhosis" />
+        </Variables>
+        <Values>0.56089744 0.43910256 0.66666667 0.33333333 0.70707071 0.29292929 0.67073171 0.32926829 0.51724138 0.48275862 0.5 0.5 0.67222222 0.32777778 0.66666667 0.33333333 0.47169811 0.52830189 0.8 0.2 0.65671642 0.34328358 0.6744186 0.3255814</Values>
+      </Potential>
+      <Potential type="Table" role="conditionalProbability">
+        <Variables>
+          <Variable name="phosphatase" />
+          <Variable name="RHepatitis" />
+          <Variable name="THepatitis" />
+          <Variable name="Cirrhosis" />
+          <Variable name="ChHepatitis" />
+        </Variables>
+        <Values>0.4487471544874715 0.3394077433940774 0.1435079714350797 0.0683371306833713 0.7558139575581395 0.23255814232558142 0.005813950058139501 0.005813950058139501 0.7777777722222223 0.14814814851851854 0.037037039629629606 0.037037039629629606 0.788863102111369 0.18561484814385154 0.023201859767981406 0.0023201899767981006 0.546623795466238 0.3858520938585209 0.0643086806430868 0.0032154300321543 0.66528067 0.31185031 0.02079002 0.002079 0.6896551768965518 0.272232302722323 0.036297640362976405 0.0018148800181488002 0.7008086229919138 0.26954177730458223 0.026954179730458206 0.0026954199730458003 0.44827586 0.48275862 0.03448276 0.03448276 0.58461538 0.38461538 0.01538462 0.01538462 0.59722222 0.34722222 0.02777778 0.02777778 0.6250000062500001 0.3333333333333333 0.020833330208333303 0.020833330208333303 0.77562327 0.19390582 0.02770083 0.00277008 0.7488299574882996 0.23400936234009365 0.015600620156006204 0.0015600600156006003 0.75675676 0.2027027 0.02702703 0.01351351 0.77097506 0.20408163 0.02267574 0.00226757 0.6485084235149158 0.31128404688715955 0.03891050961089491 0.0012970199870298003 0.69246436 0.28513238 0.0203666 0.00203666 0.7024029529759706 0.2587800374121996 0.036968579630314205 0.0018484299815157005 0.72319201276808 0.24937655750623444 0.024937659750623405 0.0024937699750623007 0.61797753 0.33707865 0.02247191 0.02247191 0.6440678 0.3220339 0.01694915 0.01694915 0.6499999935000002 0.31666666683333333 0.016666669833333304 0.016666669833333304 0.65217391 0.30434783 0.02173913 0.02173913 0.74725275 0.21978022 0.02197802 0.01098901 0.7358738573587386 0.2496714824967148 0.013140600131406001 0.0013140600131406 0.74117647 0.22352941 0.02352941 0.01176471 0.7622504576225045 0.21778584217785843 0.0181488201814882 0.0018148800181488002 0.6179775238202248 0.33707864662921355 0.03370786966292131 0.0112359598876404 0.68078669 0.30257186 0.01512859 0.00151286 0.6805555531944445 0.27777777722222224 0.027777779722222205 0.013888889861111102 0.71017274 0.26871401 0.01919386 0.00191939 0.65517241 0.29885057 0.02298851 0.02298851 0.6811594268115942 0.2898550728985507 0.014492750144927503 0.014492750144927503 0.6774193567741936 0.2903225829032258 0.016129030161290303 0.016129030161290303 0.66666667 0.29166667 0.02083333 0.02083333</Values>
+      </Potential>
+      <Potential type="Table" role="conditionalProbability">
+        <Variables>
+          <Variable name="jaundice" />
+          <Variable name="bilirubin" />
+        </Variables>
+        <Values>0.8057554 0.1942446 0.64423077 0.35576923 0.43103448 0.56896552 0.25 0.75</Values>
+      </Potential>
+      <Potential type="Table" role="conditionalProbability">
+        <Variables>
+          <Variable name="ama" />
+          <Variable name="PBC" />
+        </Variables>
+        <Values>0.98806683 0.01193317 0.43214286 0.56785714</Values>
+      </Potential>
+      <Potential type="Table" role="conditionalProbability">
+        <Variables>
+          <Variable name="le_cells" />
+          <Variable name="PBC" />
+        </Variables>
+        <Values>0.95942721 0.04057279 0.87857143 0.12142857</Values>
+      </Potential>
+      <Potential type="Table" role="conditionalProbability">
+        <Variables>
+          <Variable name="pain" />
+          <Variable name="ama" />
+          <Variable name="le_cells" />
+        </Variables>
+        <Values>0.77290837 0.22709163 0.82876712 0.17123288 0.72727273 0.27272727 0.72222222 0.27777778</Values>
+      </Potential>
+      <Potential type="Table" role="conditionalProbability">
+        <Variables>
+          <Variable name="proteins" />
+          <Variable name="Cirrhosis" />
+        </Variables>
+        <Values>0.01967213 0.98032787 0.00321543 0.99678457 0.00172117 0.99827883</Values>
+      </Potential>
+      <Potential type="Table" role="conditionalProbability">
+        <Variables>
+          <Variable name="edema" />
+          <Variable name="Cirrhosis" />
+        </Variables>
+        <Values>0.86885246 0.13114754 0.93548387 0.06451613 0.65517241 0.34482759</Values>
+      </Potential>
+      <Potential type="Table" role="conditionalProbability">
+        <Variables>
+          <Variable name="platelet" />
+          <Variable name="Cirrhosis" />
+        </Variables>
+        <Values>0.06557377000000002 0.14754098000000002 0.7065573800000001 0.08032787000000001 0.12903226 0.16129032 0.64516129 0.06451613 0.18965517 0.27586207 0.46551724 0.06896552</Values>
+      </Potential>
+      <Potential type="Table" role="conditionalProbability">
+        <Variables>
+          <Variable name="inr" />
+          <Variable name="ChHepatitis" />
+          <Variable name="Cirrhosis" />
+          <Variable name="THepatitis" />
+          <Variable name="Hyperbilirubinemia" />
+        </Variables>
+        <Values>0.06 0.875 0.065 0.02777778 0.88888889 0.08333333 0.07692308 0.9010989 0.02197802 0.32154341 0.67524116 0.00321543 0.1333333313333333 0.8333333383333333 0.0333333303333333 0.12745098 0.85294118 0.01960784 0.39586919 0.60240964 0.00172117 0.22222222 0.75308642 0.02469136 0.18333333 0.8 0.01666667 0.037037039629629606 0.9259259207407409 0.037037039629629606 0.05 0.9 0.05 0.07692308 0.90384615 0.01923077 0.19642857 0.78571429 0.01785714 0.12244898 0.83673469 0.04081633 0.12 0.86666667 0.01333333 0.22857143 0.75714286 0.01428571 0.17741935177419352 0.790322587903226 0.032258060322580606 0.16883117 0.81818182 0.01298701 0.05357143 0.89285714 0.05357143 0.04 0.90666667 0.05333333 0.072 0.904 0.024 0.16901408169014082 0.8028169080281691 0.028169010281690103 0.10714285892857142 0.8571428514285715 0.03571428964285711 0.10843373 0.86746988 0.02409639 0.22826087 0.75 0.02173913 0.17391304 0.79710145 0.02898551 0.16129032 0.8172043 0.02150538 0.12280702 0.84210526 0.03508772 0.06779661 0.88135593 0.05084746 0.08791209 0.89010989 0.02197802 0.2142857121428571 0.7678571476785715 0.0178571401785714 0.14035088 0.8245614 0.03508772 0.125 0.85 0.025 0.15517241 0.81034483 0.03448276 0.12121212 0.84848485 0.03030303 0.14035088 0.84210526 0.01754386</Values>
+      </Potential>
+      <Potential type="Table" role="conditionalProbability">
+        <Variables>
+          <Variable name="bleeding" />
+          <Variable name="platelet" />
+          <Variable name="inr" />
+        </Variables>
+        <Values>0.33333333 0.66666667 0.75 0.25 0.575 0.425 0.90909091 0.09090909 0.74418605 0.25581395 0.86666667 0.13333333 0.8626506 0.1373494 0.89361702 0.10638298 0.5 0.5 0.8 0.2 0.86956522 0.13043478 0.85714286 0.14285714</Values>
+      </Potential>
+      <Potential type="Table" role="conditionalProbability">
+        <Variables>
+          <Variable name="flatulence" />
+          <Variable name="gallstones" />
+        </Variables>
+        <Values>0.56925676 0.43074324 0.60747664 0.39252336</Values>
+      </Potential>
+      <Potential type="Table" role="conditionalProbability">
+        <Variables>
+          <Variable name="alcohol" />
+          <Variable name="Cirrhosis" />
+        </Variables>
+        <Values>0.88852459 0.11147541 0.77419355 0.22580645 0.79310345 0.20689655</Values>
+      </Potential>
+      <Potential type="Table" role="conditionalProbability">
+        <Variables>
+          <Variable name="encephalopathy" />
+          <Variable name="Cirrhosis" />
+        </Variables>
+        <Values>0.96721311 0.03278689 0.99678457 0.00321543 0.94827586 0.05172414</Values>
+      </Potential>
+      <Potential type="Table" role="conditionalProbability">
+        <Variables>
+          <Variable name="urea" />
+          <Variable name="encephalopathy" />
+        </Variables>
+        <Values>0.89940828 0.06508876 0.03550296 0.6521739165217392 0.1304347813043478 0.21739130217391303</Values>
+      </Potential>
+      <Potential type="Table" role="conditionalProbability">
+        <Variables>
+          <Variable name="ascites" />
+          <Variable name="Cirrhosis" />
+        </Variables>
+        <Values>0.90983607 0.09016393 0.90322581 0.09677419 0.36206897 0.63793103</Values>
+      </Potential>
+      <Potential type="Table" role="conditionalProbability">
+        <Variables>
+          <Variable name="hepatomegaly" />
+          <Variable name="hepatotoxic" />
+          <Variable name="RHepatitis" />
+          <Variable name="THepatitis" />
+          <Variable name="Steatosis" />
+          <Variable name="Hyperbilirubinemia" />
+        </Variables>
+        <Values>0.31055901 0.68944099 0.2244898 0.7755102 0.3125 0.6875 0.09090909 0.90909091 0.23076923 0.76923077 0.09090909 0.90909091 0.34090909 0.65909091 0.04761905 0.95238095 0.328125 0.671875 0.03225806 0.96774194 0.36231884 0.63768116 0.03225806 0.96774194 0.33802817 0.66197183 0.03225806 0.96774194 0.32692308 0.67307692 0.04761905 0.95238095 0.64150943 0.35849057 0.33333333 0.66666667 0.46376812 0.53623188 0.03225806 0.96774194 0.42666667 0.57333333 0.03225806 0.96774194 0.41666667 0.58333333 0.04761905 0.95238095 0.42253521 0.57746479 0.03225806 0.96774194 0.42372881 0.57627119 0.04761905 0.95238095 0.41509434 0.58490566 0.04761905 0.95238095 0.37254902 0.62745098 0.09090909 0.90909091</Values>
+      </Potential>
+      <Potential type="Table" role="conditionalProbability">
+        <Variables>
+          <Variable name="hepatalgia" />
+          <Variable name="hepatomegaly" />
+        </Variables>
+        <Values>0.96929825 0.03070175 0.68577495 0.31422505</Values>
+      </Potential>
+      <Potential type="Table" role="conditionalProbability">
+        <Variables>
+          <Variable name="density" />
+          <Variable name="encephalopathy" />
+        </Variables>
+        <Values>0.62278107 0.37721893 0.26086957 0.73913043</Values>
+      </Potential>
+      <Potential type="Table" role="conditionalProbability">
+        <Variables>
+          <Variable name="ESR" />
+          <Variable name="PBC" />
+          <Variable name="ChHepatitis" />
+          <Variable name="Steatosis" />
+          <Variable name="Hyperbilirubinemia" />
+        </Variables>
+        <Values>0.89940828 0.05325444 0.04733728 0.35714285642857146 0.21071428789285712 0.43214285567857147 0.8888888811111113 0.05555555944444441 0.05555555944444441 0.448 0.184 0.368 0.74725275 0.21978022 0.03296703 0.4738676 0.20557491 0.32055749 0.80597015 0.05970149 0.13432836 0.4590747345907474 0.17793594177935942 0.3629893236298933 0.8279569817204302 0.08602150913978492 0.08602150913978492 0.497326204973262 0.1711229917112299 0.331550803315508 0.6625 0.1625 0.175 0.51891892 0.18378378 0.2972973 0.91071429 0.07142857 0.01785714 0.4545454545454546 0.18181818181818182 0.36363636363636365 0.8695652113043479 0.0760869592391304 0.05434782945652171 0.49462366 0.17204301 0.33333333 0.7320261473202614 0.16339869163398693 0.10457516104575161 0.51470588 0.19117647 0.29411765 0.86075949 0.06329114 0.07594937 0.48611111 0.1712963 0.34259259 0.81927711 0.12048193 0.06024096 0.51381215 0.17679558 0.30939227 0.55487805 0.17682927 0.26829268 0.55737705 0.17213115 0.2704918</Values>
+      </Potential>
+      <Potential type="Table" role="conditionalProbability">
+        <Variables>
+          <Variable name="alt" />
+          <Variable name="ChHepatitis" />
+          <Variable name="RHepatitis" />
+          <Variable name="THepatitis" />
+          <Variable name="Steatosis" />
+          <Variable name="Cirrhosis" />
+        </Variables>
+        <Values>0.35215054352150543 0.4274193542741935 0.1747311817473118 0.0456989204569892 0.5555555544444445 0.27777777722222224 0.13888888861111112 0.027777779722222205 0.25274725 0.3956044 0.23076923 0.12087912 0.29239766 0.46783626 0.23391813 0.00584795 0.4375 0.375 0.16666667 0.02083333 0.26966292 0.41573034 0.2247191 0.08988764 0.5535055344649447 0.36900368630996316 0.07380073926199261 0.0036900399630996005 0.5272727247272727 0.3454545465454546 0.10909090890909091 0.018181819818181805 0.32291667 0.40625 0.1875 0.08333333 0.42755344427553443 0.42755344427553443 0.1425178114251781 0.002375300023753 0.49868766 0.36745407 0.1312336 0.00262467 0.31746032 0.41269841 0.19047619 0.07936508 0.49180328 0.41728763 0.08941878 0.00149031 0.5 0.38095238 0.10714286 0.01190476 0.352 0.416 0.168 0.064 0.4341534 0.44862518 0.11577424 0.00144718 0.47186933000000003 0.39927405000000005 0.12704174000000001 0.0018148800000000003 0.35000000000000003 0.41250000000000003 0.17500000000000002 0.06250000000000001 0.48620237 0.42049934 0.09198423 0.00131406 0.51580699 0.38269551 0.09983361 0.00166389 0.37647058623529417 0.4117647058823529 0.15294117847058825 0.058823529411764705 0.46065258539347415 0.4222648757773513 0.11516314884836852 0.0019193899808061003 0.4989154 0.39045553 0.10845987 0.0021692 0.38095238 0.41269841 0.15873016 0.04761905 0.25806452 0.51612903 0.19354839 0.03225806 0.44736842 0.39473684 0.13157895 0.02631579 0.2913385829133859 0.42519685425196857 0.19685039196850393 0.08661417086614172 0.34482759 0.48275862 0.15517241 0.01724138 0.40909091 0.40909091 0.15909091 0.02272727 0.27777778 0.43055556 0.20833333 0.08333333 0.42647059 0.44117647 0.11764706 0.01470588 0.46938776 0.3877551 0.12244898 0.02040816 0.32467532 0.41558442 0.18181818 0.07792208 0.3990024860099752 0.448877805511222 0.14962593850374065 0.0024937699750623007 0.45822102 0.40431267 0.13477089 0.00269542 0.31578947 0.42105263 0.19298246 0.07017544 0.43529412 0.44705882 0.10588235 0.01176471 0.46268657 0.40298507 0.11940299 0.01492537 0.34375 0.42708333 0.16666667 0.0625 0.4099821740998218 0.4634581146345812 0.12477718124777183 0.0017825300178253005 0.45738046 0.41580042 0.12474012 0.002079 0.33823529 0.42647059 0.17647059 0.05882353 0.447504304475043 0.447504304475043 0.1032702210327022 0.0017211700172117001 0.4798464452015356 0.40307101596928985 0.11516314884836852 0.0019193899808061003 0.3561643835616438 0.4246575342465753 0.1643835616438356 0.0547945205479452 0.44585987 0.42462845 0.12738854 0.00212314 0.43478261 0.41304348 0.13043478 0.02173913 0.36363636363636365 0.41818182418181826 0.16363636163636364 0.05454545054545451 0.3448275865517242 0.4655172353448277 0.12068965879310342 0.06896551931034481 0.46590909 0.38636364 0.11363636 0.03409091 0.31851852 0.42222222 0.17777778 0.08148148 0.38028169380281696 0.46478873464788734 0.12676056126760563 0.028169010281690107 0.4339622643396226 0.41509434415094343 0.1320754713207547 0.0188679201886792 0.3125 0.425 0.1875 0.075 0.45 0.425 0.1 0.025 0.48275862 0.39655172 0.10344828 0.01724138 0.34883721 0.41860465 0.1627907 0.06976744 0.42 0.44 0.12 0.02 0.4545454545454546 0.40909091409090914 0.11363636113636362 0.022727270227272705 0.33870968 0.41935484 0.17741935 0.06451613 0.45333333 0.42666667 0.09333333 0.02666667 0.47222222 0.38888889 0.11111111 0.02777778 0.34313725 0.42156863 0.16666667 0.06862745 0.4166666658333334 0.4499999955000001 0.11666666883333332 0.016666669833333304 0.46153846 0.40384615 0.11538462 0.01923077 0.3424657534246575 0.4246575342465753 0.1643835616438356 0.0684931506849315 0.43636363563636366 0.43636363563636366 0.10909090890909091 0.018181819818181805 0.46551724 0.39655172 0.12068966 0.01724138 0.34567900654321 0.4197530858024692 0.17283950827160494 0.061728399382716015 0.46 0.4 0.12 0.02 0.3965517239655172 0.3965517239655172 0.15517241155172412 0.051724140517241404 0.37254901627450987 0.4117647058823529 0.15686274843137252 0.058823529411764705</Values>
+      </Potential>
+      <Potential type="Table" role="conditionalProbability">
+        <Variables>
+          <Variable name="ast" />
+          <Variable name="ChHepatitis" />
+          <Variable name="RHepatitis" />
+          <Variable name="THepatitis" />
+          <Variable name="Steatosis" />
+          <Variable name="Cirrhosis" />
+        </Variables>
+        <Values>0.29569892 0.46774194 0.22580645 0.01075269 0.5 0.36111111 0.11111111 0.02777778 0.25274725252747254 0.46153846461538467 0.23076923230769233 0.05494505054945051 0.23391813233918132 0.6432748564327485 0.11695906116959061 0.0058479500584795 0.40339703 0.48832272 0.10615711 0.00212314 0.25842696741573035 0.5056179749438203 0.20224718797752814 0.03370786966292131 0.5535055344649447 0.36900368630996316 0.07380073926199261 0.0036900399630996005 0.49001815 0.41742287 0.0907441 0.00181488 0.32291667 0.45833333 0.1875 0.03125 0.41362530000000003 0.5109489100000001 0.07299270000000001 0.0024330900000000006 0.45822102458221026 0.45822102458221026 0.08086253080862531 0.0026954200269542006 0.3064516130645161 0.4838709748387098 0.17741935177419352 0.032258060322580606 0.49180328 0.43219076 0.07451565 0.00149031 0.48134777 0.433213 0.08423586 0.00120337 0.34920635 0.46031746 0.15873016 0.03174603 0.41369472413694724 0.49928673499286735 0.0855920108559201 0.0014265300142653002 0.45372051 0.45372051 0.0907441 0.00181488 0.34177215 0.48101266 0.15189873 0.02531646 0.49267643 0.43941411 0.0665779 0.00133156 0.49916805 0.41597338 0.08319468 0.00166389 0.38095238380952384 0.45238095452380955 0.14285714142857142 0.023809520238095204 0.46065259 0.46065259 0.07677543 0.00191939 0.4670913 0.44585987 0.08492569 0.00212314 0.37096774 0.46774194 0.14516129 0.01612903 0.22580645225806453 0.6774193567741936 0.06451613064516132 0.032258060322580606 0.4210526342105263 0.47368421473684214 0.0921052609210526 0.0131578901315789 0.28346457 0.49606299 0.18110236 0.03937008 0.3098106730981067 0.5851979358519793 0.1032702210327022 0.0017211700172117001 0.38548753 0.52154195 0.09070295 0.00226757 0.2638888873611111 0.5277777747222222 0.18055555819444444 0.027777779722222205 0.43219076 0.49180328 0.07451565 0.00149031 0.44806517 0.46843177 0.0814664 0.00203666 0.32467532 0.48051948 0.16883117 0.02597403 0.37406483625935166 0.5486284245137157 0.07481296925187032 0.0024937699750623007 0.40431267 0.51212938 0.08086253 0.00269542 0.30909091000000005 0.5090909100000001 0.16363636000000004 0.018181820000000005 0.42973287 0.48780488 0.08130081 0.00116144 0.44709389 0.46199702 0.08941878 0.00149031 0.33333333 0.47916667 0.15625 0.03125 0.38528897 0.52539405 0.08756567 0.00175131 0.42769857 0.48879837 0.0814664 0.00203666 0.3235294132352941 0.500000005 0.1470588214705882 0.0294117602941176 0.4475043 0.48192771 0.06884682 0.00172117 0.46065259 0.46065259 0.07677543 0.00191939 0.3561643835616438 0.4794520547945205 0.136986301369863 0.0273972602739726 0.42462845 0.48832272 0.08492569 0.00212314 0.42128603 0.48780488 0.0886918 0.00221729 0.36363636 0.49090909 0.12727273 0.01818182 0.34482759 0.5 0.13793103 0.01724138 0.44318181556818187 0.44318181556818187 0.10227272897727273 0.0113636398863636 0.31617646683823536 0.47058823529411764 0.17647058823529413 0.036764709632352906 0.36568214000000004 0.5203938100000001 0.11251758000000002 0.0014064700000000002 0.40665434 0.4805915 0.11090573 0.00184843 0.3 0.5 0.175 0.025 0.4551201 0.4551201 0.08849558 0.00126422 0.46471601 0.4302926 0.10327022 0.00172117 0.35294118 0.45882353 0.16470588 0.02352941 0.41916167580838326 0.4790419152095809 0.09980039900199601 0.0019960099800399003 0.42128603 0.46563193 0.11086475 0.00221729 0.33870968 0.48387097 0.16129032 0.01612903 0.45272969452729694 0.45272969452729694 0.0932090509320905 0.0013315600133156002 0.45649073 0.44222539 0.09985735 0.00142653 0.33980583 0.46601942 0.16504854 0.02912621 0.39933444399334445 0.4991680549916805 0.09983361099833611 0.0016638900166389 0.44145873 0.46065259 0.09596929 0.00191939 0.33333333 0.48611111 0.15277778 0.02777778 0.43557169 0.47186933 0.0907441 0.00181488 0.447504304475043 0.447504304475043 0.1032702210327022 0.0017211700172117001 0.34567901 0.4691358 0.16049383 0.02469136 0.43912175560878247 0.4590818354091817 0.09980039900199601 0.0019960099800399003 0.38596491 0.45614035 0.14035088 0.01754386 0.37254902 0.47058824 0.1372549 0.01960784</Values>
+      </Potential>
+      <Potential type="Table" role="conditionalProbability">
+        <Variables>
+          <Variable name="amylase" />
+          <Variable name="gallstones" />
+        </Variables>
+        <Values>0.97297297 0.01689189 0.01013514 0.93457944 0.04672897 0.01869159</Values>
+      </Potential>
+      <Potential type="Table" role="conditionalProbability">
+        <Variables>
+          <Variable name="ggtp" />
+          <Variable name="PBC" />
+          <Variable name="THepatitis" />
+          <Variable name="RHepatitis" />
+          <Variable name="Steatosis" />
+          <Variable name="ChHepatitis" />
+          <Variable name="Hyperbilirubinemia" />
+        </Variables>
+        <Values>0.68 0.144 0.096 0.08 0.40357143 0.13214286 0.225 0.23928571 0.8856088511439114 0.0369003696309963 0.0036900399630995996 0.0738007392619926 0.47478992 0.11764706 0.19327731 0.21428571 0.8187134581871346 0.05847953058479531 0.005847950058479501 0.11695906116959062 0.45887446 0.12121212 0.1991342 0.22077922 0.88691796 0.0443459 0.00221729 0.06651885 0.48979592 0.11564626 0.18367347 0.21088435 0.7611940223880598 0.13432835865671644 0.029850749701492502 0.07462686925373131 0.49626866 0.12686567 0.17910448 0.19776119 0.82716049 0.09876543 0.01234568 0.0617284 0.52071006 0.12426036 0.16568047 0.18934911 0.81081081 0.10810811 0.01351351 0.06756757 0.50909091 0.12727273 0.16969697 0.19393939 0.83179298 0.09242144 0.00184843 0.07393715 0.5322580653225807 0.12096774120967742 0.16129032161290321 0.18548387185483872 0.74792244 0.19390582 0.05540166 0.00277008 0.46840149 0.133829 0.19702602 0.20074349 0.83333333 0.10606061 0.03030303 0.03030303 0.5 0.125 0.18125 0.19375 0.8103448218965519 0.12068965879310342 0.034482759655172404 0.034482759655172404 0.4871794851282052 0.12820512871794873 0.18589743814102563 0.19871794801282053 0.83333333 0.0952381 0.02380952 0.04761905 0.51304348 0.12173913 0.17391304 0.19130435 0.77894737 0.13684211 0.04210526 0.04210526 0.51396648 0.13407821 0.16759777 0.18435754 0.8 0.12307692 0.03076923 0.04615385 0.53787879 0.12878788 0.15909091 0.17424242 0.7833333378333334 0.1333333313333333 0.0333333303333333 0.0500000005 0.52713178 0.13178295 0.1627907 0.17829457 0.81632653 0.10204082 0.02040816 0.06122449 0.5480769254807693 0.12500000125000002 0.1538461515384615 0.17307692173076922 0.59340659 0.17582418 0.14285714 0.08791209 0.47491639 0.13712375 0.19397993 0.19397993 0.72727273 0.12121212 0.08080808 0.07070707 0.49726776 0.13114754 0.18579235 0.18579235 0.7032967 0.13186813 0.08791209 0.07692308 0.48603352486033524 0.13407821134078213 0.18994413189944132 0.18994413189944132 0.71875 0.125 0.078125 0.078125 0.51145038 0.12977099 0.17557252 0.18320611 0.6923076830769233 0.1452991485470085 0.08547008914529912 0.07692307923076921 0.50731707 0.13658537 0.17560976 0.1804878 0.72619048 0.13095238 0.07142857 0.07142857 0.5306122400000001 0.12925170000000002 0.16326531000000002 0.17687075000000002 0.7088607529113925 0.13924050860759493 0.07594936924050631 0.07594936924050631 0.52 0.13333333 0.16666667 0.18 0.67105263 0.13157895 0.09210526 0.10526316 0.5446428545535714 0.12499999875000002 0.16071428839285715 0.16964285830357143 0.97864769 0.01779359 0.00177936 0.00177936 0.48675496513245037 0.12251655877483442 0.19205297807947025 0.19867549801324505 0.90540541 0.05405405 0.01351351 0.02702703 0.52325581 0.11046512 0.1744186 0.19186047 0.89230769 0.06153846 0.01538462 0.03076923 0.51190476 0.11309524 0.17857143 0.19642857 0.911062900889371 0.043383949566160505 0.0021691999783080003 0.043383949566160505 0.5409836045901639 0.10655737893442621 0.16393442836065572 0.18852458811475412 0.83333333 0.10185185 0.02777778 0.03703704 0.53645833 0.11979167 0.16145833 0.18229167 0.85714286 0.08571429 0.01428571 0.04285714 0.56115108 0.11510791 0.15107914 0.17266187 0.8461538415384616 0.09230768907692312 0.015384619846153802 0.04615384953846151 0.55147059 0.11764706 0.15441176 0.17647059 0.8662900113370999 0.07532956924670431 0.0018832399811676004 0.05649717943502821 0.57407407 0.11111111 0.14814815 0.16666667 0.74725275 0.13186813 0.07692308 0.04395604 0.5045045050450451 0.12612613126126132 0.1846846818468468 0.1846846818468468 0.81944444 0.09722222 0.04166667 0.04166667 0.53846154 0.11888112 0.16783217 0.17482517 0.8030302919696971 0.10606060893939391 0.04545454954545451 0.04545454954545451 0.52857143 0.12142857 0.17142857 0.17857143 0.85416667 0.08333333 0.02083333 0.04166667 0.5555555544444445 0.11111110888888892 0.15740740842592593 0.17592592824074074 0.7888888978888889 0.12222222122222222 0.04444444044444441 0.04444444044444441 0.5471698154716982 0.12578616125786163 0.15723270157232702 0.16981132169811322 0.8181818118181818 0.10606060893939391 0.030303029696969706 0.04545454954545451 0.57024793 0.11570248 0.14876033 0.16528926 0.80645161 0.11290323 0.03225806 0.0483871 0.55833333 0.125 0.15 0.16666667 0.81481481 0.09259259 0.03703704 0.05555556 0.5876288641237114 0.11340205886597941 0.14432989855670103 0.15463917845360822 0.75471698 0.12264151 0.06603774 0.05660377 0.5130434748695653 0.12608695873913042 0.17826086821739132 0.18260869817391304 0.7951807279518073 0.09638554096385542 0.04819277048192771 0.06024096060240961 0.5354838646451614 0.12258064877419352 0.16774193832258064 0.17419354825806452 0.7820512878205128 0.10256410102564101 0.051282050512820504 0.06410256064102561 0.52631579 0.125 0.17105263 0.17763158 0.7868852421311476 0.09836065901639342 0.04918032950819671 0.06557376934426232 0.5508474544915254 0.11864406881355932 0.16101694838983052 0.16949152830508474 0.7532467575324676 0.1168831211688312 0.06493506064935062 0.06493506064935062 0.52513966 0.12290503 0.17318436 0.17877095 0.8 0.1 0.04285714 0.05714286 0.5530303 0.12121212 0.15909091 0.16666667 0.77777778 0.11111111 0.04761905 0.06349206 0.54054054 0.12162162 0.16216216 0.17567568 0.58490566 0.12264151 0.14150943 0.1509434 0.5795454557954546 0.1136363611363636 0.1477272714772727 0.1590909115909091</Values>
+      </Potential>
+      <Potential type="Table" role="conditionalProbability">
+        <Variables>
+          <Variable name="cholesterol" />
+          <Variable name="PBC" />
+          <Variable name="Steatosis" />
+          <Variable name="ChHepatitis" />
+        </Variables>
+        <Values>0.90182141 0.09773434 4.4425E-4 0.51071429 0.36428571 0.125 0.73134328 0.2238806 0.04477612 0.5708812242911878 0.325670496743295 0.10344827896551723 0.96952909 0.02770083 0.00277008 0.5796178357961783 0.3152866231528662 0.10509554105095541 0.6918239 0.23899371 0.06918239 0.60227273 0.30113636 0.09659091 0.9010989 0.06593407 0.03296703 0.5936507959365079 0.304761903047619 0.10158730101587302 0.62844037 0.27981651 0.09174312 0.62758621 0.28275862 0.08965517</Values>
+      </Potential>
+      <Potential type="Table" role="conditionalProbability">
+        <Variables>
+          <Variable name="hbsag" />
+          <Variable name="vh_amn" />
+          <Variable name="ChHepatitis" />
+        </Variables>
+        <Values>0.95325203 0.04674797 0.8875 0.1125 0.95652174 0.04347826 0.53846154 0.46153846 0.80952381 0.19047619 0.5 0.5</Values>
+      </Potential>
+      <Potential type="Table" role="conditionalProbability">
+        <Variables>
+          <Variable name="hbsag_anti" />
+          <Variable name="vh_amn" />
+          <Variable name="ChHepatitis" />
+        </Variables>
+        <Values>0.98577236 0.01422764 0.9625 0.0375 0.995671 0.004329 0.99236641 0.00763359 0.98412698 0.01587302 0.96428571 0.03571429</Values>
+      </Potential>
+      <Potential type="Table" role="conditionalProbability">
+        <Variables>
+          <Variable name="anorexia" />
+          <Variable name="RHepatitis" />
+          <Variable name="THepatitis" />
+        </Variables>
+        <Values>0.71908397 0.28091603 0.88235294 0.11764706 0.77777778 0.22222222 0.81818182 0.18181818</Values>
+      </Potential>
+      <Potential type="Table" role="conditionalProbability">
+        <Variables>
+          <Variable name="nausea" />
+          <Variable name="RHepatitis" />
+          <Variable name="THepatitis" />
+        </Variables>
+        <Values>0.71450382 0.28549618 0.64705882 0.35294118 0.62962963 0.37037037 0.63636364 0.36363636</Values>
+      </Potential>
+      <Potential type="Table" role="conditionalProbability">
+        <Variables>
+          <Variable name="spleen" />
+          <Variable name="Cirrhosis" />
+        </Variables>
+        <Values>0.89836066 0.10163934 0.74193548 0.25806452 0.51724138 0.48275862</Values>
+      </Potential>
+      <Potential type="Table" role="conditionalProbability">
+        <Variables>
+          <Variable name="consciousness" />
+          <Variable name="encephalopathy" />
+        </Variables>
+        <Values>0.98372781 0.01627219 0.69565217 0.30434783</Values>
+      </Potential>
+      <Potential type="Table" role="conditionalProbability">
+        <Variables>
+          <Variable name="spiders" />
+          <Variable name="ascites" />
+          <Variable name="bleeding" />
+        </Variables>
+        <Values>0.81640625 0.18359375 0.64705882 0.35294118 0.70652174 0.29347826 0.37037037 0.62962963</Values>
+      </Potential>
+      <Potential type="Table" role="conditionalProbability">
+        <Variables>
+          <Variable name="skin" />
+          <Variable name="bilirubin" />
+        </Variables>
+        <Values>0.8177458 0.1822542 0.28365385 0.71634615 0.12068966 0.87931034 0.00621118 0.99378882</Values>
+      </Potential>
+      <Potential type="Table" role="conditionalProbability">
+        <Variables>
+          <Variable name="albumin" />
+          <Variable name="Cirrhosis" />
+        </Variables>
+        <Values>0.11803279 0.14262295 0.73934426 0.03215434 0.00321543 0.96463023 0.00172117 0.08605852 0.91222031</Values>
+      </Potential>
+      <Potential type="Table" role="conditionalProbability">
+        <Variables>
+          <Variable name="edge" />
+          <Variable name="Cirrhosis" />
+        </Variables>
+        <Values>0.76557377 0.23442623 0.5483871 0.4516129 0.24137931 0.75862069</Values>
+      </Potential>
+      <Potential type="Table" role="conditionalProbability">
+        <Variables>
+          <Variable name="irregular_liver" />
+          <Variable name="Cirrhosis" />
+        </Variables>
+        <Values>0.89344262 0.10655738 0.64516129 0.35483871 0.39655172 0.60344828</Values>
+      </Potential>
+      <Potential type="Table" role="conditionalProbability">
+        <Variables>
+          <Variable name="hbc_anti" />
+          <Variable name="vh_amn" />
+          <Variable name="ChHepatitis" />
+        </Variables>
+        <Values>0.89837398 0.10162602 0.9125 0.0875 0.86956522 0.13043478 0.99236641 0.00763359 0.92063492 0.07936508 0.99644128 0.00355872</Values>
+      </Potential>
+      <Potential type="Table" role="conditionalProbability">
+        <Variables>
+          <Variable name="hcv_anti" />
+          <Variable name="vh_amn" />
+          <Variable name="ChHepatitis" />
+        </Variables>
+        <Values>0.99796748 0.00203252 0.99875156 0.00124844 0.995671 0.004329 0.99236641 0.00763359 0.99841521 0.00158479 0.99644128 0.00355872</Values>
+      </Potential>
+      <Potential type="Table" role="conditionalProbability">
+        <Variables>
+          <Variable name="joints" />
+          <Variable name="ama" />
+        </Variables>
+        <Values>0.88598131 0.11401869 0.89634146 0.10365854</Values>
+      </Potential>
+      <Potential type="Table" role="conditionalProbability">
+        <Variables>
+          <Variable name="palms" />
+          <Variable name="inr" />
+        </Variables>
+        <Values>0.62318841 0.37681159 0.84369748 0.15630252 0.85714286 0.14285714</Values>
+      </Potential>
+      <Potential type="Table" role="conditionalProbability">
+        <Variables>
+          <Variable name="hbeag" />
+          <Variable name="vh_amn" />
+          <Variable name="ChHepatitis" />
+        </Variables>
+        <Values>0.99796748 0.00203252 0.99875156 0.00124844 0.95652174 0.04347826 0.99236641 0.00763359 0.99841521 0.00158479 0.99644128 0.00355872</Values>
+      </Potential>
+      <Potential type="Table" role="conditionalProbability">
+        <Variables>
+          <Variable name="jaund_symptoms" />
+          <Variable name="bilirubin" />
+        </Variables>
+        <Values>0.7146283 0.2853717 0.36538462 0.63461538 0.44827586 0.55172414 0.125 0.875</Values>
+      </Potential>
+      <Potential type="Table" role="conditionalProbability">
+        <Variables>
+          <Variable name="carcinoma" />
+          <Variable name="Cirrhosis" />
+          <Variable name="PBC" />
+        </Variables>
+        <Values>0.9 0.1 0.6 0.4 0.7 0.3 0.9 0.1 0.6 0.4 0.7 0.3</Values>
+      </Potential>
+    </Potentials>
+    <AdditionalProperties>
+      <Property name="VisualPrecision" value="0.0" />
+      <Property name="Version" value="1.0" />
+    </AdditionalProperties>
+  </ProbNet>
+</ProbModelXML>

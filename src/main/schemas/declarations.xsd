@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema attributeFormDefault="unqualified"
+	elementFormDefault="qualified"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	
+	<xs:simpleType name="networkType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="BayesianNetwork" />
+			<xs:enumeration value="MarkovNetwork" />
+			<xs:enumeration value="InfluenceDiagram" />
+			<xs:enumeration value="LIMID" />
+			<xs:enumeration value="DecisionAnalysisNetwork" />
+			<xs:enumeration value="DynamicBayesianNetwork" />
+			<xs:enumeration value="SimpleMarkovModel" />
+			<xs:enumeration value="MDP" />
+			<xs:enumeration value="POMDP" />
+			<xs:enumeration value="Dec-POMDP" />
+			<xs:enumeration value="DynamicLIMID" />
+			<xs:enumeration value="MPAD" />
+			<xs:enumeration value="DAN" />
+			<xs:enumeration value="MID" />
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="variableType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="finiteStates" />
+			<xs:enumeration value="numeric" />
+			<xs:enumeration value="discretized" />
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="variableRole">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="chance" />
+			<xs:enumeration value="decision" />
+			<xs:enumeration value="utility" />
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>

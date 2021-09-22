@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ProbModelXML formatVersion="0.2.0">
+  <ProbNet type="DAN">
+    <Comment showWhenOpeningNetwork="false"><![CDATA[<<Double click to add/modify comment>>]]></Comment>
+    <DecisionCriteria>
+      <Criterion name="---" unit="---" />
+    </DecisionCriteria>
+    <Properties />
+    <Variables>
+      <Variable name="U0" type="numeric" role="utility">
+        <Coordinates x="802" y="280" />
+        <Unit />
+        <Precision>0.01</Precision>
+        <Criterion name="---" />
+      </Variable>
+      <Variable name="U1" type="numeric" role="utility">
+        <Coordinates x="771" y="175" />
+        <Unit />
+        <Precision>0.01</Precision>
+        <Criterion name="---" />
+      </Variable>
+      <Variable name="A" type="finiteStates" role="chance">
+        <Coordinates x="744" y="58" />
+        <States>
+          <State name="absent" />
+          <State name="present" />
+        </States>
+      </Variable>
+    </Variables>
+    <Links>
+      <Link directed="true">
+        <Variable name="U1" />
+        <Variable name="U0" />
+      </Link>
+      <Link directed="true">
+        <Variable name="A" />
+        <Variable name="U1" />
+      </Link>
+    </Links>
+    <Potentials>
+      <Potential type="Function" role="utility">
+        <UtilityVariable name="U0" />
+        <Variables>
+          <Variable name="U1" />
+        </Variables>
+        <Function>abs({U1})</Function>
+      </Potential>
+      <Potential type="Table" role="conditionalProbability">
+        <UtilityVariable name="U1" />
+        <Variables>
+          <Variable name="A" />
+        </Variables>
+        <Values>3.0 -9.0</Values>
+      </Potential>
+      <Potential type="Table" role="conditionalProbability">
+        <Variables>
+          <Variable name="A" />
+        </Variables>
+        <Values>0.7 0.3</Values>
+      </Potential>
+    </Potentials>
+  </ProbNet>
+  <InferenceOptions>
+    <MulticriteriaOptions>
+      <SelectedAnalysisType>UNICRITERION</SelectedAnalysisType>
+      <Unicriterion>
+        <Scales>
+          <Scale Criterion="---" Value="1.0" />
+        </Scales>
+      </Unicriterion>
+      <CostEffectiveness>
+        <Scales>
+          <Scale Criterion="---" Value="1.0" />
+        </Scales>
+        <CE_Criteria>
+          <CE_Criterion Criterion="---" Value="Cost" />
+        </CE_Criteria>
+      </CostEffectiveness>
+    </MulticriteriaOptions>
+  </InferenceOptions>
+</ProbModelXML>

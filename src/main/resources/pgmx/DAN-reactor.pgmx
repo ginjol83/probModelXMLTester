@@ -1,0 +1,336 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ProbModelXML formatVersion="0.2.0">
+  <ProbNet type="DAN">
+    <Comment showWhenOpeningNetwork="true"><![CDATA[<html>
+  <head>
+    
+  </head>
+  <body>
+    <p style="margin-top: 0">
+      &quot;The Choice of a Power Reactor&quot;
+    </p>
+    <p style="margin-top: 0">
+      
+    </p>
+    <p style="margin-top: 0">
+      It was proposed in:
+    </p>
+    <p style="margin-top: 0">
+      
+    </p>
+    <p style="margin-top: 0">
+      Z. Covaliu and R. M. Oliver, &quot;Representation and solution of decision 
+      problems using sequential decision diagrams&quot;, <i>Management Science</i>, 
+      vol. 41,
+    </p>
+    <p style="margin-top: 0">
+      pp. 1860&#8211;1881, 1995.
+    </p>
+    <p style="margin-top: 0">
+      
+    </p>
+    <p style="margin-top: 0">
+      And it is described as follows:
+    </p>
+    <p style="margin-top: 0">
+      
+    </p>
+    <p style="margin-top: 0">
+      &quot;Consider the problem of choosing a nuclear power reactor to provide 
+      future energy needs. If the decision maker decides to build such a 
+      reactor he or she can either select a &quot;conventional&quot; type or an 
+      &quot;advanced&quot; type. The latter, if successful, is more promising in its 
+      economic return, but having larger uncertainties is riskier. Before 
+      making the main decision, the decision maker can conduct tests, at a 
+      known cost, of critical components of the advanced reactor, the results 
+      of which will reduce some uncertainties related to the prospects of 
+      this, but not of the conventional, reactor. There are at most two 
+      decisions to be made denoted by D1 and D2. Initially, one of three 
+      alternatives has to be chosen: doing nothing (Di = dn), building with no 
+      test (Dl = nt), and testing (Dl = t). If the initial decision is to 
+      build without testing, a second decision must be made on the reactor 
+      type: conventional (D2 c) or advanced (D2 = a). If D1 = t, the test 
+      outcome, denoted by T, may be excellent (T = e), good (T = g), or bad (T 
+      = b). In the latter case, the advanced option is not viable, and the 
+      conventional reactor will be constructed.&quot;
+    </p>
+    <p style="margin-top: 0">
+      
+    </p>
+    <p style="margin-top: 0">
+      It is worth noting we have added the possibility of not building any 
+      reactor at all.
+    </p>
+  </body>
+</html>]]></Comment>
+    <DecisionCriteria>
+      <Criterion name="---" unit="" />
+    </DecisionCriteria>
+    <AdditionalProperties />
+    <Variables>
+      <Variable name="Result of advanced reactor" type="finiteStates" role="chance">
+        <Coordinates x="473" y="321" />
+        <States>
+          <State name="success" />
+          <State name="limited accident" />
+          <State name="major accident" />
+        </States>
+      </Variable>
+      <Variable name="Result of test" type="finiteStates" role="chance">
+        <Comment><![CDATA[<html>
+  <head>
+    
+  </head>
+  <body>
+    <p style="margin-top: 0">
+      The result of the test of of critical components of the advanced reactor.
+    </p>
+  </body>
+</html>]]></Comment>
+        <Coordinates x="310" y="147" />
+        <States>
+          <State name="bad" />
+          <State name="good" />
+          <State name="excellent" />
+        </States>
+      </Variable>
+      <Variable name="Result of conventional reactor" type="finiteStates" role="chance">
+        <Coordinates x="174" y="323" />
+        <States>
+          <State name="success" />
+          <State name="failure" />
+        </States>
+      </Variable>
+      <Variable name="Quality of components" type="finiteStates" role="chance">
+        <Comment><![CDATA[<html>
+  <head>
+    
+  </head>
+  <body>
+    <p style="margin-top: 0">
+      Represents the quality of critical components to build an advanced 
+      reactor.
+    </p>
+  </body>
+</html>]]></Comment>
+        <Coordinates x="473" y="69" />
+        <States>
+          <State name="bad" />
+          <State name="good" />
+          <State name="excellent" />
+        </States>
+      </Variable>
+      <Variable name="Test decision" type="finiteStates" role="decision">
+        <Comment><![CDATA[<html>
+  <head>
+    
+  </head>
+  <body>
+    <p style="margin-top: 0">
+      Represents the decision over to do or not the test of the critical 
+      components of an advanced reactor
+    </p>
+  </body>
+</html>]]></Comment>
+        <Coordinates x="146" y="64" />
+        <States>
+          <State name="test" />
+          <State name="notest" />
+        </States>
+      </Variable>
+      <Variable name="Build decision" type="finiteStates" role="decision">
+        <Comment><![CDATA[<html>
+  <head>
+    
+  </head>
+  <body>
+    <p style="margin-top: 0">
+      The decision over what kind of reactor to build (or not to build a 
+      reactor at all).
+    </p>
+  </body>
+</html>]]></Comment>
+        <Coordinates x="310" y="233" />
+        <States>
+          <State name="build advanced" />
+          <State name="build conventional" />
+          <State name="build none" />
+        </States>
+      </Variable>
+      <Variable name="Cost of test" type="numeric" role="utility">
+        <Comment><![CDATA[<html>
+  <head>
+    
+  </head>
+  <body>
+    <p style="margin-top: 0">
+      The cost of the test of of critical components of the advanced reactor.
+    </p>
+  </body>
+</html>]]></Comment>
+        <Coordinates x="146" y="141" />
+        <Unit />
+        <Precision>0.01</Precision>
+        <Criterion name="---" />
+      </Variable>
+      <Variable name="Benefit of advanced reactor" type="numeric" role="utility">
+        <Coordinates x="473" y="397" />
+        <Unit />
+        <Precision>0.01</Precision>
+        <Criterion name="---" />
+      </Variable>
+      <Variable name="Benefit of conventional reactor" type="numeric" role="utility">
+        <Coordinates x="174" y="395" />
+        <Unit />
+        <Precision>0.01</Precision>
+        <Criterion name="---" />
+      </Variable>
+    </Variables>
+    <Links>
+      <Link directed="true">
+        <Variable name="Result of advanced reactor" />
+        <Variable name="Benefit of advanced reactor" />
+      </Link>
+      <Link directed="true">
+        <Variable name="Result of test" />
+        <Variable name="Build decision" />
+        <Potential type="Table" role="linkRestriction">
+          <Variables>
+            <Variable name="Result of test" />
+            <Variable name="Build decision" />
+          </Variables>
+          <Values>0.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0</Values>
+        </Potential>
+      </Link>
+      <Link directed="true">
+        <Variable name="Result of conventional reactor" />
+        <Variable name="Benefit of conventional reactor" />
+      </Link>
+      <Link directed="true">
+        <Variable name="Quality of components" />
+        <Variable name="Result of test" />
+      </Link>
+      <Link directed="true">
+        <Variable name="Quality of components" />
+        <Variable name="Result of advanced reactor" />
+      </Link>
+      <Link directed="true">
+        <Variable name="Test decision" />
+        <Variable name="Cost of test" />
+      </Link>
+      <Link directed="true">
+        <Variable name="Test decision" />
+        <Variable name="Result of test" />
+        <Potential type="Table" role="linkRestriction">
+          <Variables>
+            <Variable name="Test decision" />
+            <Variable name="Result of test" />
+          </Variables>
+          <Values>1.0 0.0 1.0 0.0 1.0 0.0</Values>
+        </Potential>
+        <RevelationCondition>
+          <State name="test" />
+        </RevelationCondition>
+      </Link>
+      <Link directed="true">
+        <Variable name="Test decision" />
+        <Variable name="Build decision" />
+      </Link>
+      <Link directed="true">
+        <Variable name="Build decision" />
+        <Variable name="Result of advanced reactor" />
+        <Potential type="Table" role="linkRestriction">
+          <Variables>
+            <Variable name="Build decision" />
+            <Variable name="Result of advanced reactor" />
+          </Variables>
+          <Values>1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0</Values>
+        </Potential>
+        <RevelationCondition>
+          <State name="build advanced" />
+        </RevelationCondition>
+      </Link>
+      <Link directed="true">
+        <Variable name="Build decision" />
+        <Variable name="Result of conventional reactor" />
+        <Potential type="Table" role="linkRestriction">
+          <Variables>
+            <Variable name="Build decision" />
+            <Variable name="Result of conventional reactor" />
+          </Variables>
+          <Values>0.0 1.0 0.0 0.0 1.0 0.0</Values>
+        </Potential>
+        <RevelationCondition>
+          <State name="build conventional" />
+        </RevelationCondition>
+      </Link>
+    </Links>
+    <Potentials>
+      <Potential type="Table" role="conditionalProbability">
+        <Variables>
+          <Variable name="Result of advanced reactor" />
+          <Variable name="Build decision" />
+          <Variable name="Quality of components" />
+        </Variables>
+        <Values>0.0 0.7 0.3 0.0 0.0 0.0 0.0 0.0 0.0 0.4 0.46 0.14 0.0 0.0 0.0 0.0 0.0 0.0 0.9 0.06 0.04 0.0 0.0 0.0 0.0 0.0 0.0</Values>
+      </Potential>
+      <Potential type="Table" role="conditionalProbability">
+        <Variables>
+          <Variable name="Result of test" />
+          <Variable name="Test decision" />
+          <Variable name="Quality of components" />
+        </Variables>
+        <Values>1.0 0.0 0.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0</Values>
+      </Potential>
+      <Potential type="Table" role="conditionalProbability">
+        <Variables>
+          <Variable name="Result of conventional reactor" />
+          <Variable name="Build decision" />
+        </Variables>
+        <Values>0.0 0.0 0.98 0.02 0.0 0.0</Values>
+      </Potential>
+      <Potential type="Table" role="conditionalProbability">
+        <Variables>
+          <Variable name="Quality of components" />
+        </Variables>
+        <Values>0.1 0.3 0.6</Values>
+      </Potential>
+      <Potential type="Table" role="utility">
+        <UtilityVariable name="Cost of test" />
+        <Variables>
+          <Variable name="Test decision" />
+        </Variables>
+        <Values>-1.0 0.0</Values>
+      </Potential>
+      <Potential type="Table" role="utility">
+        <UtilityVariable name="Benefit of advanced reactor" />
+        <Variables>
+          <Variable name="Result of advanced reactor" />
+        </Variables>
+        <Values>12.0 -6.0 -10.0</Values>
+      </Potential>
+      <Potential type="Table" role="utility">
+        <UtilityVariable name="Benefit of conventional reactor" />
+        <Variables>
+          <Variable name="Result of conventional reactor" />
+        </Variables>
+        <Values>8.0 -4.0</Values>
+      </Potential>
+    </Potentials>
+  </ProbNet>
+  <InferenceOptions>
+    <MulticriteriaOptions>
+      <SelectedAnalysisType>UNICRITERION</SelectedAnalysisType>
+      <Unicriterion>
+        <Scales>
+          <Scale Criterion="---" Value="1.0" />
+        </Scales>
+      </Unicriterion>
+      <CostEffectiveness>
+        <CE_Criteria>
+          <CE_Criterion Criterion="---" Value="Cost" />
+        </CE_Criteria>
+      </CostEffectiveness>
+    </MulticriteriaOptions>
+  </InferenceOptions>
+</ProbModelXML>

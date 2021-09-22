@@ -1,0 +1,2632 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ProbModelXML formatVersion="0.2.0">
+  <ProbNet type="MID">
+    <DecisionCriteria>
+      <Criterion name="cost" />
+      <Criterion name="effectiveness" />
+    </DecisionCriteria>
+    <TimeUnit unit="YEAR" Value="1.0" />
+    <AdditionalProperties />
+    <Variables>
+      <Variable name="Age" timeSlice="0" type="numeric" role="chance">
+        <Coordinates x="156" y="215" />
+        <AdditionalProperties>
+          <Property name="Relevance" value="7.0" />
+        </AdditionalProperties>
+        <Unit />
+        <Precision>0.01</Precision>
+        <Thresholds>
+          <Threshold value="10.0" belongsTo="right" />
+          <Threshold value="Infinity" belongsTo="right" />
+        </Thresholds>
+      </Variable>
+      <Variable name="Infection 16-18" timeSlice="0" type="finiteStates" role="chance">
+        <Comment><![CDATA[<html>
+  <head>
+    
+  </head>
+  <body>
+    <p style="margin-top: 0">
+      Indica que la mujer se ha infectado en este instante.
+    </p>
+  </body>
+</html>]]></Comment>
+        <Coordinates x="440" y="290" />
+        <AdditionalProperties>
+          <Property name="Relevance" value="7.0" />
+        </AdditionalProperties>
+        <States>
+          <State name="no" />
+          <State name="yes" />
+        </States>
+      </Variable>
+      <Variable name="Health state" timeSlice="0" type="finiteStates" role="chance">
+        <Coordinates x="204" y="386" />
+        <AdditionalProperties>
+          <Property name="Relevance" value="7.0" />
+        </AdditionalProperties>
+        <States>
+          <State name="negative" />
+          <State name="CIN1" />
+          <State name="CIN2" />
+          <State name="CIN3" />
+          <State name="CIS1" />
+          <State name="CIS2" />
+          <State name="LCC" />
+          <State name="RCC" />
+          <State name="DCC" />
+          <State name="dead" />
+        </States>
+      </Variable>
+      <Variable name="Death CC" timeSlice="0" type="finiteStates" role="chance">
+        <Coordinates x="450" y="360" />
+        <AdditionalProperties>
+          <Property name="Relevance" value="7.0" />
+        </AdditionalProperties>
+        <States>
+          <State name="no" />
+          <State name="yes" />
+        </States>
+      </Variable>
+      <Variable name="Death OC" timeSlice="0" type="finiteStates" role="chance">
+        <Coordinates x="96" y="292" />
+        <AdditionalProperties>
+          <Property name="Relevance" value="7.0" />
+        </AdditionalProperties>
+        <States>
+          <State name="no" />
+          <State name="yes" />
+        </States>
+      </Variable>
+      <Variable name="Symptoms" timeSlice="0" type="finiteStates" role="chance">
+        <Coordinates x="348" y="476" />
+        <AdditionalProperties>
+          <Property name="Relevance" value="7.0" />
+        </AdditionalProperties>
+        <States>
+          <State name="no" />
+          <State name="yes" />
+        </States>
+      </Variable>
+      <Variable name="Screening" timeSlice="0" type="finiteStates" role="chance">
+        <Coordinates x="510" y="241" />
+        <AdditionalProperties>
+          <Property name="Relevance" value="7.0" />
+        </AdditionalProperties>
+        <States>
+          <State name="no" />
+          <State name="yes" />
+        </States>
+      </Variable>
+      <Variable name="Age" timeSlice="1" type="numeric" role="chance">
+        <Coordinates x="881" y="215" />
+        <AdditionalProperties>
+          <Property name="Relevance" value="7.0" />
+        </AdditionalProperties>
+        <Unit />
+        <Precision>0.01</Precision>
+        <Thresholds>
+          <Threshold value="10.0" belongsTo="right" />
+          <Threshold value="Infinity" belongsTo="right" />
+        </Thresholds>
+      </Variable>
+      <Variable name="Health state" timeSlice="1" type="finiteStates" role="chance">
+        <Coordinates x="912" y="386" />
+        <AdditionalProperties>
+          <Property name="Relevance" value="7.0" />
+        </AdditionalProperties>
+        <States>
+          <State name="negative" />
+          <State name="CIN1" />
+          <State name="CIN2" />
+          <State name="CIN3" />
+          <State name="CIS1" />
+          <State name="CIS2" />
+          <State name="LCC" />
+          <State name="RCC" />
+          <State name="DCC" />
+          <State name="dead" />
+        </States>
+      </Variable>
+      <Variable name="Healing" timeSlice="0" type="finiteStates" role="chance">
+        <Coordinates x="799" y="525" />
+        <AdditionalProperties>
+          <Property name="Relevance" value="7.0" />
+        </AdditionalProperties>
+        <States>
+          <State name="no" />
+          <State name="yes" />
+        </States>
+      </Variable>
+      <Variable name="Screening result" timeSlice="0" type="finiteStates" role="chance">
+        <Coordinates x="586" y="424" />
+        <AdditionalProperties>
+          <Property name="Relevance" value="7.0" />
+        </AdditionalProperties>
+        <States>
+          <State name="not-performed" />
+          <State name="negative" />
+          <State name="positive" />
+        </States>
+      </Variable>
+      <Variable name="Effective vaccine" type="finiteStates" role="chance">
+        <Coordinates x="593" y="116" />
+        <States>
+          <State name="no" />
+          <State name="yes" />
+        </States>
+      </Variable>
+      <Variable name="Vaccinated" type="finiteStates" role="chance">
+        <Coordinates x="426" y="69" />
+        <States>
+          <State name="no" />
+          <State name="yes" />
+        </States>
+      </Variable>
+      <Variable name="Do colposcopy &amp; biopsy" timeSlice="0" type="finiteStates" role="chance">
+        <Coordinates x="351" y="552" />
+        <States>
+          <State name="no" />
+          <State name="yes" />
+        </States>
+      </Variable>
+      <Variable name="Histerectomy" timeSlice="0" type="finiteStates" role="chance">
+        <Coordinates x="132" y="627" />
+        <States>
+          <State name="no" />
+          <State name="yes" />
+        </States>
+      </Variable>
+      <Variable name="Radiotherapy" timeSlice="0" type="finiteStates" role="chance">
+        <Coordinates x="216" y="692" />
+        <States>
+          <State name="no" />
+          <State name="yes" />
+        </States>
+      </Variable>
+      <Variable name="Chemotherapy" timeSlice="0" type="finiteStates" role="chance">
+        <Coordinates x="311" y="644" />
+        <States>
+          <State name="no" />
+          <State name="yes" />
+        </States>
+      </Variable>
+      <Variable name="Treatment" timeSlice="0" type="finiteStates" role="chance">
+        <Coordinates x="610" y="770" />
+        <States>
+          <State name="no" />
+          <State name="yes" />
+        </States>
+      </Variable>
+      <Variable name="Ever screened" type="finiteStates" role="chance">
+        <Coordinates x="445" y="169" />
+        <States>
+          <State name="no" />
+          <State name="yes" />
+        </States>
+      </Variable>
+      <Variable name="Conization" timeSlice="0" type="finiteStates" role="chance">
+        <Coordinates x="406" y="691" />
+        <States>
+          <State name="no" />
+          <State name="yes" />
+        </States>
+      </Variable>
+      <Variable name="Dec:Vaccine" type="finiteStates" role="decision">
+        <Coordinates x="276" y="30" />
+        <AdditionalProperties>
+          <Property name="Relevance" value="7.0" />
+        </AdditionalProperties>
+        <States>
+          <State name="no" />
+          <State name="yes" />
+        </States>
+      </Variable>
+      <Variable name="Dec:Test type" type="finiteStates" role="decision">
+        <Coordinates x="887" y="49" />
+        <AdditionalProperties>
+          <Property name="Relevance" value="7.0" />
+        </AdditionalProperties>
+        <States>
+          <State name="citology" />
+          <State name="HC2" />
+          <State name="citology+HC2" />
+        </States>
+      </Variable>
+      <Variable name="Cost of citology" timeSlice="0" type="numeric" role="utility">
+        <Coordinates x="669" y="236" />
+        <AdditionalProperties>
+          <Property name="Purpose" value="cost" />
+        </AdditionalProperties>
+        <Unit />
+        <Precision>0.0</Precision>
+        <Criterion name="cost" />
+      </Variable>
+      <Variable name="Cost of HC2" timeSlice="0" type="numeric" role="utility">
+        <Comment><![CDATA[<html>
+  <head>
+    
+  </head>
+  <body>
+    <p style="margin-top: 0">
+      En la hoja de Excel aparace como cHibridaci&#243;n
+    </p>
+  </body>
+</html>]]></Comment>
+        <Coordinates x="663" y="268" />
+        <AdditionalProperties>
+          <Property name="Purpose" value="cost" />
+        </AdditionalProperties>
+        <Unit />
+        <Precision>0.0</Precision>
+        <Criterion name="cost" />
+      </Variable>
+      <Variable name="Cost of vaccine" type="numeric" role="utility">
+        <Coordinates x="310" y="117" />
+        <AdditionalProperties>
+          <Property name="Purpose" value="cost" />
+        </AdditionalProperties>
+        <Unit />
+        <Precision>0.0</Precision>
+        <Criterion name="cost" />
+      </Variable>
+      <Variable name="AR QoL" timeSlice="0" type="numeric" role="utility">
+        <Comment><![CDATA[<html>
+  <head>
+    
+  </head>
+  <body>
+    <p style="margin-top: 0">
+      Age-related quality of life
+    </p>
+  </body>
+</html>]]></Comment>
+        <Coordinates x="225" y="282" />
+        <AdditionalProperties>
+          <Property name="Purpose" value="effectiveness" />
+        </AdditionalProperties>
+        <Unit />
+        <Precision>0.0</Precision>
+        <Criterion name="effectiveness" />
+      </Variable>
+      <Variable name="HSR QoL" timeSlice="0" type="numeric" role="utility">
+        <Comment><![CDATA[<html>
+  <head>
+    
+  </head>
+  <body>
+    <p style="margin-top: 0">
+      Quality of life related to the health state
+    </p>
+  </body>
+</html>]]></Comment>
+        <Coordinates x="519" y="518" />
+        <AdditionalProperties>
+          <Property name="Purpose" value="effectiveness" />
+        </AdditionalProperties>
+        <Unit />
+        <Precision>0.0</Precision>
+        <Criterion name="effectiveness" />
+      </Variable>
+      <Variable name="QoL" timeSlice="0" type="numeric" role="utility">
+        <Comment><![CDATA[<html>
+  <head>
+    
+  </head>
+  <body>
+    <p style="margin-top: 0">
+      Quality of life
+    </p>
+  </body>
+</html>]]></Comment>
+        <Coordinates x="651" y="531" />
+        <AdditionalProperties>
+          <Property name="Purpose" value="effectiveness" />
+        </AdditionalProperties>
+        <Unit />
+        <Precision>0.0</Precision>
+        <Criterion name="effectiveness" />
+      </Variable>
+      <Variable name="Cost of histerectomy" timeSlice="0" type="numeric" role="utility">
+        <Coordinates x="111" y="729" />
+        <AdditionalProperties>
+          <Property name="Purpose" value="cost" />
+        </AdditionalProperties>
+        <Unit />
+        <Precision>0.0</Precision>
+        <Criterion name="cost" />
+      </Variable>
+      <Variable name="Cost of radiotherapy" timeSlice="0" type="numeric" role="utility">
+        <Coordinates x="237" y="778" />
+        <AdditionalProperties>
+          <Property name="Purpose" value="cost" />
+        </AdditionalProperties>
+        <Unit />
+        <Precision>0.0</Precision>
+        <Criterion name="cost" />
+      </Variable>
+      <Variable name="Cost of chemo" timeSlice="0" type="numeric" role="utility">
+        <Coordinates x="322" y="739" />
+        <AdditionalProperties>
+          <Property name="Purpose" value="cost" />
+        </AdditionalProperties>
+        <Unit />
+        <Precision>0.0</Precision>
+        <Criterion name="cost" />
+      </Variable>
+      <Variable name="Cost colposcopy" timeSlice="0" type="numeric" role="utility">
+        <Coordinates x="475" y="612" />
+        <AdditionalProperties>
+          <Property name="Purpose" value="cost" />
+        </AdditionalProperties>
+        <Unit />
+        <Precision>0.0</Precision>
+        <Criterion name="cost" />
+      </Variable>
+      <Variable name="Cost biopsy" timeSlice="0" type="numeric" role="utility">
+        <Coordinates x="495" y="647" />
+        <AdditionalProperties>
+          <Property name="Purpose" value="cost" />
+        </AdditionalProperties>
+        <Unit />
+        <Precision>0.0</Precision>
+        <Criterion name="cost" />
+      </Variable>
+      <Variable name="Cost of conization" timeSlice="0" type="numeric" role="utility">
+        <Coordinates x="428" y="778" />
+        <AdditionalProperties>
+          <Property name="Purpose" value="cost" />
+        </AdditionalProperties>
+        <Unit />
+        <Precision>0.0</Precision>
+        <Criterion name="cost" />
+      </Variable>
+    </Variables>
+    <Links>
+      <Link directed="true">
+        <Variable name="Age" timeSlice="0" />
+        <Variable name="Infection 16-18" timeSlice="0" />
+      </Link>
+      <Link directed="true">
+        <Variable name="Age" timeSlice="0" />
+        <Variable name="Screening" timeSlice="0" />
+      </Link>
+      <Link directed="true">
+        <Variable name="Age" timeSlice="0" />
+        <Variable name="Death CC" timeSlice="0" />
+      </Link>
+      <Link directed="true">
+        <Variable name="Age" timeSlice="0" />
+        <Variable name="Death OC" timeSlice="0" />
+      </Link>
+      <Link directed="true">
+        <Variable name="Age" timeSlice="0" />
+        <Variable name="Age" timeSlice="1" />
+      </Link>
+      <Link directed="true">
+        <Variable name="Age" timeSlice="0" />
+        <Variable name="AR QoL" timeSlice="0" />
+      </Link>
+      <Link directed="true">
+        <Variable name="Infection 16-18" timeSlice="0" />
+        <Variable name="Health state" timeSlice="1" />
+      </Link>
+      <Link directed="true">
+        <Variable name="Health state" timeSlice="0" />
+        <Variable name="Death CC" timeSlice="0" />
+      </Link>
+      <Link directed="true">
+        <Variable name="Health state" timeSlice="0" />
+        <Variable name="Symptoms" timeSlice="0" />
+      </Link>
+      <Link directed="true">
+        <Variable name="Health state" timeSlice="0" />
+        <Variable name="Health state" timeSlice="1" />
+      </Link>
+      <Link directed="true">
+        <Variable name="Health state" timeSlice="0" />
+        <Variable name="Screening result" timeSlice="0" />
+      </Link>
+      <Link directed="true">
+        <Variable name="Health state" timeSlice="0" />
+        <Variable name="HSR QoL" timeSlice="0" />
+      </Link>
+      <Link directed="true">
+        <Variable name="Health state" timeSlice="0" />
+        <Variable name="Histerectomy" timeSlice="0" />
+      </Link>
+      <Link directed="true">
+        <Variable name="Health state" timeSlice="0" />
+        <Variable name="Radiotherapy" timeSlice="0" />
+      </Link>
+      <Link directed="true">
+        <Variable name="Health state" timeSlice="0" />
+        <Variable name="Chemotherapy" timeSlice="0" />
+      </Link>
+      <Link directed="true">
+        <Variable name="Health state" timeSlice="0" />
+        <Variable name="Healing" timeSlice="0" />
+      </Link>
+      <Link directed="true">
+        <Variable name="Health state" timeSlice="0" />
+        <Variable name="Conization" timeSlice="0" />
+      </Link>
+      <Link directed="true">
+        <Variable name="Death CC" timeSlice="0" />
+        <Variable name="Health state" timeSlice="1" />
+      </Link>
+      <Link directed="true">
+        <Variable name="Death OC" timeSlice="0" />
+        <Variable name="Health state" timeSlice="1" />
+      </Link>
+      <Link directed="true">
+        <Variable name="Symptoms" timeSlice="0" />
+        <Variable name="Do colposcopy &amp; biopsy" timeSlice="0" />
+      </Link>
+      <Link directed="true">
+        <Variable name="Screening" timeSlice="0" />
+        <Variable name="Screening result" timeSlice="0" />
+      </Link>
+      <Link directed="true">
+        <Variable name="Screening" timeSlice="0" />
+        <Variable name="Cost of citology" timeSlice="0" />
+      </Link>
+      <Link directed="true">
+        <Variable name="Screening" timeSlice="0" />
+        <Variable name="Cost of HC2" timeSlice="0" />
+      </Link>
+      <Link directed="true">
+        <Variable name="Healing" timeSlice="0" />
+        <Variable name="Health state" timeSlice="1" />
+      </Link>
+      <Link directed="true">
+        <Variable name="Screening result" timeSlice="0" />
+        <Variable name="Do colposcopy &amp; biopsy" timeSlice="0" />
+      </Link>
+      <Link directed="true">
+        <Variable name="Effective vaccine" />
+        <Variable name="Health state" timeSlice="1" />
+      </Link>
+      <Link directed="true">
+        <Variable name="Vaccinated" />
+        <Variable name="Effective vaccine" />
+      </Link>
+      <Link directed="true">
+        <Variable name="Vaccinated" />
+        <Variable name="Cost of vaccine" />
+      </Link>
+      <Link directed="true">
+        <Variable name="Do colposcopy &amp; biopsy" timeSlice="0" />
+        <Variable name="Histerectomy" timeSlice="0" />
+      </Link>
+      <Link directed="true">
+        <Variable name="Do colposcopy &amp; biopsy" timeSlice="0" />
+        <Variable name="Radiotherapy" timeSlice="0" />
+      </Link>
+      <Link directed="true">
+        <Variable name="Do colposcopy &amp; biopsy" timeSlice="0" />
+        <Variable name="Chemotherapy" timeSlice="0" />
+      </Link>
+      <Link directed="true">
+        <Variable name="Do colposcopy &amp; biopsy" timeSlice="0" />
+        <Variable name="Cost colposcopy" timeSlice="0" />
+      </Link>
+      <Link directed="true">
+        <Variable name="Do colposcopy &amp; biopsy" timeSlice="0" />
+        <Variable name="Cost biopsy" timeSlice="0" />
+      </Link>
+      <Link directed="true">
+        <Variable name="Do colposcopy &amp; biopsy" timeSlice="0" />
+        <Variable name="Conization" timeSlice="0" />
+      </Link>
+      <Link directed="true">
+        <Variable name="Histerectomy" timeSlice="0" />
+        <Variable name="Cost of histerectomy" timeSlice="0" />
+      </Link>
+      <Link directed="true">
+        <Variable name="Histerectomy" timeSlice="0" />
+        <Variable name="Treatment" timeSlice="0" />
+      </Link>
+      <Link directed="true">
+        <Variable name="Radiotherapy" timeSlice="0" />
+        <Variable name="Cost of radiotherapy" timeSlice="0" />
+      </Link>
+      <Link directed="true">
+        <Variable name="Radiotherapy" timeSlice="0" />
+        <Variable name="Treatment" timeSlice="0" />
+      </Link>
+      <Link directed="true">
+        <Variable name="Chemotherapy" timeSlice="0" />
+        <Variable name="Cost of chemo" timeSlice="0" />
+      </Link>
+      <Link directed="true">
+        <Variable name="Chemotherapy" timeSlice="0" />
+        <Variable name="Treatment" timeSlice="0" />
+      </Link>
+      <Link directed="true">
+        <Variable name="Treatment" timeSlice="0" />
+        <Variable name="Healing" timeSlice="0" />
+      </Link>
+      <Link directed="true">
+        <Variable name="Ever screened" />
+        <Variable name="Screening" timeSlice="0" />
+      </Link>
+      <Link directed="true">
+        <Variable name="Conization" timeSlice="0" />
+        <Variable name="Treatment" timeSlice="0" />
+      </Link>
+      <Link directed="true">
+        <Variable name="Conization" timeSlice="0" />
+        <Variable name="Cost of conization" timeSlice="0" />
+      </Link>
+      <Link directed="true">
+        <Variable name="Dec:Vaccine" />
+        <Variable name="Vaccinated" />
+      </Link>
+      <Link directed="true">
+        <Variable name="Dec:Test type" />
+        <Variable name="Screening result" timeSlice="0" />
+      </Link>
+      <Link directed="true">
+        <Variable name="Dec:Test type" />
+        <Variable name="Cost of citology" timeSlice="0" />
+      </Link>
+      <Link directed="true">
+        <Variable name="Dec:Test type" />
+        <Variable name="Cost of HC2" timeSlice="0" />
+      </Link>
+      <Link directed="true">
+        <Variable name="AR QoL" timeSlice="0" />
+        <Variable name="QoL" timeSlice="0" />
+      </Link>
+      <Link directed="true">
+        <Variable name="HSR QoL" timeSlice="0" />
+        <Variable name="QoL" timeSlice="0" />
+      </Link>
+    </Links>
+    <Potentials>
+      <Potential type="Delta" role="conditionalProbability">
+        <Variables>
+          <Variable name="Age" timeSlice="0" />
+        </Variables>
+        <NumericValue>12.0</NumericValue>
+      </Potential>
+      <Potential type="Tree/ADD" role="conditionalProbability">
+        <Variables>
+          <Variable name="Infection 16-18" timeSlice="0" />
+          <Variable name="Age" timeSlice="0" />
+        </Variables>
+        <TopVariable name="Age" timeSlice="0" />
+        <Branches>
+          <Branch>
+            <Thresholds>
+              <Threshold value="10.0" belongsTo="right" />
+              <Threshold value="15.0" belongsTo="right" />
+            </Thresholds>
+            <Potential type="Table">
+              <Variables>
+                <Variable name="Infection 16-18" timeSlice="0" />
+              </Variables>
+              <Values>1.0 0.0</Values>
+            </Potential>
+          </Branch>
+          <Branch>
+            <Thresholds>
+              <Threshold value="15.0" belongsTo="right" />
+              <Threshold value="20.0" belongsTo="right" />
+            </Thresholds>
+            <Potential type="Table">
+              <Variables>
+                <Variable name="Infection 16-18" timeSlice="0" />
+              </Variables>
+              <Values>0.941615385 0.058384615</Values>
+            </Potential>
+          </Branch>
+          <Branch>
+            <Thresholds>
+              <Threshold value="20.0" belongsTo="right" />
+              <Threshold value="25.0" belongsTo="right" />
+            </Thresholds>
+            <Potential type="Table">
+              <Variables>
+                <Variable name="Infection 16-18" timeSlice="0" />
+              </Variables>
+              <Values>0.964615385 0.035384615</Values>
+            </Potential>
+          </Branch>
+          <Branch>
+            <Thresholds>
+              <Threshold value="25.0" belongsTo="right" />
+              <Threshold value="30.0" belongsTo="right" />
+            </Thresholds>
+            <Potential type="Table">
+              <Variables>
+                <Variable name="Infection 16-18" timeSlice="0" />
+              </Variables>
+              <Values>0.979653846 0.020346154</Values>
+            </Potential>
+          </Branch>
+          <Branch>
+            <Thresholds>
+              <Threshold value="30.0" belongsTo="right" />
+              <Threshold value="Infinity" belongsTo="right" />
+            </Thresholds>
+            <Potential type="Table">
+              <Variables>
+                <Variable name="Infection 16-18" timeSlice="0" />
+              </Variables>
+              <Values>0.983192308 0.016807692</Values>
+            </Potential>
+          </Branch>
+        </Branches>
+      </Potential>
+      <Potential type="Table" role="conditionalProbability">
+        <Variables>
+          <Variable name="Health state" timeSlice="0" />
+        </Variables>
+        <Values>1.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0</Values>
+      </Potential>
+      <Potential type="Tree/ADD" role="conditionalProbability">
+        <Variables>
+          <Variable name="Death CC" timeSlice="0" />
+          <Variable name="Age" timeSlice="0" />
+          <Variable name="Health state" timeSlice="0" />
+        </Variables>
+        <TopVariable name="Health state" timeSlice="0" />
+        <Branches>
+          <Branch>
+            <States>
+              <State name="dead" />
+              <State name="CIN3" />
+              <State name="CIN2" />
+              <State name="CIN1" />
+              <State name="CIS2" />
+              <State name="CIS1" />
+              <State name="negative" />
+            </States>
+            <Potential type="Table">
+              <Variables>
+                <Variable name="Death CC" timeSlice="0" />
+              </Variables>
+              <Values>1.0 0.0</Values>
+            </Potential>
+          </Branch>
+          <Branch>
+            <States>
+              <State name="LCC" />
+            </States>
+            <Potential type="Tree/ADD">
+              <Variables>
+                <Variable name="Death CC" timeSlice="0" />
+                <Variable name="Age" timeSlice="0" />
+              </Variables>
+              <TopVariable name="Age" timeSlice="0" />
+              <Branches>
+                <Branch>
+                  <Thresholds>
+                    <Threshold value="10.0" belongsTo="right" />
+                    <Threshold value="15.0" belongsTo="right" />
+                  </Thresholds>
+                  <Potential type="Table">
+                    <Variables>
+                      <Variable name="Death CC" timeSlice="0" />
+                    </Variables>
+                    <Values>0.0 1.0</Values>
+                  </Potential>
+                </Branch>
+                <Branch>
+                  <Thresholds>
+                    <Threshold value="15.0" belongsTo="right" />
+                    <Threshold value="30.0" belongsTo="right" />
+                  </Thresholds>
+                  <Potential type="Table">
+                    <Variables>
+                      <Variable name="Death CC" timeSlice="0" />
+                    </Variables>
+                    <Values>0.993 0.007</Values>
+                  </Potential>
+                </Branch>
+                <Branch>
+                  <Thresholds>
+                    <Threshold value="30.0" belongsTo="right" />
+                    <Threshold value="40.0" belongsTo="right" />
+                  </Thresholds>
+                  <Potential type="Table">
+                    <Variables>
+                      <Variable name="Death CC" timeSlice="0" />
+                    </Variables>
+                    <Values>0.994 0.006</Values>
+                  </Potential>
+                </Branch>
+                <Branch>
+                  <Thresholds>
+                    <Threshold value="40.0" belongsTo="right" />
+                    <Threshold value="50.0" belongsTo="right" />
+                  </Thresholds>
+                  <Potential type="Table">
+                    <Variables>
+                      <Variable name="Death CC" timeSlice="0" />
+                    </Variables>
+                    <Values>0.992 0.008</Values>
+                  </Potential>
+                </Branch>
+                <Branch>
+                  <Thresholds>
+                    <Threshold value="50.0" belongsTo="right" />
+                    <Threshold value="60.0" belongsTo="right" />
+                  </Thresholds>
+                  <Potential type="Table">
+                    <Variables>
+                      <Variable name="Death CC" timeSlice="0" />
+                    </Variables>
+                    <Values>0.981 0.019</Values>
+                  </Potential>
+                </Branch>
+                <Branch>
+                  <Thresholds>
+                    <Threshold value="60.0" belongsTo="right" />
+                    <Threshold value="70.0" belongsTo="right" />
+                  </Thresholds>
+                  <Potential type="Table">
+                    <Variables>
+                      <Variable name="Death CC" timeSlice="0" />
+                    </Variables>
+                    <Values>0.958 0.042</Values>
+                  </Potential>
+                </Branch>
+                <Branch>
+                  <Thresholds>
+                    <Threshold value="70.0" belongsTo="right" />
+                    <Threshold value="Infinity" belongsTo="right" />
+                  </Thresholds>
+                  <Potential type="Table">
+                    <Variables>
+                      <Variable name="Death CC" timeSlice="0" />
+                    </Variables>
+                    <Values>0.884 0.116</Values>
+                  </Potential>
+                </Branch>
+              </Branches>
+            </Potential>
+          </Branch>
+          <Branch>
+            <States>
+              <State name="RCC" />
+            </States>
+            <Potential type="Tree/ADD">
+              <Variables>
+                <Variable name="Death CC" timeSlice="0" />
+                <Variable name="Age" timeSlice="0" />
+              </Variables>
+              <TopVariable name="Age" timeSlice="0" />
+              <Branches>
+                <Branch>
+                  <Thresholds>
+                    <Threshold value="10.0" belongsTo="right" />
+                    <Threshold value="15.0" belongsTo="right" />
+                  </Thresholds>
+                  <Potential type="Table">
+                    <Variables>
+                      <Variable name="Death CC" timeSlice="0" />
+                    </Variables>
+                    <Values>0.0 1.0</Values>
+                  </Potential>
+                </Branch>
+                <Branch>
+                  <Thresholds>
+                    <Threshold value="15.0" belongsTo="right" />
+                    <Threshold value="30.0" belongsTo="right" />
+                  </Thresholds>
+                  <Potential type="Table">
+                    <Variables>
+                      <Variable name="Death CC" timeSlice="0" />
+                    </Variables>
+                    <Values>0.866 0.134</Values>
+                  </Potential>
+                </Branch>
+                <Branch>
+                  <Thresholds>
+                    <Threshold value="30.0" belongsTo="right" />
+                    <Threshold value="40.0" belongsTo="right" />
+                  </Thresholds>
+                  <Potential type="Table">
+                    <Variables>
+                      <Variable name="Death CC" timeSlice="0" />
+                    </Variables>
+                    <Values>0.911 0.089</Values>
+                  </Potential>
+                </Branch>
+                <Branch>
+                  <Thresholds>
+                    <Threshold value="40.0" belongsTo="right" />
+                    <Threshold value="50.0" belongsTo="right" />
+                  </Thresholds>
+                  <Potential type="Table">
+                    <Variables>
+                      <Variable name="Death CC" timeSlice="0" />
+                    </Variables>
+                    <Values>0.89 0.11</Values>
+                  </Potential>
+                </Branch>
+                <Branch>
+                  <Thresholds>
+                    <Threshold value="50.0" belongsTo="right" />
+                    <Threshold value="60.0" belongsTo="right" />
+                  </Thresholds>
+                  <Potential type="Table">
+                    <Variables>
+                      <Variable name="Death CC" timeSlice="0" />
+                    </Variables>
+                    <Values>0.899 0.101</Values>
+                  </Potential>
+                </Branch>
+                <Branch>
+                  <Thresholds>
+                    <Threshold value="60.0" belongsTo="right" />
+                    <Threshold value="70.0" belongsTo="right" />
+                  </Thresholds>
+                  <Potential type="Table">
+                    <Variables>
+                      <Variable name="Death CC" timeSlice="0" />
+                    </Variables>
+                    <Values>0.824 0.176</Values>
+                  </Potential>
+                </Branch>
+                <Branch>
+                  <Thresholds>
+                    <Threshold value="70.0" belongsTo="right" />
+                    <Threshold value="Infinity" belongsTo="right" />
+                  </Thresholds>
+                  <Potential type="Table">
+                    <Variables>
+                      <Variable name="Death CC" timeSlice="0" />
+                    </Variables>
+                    <Values>0.714 0.286</Values>
+                  </Potential>
+                </Branch>
+              </Branches>
+            </Potential>
+          </Branch>
+          <Branch>
+            <States>
+              <State name="DCC" />
+            </States>
+            <Potential type="Tree/ADD">
+              <Variables>
+                <Variable name="Death CC" timeSlice="0" />
+                <Variable name="Age" timeSlice="0" />
+              </Variables>
+              <TopVariable name="Age" timeSlice="0" />
+              <Branches>
+                <Branch>
+                  <Thresholds>
+                    <Threshold value="10.0" belongsTo="right" />
+                    <Threshold value="15.0" belongsTo="right" />
+                  </Thresholds>
+                  <Potential type="Table">
+                    <Variables>
+                      <Variable name="Death CC" timeSlice="0" />
+                    </Variables>
+                    <Values>0.0 1.0</Values>
+                  </Potential>
+                </Branch>
+                <Branch>
+                  <Thresholds>
+                    <Threshold value="15.0" belongsTo="right" />
+                    <Threshold value="30.0" belongsTo="right" />
+                  </Thresholds>
+                  <Potential type="Table">
+                    <Variables>
+                      <Variable name="Death CC" timeSlice="0" />
+                    </Variables>
+                    <Values>0.571 0.429</Values>
+                  </Potential>
+                </Branch>
+                <Branch>
+                  <Thresholds>
+                    <Threshold value="30.0" belongsTo="right" />
+                    <Threshold value="40.0" belongsTo="right" />
+                  </Thresholds>
+                  <Potential type="Table">
+                    <Variables>
+                      <Variable name="Death CC" timeSlice="0" />
+                    </Variables>
+                    <Values>0.59 0.41</Values>
+                  </Potential>
+                </Branch>
+                <Branch>
+                  <Thresholds>
+                    <Threshold value="40.0" belongsTo="right" />
+                    <Threshold value="50.0" belongsTo="right" />
+                  </Thresholds>
+                  <Potential type="Table">
+                    <Variables>
+                      <Variable name="Death CC" timeSlice="0" />
+                    </Variables>
+                    <Values>0.533 0.467</Values>
+                  </Potential>
+                </Branch>
+                <Branch>
+                  <Thresholds>
+                    <Threshold value="50.0" belongsTo="right" />
+                    <Threshold value="60.0" belongsTo="right" />
+                  </Thresholds>
+                  <Potential type="Table">
+                    <Variables>
+                      <Variable name="Death CC" timeSlice="0" />
+                    </Variables>
+                    <Values>0.473 0.527</Values>
+                  </Potential>
+                </Branch>
+                <Branch>
+                  <Thresholds>
+                    <Threshold value="60.0" belongsTo="right" />
+                    <Threshold value="70.0" belongsTo="right" />
+                  </Thresholds>
+                  <Potential type="Table">
+                    <Variables>
+                      <Variable name="Death CC" timeSlice="0" />
+                    </Variables>
+                    <Values>0.454 0.546</Values>
+                  </Potential>
+                </Branch>
+                <Branch>
+                  <Thresholds>
+                    <Threshold value="70.0" belongsTo="right" />
+                    <Threshold value="Infinity" belongsTo="right" />
+                  </Thresholds>
+                  <Potential type="Table">
+                    <Variables>
+                      <Variable name="Death CC" timeSlice="0" />
+                    </Variables>
+                    <Values>0.297 0.703</Values>
+                  </Potential>
+                </Branch>
+              </Branches>
+            </Potential>
+          </Branch>
+        </Branches>
+      </Potential>
+      <Potential type="Tree/ADD" role="conditionalProbability">
+        <Variables>
+          <Variable name="Death OC" timeSlice="0" />
+          <Variable name="Age" timeSlice="0" />
+        </Variables>
+        <TopVariable name="Age" timeSlice="0" />
+        <Branches>
+          <Branch>
+            <Thresholds>
+              <Threshold value="10.0" belongsTo="right" />
+              <Threshold value="15.0" belongsTo="right" />
+            </Thresholds>
+            <Potential type="Table">
+              <Variables>
+                <Variable name="Death OC" timeSlice="0" />
+              </Variables>
+              <Values>0.999899027 1.00973E-4</Values>
+            </Potential>
+          </Branch>
+          <Branch>
+            <Thresholds>
+              <Threshold value="15.0" belongsTo="right" />
+              <Threshold value="20.0" belongsTo="right" />
+            </Thresholds>
+            <Potential type="Table">
+              <Variables>
+                <Variable name="Death OC" timeSlice="0" />
+              </Variables>
+              <Values>0.999819604 1.80396E-4</Values>
+            </Potential>
+          </Branch>
+          <Branch>
+            <Thresholds>
+              <Threshold value="20.0" belongsTo="right" />
+              <Threshold value="25.0" belongsTo="right" />
+            </Thresholds>
+            <Potential type="Table">
+              <Variables>
+                <Variable name="Death OC" timeSlice="0" />
+              </Variables>
+              <Values>0.999791086 2.08914E-4</Values>
+            </Potential>
+          </Branch>
+          <Branch>
+            <Thresholds>
+              <Threshold value="25.0" belongsTo="right" />
+              <Threshold value="30.0" belongsTo="right" />
+            </Thresholds>
+            <Potential type="Table">
+              <Variables>
+                <Variable name="Death OC" timeSlice="0" />
+              </Variables>
+              <Values>0.999772284 2.27716E-4</Values>
+            </Potential>
+          </Branch>
+          <Branch>
+            <Thresholds>
+              <Threshold value="30.0" belongsTo="right" />
+              <Threshold value="35.0" belongsTo="right" />
+            </Thresholds>
+            <Potential type="Table">
+              <Variables>
+                <Variable name="Death OC" timeSlice="0" />
+              </Variables>
+              <Values>0.999675167 3.24833E-4</Values>
+            </Potential>
+          </Branch>
+          <Branch>
+            <Thresholds>
+              <Threshold value="35.0" belongsTo="right" />
+              <Threshold value="40.0" belongsTo="right" />
+            </Thresholds>
+            <Potential type="Table">
+              <Variables>
+                <Variable name="Death OC" timeSlice="0" />
+              </Variables>
+              <Values>0.999467517 5.32483E-4</Values>
+            </Potential>
+          </Branch>
+          <Branch>
+            <Thresholds>
+              <Threshold value="40.0" belongsTo="right" />
+              <Threshold value="45.0" belongsTo="right" />
+            </Thresholds>
+            <Potential type="Table">
+              <Variables>
+                <Variable name="Death OC" timeSlice="0" />
+              </Variables>
+              <Values>0.999134926 8.65074E-4</Values>
+            </Potential>
+          </Branch>
+          <Branch>
+            <Thresholds>
+              <Threshold value="45.0" belongsTo="right" />
+              <Threshold value="50.0" belongsTo="right" />
+            </Thresholds>
+            <Potential type="Table">
+              <Variables>
+                <Variable name="Death OC" timeSlice="0" />
+              </Variables>
+              <Values>0.998616534 0.001383466</Values>
+            </Potential>
+          </Branch>
+          <Branch>
+            <Thresholds>
+              <Threshold value="50.0" belongsTo="right" />
+              <Threshold value="55.0" belongsTo="right" />
+            </Thresholds>
+            <Potential type="Table">
+              <Variables>
+                <Variable name="Death OC" timeSlice="0" />
+              </Variables>
+              <Values>0.998013027 0.001986973</Values>
+            </Potential>
+          </Branch>
+          <Branch>
+            <Thresholds>
+              <Threshold value="55.0" belongsTo="right" />
+              <Threshold value="60.0" belongsTo="right" />
+            </Thresholds>
+            <Potential type="Table">
+              <Variables>
+                <Variable name="Death OC" timeSlice="0" />
+              </Variables>
+              <Values>0.997190404 0.002809596</Values>
+            </Potential>
+          </Branch>
+          <Branch>
+            <Thresholds>
+              <Threshold value="60.0" belongsTo="right" />
+              <Threshold value="65.0" belongsTo="right" />
+            </Thresholds>
+            <Potential type="Table">
+              <Variables>
+                <Variable name="Death OC" timeSlice="0" />
+              </Variables>
+              <Values>0.995827955 0.004172045</Values>
+            </Potential>
+          </Branch>
+          <Branch>
+            <Thresholds>
+              <Threshold value="65.0" belongsTo="right" />
+              <Threshold value="70.0" belongsTo="right" />
+            </Thresholds>
+            <Potential type="Table">
+              <Variables>
+                <Variable name="Death OC" timeSlice="0" />
+              </Variables>
+              <Values>0.993564289 0.006435711</Values>
+            </Potential>
+          </Branch>
+          <Branch>
+            <Thresholds>
+              <Threshold value="70.0" belongsTo="right" />
+              <Threshold value="75.0" belongsTo="right" />
+            </Thresholds>
+            <Potential type="Table">
+              <Variables>
+                <Variable name="Death OC" timeSlice="0" />
+              </Variables>
+              <Values>0.986934179 0.013065821</Values>
+            </Potential>
+          </Branch>
+          <Branch>
+            <Thresholds>
+              <Threshold value="75.0" belongsTo="right" />
+              <Threshold value="80.0" belongsTo="right" />
+            </Thresholds>
+            <Potential type="Table">
+              <Variables>
+                <Variable name="Death OC" timeSlice="0" />
+              </Variables>
+              <Values>0.976278957 0.023721043</Values>
+            </Potential>
+          </Branch>
+          <Branch>
+            <Thresholds>
+              <Threshold value="80.0" belongsTo="right" />
+              <Threshold value="85.0" belongsTo="right" />
+            </Thresholds>
+            <Potential type="Table">
+              <Variables>
+                <Variable name="Death OC" timeSlice="0" />
+              </Variables>
+              <Values>0.951109977 0.048890023</Values>
+            </Potential>
+          </Branch>
+          <Branch>
+            <Thresholds>
+              <Threshold value="85.0" belongsTo="right" />
+              <Threshold value="90.0" belongsTo="right" />
+            </Thresholds>
+            <Potential type="Table">
+              <Variables>
+                <Variable name="Death OC" timeSlice="0" />
+              </Variables>
+              <Values>0.90614936 0.09385064</Values>
+            </Potential>
+          </Branch>
+          <Branch>
+            <Thresholds>
+              <Threshold value="90.0" belongsTo="right" />
+              <Threshold value="95.0" belongsTo="right" />
+            </Thresholds>
+            <Potential type="Table">
+              <Variables>
+                <Variable name="Death OC" timeSlice="0" />
+              </Variables>
+              <Values>0.820969308 0.179030692</Values>
+            </Potential>
+          </Branch>
+          <Branch>
+            <Thresholds>
+              <Threshold value="95.0" belongsTo="right" />
+              <Threshold value="Infinity" belongsTo="right" />
+            </Thresholds>
+            <Potential type="Table">
+              <Variables>
+                <Variable name="Death OC" timeSlice="0" />
+              </Variables>
+              <Values>0.682035744 0.317964256</Values>
+            </Potential>
+          </Branch>
+        </Branches>
+      </Potential>
+      <Potential type="Table" role="conditionalProbability">
+        <Variables>
+          <Variable name="Symptoms" timeSlice="0" />
+          <Variable name="Health state" timeSlice="0" />
+        </Variables>
+        <Values>1.0 0.0 1.0 0.0 1.0 0.0 1.0 0.0 1.0 0.0 1.0 0.0 0.96 0.04 0.8367346938775511 0.16326530612244897 0.1 0.9 1.0 0.0</Values>
+        <UncertainValues>
+          <Value />
+          <Value />
+          <Value />
+          <Value />
+          <Value />
+          <Value />
+          <Value />
+          <Value />
+          <Value />
+          <Value />
+          <Value />
+          <Value />
+          <Value distribution="Complement">1.0</Value>
+          <Value distribution="Beta" name="sLCC ">2.0 48.0</Value>
+          <Value distribution="Complement">1.0</Value>
+          <Value distribution="Beta" name="sRCC ">8.0 41.0</Value>
+          <Value distribution="Complement">1.0</Value>
+          <Value distribution="Beta" name="sDCC ">45.0 5.0</Value>
+          <Value />
+          <Value />
+        </UncertainValues>
+      </Potential>
+      <Potential type="Tree/ADD" role="conditionalProbability">
+        <Variables>
+          <Variable name="Screening" timeSlice="0" />
+          <Variable name="Age" timeSlice="0" />
+          <Variable name="Ever screened" />
+        </Variables>
+        <TopVariable name="Ever screened" />
+        <Branches>
+          <Branch>
+            <States>
+              <State name="no" />
+            </States>
+            <Potential type="Table">
+              <Variables>
+                <Variable name="Screening" timeSlice="0" />
+              </Variables>
+              <Values>1.0 0.0</Values>
+            </Potential>
+          </Branch>
+          <Branch>
+            <States>
+              <State name="yes" />
+            </States>
+            <Potential type="Tree/ADD">
+              <Variables>
+                <Variable name="Screening" timeSlice="0" />
+                <Variable name="Age" timeSlice="0" />
+              </Variables>
+              <TopVariable name="Age" timeSlice="0" />
+              <Branches>
+                <Branch>
+                  <Thresholds>
+                    <Threshold value="10.0" belongsTo="right" />
+                    <Threshold value="20.0" belongsTo="right" />
+                  </Thresholds>
+                  <Potential type="Table">
+                    <Variables>
+                      <Variable name="Screening" timeSlice="0" />
+                    </Variables>
+                    <Values>1.0 0.0</Values>
+                  </Potential>
+                </Branch>
+                <Branch>
+                  <Thresholds>
+                    <Threshold value="20.0" belongsTo="right" />
+                    <Threshold value="25.0" belongsTo="right" />
+                  </Thresholds>
+                  <Potential type="Table">
+                    <Variables>
+                      <Variable name="Screening" timeSlice="0" />
+                    </Variables>
+                    <Values>0.781360086 0.218639914</Values>
+                  </Potential>
+                </Branch>
+                <Branch>
+                  <Thresholds>
+                    <Threshold value="25.0" belongsTo="right" />
+                    <Threshold value="35.0" belongsTo="right" />
+                  </Thresholds>
+                  <Potential type="Table">
+                    <Variables>
+                      <Variable name="Screening" timeSlice="0" />
+                    </Variables>
+                    <Values>0.706060452 0.293939548</Values>
+                  </Potential>
+                </Branch>
+                <Branch>
+                  <Thresholds>
+                    <Threshold value="35.0" belongsTo="right" />
+                    <Threshold value="45.0" belongsTo="right" />
+                  </Thresholds>
+                  <Potential type="Table">
+                    <Variables>
+                      <Variable name="Screening" timeSlice="0" />
+                    </Variables>
+                    <Values>0.667986588 0.332013412</Values>
+                  </Potential>
+                </Branch>
+                <Branch>
+                  <Thresholds>
+                    <Threshold value="45.0" belongsTo="right" />
+                    <Threshold value="55.0" belongsTo="right" />
+                  </Thresholds>
+                  <Potential type="Table">
+                    <Variables>
+                      <Variable name="Screening" timeSlice="0" />
+                    </Variables>
+                    <Values>0.6549959 0.3450041</Values>
+                  </Potential>
+                </Branch>
+                <Branch>
+                  <Thresholds>
+                    <Threshold value="55.0" belongsTo="right" />
+                    <Threshold value="65.0" belongsTo="right" />
+                  </Thresholds>
+                  <Potential type="Table">
+                    <Variables>
+                      <Variable name="Screening" timeSlice="0" />
+                    </Variables>
+                    <Values>0.673144847 0.326855153</Values>
+                  </Potential>
+                </Branch>
+                <Branch>
+                  <Thresholds>
+                    <Threshold value="65.0" belongsTo="right" />
+                    <Threshold value="75.0" belongsTo="right" />
+                  </Thresholds>
+                  <Potential type="Table">
+                    <Variables>
+                      <Variable name="Screening" timeSlice="0" />
+                    </Variables>
+                    <Values>0.75122731 0.24877269</Values>
+                  </Potential>
+                </Branch>
+                <Branch>
+                  <Thresholds>
+                    <Threshold value="75.0" belongsTo="right" />
+                    <Threshold value="Infinity" belongsTo="right" />
+                  </Thresholds>
+                  <Potential type="Table">
+                    <Variables>
+                      <Variable name="Screening" timeSlice="0" />
+                    </Variables>
+                    <Values>0.831522364 0.168477636</Values>
+                  </Potential>
+                </Branch>
+              </Branches>
+            </Potential>
+          </Branch>
+        </Branches>
+      </Potential>
+      <Potential type="CycleLengthShift" role="conditionalProbability">
+        <Variables>
+          <Variable name="Age" timeSlice="1" />
+          <Variable name="Age" timeSlice="0" />
+        </Variables>
+      </Potential>
+      <Potential type="Tree/ADD" role="conditionalProbability">
+        <Variables>
+          <Variable name="Health state" timeSlice="1" />
+          <Variable name="Health state" timeSlice="0" />
+          <Variable name="Death CC" timeSlice="0" />
+          <Variable name="Death OC" timeSlice="0" />
+          <Variable name="Infection 16-18" timeSlice="0" />
+          <Variable name="Healing" timeSlice="0" />
+          <Variable name="Effective vaccine" />
+        </Variables>
+        <TopVariable name="Death OC" timeSlice="0" />
+        <Branches>
+          <Branch>
+            <States>
+              <State name="yes" />
+            </States>
+            <Potential type="Table">
+              <Variables>
+                <Variable name="Health state" timeSlice="1" />
+              </Variables>
+              <Values>0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 1.0</Values>
+            </Potential>
+          </Branch>
+          <Branch>
+            <States>
+              <State name="no" />
+            </States>
+            <Potential type="Tree/ADD">
+              <Variables>
+                <Variable name="Health state" timeSlice="1" />
+                <Variable name="Health state" timeSlice="0" />
+                <Variable name="Death CC" timeSlice="0" />
+                <Variable name="Infection 16-18" timeSlice="0" />
+                <Variable name="Healing" timeSlice="0" />
+                <Variable name="Effective vaccine" />
+              </Variables>
+              <TopVariable name="Death CC" timeSlice="0" />
+              <Branches>
+                <Branch>
+                  <States>
+                    <State name="yes" />
+                  </States>
+                  <Potential type="Table">
+                    <Variables>
+                      <Variable name="Health state" timeSlice="1" />
+                    </Variables>
+                    <Values>0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 1.0</Values>
+                  </Potential>
+                </Branch>
+                <Branch>
+                  <States>
+                    <State name="no" />
+                  </States>
+                  <Potential type="Tree/ADD">
+                    <TopVariable name="Health state" timeSlice="0" />
+                    <Branches>
+                      <Branch>
+                        <States>
+                          <State name="dead" />
+                        </States>
+                        <Potential type="Table">
+                          <Variables>
+                            <Variable name="Health state" timeSlice="1" />
+                          </Variables>
+                          <Values>0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 1.0</Values>
+                        </Potential>
+                      </Branch>
+                      <Branch>
+                        <States>
+                          <State name="negative" />
+                        </States>
+                        <Potential type="Tree/ADD">
+                          <TopVariable name="Infection 16-18" timeSlice="0" />
+                          <Branches>
+                            <Branch>
+                              <States>
+                                <State name="no" />
+                              </States>
+                              <Potential type="Table">
+                                <Variables>
+                                  <Variable name="Health state" timeSlice="1" />
+                                </Variables>
+                                <Values>1.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0</Values>
+                              </Potential>
+                            </Branch>
+                            <Branch>
+                              <States>
+                                <State name="yes" />
+                              </States>
+                              <Potential type="Tree/ADD">
+                                <TopVariable name="Effective vaccine" />
+                                <Branches>
+                                  <Branch>
+                                    <States>
+                                      <State name="yes" />
+                                    </States>
+                                    <Potential type="Table">
+                                      <Variables>
+                                        <Variable name="Health state" timeSlice="1" />
+                                      </Variables>
+                                      <Values>0.906 0.094 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0</Values>
+                                      <UncertainValues>
+                                        <Value distribution="Complement">1.0</Value>
+                                        <Value distribution="Beta" name="pI_CIN1 ineff vaccine">18.8 181.2</Value>
+                                        <Value distribution="Exact">0.0</Value>
+                                        <Value distribution="Exact">0.0</Value>
+                                        <Value distribution="Exact">0.0</Value>
+                                        <Value distribution="Exact">0.0</Value>
+                                        <Value distribution="Exact">0.0</Value>
+                                        <Value distribution="Exact">0.0</Value>
+                                        <Value distribution="Exact">0.0</Value>
+                                        <Value distribution="Exact">0.0</Value>
+                                      </UncertainValues>
+                                    </Potential>
+                                  </Branch>
+                                  <Branch>
+                                    <States>
+                                      <State name="no" />
+                                    </States>
+                                    <Potential type="Table">
+                                      <Variables>
+                                        <Variable name="Health state" timeSlice="1" />
+                                      </Variables>
+                                      <Values>0.813 0.094 0.058 0.035 0.0 0.0 0.0 0.0 0.0 0.0</Values>
+                                      <UncertainValues>
+                                        <Value distribution="Dirichlet" name="r_infected">162.6</Value>
+                                        <Value distribution="Dirichlet" name="pI_CIN1">18.8</Value>
+                                        <Value distribution="Dirichlet" name="pI_CIN2 ">11.6</Value>
+                                        <Value distribution="Dirichlet" name="pI_CIN3 ">7.0</Value>
+                                        <Value distribution="Exact">0.0</Value>
+                                        <Value distribution="Exact">0.0</Value>
+                                        <Value distribution="Exact">0.0</Value>
+                                        <Value distribution="Exact">0.0</Value>
+                                        <Value distribution="Exact">0.0</Value>
+                                        <Value distribution="Exact">0.0</Value>
+                                      </UncertainValues>
+                                    </Potential>
+                                  </Branch>
+                                </Branches>
+                              </Potential>
+                            </Branch>
+                          </Branches>
+                        </Potential>
+                      </Branch>
+                      <Branch>
+                        <States>
+                          <State name="CIN1" />
+                        </States>
+                        <Potential type="Tree/ADD">
+                          <TopVariable name="Infection 16-18" timeSlice="0" />
+                          <Branches>
+                            <Branch>
+                              <States>
+                                <State name="no" />
+                              </States>
+                              <Potential type="Table">
+                                <Variables>
+                                  <Variable name="Health state" timeSlice="1" />
+                                </Variables>
+                                <Values>1.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0</Values>
+                              </Potential>
+                            </Branch>
+                            <Branch>
+                              <States>
+                                <State name="yes" />
+                              </States>
+                              <Potential type="Tree/ADD">
+                                <TopVariable name="Effective vaccine" />
+                                <Branches>
+                                  <Branch>
+                                    <States>
+                                      <State name="yes" />
+                                    </States>
+                                    <Potential type="Table">
+                                      <Variables>
+                                        <Variable name="Health state" timeSlice="1" />
+                                      </Variables>
+                                      <Values>0.329 0.671 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0</Values>
+                                      <UncertainValues>
+                                        <Value distribution="Complement">1.0</Value>
+                                        <Value distribution="Beta" name="rCIN1_n ineff vaccine">53.68 26.32</Value>
+                                        <Value distribution="Exact">0.0</Value>
+                                        <Value distribution="Exact">0.0</Value>
+                                        <Value distribution="Exact">0.0</Value>
+                                        <Value distribution="Exact">0.0</Value>
+                                        <Value distribution="Exact">0.0</Value>
+                                        <Value distribution="Exact">0.0</Value>
+                                        <Value distribution="Exact">0.0</Value>
+                                        <Value distribution="Exact">0.0</Value>
+                                      </UncertainValues>
+                                    </Potential>
+                                  </Branch>
+                                  <Branch>
+                                    <States>
+                                      <State name="no" />
+                                    </States>
+                                    <Potential type="Table">
+                                      <Variables>
+                                        <Variable name="Health state" timeSlice="1" />
+                                      </Variables>
+                                      <Values>0.329 0.535 0.136 0.0 0.0 0.0 0.0 0.0 0.0 0.0</Values>
+                                      <UncertainValues>
+                                        <Value distribution="Dirichlet" name="rCIN1_n ">26.32</Value>
+                                        <Value distribution="Dirichlet" name="rCIN1 ">42.8</Value>
+                                        <Value distribution="Dirichlet" name="pCIN1_2 ">10.88</Value>
+                                        <Value distribution="Exact">0.0</Value>
+                                        <Value distribution="Exact">0.0</Value>
+                                        <Value distribution="Exact">0.0</Value>
+                                        <Value distribution="Exact">0.0</Value>
+                                        <Value distribution="Exact">0.0</Value>
+                                        <Value distribution="Exact">0.0</Value>
+                                        <Value distribution="Exact">0.0</Value>
+                                      </UncertainValues>
+                                    </Potential>
+                                  </Branch>
+                                </Branches>
+                              </Potential>
+                            </Branch>
+                          </Branches>
+                        </Potential>
+                      </Branch>
+                      <Branch>
+                        <States>
+                          <State name="CIN2" />
+                        </States>
+                        <Potential type="Tree/ADD">
+                          <TopVariable name="Healing" timeSlice="0" />
+                          <Branches>
+                            <Branch>
+                              <States>
+                                <State name="yes" />
+                              </States>
+                              <Potential type="Table">
+                                <Variables>
+                                  <Variable name="Health state" timeSlice="1" />
+                                </Variables>
+                                <Values>1.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0</Values>
+                              </Potential>
+                            </Branch>
+                            <Branch>
+                              <States>
+                                <State name="no" />
+                              </States>
+                              <Potential type="Table">
+                                <Variables>
+                                  <Variable name="Health state" timeSlice="1" />
+                                </Variables>
+                                <Values>0.21 0.133 0.517 0.14 0.0 0.0 0.0 0.0 0.0 0.0</Values>
+                                <UncertainValues>
+                                  <Value distribution="Dirichlet" name="rCIN2_n">21.0</Value>
+                                  <Value distribution="Dirichlet" name="rCIN2_1">13.3</Value>
+                                  <Value distribution="Dirichlet" name="rCIN2">51.7</Value>
+                                  <Value distribution="Dirichlet" name="pCIN2_3">14.0</Value>
+                                  <Value distribution="Exact">0.0</Value>
+                                  <Value distribution="Exact">0.0</Value>
+                                  <Value distribution="Exact">0.0</Value>
+                                  <Value distribution="Exact">0.0</Value>
+                                  <Value distribution="Exact">0.0</Value>
+                                  <Value distribution="Exact">0.0</Value>
+                                </UncertainValues>
+                              </Potential>
+                            </Branch>
+                          </Branches>
+                        </Potential>
+                      </Branch>
+                      <Branch>
+                        <States>
+                          <State name="CIN3" />
+                        </States>
+                        <Potential type="Tree/ADD">
+                          <TopVariable name="Healing" timeSlice="0" />
+                          <Branches>
+                            <Branch>
+                              <States>
+                                <State name="yes" />
+                              </States>
+                              <Potential type="Table">
+                                <Variables>
+                                  <Variable name="Health state" timeSlice="1" />
+                                </Variables>
+                                <Values>1.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0</Values>
+                              </Potential>
+                            </Branch>
+                            <Branch>
+                              <States>
+                                <State name="no" />
+                              </States>
+                              <Potential type="Table">
+                                <Variables>
+                                  <Variable name="Health state" timeSlice="1" />
+                                </Variables>
+                                <Values>0.11 0.03 0.03 0.4 0.43 0.0 0.0 0.0 0.0 0.0</Values>
+                                <UncertainValues>
+                                  <Value distribution="Dirichlet" name="rCIN3_n ">6.6</Value>
+                                  <Value distribution="Dirichlet" name="rCIN3_1 ">1.8</Value>
+                                  <Value distribution="Dirichlet" name="rCIN3_2 ">1.8</Value>
+                                  <Value distribution="Dirichlet" name="rCIN3">24.0</Value>
+                                  <Value distribution="Dirichlet" name="pCIN3_CIS1 ">25.8</Value>
+                                  <Value distribution="Exact">0.0</Value>
+                                  <Value distribution="Exact">0.0</Value>
+                                  <Value distribution="Exact">0.0</Value>
+                                  <Value distribution="Exact">0.0</Value>
+                                  <Value distribution="Exact">0.0</Value>
+                                </UncertainValues>
+                              </Potential>
+                            </Branch>
+                          </Branches>
+                        </Potential>
+                      </Branch>
+                      <Branch>
+                        <States>
+                          <State name="CIS1" />
+                        </States>
+                        <Potential type="Table">
+                          <Variables>
+                            <Variable name="Health state" timeSlice="1" />
+                          </Variables>
+                          <Values>0.0 0.0 0.0 0.0 0.95 0.05 0.0 0.0 0.0 0.0</Values>
+                          <UncertainValues>
+                            <Value distribution="Exact">0.0</Value>
+                            <Value distribution="Exact">0.0</Value>
+                            <Value distribution="Exact">0.0</Value>
+                            <Value distribution="Exact">0.0</Value>
+                            <Value distribution="Complement">1.0</Value>
+                            <Value distribution="Beta" name="pCIS1_2 ">2.5 47.5</Value>
+                            <Value distribution="Exact">0.0</Value>
+                            <Value distribution="Exact">0.0</Value>
+                            <Value distribution="Exact">0.0</Value>
+                            <Value distribution="Exact">0.0</Value>
+                          </UncertainValues>
+                        </Potential>
+                      </Branch>
+                      <Branch>
+                        <States>
+                          <State name="CIS2" />
+                        </States>
+                        <Potential type="Table">
+                          <Variables>
+                            <Variable name="Health state" timeSlice="1" />
+                          </Variables>
+                          <Values>0.0 0.0 0.0 0.0 0.0 0.82 0.18 0.0 0.0 0.0</Values>
+                          <UncertainValues>
+                            <Value distribution="Exact">0.0</Value>
+                            <Value distribution="Exact">0.0</Value>
+                            <Value distribution="Exact">0.0</Value>
+                            <Value distribution="Exact">0.0</Value>
+                            <Value distribution="Exact">0.0</Value>
+                            <Value distribution="Complement">1.0</Value>
+                            <Value distribution="Beta" name="pLCC ">9.0 41.0</Value>
+                            <Value distribution="Exact">0.0</Value>
+                            <Value distribution="Exact">0.0</Value>
+                            <Value distribution="Exact">0.0</Value>
+                          </UncertainValues>
+                        </Potential>
+                      </Branch>
+                      <Branch>
+                        <States>
+                          <State name="DCC" />
+                          <State name="RCC" />
+                          <State name="LCC" />
+                        </States>
+                        <Potential type="Tree/ADD">
+                          <TopVariable name="Healing" timeSlice="0" />
+                          <Branches>
+                            <Branch>
+                              <States>
+                                <State name="yes" />
+                              </States>
+                              <Potential type="Table">
+                                <Variables>
+                                  <Variable name="Health state" timeSlice="1" />
+                                </Variables>
+                                <Values>1.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0</Values>
+                              </Potential>
+                            </Branch>
+                            <Branch>
+                              <States>
+                                <State name="no" />
+                              </States>
+                              <Potential type="Tree/ADD">
+                                <TopVariable name="Health state" timeSlice="0" />
+                                <Branches>
+                                  <Branch>
+                                    <States>
+                                      <State name="LCC" />
+                                    </States>
+                                    <Potential type="Table">
+                                      <Variables>
+                                        <Variable name="Health state" timeSlice="1" />
+                                      </Variables>
+                                      <Values>0.0 0.0 0.0 0.0 0.0 0.0 0.9 0.1 0.0 0.0</Values>
+                                      <UncertainValues>
+                                        <Value distribution="Exact">0.0</Value>
+                                        <Value distribution="Exact">0.0</Value>
+                                        <Value distribution="Exact">0.0</Value>
+                                        <Value distribution="Exact">0.0</Value>
+                                        <Value distribution="Exact">0.0</Value>
+                                        <Value distribution="Exact">0.0</Value>
+                                        <Value distribution="Complement">1.0</Value>
+                                        <Value distribution="Beta" name="pRCC ">5.0 45.0</Value>
+                                        <Value distribution="Exact">0.0</Value>
+                                        <Value distribution="Exact">0.0</Value>
+                                      </UncertainValues>
+                                    </Potential>
+                                  </Branch>
+                                  <Branch>
+                                    <States>
+                                      <State name="RCC" />
+                                    </States>
+                                    <Potential type="Table">
+                                      <Variables>
+                                        <Variable name="Health state" timeSlice="1" />
+                                      </Variables>
+                                      <Values>0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.7 0.3 0.0</Values>
+                                      <UncertainValues>
+                                        <Value distribution="Exact">0.0</Value>
+                                        <Value distribution="Exact">0.0</Value>
+                                        <Value distribution="Exact">0.0</Value>
+                                        <Value distribution="Exact">0.0</Value>
+                                        <Value distribution="Exact">0.0</Value>
+                                        <Value distribution="Exact">0.0</Value>
+                                        <Value distribution="Exact">0.0</Value>
+                                        <Value distribution="Complement">1.0</Value>
+                                        <Value distribution="Beta" name="pDCC ">15.0 35.0</Value>
+                                        <Value distribution="Exact">0.0</Value>
+                                      </UncertainValues>
+                                    </Potential>
+                                  </Branch>
+                                  <Branch>
+                                    <States>
+                                      <State name="DCC" />
+                                    </States>
+                                    <Potential type="Table">
+                                      <Variables>
+                                        <Variable name="Health state" timeSlice="1" />
+                                      </Variables>
+                                      <Values>0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 1.0 0.0</Values>
+                                    </Potential>
+                                  </Branch>
+                                </Branches>
+                              </Potential>
+                            </Branch>
+                          </Branches>
+                        </Potential>
+                      </Branch>
+                    </Branches>
+                  </Potential>
+                </Branch>
+              </Branches>
+            </Potential>
+          </Branch>
+        </Branches>
+      </Potential>
+      <Potential type="Tree/ADD" role="conditionalProbability">
+        <Variables>
+          <Variable name="Healing" timeSlice="0" />
+          <Variable name="Treatment" timeSlice="0" />
+          <Variable name="Health state" timeSlice="0" />
+        </Variables>
+        <TopVariable name="Treatment" timeSlice="0" />
+        <Branches>
+          <Branch>
+            <States>
+              <State name="no" />
+            </States>
+            <Potential type="Table">
+              <Variables>
+                <Variable name="Healing" timeSlice="0" />
+              </Variables>
+              <Values>1.0 0.0</Values>
+            </Potential>
+          </Branch>
+          <Branch>
+            <States>
+              <State name="yes" />
+            </States>
+            <Potential type="Tree/ADD">
+              <Variables>
+                <Variable name="Healing" timeSlice="0" />
+                <Variable name="Health state" timeSlice="0" />
+              </Variables>
+              <TopVariable name="Health state" timeSlice="0" />
+              <Branches>
+                <Branch>
+                  <States>
+                    <State name="CIN1" />
+                    <State name="negative" />
+                  </States>
+                  <Potential type="Table">
+                    <Variables>
+                      <Variable name="Healing" timeSlice="0" />
+                    </Variables>
+                    <Values>1.0 0.0</Values>
+                  </Potential>
+                </Branch>
+                <Branch>
+                  <States>
+                    <State name="CIN3" />
+                    <State name="CIN2" />
+                    <State name="CIS2" />
+                    <State name="CIS1" />
+                  </States>
+                  <Potential type="Table">
+                    <Variables>
+                      <Variable name="Healing" timeSlice="0" />
+                    </Variables>
+                    <Values>0.07027300303336703 0.929726996966633</Values>
+                    <UncertainValues>
+                      <Value distribution="Complement">1.0</Value>
+                      <Value distribution="Beta" name="cCIN2">1839.0 139.0</Value>
+                    </UncertainValues>
+                  </Potential>
+                </Branch>
+                <Branch>
+                  <States>
+                    <State name="LCC" />
+                  </States>
+                  <Potential type="Table">
+                    <Variables>
+                      <Variable name="Healing" timeSlice="0" />
+                    </Variables>
+                    <Values>0.08 0.92</Values>
+                    <UncertainValues>
+                      <Value distribution="Complement">1.0</Value>
+                      <Value distribution="Beta" name="cLCC ">46.0 4.0</Value>
+                    </UncertainValues>
+                  </Potential>
+                </Branch>
+                <Branch>
+                  <States>
+                    <State name="RCC" />
+                  </States>
+                  <Potential type="Table">
+                    <Variables>
+                      <Variable name="Healing" timeSlice="0" />
+                    </Variables>
+                    <Values>0.45 0.55</Values>
+                    <UncertainValues>
+                      <Value distribution="Complement">1.0</Value>
+                      <Value distribution="Beta" name="cRCC ">27.5 22.5</Value>
+                    </UncertainValues>
+                  </Potential>
+                </Branch>
+                <Branch>
+                  <States>
+                    <State name="DCC" />
+                  </States>
+                  <Potential type="Table">
+                    <Variables>
+                      <Variable name="Healing" timeSlice="0" />
+                    </Variables>
+                    <Values>0.83 0.17</Values>
+                    <UncertainValues>
+                      <Value distribution="Complement">1.0</Value>
+                      <Value distribution="Beta" name="cDCC ">8.5 41.5</Value>
+                    </UncertainValues>
+                  </Potential>
+                </Branch>
+                <Branch>
+                  <States>
+                    <State name="dead" />
+                  </States>
+                  <Potential type="Table">
+                    <Variables>
+                      <Variable name="Healing" timeSlice="0" />
+                    </Variables>
+                    <Values>1.0 0.0</Values>
+                  </Potential>
+                </Branch>
+              </Branches>
+            </Potential>
+          </Branch>
+        </Branches>
+      </Potential>
+      <Potential type="Tree/ADD" role="conditionalProbability">
+        <Variables>
+          <Variable name="Screening result" timeSlice="0" />
+          <Variable name="Health state" timeSlice="0" />
+          <Variable name="Screening" timeSlice="0" />
+          <Variable name="Dec:Test type" />
+        </Variables>
+        <TopVariable name="Screening" timeSlice="0" />
+        <Branches>
+          <Branch>
+            <States>
+              <State name="no" />
+            </States>
+            <Potential type="Table">
+              <Variables>
+                <Variable name="Screening result" timeSlice="0" />
+              </Variables>
+              <Values>1.0 0.0 0.0</Values>
+            </Potential>
+          </Branch>
+          <Branch>
+            <States>
+              <State name="yes" />
+            </States>
+            <Potential type="Tree/ADD">
+              <Variables>
+                <Variable name="Screening result" timeSlice="0" />
+                <Variable name="Health state" timeSlice="0" />
+                <Variable name="Dec:Test type" />
+              </Variables>
+              <TopVariable name="Health state" timeSlice="0" />
+              <Branches>
+                <Branch>
+                  <States>
+                    <State name="CIN1" />
+                    <State name="negative" />
+                  </States>
+                  <Potential type="Table">
+                    <Variables>
+                      <Variable name="Screening result" timeSlice="0" />
+                      <Variable name="Dec:Test type" />
+                    </Variables>
+                    <Values>0.0 0.9621999869955778 0.03780001300442215 0.0 0.9390999208075193 0.06090007919248075 0.0 0.9283000540126596 0.07169994598734042</Values>
+                    <UncertainValues>
+                      <Value distribution="Exact">0.0</Value>
+                      <Value distribution="Beta" name="E_Cit ">234.401 9.20844</Value>
+                      <Value distribution="Complement">1.0</Value>
+                      <Value distribution="Exact">0.0</Value>
+                      <Value distribution="Beta" name="E_HC2 ">650.258 42.16885</Value>
+                      <Value distribution="Complement">1.0</Value>
+                      <Value distribution="Exact">0.0</Value>
+                      <Value distribution="Beta" name="E_CitHC2 ">586.5825 45.3064</Value>
+                      <Value distribution="Complement">1.0</Value>
+                    </UncertainValues>
+                  </Potential>
+                </Branch>
+                <Branch>
+                  <States>
+                    <State name="DCC" />
+                    <State name="RCC" />
+                    <State name="LCC" />
+                    <State name="CIN3" />
+                    <State name="CIN2" />
+                    <State name="CIS2" />
+                    <State name="CIS1" />
+                  </States>
+                  <Potential type="Table">
+                    <Variables>
+                      <Variable name="Screening result" timeSlice="0" />
+                      <Variable name="Dec:Test type" />
+                    </Variables>
+                    <Values>0.0 0.3687999993310753 0.6312000006689247 0.0 0.054700513552124796 0.9452994864478752 0.0 0.01500000050858985 0.9849999994914101</Values>
+                    <UncertainValues>
+                      <Value distribution="Exact">0.0</Value>
+                      <Value distribution="Complement">1.0</Value>
+                      <Value distribution="Beta" name="S_Cit ">21.3631946 12.4821707</Value>
+                      <Value distribution="Exact">0.0</Value>
+                      <Value distribution="Complement">1.0</Value>
+                      <Value distribution="Beta" name="S_HC2 ">23.92 1.38415</Value>
+                      <Value distribution="Exact">0.0</Value>
+                      <Value distribution="Complement">1.0</Value>
+                      <Value distribution="Beta" name="S_CitHC2 ">8.6184391 0.13124527</Value>
+                    </UncertainValues>
+                  </Potential>
+                </Branch>
+                <Branch>
+                  <States>
+                    <State name="dead" />
+                  </States>
+                  <Potential type="Table">
+                    <Variables>
+                      <Variable name="Screening result" timeSlice="0" />
+                    </Variables>
+                    <Values>1.0 0.0 0.0</Values>
+                  </Potential>
+                </Branch>
+              </Branches>
+            </Potential>
+          </Branch>
+        </Branches>
+      </Potential>
+      <Potential type="Table" role="conditionalProbability">
+        <Variables>
+          <Variable name="Effective vaccine" />
+          <Variable name="Vaccinated" />
+        </Variables>
+        <Values>1.0 0.0 0.04 0.96</Values>
+        <UncertainValues>
+          <Value />
+          <Value />
+          <Value distribution="Complement" name="">1.0</Value>
+          <Value distribution="Beta" name="eficaciaVac">48.0 2.0</Value>
+        </UncertainValues>
+      </Potential>
+      <Potential type="Table" role="conditionalProbability">
+        <Variables>
+          <Variable name="Vaccinated" />
+          <Variable name="Dec:Vaccine" />
+        </Variables>
+        <Values>1.0 0.0 0.04 0.96</Values>
+        <UncertainValues>
+          <Value />
+          <Value />
+          <Value distribution="Complement">1.0</Value>
+          <Value distribution="Beta" name="coberturaVac">48.0 2.0</Value>
+        </UncertainValues>
+      </Potential>
+      <Potential type="Table" role="conditionalProbability">
+        <Variables>
+          <Variable name="Do colposcopy &amp; biopsy" timeSlice="0" />
+          <Variable name="Symptoms" timeSlice="0" />
+          <Variable name="Screening result" timeSlice="0" />
+        </Variables>
+        <Values>1.0 0.0 0.0 1.0 1.0 0.0 0.0 1.0 0.0 1.0 0.0 1.0</Values>
+      </Potential>
+      <Potential type="Tree/ADD" role="conditionalProbability">
+        <Variables>
+          <Variable name="Histerectomy" timeSlice="0" />
+          <Variable name="Health state" timeSlice="0" />
+          <Variable name="Do colposcopy &amp; biopsy" timeSlice="0" />
+        </Variables>
+        <TopVariable name="Do colposcopy &amp; biopsy" timeSlice="0" />
+        <Branches>
+          <Branch>
+            <States>
+              <State name="no" />
+            </States>
+            <Potential type="Table">
+              <Variables>
+                <Variable name="Histerectomy" timeSlice="0" />
+              </Variables>
+              <Values>1.0 0.0</Values>
+            </Potential>
+          </Branch>
+          <Branch>
+            <States>
+              <State name="yes" />
+            </States>
+            <Potential type="Table">
+              <Variables>
+                <Variable name="Histerectomy" timeSlice="0" />
+                <Variable name="Health state" timeSlice="0" />
+              </Variables>
+              <Values>1.0 0.0 1.0 0.0 1.0 0.0 1.0 0.0 1.0 0.0 1.0 0.0 0.0 1.0 0.0 1.0 1.0 0.0 1.0 0.0</Values>
+            </Potential>
+          </Branch>
+        </Branches>
+      </Potential>
+      <Potential type="Tree/ADD" role="conditionalProbability">
+        <Variables>
+          <Variable name="Radiotherapy" timeSlice="0" />
+          <Variable name="Health state" timeSlice="0" />
+          <Variable name="Do colposcopy &amp; biopsy" timeSlice="0" />
+        </Variables>
+        <TopVariable name="Do colposcopy &amp; biopsy" timeSlice="0" />
+        <Branches>
+          <Branch>
+            <States>
+              <State name="no" />
+            </States>
+            <Potential type="Table">
+              <Variables>
+                <Variable name="Radiotherapy" timeSlice="0" />
+              </Variables>
+              <Values>1.0 0.0</Values>
+            </Potential>
+          </Branch>
+          <Branch>
+            <States>
+              <State name="yes" />
+            </States>
+            <Potential type="Table">
+              <Variables>
+                <Variable name="Radiotherapy" timeSlice="0" />
+                <Variable name="Health state" timeSlice="0" />
+              </Variables>
+              <Values>1.0 0.0 1.0 0.0 1.0 0.0 1.0 0.0 1.0 0.0 1.0 0.0 1.0 0.0 0.0 1.0 0.0 1.0 1.0 0.0</Values>
+            </Potential>
+          </Branch>
+        </Branches>
+      </Potential>
+      <Potential type="Tree/ADD" role="conditionalProbability">
+        <Variables>
+          <Variable name="Chemotherapy" timeSlice="0" />
+          <Variable name="Health state" timeSlice="0" />
+          <Variable name="Do colposcopy &amp; biopsy" timeSlice="0" />
+        </Variables>
+        <TopVariable name="Do colposcopy &amp; biopsy" timeSlice="0" />
+        <Branches>
+          <Branch>
+            <States>
+              <State name="no" />
+            </States>
+            <Potential type="Table">
+              <Variables>
+                <Variable name="Chemotherapy" timeSlice="0" />
+              </Variables>
+              <Values>1.0 0.0</Values>
+            </Potential>
+          </Branch>
+          <Branch>
+            <States>
+              <State name="yes" />
+            </States>
+            <Potential type="Table">
+              <Variables>
+                <Variable name="Chemotherapy" timeSlice="0" />
+                <Variable name="Health state" timeSlice="0" />
+              </Variables>
+              <Values>1.0 0.0 1.0 0.0 1.0 0.0 1.0 0.0 1.0 0.0 1.0 0.0 1.0 0.0 0.0 1.0 1.0 0.0 1.0 0.0</Values>
+            </Potential>
+          </Branch>
+        </Branches>
+      </Potential>
+      <Potential type="Table" role="conditionalProbability">
+        <Variables>
+          <Variable name="Treatment" timeSlice="0" />
+          <Variable name="Chemotherapy" timeSlice="0" />
+          <Variable name="Radiotherapy" timeSlice="0" />
+          <Variable name="Histerectomy" timeSlice="0" />
+          <Variable name="Conization" timeSlice="0" />
+        </Variables>
+        <Values>1.0 0.0 0.0 1.0 0.0 1.0 0.0 1.0 0.0 1.0 0.0 1.0 0.0 1.0 0.0 1.0 0.0 1.0 0.0 1.0 0.0 1.0 0.0 1.0 0.0 1.0 0.0 1.0 0.0 1.0 0.0 1.0</Values>
+      </Potential>
+      <Potential type="Table" role="conditionalProbability">
+        <Variables>
+          <Variable name="Ever screened" />
+        </Variables>
+        <Values>0.21001344086021506 0.7899865591397851</Values>
+        <UncertainValues>
+          <Value distribution="Beta" name="No_scre ">2500.0 9404.0</Value>
+          <Value distribution="Complement">1.0</Value>
+        </UncertainValues>
+      </Potential>
+      <Potential type="Tree/ADD" role="conditionalProbability">
+        <Variables>
+          <Variable name="Conization" timeSlice="0" />
+          <Variable name="Do colposcopy &amp; biopsy" timeSlice="0" />
+          <Variable name="Health state" timeSlice="0" />
+        </Variables>
+        <TopVariable name="Do colposcopy &amp; biopsy" timeSlice="0" />
+        <Branches>
+          <Branch>
+            <States>
+              <State name="no" />
+            </States>
+            <Potential type="Table">
+              <Variables>
+                <Variable name="Conization" timeSlice="0" />
+              </Variables>
+              <Values>1.0 0.0</Values>
+            </Potential>
+          </Branch>
+          <Branch>
+            <States>
+              <State name="yes" />
+            </States>
+            <Potential type="Table">
+              <Variables>
+                <Variable name="Conization" timeSlice="0" />
+                <Variable name="Health state" timeSlice="0" />
+              </Variables>
+              <Values>1.0 0.0 0.0 1.0 0.0 1.0 1.0 0.0 1.0 0.0 1.0 0.0 1.0 0.0 1.0 0.0 1.0 0.0 1.0 0.0</Values>
+            </Potential>
+          </Branch>
+        </Branches>
+      </Potential>
+      <Potential type="Tree/ADD" role="utility">
+        <UtilityVariable name="Cost of citology" timeSlice="0" />
+        <Variables>
+          <Variable name="Screening" timeSlice="0" />
+          <Variable name="Dec:Test type" />
+        </Variables>
+        <TopVariable name="Screening" timeSlice="0" />
+        <Branches>
+          <Branch>
+            <States>
+              <State name="no" />
+            </States>
+            <Potential type="Table">
+              <UtilityVariable name="Cost of citology" timeSlice="0" />
+              <Values>0.0</Values>
+            </Potential>
+          </Branch>
+          <Branch>
+            <States>
+              <State name="yes" />
+            </States>
+            <Potential type="Tree/ADD">
+              <UtilityVariable name="Cost of citology" timeSlice="0" />
+              <Variables>
+                <Variable name="Dec:Test type" />
+              </Variables>
+              <TopVariable name="Dec:Test type" />
+              <Branches>
+                <Branch>
+                  <States>
+                    <State name="citology+HC2" />
+                    <State name="citology" />
+                  </States>
+                  <Potential type="Table">
+                    <UtilityVariable name="Cost of citology" timeSlice="0" />
+                    <Values>24.62</Values>
+                    <UncertainValues>
+                      <Value distribution="Triangular" name="cCitología ">19.696 29.544 24.62</Value>
+                    </UncertainValues>
+                  </Potential>
+                </Branch>
+                <Branch>
+                  <States>
+                    <State name="HC2" />
+                  </States>
+                  <Potential type="Table">
+                    <UtilityVariable name="Cost of citology" timeSlice="0" />
+                    <Values>0.0</Values>
+                  </Potential>
+                </Branch>
+              </Branches>
+            </Potential>
+          </Branch>
+        </Branches>
+      </Potential>
+      <Potential type="Tree/ADD" role="utility">
+        <UtilityVariable name="Cost of HC2" timeSlice="0" />
+        <Variables>
+          <Variable name="Screening" timeSlice="0" />
+          <Variable name="Dec:Test type" />
+        </Variables>
+        <TopVariable name="Screening" timeSlice="0" />
+        <Branches>
+          <Branch>
+            <States>
+              <State name="no" />
+            </States>
+            <Potential type="Table">
+              <UtilityVariable name="Cost of HC2" timeSlice="0" />
+              <Values>0.0</Values>
+            </Potential>
+          </Branch>
+          <Branch>
+            <States>
+              <State name="yes" />
+            </States>
+            <Potential type="Tree/ADD">
+              <UtilityVariable name="Cost of HC2" timeSlice="0" />
+              <Variables>
+                <Variable name="Dec:Test type" />
+              </Variables>
+              <TopVariable name="Dec:Test type" />
+              <Branches>
+                <Branch>
+                  <States>
+                    <State name="citology+HC2" />
+                    <State name="HC2" />
+                  </States>
+                  <Potential type="Table">
+                    <UtilityVariable name="Cost of HC2" timeSlice="0" />
+                    <Values>109.17</Values>
+                    <UncertainValues>
+                      <Value distribution="Triangular" name="cHibridación ">87.336 131.004 109.17</Value>
+                    </UncertainValues>
+                  </Potential>
+                </Branch>
+                <Branch>
+                  <States>
+                    <State name="citology" />
+                  </States>
+                  <Potential type="Table">
+                    <UtilityVariable name="Cost of HC2" timeSlice="0" />
+                    <Values>0.0</Values>
+                  </Potential>
+                </Branch>
+              </Branches>
+            </Potential>
+          </Branch>
+        </Branches>
+      </Potential>
+      <Potential type="Table" role="utility">
+        <UtilityVariable name="Cost of vaccine" />
+        <Variables>
+          <Variable name="Vaccinated" />
+        </Variables>
+        <Values>0.0 355.8</Values>
+        <UncertainValues>
+          <Value />
+          <Value distribution="Triangular" name="cVacuna ">316.8 394.8 355.8</Value>
+        </UncertainValues>
+      </Potential>
+      <Potential type="Tree/ADD" role="utility">
+        <UtilityVariable name="AR QoL" timeSlice="0" />
+        <Variables>
+          <Variable name="Age" timeSlice="0" />
+        </Variables>
+        <TopVariable name="Age" timeSlice="0" />
+        <Branches>
+          <Branch>
+            <Thresholds>
+              <Threshold value="10.0" belongsTo="right" />
+              <Threshold value="20.0" belongsTo="right" />
+            </Thresholds>
+            <Potential type="Table">
+              <UtilityVariable name="AR QoL" timeSlice="0" />
+              <Values>0.93</Values>
+            </Potential>
+          </Branch>
+          <Branch>
+            <Thresholds>
+              <Threshold value="20.0" belongsTo="right" />
+              <Threshold value="35.0" belongsTo="right" />
+            </Thresholds>
+            <Potential type="Table">
+              <UtilityVariable name="AR QoL" timeSlice="0" />
+              <Values>0.91</Values>
+            </Potential>
+          </Branch>
+          <Branch>
+            <Thresholds>
+              <Threshold value="35.0" belongsTo="right" />
+              <Threshold value="45.0" belongsTo="right" />
+            </Thresholds>
+            <Potential type="Table">
+              <UtilityVariable name="AR QoL" timeSlice="0" />
+              <Values>0.89</Values>
+            </Potential>
+          </Branch>
+          <Branch>
+            <Thresholds>
+              <Threshold value="45.0" belongsTo="right" />
+              <Threshold value="55.0" belongsTo="right" />
+            </Thresholds>
+            <Potential type="Table">
+              <UtilityVariable name="AR QoL" timeSlice="0" />
+              <Values>0.86</Values>
+            </Potential>
+          </Branch>
+          <Branch>
+            <Thresholds>
+              <Threshold value="55.0" belongsTo="right" />
+              <Threshold value="65.0" belongsTo="right" />
+            </Thresholds>
+            <Potential type="Table">
+              <UtilityVariable name="AR QoL" timeSlice="0" />
+              <Values>0.8</Values>
+            </Potential>
+          </Branch>
+          <Branch>
+            <Thresholds>
+              <Threshold value="65.0" belongsTo="right" />
+              <Threshold value="75.0" belongsTo="right" />
+            </Thresholds>
+            <Potential type="Table">
+              <UtilityVariable name="AR QoL" timeSlice="0" />
+              <Values>0.78</Values>
+            </Potential>
+          </Branch>
+          <Branch>
+            <Thresholds>
+              <Threshold value="75.0" belongsTo="right" />
+              <Threshold value="Infinity" belongsTo="right" />
+            </Thresholds>
+            <Potential type="Table">
+              <UtilityVariable name="AR QoL" timeSlice="0" />
+              <Values>0.7</Values>
+            </Potential>
+          </Branch>
+        </Branches>
+      </Potential>
+      <Potential type="Tree/ADD" role="utility">
+        <UtilityVariable name="HSR QoL" timeSlice="0" />
+        <Variables>
+          <Variable name="Health state" timeSlice="0" />
+        </Variables>
+        <TopVariable name="Health state" timeSlice="0" />
+        <Branches>
+          <Branch>
+            <States>
+              <State name="negative" />
+            </States>
+            <Potential type="Table">
+              <UtilityVariable name="HSR QoL" timeSlice="0" />
+              <Values>1.0</Values>
+            </Potential>
+          </Branch>
+          <Branch>
+            <States>
+              <State name="CIN1" />
+            </States>
+            <Potential type="Table">
+              <UtilityVariable name="HSR QoL" timeSlice="0" />
+              <Values>0.91</Values>
+              <UncertainValues>
+                <Value distribution="Triangular" name="uCIN1 ">0.82 1.0 0.91</Value>
+              </UncertainValues>
+            </Potential>
+          </Branch>
+          <Branch>
+            <States>
+              <State name="CIN3" />
+              <State name="CIN2" />
+              <State name="CIS2" />
+              <State name="CIS1" />
+            </States>
+            <Potential type="Table">
+              <UtilityVariable name="HSR QoL" timeSlice="0" />
+              <Values>0.87</Values>
+              <UncertainValues>
+                <Value distribution="Triangular" name="uCIN2,3 ">0.783 0.957 0.87</Value>
+              </UncertainValues>
+            </Potential>
+          </Branch>
+          <Branch>
+            <States>
+              <State name="LCC" />
+            </States>
+            <Potential type="Table">
+              <UtilityVariable name="HSR QoL" timeSlice="0" />
+              <Values>0.76</Values>
+              <UncertainValues>
+                <Value distribution="Triangular" name="uLCC ">0.684 0.836 0.76</Value>
+              </UncertainValues>
+            </Potential>
+          </Branch>
+          <Branch>
+            <States>
+              <State name="RCC" />
+            </States>
+            <Potential type="Table">
+              <UtilityVariable name="HSR QoL" timeSlice="0" />
+              <Values>0.67</Values>
+              <UncertainValues>
+                <Value distribution="Triangular" name="uRCC ">0.603 0.737 0.67</Value>
+              </UncertainValues>
+            </Potential>
+          </Branch>
+          <Branch>
+            <States>
+              <State name="DCC" />
+            </States>
+            <Potential type="Table">
+              <UtilityVariable name="HSR QoL" timeSlice="0" />
+              <Values>0.48</Values>
+              <UncertainValues>
+                <Value distribution="Triangular" name="uDCC ">0.432 0.528 0.48</Value>
+              </UncertainValues>
+            </Potential>
+          </Branch>
+          <Branch>
+            <States>
+              <State name="dead" />
+            </States>
+            <Potential type="Table">
+              <UtilityVariable name="HSR QoL" timeSlice="0" />
+              <Values>0.0</Values>
+            </Potential>
+          </Branch>
+        </Branches>
+      </Potential>
+      <Potential type="Product" role="utility">
+        <UtilityVariable name="QoL" timeSlice="0" />
+        <Variables>
+          <Variable name="HSR QoL" timeSlice="0" />
+          <Variable name="AR QoL" timeSlice="0" />
+        </Variables>
+      </Potential>
+      <Potential type="Table" role="utility">
+        <UtilityVariable name="Cost of histerectomy" timeSlice="0" />
+        <Variables>
+          <Variable name="Histerectomy" timeSlice="0" />
+        </Variables>
+        <Values>0.0 8538.0</Values>
+        <UncertainValues>
+          <Value />
+          <Value distribution="Triangular" name="cHisterectomía ">6830.4 10245.6 8538.0</Value>
+        </UncertainValues>
+      </Potential>
+      <Potential type="Table" role="utility">
+        <UtilityVariable name="Cost of radiotherapy" timeSlice="0" />
+        <Variables>
+          <Variable name="Radiotherapy" timeSlice="0" />
+        </Variables>
+        <Values>0.0 3498.0</Values>
+        <UncertainValues>
+          <Value />
+          <Value distribution="Triangular" name="cRadio ">2798.4 4197.6 3498.0</Value>
+        </UncertainValues>
+      </Potential>
+      <Potential type="Table" role="utility">
+        <UtilityVariable name="Cost of chemo" timeSlice="0" />
+        <Variables>
+          <Variable name="Chemotherapy" timeSlice="0" />
+        </Variables>
+        <Values>0.0 2795.0</Values>
+        <UncertainValues>
+          <Value />
+          <Value distribution="Triangular" name="cQuimio ">2236.0 3354.0 2795.0</Value>
+        </UncertainValues>
+      </Potential>
+      <Potential type="Table" role="utility">
+        <UtilityVariable name="Cost colposcopy" timeSlice="0" />
+        <Variables>
+          <Variable name="Do colposcopy &amp; biopsy" timeSlice="0" />
+        </Variables>
+        <Values>0.0 439.62</Values>
+        <UncertainValues>
+          <Value />
+          <Value distribution="Triangular" name="cColposcopia ">351.696 527.544 439.62</Value>
+        </UncertainValues>
+      </Potential>
+      <Potential type="Table" role="utility">
+        <UtilityVariable name="Cost biopsy" timeSlice="0" />
+        <Variables>
+          <Variable name="Do colposcopy &amp; biopsy" timeSlice="0" />
+        </Variables>
+        <Values>0.0 285.19</Values>
+        <UncertainValues>
+          <Value />
+          <Value distribution="Triangular" name="cBiopsia ">228.152 342.228 285.19</Value>
+        </UncertainValues>
+      </Potential>
+      <Potential type="Table" role="utility">
+        <UtilityVariable name="Cost of conization" timeSlice="0" />
+        <Variables>
+          <Variable name="Conization" timeSlice="0" />
+        </Variables>
+        <Values>0.0 415.0</Values>
+        <UncertainValues>
+          <Value />
+          <Value distribution="Triangular" name="cConizacion ">332.0 498.0 415.0</Value>
+        </UncertainValues>
+      </Potential>
+    </Potentials>
+  </ProbNet>
+  <InferenceOptions>
+    <MulticriteriaOptions>
+      <SelectedAnalysisType>COST_EFFECTIVENESS</SelectedAnalysisType>
+      <Unicriterion>
+        <Scales>
+          <Scale Criterion="cost" Value="1.0" />
+          <Scale Criterion="effectiveness" Value="1.0" />
+        </Scales>
+      </Unicriterion>
+      <CostEffectiveness>
+        <CE_Criteria>
+          <CE_Criterion Criterion="cost" Value="Cost" />
+          <CE_Criterion Criterion="effectiveness" Value="Effectiveness" />
+        </CE_Criteria>
+      </CostEffectiveness>
+    </MulticriteriaOptions>
+    <TemporalOptions>
+      <Slices>20</Slices>
+      <Transition>BEGINNING</Transition>
+      <DiscountRates>
+        <DiscountRate Criterion="cost" value="0.0" unit="YEAR" />
+        <DiscountRate Criterion="effectiveness" value="0.0" unit="YEAR" />
+      </DiscountRates>
+    </TemporalOptions>
+  </InferenceOptions>
+</ProbModelXML>

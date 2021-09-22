@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ProbModelXML formatVersion="0.2.0">
+  <ProbNet type="DAN">
+    <Comment showWhenOpeningNetwork="false"><![CDATA[<<Double click to add/modify comment>>]]></Comment>
+    <DecisionCriteria>
+      <Criterion name="Cost" unit="€" />
+      <Criterion name="Effectiveness" unit="QALY" />
+    </DecisionCriteria>
+    <AdditionalProperties />
+    <Variables>
+      <Variable name="CostU" type="numeric" role="utility">
+        <Coordinates x="452" y="271" />
+        <Unit />
+        <Precision>0.01</Precision>
+        <Criterion name="Cost" />
+      </Variable>
+      <Variable name="D" type="finiteStates" role="decision">
+        <Coordinates x="520" y="127" />
+        <States>
+          <State name="no" />
+          <State name="yes" />
+        </States>
+      </Variable>
+      <Variable name="EffectivenessU" type="numeric" role="utility">
+        <Coordinates x="638" y="268" />
+        <Unit />
+        <Precision>0.01</Precision>
+        <Criterion name="Effectiveness" />
+      </Variable>
+    </Variables>
+    <Links>
+      <Link directed="true">
+        <Variable name="D" />
+        <Variable name="CostU" />
+      </Link>
+      <Link directed="true">
+        <Variable name="D" />
+        <Variable name="EffectivenessU" />
+      </Link>
+    </Links>
+    <Potentials>
+      <Potential type="Table" role="utility">
+        <UtilityVariable name="CostU" />
+        <Variables>
+          <Variable name="D" />
+        </Variables>
+        <Values>2.0 10.0</Values>
+      </Potential>
+      <Potential type="Table" role="conditionalProbability">
+        <UtilityVariable name="EffectivenessU" />
+        <Variables>
+          <Variable name="D" />
+        </Variables>
+        <Values>3.0 9.0</Values>
+      </Potential>
+    </Potentials>
+  </ProbNet>
+  <InferenceOptions>
+    <MulticriteriaOptions>
+      <SelectedAnalysisType>UNICRITERION</SelectedAnalysisType>
+      <Unicriterion>
+        <Scales>
+          <Scale Criterion="Cost" Value="-1.0" />
+          <Scale Criterion="Effectiveness" Value="30000.0" />
+        </Scales>
+      </Unicriterion>
+      <CostEffectiveness>
+        <Scales>
+          <Scale Criterion="Cost" Value="1.0" />
+          <Scale Criterion="Effectiveness" Value="1.0" />
+        </Scales>
+        <CE_Criteria>
+          <CE_Criterion Criterion="Cost" Value="Cost" />
+          <CE_Criterion Criterion="Effectiveness" Value="Effectiveness" />
+        </CE_Criteria>
+      </CostEffectiveness>
+    </MulticriteriaOptions>
+  </InferenceOptions>
+</ProbModelXML>

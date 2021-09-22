@@ -1,0 +1,4969 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ProbModelXML formatVersion="0.2.0">
+  <ProbNet type="MID">
+    <Comment showWhenOpeningNetwork="false"><![CDATA[<html>
+  <head>
+    
+  </head>
+  <body>
+    We have included the cost of fixing the processor 2 into the maintenance 
+    costs (because it was included in the survey). We have not included the 
+    yearly tuning costs because we assume they are covered by the manufacturer.
+  </body>
+</html>]]></Comment>
+    <DecisionCriteria>
+      <Criterion name="Cost HCS" unit="€" />
+      <Criterion name="Cost Family" unit="€" />
+      <Criterion name="Effectiveness" unit="QALY" />
+    </DecisionCriteria>
+    <TimeUnit unit="YEAR" Value="1.0" />
+    <AdditionalProperties />
+    <Variables>
+      <Variable name="Gender" type="finiteStates" role="chance">
+        <Comment><![CDATA[<html>
+  <head>
+    
+  </head>
+  <body>
+    <p style="margin-top: 0">
+      Source: INE at January 2015 http://www.ine.es/jaxiT3/Tabla.htm?t=9663
+    </p>
+  </body>
+</html>]]></Comment>
+        <Coordinates x="937" y="35" />
+        <States>
+          <State name="female" />
+          <State name="male" />
+        </States>
+      </Variable>
+      <Variable name="Death" timeSlice="0" type="finiteStates" role="chance">
+        <Comment><![CDATA[<html>
+  <head>
+    
+  </head>
+  <body>
+    <p style="margin-top: 0">
+      Mortality rate by sex and age. Source: National Institue of Statistics 
+      (INE, Spain).
+    </p>
+  </body>
+</html>]]></Comment>
+        <Coordinates x="989" y="105" />
+        <States>
+          <State name="no" />
+          <State name="yes" />
+        </States>
+      </Variable>
+      <Variable name="Age" timeSlice="0" type="numeric" role="chance">
+        <Comment><![CDATA[<html>
+  <head>
+    
+  </head>
+  <body>
+    <p style="margin-top: 0">
+      Age of the patient
+    </p>
+  </body>
+</html>]]></Comment>
+        <Coordinates x="1035" y="36" />
+        <Unit />
+        <Precision>1.0</Precision>
+        <Thresholds>
+          <Threshold value="0.0" belongsTo="right" />
+          <Threshold value="Infinity" belongsTo="right" />
+        </Thresholds>
+      </Variable>
+      <Variable name="Age" timeSlice="1" type="numeric" role="chance">
+        <Coordinates x="1140" y="36" />
+        <Unit />
+        <Precision>1.0</Precision>
+        <Thresholds>
+          <Threshold value="0.0" belongsTo="right" />
+          <Threshold value="Infinity" belongsTo="right" />
+        </Thresholds>
+      </Variable>
+      <Variable name="Intervention decided" type="finiteStates" role="decision">
+        <Comment><![CDATA[<html>
+  <head>
+    
+  </head>
+  <body>
+    <p style="margin-top: 0">
+      There are 3 possible decisions:
+    </p>
+    <p style="margin-top: 0">
+      - Bilateral Cochlear Implant simultaneous
+    </p>
+    <p style="margin-top: 0">
+      - Bilateral Cochlear Implant sequential
+    </p>
+    <p style="margin-top: 0">
+      - No intervention
+    </p>
+    <p style="margin-top: 0">
+      
+    </p>
+    <p style="margin-top: 0">
+      No intervention implies that the pacient only will have a UCI
+    </p>
+  </body>
+</html>]]></Comment>
+        <Coordinates x="256" y="51" />
+        <States>
+          <State name="Unilateral" />
+          <State name="BCI simultaneous" />
+          <State name="BCI sequential" />
+        </States>
+      </Variable>
+      <Variable name="Alive" timeSlice="0" type="finiteStates" role="chance">
+        <Coordinates x="1205" y="107" />
+        <States>
+          <State name="no" />
+          <State name="yes" />
+        </States>
+      </Variable>
+      <Variable name="Alive" timeSlice="1" type="finiteStates" role="chance">
+        <Coordinates x="1152" y="202" />
+        <States>
+          <State name="no" />
+          <State name="yes" />
+        </States>
+      </Variable>
+      <Variable name="Surgery death" timeSlice="0" type="finiteStates" role="chance">
+        <Comment><![CDATA[<html>
+  <head>
+    
+  </head>
+  <body>
+    <p style="margin-top: 0">
+      Death because of surgery associated to anesthesia. In children Gonzalez 
+      et al. [2012]. In adults Braz et al. [2009]
+    </p>
+  </body>
+</html>]]></Comment>
+        <Coordinates x="1124" y="482" />
+        <States>
+          <State name="no" />
+          <State name="yes" />
+        </States>
+      </Variable>
+      <Variable name="Revision surgery" timeSlice="0" type="finiteStates" role="chance">
+        <Comment><![CDATA[<html>
+  <head>
+    
+  </head>
+  <body>
+    <p style="margin-top: 0">
+      Surgery motivated by a major complication or an internal-device failure 
+      of the second implant.
+    </p>
+  </body>
+</html>]]></Comment>
+        <Coordinates x="881" y="482" />
+        <States>
+          <State name="no" />
+          <State name="yes" />
+        </States>
+      </Variable>
+      <Variable name="Major complic 2" timeSlice="0" type="finiteStates" role="chance">
+        <Comment><![CDATA[<html>
+  <head>
+    
+  </head>
+  <body>
+    <p style="margin-top: 0">
+      See comment for <i>Major complic 1</i>.
+    </p>
+  </body>
+</html>]]></Comment>
+        <Coordinates x="829" y="429" />
+        <States>
+          <State name="no" />
+          <State name="yes" />
+        </States>
+      </Variable>
+      <Variable name="CS: Revision surgery" timeSlice="0" type="numeric" role="utility">
+        <Coordinates x="990" y="532" />
+        <Unit />
+        <Precision>0.01</Precision>
+        <Criterion name="Cost HCS" />
+      </Variable>
+      <Variable name="Implants used" timeSlice="0" type="finiteStates" role="chance">
+        <Coordinates x="428" y="331" />
+        <States>
+          <State name="none" />
+          <State name="only second implant" />
+          <State name="only first implant" />
+          <State name="both implants" />
+        </States>
+      </Variable>
+      <Variable name="Implants used" timeSlice="1" type="finiteStates" role="chance">
+        <Coordinates x="1257" y="331" />
+        <States>
+          <State name="none" />
+          <State name="only second implant" />
+          <State name="only first implant" />
+          <State name="both implants" />
+        </States>
+      </Variable>
+      <Variable name="Explant 2" timeSlice="0" type="finiteStates" role="chance">
+        <Comment><![CDATA[<html>
+  <head>
+    
+  </head>
+  <body>
+    <p style="margin-top: 0">
+      Permanent explantation of the second cochlear implant. Wang et al. [2014]
+    </p>
+  </body>
+</html>]]></Comment>
+        <Coordinates x="1030" y="432" />
+        <States>
+          <State name="no" />
+          <State name="yes" />
+        </States>
+      </Variable>
+      <Variable name="Elective non use 2" type="finiteStates" role="chance">
+        <Comment><![CDATA[<html>
+  <head>
+    
+  </head>
+  <body>
+    <p style="margin-top: 0">
+      Elective non use of the second cochlear implant
+    </p>
+  </body>
+</html>]]></Comment>
+        <Coordinates x="1393" y="237" />
+        <States>
+          <State name="no" />
+          <State name="yes" />
+        </States>
+      </Variable>
+      <Variable name="External device 2 failure" timeSlice="0" type="finiteStates" role="chance">
+        <Comment><![CDATA[<html>
+  <head>
+    
+  </head>
+  <body>
+    <p style="margin-top: 0">
+      Failure of the external device that requires its replacement. This node 
+      does not include failures that can be repaired, because they are 
+      considered as maintenance costs.
+    </p>
+  </body>
+</html>]]></Comment>
+        <Coordinates x="266" y="568" />
+        <States>
+          <State name="no" />
+          <State name="yes" />
+        </States>
+      </Variable>
+      <Variable name="Processor 2 age" timeSlice="0" type="finiteStates" role="chance">
+        <Comment><![CDATA[<html>
+  <head>
+    
+  </head>
+  <body>
+    <p style="margin-top: 0">
+      Age of the second external device in the current slice
+    </p>
+  </body>
+</html>]]></Comment>
+        <Coordinates x="109" y="627" />
+        <States>
+          <State name="0" />
+          <State name="1" />
+          <State name="2" />
+          <State name="3" />
+          <State name="4" />
+          <State name="5" />
+          <State name="6" />
+          <State name="7+" />
+        </States>
+      </Variable>
+      <Variable name="Processor 2 age" timeSlice="1" type="finiteStates" role="chance">
+        <Comment><![CDATA[<html>
+  <head>
+    
+  </head>
+  <body>
+    <p style="margin-top: 0">
+      Age of the second external device in the current slice
+    </p>
+  </body>
+</html>]]></Comment>
+        <Coordinates x="433" y="625" />
+        <States>
+          <State name="0" />
+          <State name="1" />
+          <State name="2" />
+          <State name="3" />
+          <State name="4" />
+          <State name="5" />
+          <State name="6" />
+          <State name="7+" />
+        </States>
+      </Variable>
+      <Variable name="CS: Processor 2 replace" timeSlice="0" type="numeric" role="utility">
+        <Comment><![CDATA[<html>
+  <head>
+    
+  </head>
+  <body>
+    <p style="margin-top: 0">
+      Cost of replacing the external processor of the second implant. In Spain 
+      it is replaced by the health system when it is 7 or more y.o. and fails.
+    </p>
+  </body>
+</html>]]></Comment>
+        <Coordinates x="180" y="696" />
+        <Unit />
+        <Precision>0.01</Precision>
+        <Criterion name="Cost HCS" />
+      </Variable>
+      <Variable name="Internal device 2 failure" timeSlice="0" type="finiteStates" role="chance">
+        <Comment><![CDATA[<html>
+  <head>
+    
+  </head>
+  <body>
+    <p style="margin-top: 0">
+      Failure of the internal device of the second implant requiring revision 
+      surgery.
+    </p>
+  </body>
+</html>]]></Comment>
+        <Coordinates x="881" y="647" />
+        <States>
+          <State name="no" />
+          <State name="yes" />
+        </States>
+      </Variable>
+      <Variable name="Internal device 2 age" timeSlice="0" type="finiteStates" role="chance">
+        <Comment><![CDATA[<html>
+  <head>
+    
+  </head>
+  <body>
+    <p style="margin-top: 0">
+      Age of the second internal device in the current slice
+    </p>
+  </body>
+</html>]]></Comment>
+        <Coordinates x="656" y="587" />
+        <States>
+          <State name="0" />
+          <State name="1" />
+          <State name="2" />
+          <State name="3" />
+          <State name="4" />
+          <State name="5" />
+          <State name="6" />
+          <State name="7" />
+          <State name="8" />
+          <State name="9" />
+          <State name="10+" />
+        </States>
+      </Variable>
+      <Variable name="Internal device 2 age" timeSlice="1" type="finiteStates" role="chance">
+        <Coordinates x="1204" y="587" />
+        <States>
+          <State name="0" />
+          <State name="1" />
+          <State name="2" />
+          <State name="3" />
+          <State name="4" />
+          <State name="5" />
+          <State name="6" />
+          <State name="7" />
+          <State name="8" />
+          <State name="9" />
+          <State name="10+" />
+        </States>
+      </Variable>
+      <Variable name="CS: Internal device 2 replace" timeSlice="0" type="numeric" role="utility">
+        <Comment><![CDATA[<html>
+  <head>
+    
+  </head>
+  <body>
+    <p style="margin-top: 0">
+      Cost of replacing the internal components of the second implant. It is 
+      covered by the health system if it occurs after the 10-year guarantee 
+      period.
+    </p>
+  </body>
+</html>]]></Comment>
+        <Coordinates x="778" y="712" />
+        <Unit />
+        <Precision>0.01</Precision>
+        <Criterion name="Cost HCS" />
+      </Variable>
+      <Variable name="ΔQoL 1-&gt;2" timeSlice="0" type="numeric" role="utility">
+        <Comment><![CDATA[<html>
+  <head>
+    
+  </head>
+  <body>
+    <p style="margin-top: 0">
+      Quality of Life of the pacient
+    </p>
+  </body>
+</html>]]></Comment>
+        <Coordinates x="464" y="452" />
+        <Unit />
+        <Precision>0.01</Precision>
+        <Criterion name="Effectiveness" />
+      </Variable>
+      <Variable name="CF: Mainteinance" timeSlice="0" type="numeric" role="utility">
+        <Comment><![CDATA[<html>
+  <head>
+    
+  </head>
+  <body>
+    <p style="margin-top: 0">
+      Costs of repairing the sound processor and replacing microphones, coils, 
+      cables and batteries. In Spain these costs are paid by users and their 
+      families. Source: survey
+    </p>
+  </body>
+</html>]]></Comment>
+        <Coordinates x="596" y="389" />
+        <Unit />
+        <Precision>0.01</Precision>
+        <Criterion name="Cost Family" />
+      </Variable>
+      <Variable name="CS: Device" type="numeric" role="utility">
+        <Comment><![CDATA[<html>
+  <head>
+    
+  </head>
+  <body>
+    <p style="margin-top: 0">
+      Cost of buying the cochlear implant(s).
+    </p>
+  </body>
+</html>]]></Comment>
+        <Coordinates x="625" y="63" />
+        <Unit />
+        <Precision>0.01</Precision>
+        <Criterion name="Cost HCS" />
+      </Variable>
+      <Variable name="Major complic 1" timeSlice="0" type="finiteStates" role="chance">
+        <Comment><![CDATA[<html>
+  <head>
+    
+  </head>
+  <body>
+    <p style="margin-top: 0">
+      Major medical/surgical complication in the first implanted ear, other 
+      than the failure of the internal device. Following Bond et al. [2007], 
+      &quot;a major complication is defined as one which leads to revision surgery 
+      under general anaesthetic&quot;--see also [Summerfield et al., 2010].
+    </p>
+  </body>
+</html>]]></Comment>
+        <Coordinates x="829" y="375" />
+        <States>
+          <State name="no" />
+          <State name="yes" />
+        </States>
+      </Variable>
+      <Variable name="Explant 1" timeSlice="0" type="finiteStates" role="chance">
+        <Comment><![CDATA[<html>
+  <head>
+    
+  </head>
+  <body>
+    <p style="margin-top: 0">
+      Permanent explantation of the first cochlear implant. See comment on <i>Major 
+      complic 1</i>. Wang et al. [2014]
+    </p>
+  </body>
+</html>]]></Comment>
+        <Coordinates x="1032" y="377" />
+        <States>
+          <State name="no" />
+          <State name="yes" />
+        </States>
+      </Variable>
+      <Variable name="Internal device 1 age" timeSlice="0" type="finiteStates" role="chance">
+        <Coordinates x="654" y="266" />
+        <States>
+          <State name="0" />
+          <State name="1+" />
+        </States>
+      </Variable>
+      <Variable name="Internal device 1 age" timeSlice="1" type="finiteStates" role="chance">
+        <Coordinates x="915" y="266" />
+        <States>
+          <State name="0" />
+          <State name="1+" />
+        </States>
+      </Variable>
+      <Variable name="CS: Surgery" type="numeric" role="utility">
+        <Comment><![CDATA[<html>
+  <head>
+    
+  </head>
+  <body>
+    <p style="margin-top: 0">
+      Surgery incremental costs
+    </p>
+    <p style="margin-top: 0">
+      
+    </p>
+    <p style="margin-top: 0">
+      Sources:
+    </p>
+    <p style="margin-top: 0">
+      De La Torre et al. 2005
+    </p>
+    <p style="margin-top: 0">
+      Herranz Amo et al. 2006
+    </p>
+    <p style="margin-top: 0">
+      Feli&#250; Pala et. 2003
+    </p>
+    <p style="margin-top: 0">
+      Smulders et al. 2016
+    </p>
+  </body>
+</html>]]></Comment>
+        <Coordinates x="624" y="102" />
+        <Unit />
+        <Precision>0.01</Precision>
+        <Criterion name="Cost HCS" />
+      </Variable>
+      <Variable name="CS: Habilitation" type="numeric" role="utility">
+        <Comment><![CDATA[<html>
+  <head>
+    
+  </head>
+  <body>
+    <p style="margin-top: 0">
+      Source:
+    </p>
+  </body>
+</html>]]></Comment>
+        <Coordinates x="621" y="149" />
+        <Unit />
+        <Precision>0.01</Precision>
+        <Criterion name="Cost HCS" />
+      </Variable>
+      <Variable name="Intervention applied" type="finiteStates" role="chance">
+        <Coordinates x="444" y="109" />
+        <States>
+          <State name="Unilateral" />
+          <State name="BCI simultaneous" />
+          <State name="BCI sequential" />
+        </States>
+      </Variable>
+      <Variable name="ΔQoL 0-&gt;1" timeSlice="0" type="numeric" role="utility">
+        <Coordinates x="395" y="500" />
+        <Unit />
+        <Precision>0.01</Precision>
+        <Criterion name="Effectiveness" />
+      </Variable>
+    </Variables>
+    <Links>
+      <Link directed="true">
+        <Variable name="Gender" />
+        <Variable name="Death" timeSlice="0" />
+      </Link>
+      <Link directed="true">
+        <Variable name="Death" timeSlice="0" />
+        <Variable name="Alive" timeSlice="1" />
+      </Link>
+      <Link directed="true">
+        <Variable name="Age" timeSlice="0" />
+        <Variable name="Age" timeSlice="1" />
+      </Link>
+      <Link directed="true">
+        <Variable name="Age" timeSlice="0" />
+        <Variable name="Death" timeSlice="0" />
+      </Link>
+      <Link directed="true">
+        <Variable name="Age" timeSlice="0" />
+        <Variable name="Surgery death" timeSlice="0" />
+      </Link>
+      <Link directed="true">
+        <Variable name="Age" timeSlice="0" />
+        <Variable name="CF: Mainteinance" timeSlice="0" />
+      </Link>
+      <Link directed="true">
+        <Variable name="Intervention decided" />
+        <Variable name="Implants used" timeSlice="0" />
+      </Link>
+      <Link directed="true">
+        <Variable name="Intervention decided" />
+        <Variable name="Intervention applied" />
+      </Link>
+      <Link directed="true">
+        <Variable name="Alive" timeSlice="0" />
+        <Variable name="Alive" timeSlice="1" />
+      </Link>
+      <Link directed="true">
+        <Variable name="Alive" timeSlice="1" />
+        <Variable name="Implants used" timeSlice="1" />
+      </Link>
+      <Link directed="true">
+        <Variable name="Surgery death" timeSlice="0" />
+        <Variable name="Alive" timeSlice="1" />
+      </Link>
+      <Link directed="true">
+        <Variable name="Revision surgery" timeSlice="0" />
+        <Variable name="Surgery death" timeSlice="0" />
+      </Link>
+      <Link directed="true">
+        <Variable name="Revision surgery" timeSlice="0" />
+        <Variable name="CS: Revision surgery" timeSlice="0" />
+      </Link>
+      <Link directed="true">
+        <Variable name="Major complic 2" timeSlice="0" />
+        <Variable name="Revision surgery" timeSlice="0" />
+      </Link>
+      <Link directed="true">
+        <Variable name="Major complic 2" timeSlice="0" />
+        <Variable name="Explant 2" timeSlice="0" />
+      </Link>
+      <Link directed="true">
+        <Variable name="Implants used" timeSlice="0" />
+        <Variable name="Major complic 2" timeSlice="0" />
+      </Link>
+      <Link directed="true">
+        <Variable name="Implants used" timeSlice="0" />
+        <Variable name="Implants used" timeSlice="1" />
+      </Link>
+      <Link directed="true">
+        <Variable name="Implants used" timeSlice="0" />
+        <Variable name="External device 2 failure" timeSlice="0" />
+      </Link>
+      <Link directed="true">
+        <Variable name="Implants used" timeSlice="0" />
+        <Variable name="Internal device 2 failure" timeSlice="0" />
+      </Link>
+      <Link directed="true">
+        <Variable name="Implants used" timeSlice="0" />
+        <Variable name="ΔQoL 1-&gt;2" timeSlice="0" />
+      </Link>
+      <Link directed="true">
+        <Variable name="Implants used" timeSlice="0" />
+        <Variable name="CF: Mainteinance" timeSlice="0" />
+      </Link>
+      <Link directed="true">
+        <Variable name="Implants used" timeSlice="0" />
+        <Variable name="Major complic 1" timeSlice="0" />
+      </Link>
+      <Link directed="true">
+        <Variable name="Implants used" timeSlice="0" />
+        <Variable name="ΔQoL 0-&gt;1" timeSlice="0" />
+      </Link>
+      <Link directed="true">
+        <Variable name="Explant 2" timeSlice="0" />
+        <Variable name="Implants used" timeSlice="1" />
+      </Link>
+      <Link directed="true">
+        <Variable name="Elective non use 2" />
+        <Variable name="Implants used" timeSlice="1" />
+      </Link>
+      <Link directed="true">
+        <Variable name="External device 2 failure" timeSlice="0" />
+        <Variable name="CS: Processor 2 replace" timeSlice="0" />
+      </Link>
+      <Link directed="true">
+        <Variable name="External device 2 failure" timeSlice="0" />
+        <Variable name="Processor 2 age" timeSlice="1" />
+      </Link>
+      <Link directed="true">
+        <Variable name="Processor 2 age" timeSlice="0" />
+        <Variable name="Processor 2 age" timeSlice="1" />
+      </Link>
+      <Link directed="true">
+        <Variable name="Processor 2 age" timeSlice="0" />
+        <Variable name="CS: Processor 2 replace" timeSlice="0" />
+      </Link>
+      <Link directed="true">
+        <Variable name="Processor 2 age" timeSlice="0" />
+        <Variable name="External device 2 failure" timeSlice="0" />
+      </Link>
+      <Link directed="true">
+        <Variable name="Internal device 2 failure" timeSlice="0" />
+        <Variable name="Internal device 2 age" timeSlice="1" />
+      </Link>
+      <Link directed="true">
+        <Variable name="Internal device 2 failure" timeSlice="0" />
+        <Variable name="CS: Internal device 2 replace" timeSlice="0" />
+      </Link>
+      <Link directed="true">
+        <Variable name="Internal device 2 failure" timeSlice="0" />
+        <Variable name="Revision surgery" timeSlice="0" />
+      </Link>
+      <Link directed="true">
+        <Variable name="Internal device 2 age" timeSlice="0" />
+        <Variable name="Internal device 2 age" timeSlice="1" />
+      </Link>
+      <Link directed="true">
+        <Variable name="Internal device 2 age" timeSlice="0" />
+        <Variable name="CS: Internal device 2 replace" timeSlice="0" />
+      </Link>
+      <Link directed="true">
+        <Variable name="Internal device 2 age" timeSlice="0" />
+        <Variable name="Internal device 2 failure" timeSlice="0" />
+      </Link>
+      <Link directed="true">
+        <Variable name="Internal device 2 age" timeSlice="0" />
+        <Variable name="Major complic 2" timeSlice="0" />
+      </Link>
+      <Link directed="true">
+        <Variable name="Major complic 1" timeSlice="0" />
+        <Variable name="Explant 1" timeSlice="0" />
+      </Link>
+      <Link directed="true">
+        <Variable name="Explant 1" timeSlice="0" />
+        <Variable name="Implants used" timeSlice="1" />
+      </Link>
+      <Link directed="true">
+        <Variable name="Internal device 1 age" timeSlice="0" />
+        <Variable name="Major complic 1" timeSlice="0" />
+      </Link>
+      <Link directed="true">
+        <Variable name="Internal device 1 age" timeSlice="0" />
+        <Variable name="Internal device 1 age" timeSlice="1" />
+      </Link>
+      <Link directed="true">
+        <Variable name="Intervention applied" />
+        <Variable name="CS: Device" />
+      </Link>
+      <Link directed="true">
+        <Variable name="Intervention applied" />
+        <Variable name="CS: Surgery" />
+      </Link>
+      <Link directed="true">
+        <Variable name="Intervention applied" />
+        <Variable name="CS: Habilitation" />
+      </Link>
+    </Links>
+    <Potentials>
+      <Potential type="Table" role="conditionalProbability">
+        <Comment><![CDATA[<html>
+  <head>
+    
+  </head>
+  <body>
+    Source: INE
+  </body>
+</html>]]></Comment>
+        <Variables>
+          <Variable name="Gender" />
+        </Variables>
+        <Values>0.5086 0.4914</Values>
+        <UncertainValues>
+          <Value distribution="Complement">1.0</Value>
+          <Value distribution="Beta">49.14 50.86</Value>
+        </UncertainValues>
+      </Potential>
+      <Potential type="Tree/ADD" role="conditionalProbability">
+        <Comment><![CDATA[<html>
+  <head>
+    
+  </head>
+  <body>
+    Source: INE
+  </body>
+</html>]]></Comment>
+        <Variables>
+          <Variable name="Death" timeSlice="0" />
+          <Variable name="Gender" />
+          <Variable name="Age" timeSlice="0" />
+        </Variables>
+        <TopVariable name="Gender" />
+        <Branches>
+          <Branch>
+            <States>
+              <State name="male" />
+            </States>
+            <Potential type="Tree/ADD">
+              <Variables>
+                <Variable name="Death" timeSlice="0" />
+                <Variable name="Age" timeSlice="0" />
+              </Variables>
+              <TopVariable name="Age" timeSlice="0" />
+              <Branches>
+                <Branch>
+                  <Thresholds>
+                    <Threshold value="0.0" belongsTo="right" />
+                    <Threshold value="1.0" belongsTo="left" />
+                  </Thresholds>
+                  <Potential type="Table">
+                    <Variables>
+                      <Variable name="Death" timeSlice="0" />
+                    </Variables>
+                    <Values>0.999795244 2.04756E-4</Values>
+                  </Potential>
+                </Branch>
+                <Branch>
+                  <Thresholds>
+                    <Threshold value="1.0" belongsTo="left" />
+                    <Threshold value="2.0" belongsTo="left" />
+                  </Thresholds>
+                  <Potential type="Table">
+                    <Variables>
+                      <Variable name="Death" timeSlice="0" />
+                    </Variables>
+                    <Values>0.999837359 1.62641E-4</Values>
+                  </Potential>
+                </Branch>
+                <Branch>
+                  <Thresholds>
+                    <Threshold value="2.0" belongsTo="left" />
+                    <Threshold value="3.0" belongsTo="left" />
+                  </Thresholds>
+                  <Potential type="Table">
+                    <Variables>
+                      <Variable name="Death" timeSlice="0" />
+                    </Variables>
+                    <Values>0.999884515 1.15485E-4</Values>
+                  </Potential>
+                </Branch>
+                <Branch>
+                  <Thresholds>
+                    <Threshold value="3.0" belongsTo="left" />
+                    <Threshold value="4.0" belongsTo="left" />
+                  </Thresholds>
+                  <Potential type="Table">
+                    <Variables>
+                      <Variable name="Death" timeSlice="0" />
+                    </Variables>
+                    <Values>0.999888894 1.11106E-4</Values>
+                  </Potential>
+                </Branch>
+                <Branch>
+                  <Thresholds>
+                    <Threshold value="4.0" belongsTo="left" />
+                    <Threshold value="5.0" belongsTo="left" />
+                  </Thresholds>
+                  <Potential type="Table">
+                    <Variables>
+                      <Variable name="Death" timeSlice="0" />
+                    </Variables>
+                    <Values>0.999916325 8.3675E-5</Values>
+                  </Potential>
+                </Branch>
+                <Branch>
+                  <Thresholds>
+                    <Threshold value="5.0" belongsTo="left" />
+                    <Threshold value="6.0" belongsTo="left" />
+                  </Thresholds>
+                  <Potential type="Table">
+                    <Variables>
+                      <Variable name="Death" timeSlice="0" />
+                    </Variables>
+                    <Values>0.9999027 9.73E-5</Values>
+                  </Potential>
+                </Branch>
+                <Branch>
+                  <Thresholds>
+                    <Threshold value="6.0" belongsTo="left" />
+                    <Threshold value="7.0" belongsTo="left" />
+                  </Thresholds>
+                  <Potential type="Table">
+                    <Variables>
+                      <Variable name="Death" timeSlice="0" />
+                    </Variables>
+                    <Values>0.999920936 7.9064E-5</Values>
+                  </Potential>
+                </Branch>
+                <Branch>
+                  <Thresholds>
+                    <Threshold value="7.0" belongsTo="left" />
+                    <Threshold value="8.0" belongsTo="left" />
+                  </Thresholds>
+                  <Potential type="Table">
+                    <Variables>
+                      <Variable name="Death" timeSlice="0" />
+                    </Variables>
+                    <Values>0.999895607 1.04393E-4</Values>
+                  </Potential>
+                </Branch>
+                <Branch>
+                  <Thresholds>
+                    <Threshold value="8.0" belongsTo="left" />
+                    <Threshold value="9.0" belongsTo="left" />
+                  </Thresholds>
+                  <Potential type="Table">
+                    <Variables>
+                      <Variable name="Death" timeSlice="0" />
+                    </Variables>
+                    <Values>0.999914406 8.5594E-5</Values>
+                  </Potential>
+                </Branch>
+                <Branch>
+                  <Thresholds>
+                    <Threshold value="9.0" belongsTo="left" />
+                    <Threshold value="10.0" belongsTo="left" />
+                  </Thresholds>
+                  <Potential type="Table">
+                    <Variables>
+                      <Variable name="Death" timeSlice="0" />
+                    </Variables>
+                    <Values>0.999924414 7.5586E-5</Values>
+                  </Potential>
+                </Branch>
+                <Branch>
+                  <Thresholds>
+                    <Threshold value="10.0" belongsTo="left" />
+                    <Threshold value="11.0" belongsTo="left" />
+                  </Thresholds>
+                  <Potential type="Table">
+                    <Variables>
+                      <Variable name="Death" timeSlice="0" />
+                    </Variables>
+                    <Values>0.999922599 7.7401E-5</Values>
+                  </Potential>
+                </Branch>
+                <Branch>
+                  <Thresholds>
+                    <Threshold value="11.0" belongsTo="left" />
+                    <Threshold value="12.0" belongsTo="left" />
+                  </Thresholds>
+                  <Potential type="Table">
+                    <Variables>
+                      <Variable name="Death" timeSlice="0" />
+                    </Variables>
+                    <Values>0.99988801 1.1199E-4</Values>
+                  </Potential>
+                </Branch>
+                <Branch>
+                  <Thresholds>
+                    <Threshold value="12.0" belongsTo="left" />
+                    <Threshold value="13.0" belongsTo="left" />
+                  </Thresholds>
+                  <Potential type="Table">
+                    <Variables>
+                      <Variable name="Death" timeSlice="0" />
+                    </Variables>
+                    <Values>0.999886709 1.13291E-4</Values>
+                  </Potential>
+                </Branch>
+                <Branch>
+                  <Thresholds>
+                    <Threshold value="13.0" belongsTo="left" />
+                    <Threshold value="14.0" belongsTo="left" />
+                  </Thresholds>
+                  <Potential type="Table">
+                    <Variables>
+                      <Variable name="Death" timeSlice="0" />
+                    </Variables>
+                    <Values>0.999937363 6.2637E-5</Values>
+                  </Potential>
+                </Branch>
+                <Branch>
+                  <Thresholds>
+                    <Threshold value="14.0" belongsTo="left" />
+                    <Threshold value="15.0" belongsTo="left" />
+                  </Thresholds>
+                  <Potential type="Table">
+                    <Variables>
+                      <Variable name="Death" timeSlice="0" />
+                    </Variables>
+                    <Values>0.999832443 1.67557E-4</Values>
+                  </Potential>
+                </Branch>
+                <Branch>
+                  <Thresholds>
+                    <Threshold value="15.0" belongsTo="left" />
+                    <Threshold value="16.0" belongsTo="left" />
+                  </Thresholds>
+                  <Potential type="Table">
+                    <Variables>
+                      <Variable name="Death" timeSlice="0" />
+                    </Variables>
+                    <Values>0.999826992 1.73008E-4</Values>
+                  </Potential>
+                </Branch>
+                <Branch>
+                  <Thresholds>
+                    <Threshold value="16.0" belongsTo="left" />
+                    <Threshold value="17.0" belongsTo="left" />
+                  </Thresholds>
+                  <Potential type="Table">
+                    <Variables>
+                      <Variable name="Death" timeSlice="0" />
+                    </Variables>
+                    <Values>0.999812668 1.87332E-4</Values>
+                  </Potential>
+                </Branch>
+                <Branch>
+                  <Thresholds>
+                    <Threshold value="17.0" belongsTo="left" />
+                    <Threshold value="18.0" belongsTo="left" />
+                  </Thresholds>
+                  <Potential type="Table">
+                    <Variables>
+                      <Variable name="Death" timeSlice="0" />
+                    </Variables>
+                    <Values>0.999733468 2.66532E-4</Values>
+                  </Potential>
+                </Branch>
+                <Branch>
+                  <Thresholds>
+                    <Threshold value="18.0" belongsTo="left" />
+                    <Threshold value="19.0" belongsTo="left" />
+                  </Thresholds>
+                  <Potential type="Table">
+                    <Variables>
+                      <Variable name="Death" timeSlice="0" />
+                    </Variables>
+                    <Values>0.999692577 3.07423E-4</Values>
+                  </Potential>
+                </Branch>
+                <Branch>
+                  <Thresholds>
+                    <Threshold value="19.0" belongsTo="left" />
+                    <Threshold value="20.0" belongsTo="left" />
+                  </Thresholds>
+                  <Potential type="Table">
+                    <Variables>
+                      <Variable name="Death" timeSlice="0" />
+                    </Variables>
+                    <Values>0.99967422 3.2578E-4</Values>
+                  </Potential>
+                </Branch>
+                <Branch>
+                  <Thresholds>
+                    <Threshold value="20.0" belongsTo="left" />
+                    <Threshold value="21.0" belongsTo="left" />
+                  </Thresholds>
+                  <Potential type="Table">
+                    <Variables>
+                      <Variable name="Death" timeSlice="0" />
+                    </Variables>
+                    <Values>0.999651388 3.48612E-4</Values>
+                  </Potential>
+                </Branch>
+                <Branch>
+                  <Thresholds>
+                    <Threshold value="21.0" belongsTo="left" />
+                    <Threshold value="22.0" belongsTo="left" />
+                  </Thresholds>
+                  <Potential type="Table">
+                    <Variables>
+                      <Variable name="Death" timeSlice="0" />
+                    </Variables>
+                    <Values>0.999621639 3.78361E-4</Values>
+                  </Potential>
+                </Branch>
+                <Branch>
+                  <Thresholds>
+                    <Threshold value="22.0" belongsTo="left" />
+                    <Threshold value="23.0" belongsTo="left" />
+                  </Thresholds>
+                  <Potential type="Table">
+                    <Variables>
+                      <Variable name="Death" timeSlice="0" />
+                    </Variables>
+                    <Values>0.999666354 3.33646E-4</Values>
+                  </Potential>
+                </Branch>
+                <Branch>
+                  <Thresholds>
+                    <Threshold value="23.0" belongsTo="left" />
+                    <Threshold value="24.0" belongsTo="left" />
+                  </Thresholds>
+                  <Potential type="Table">
+                    <Variables>
+                      <Variable name="Death" timeSlice="0" />
+                    </Variables>
+                    <Values>0.999690843 3.09157E-4</Values>
+                  </Potential>
+                </Branch>
+                <Branch>
+                  <Thresholds>
+                    <Threshold value="24.0" belongsTo="left" />
+                    <Threshold value="25.0" belongsTo="left" />
+                  </Thresholds>
+                  <Potential type="Table">
+                    <Variables>
+                      <Variable name="Death" timeSlice="0" />
+                    </Variables>
+                    <Values>0.999618961 3.81039E-4</Values>
+                  </Potential>
+                </Branch>
+                <Branch>
+                  <Thresholds>
+                    <Threshold value="25.0" belongsTo="left" />
+                    <Threshold value="26.0" belongsTo="left" />
+                  </Thresholds>
+                  <Potential type="Table">
+                    <Variables>
+                      <Variable name="Death" timeSlice="0" />
+                    </Variables>
+                    <Values>0.999589274 4.10726E-4</Values>
+                  </Potential>
+                </Branch>
+                <Branch>
+                  <Thresholds>
+                    <Threshold value="26.0" belongsTo="left" />
+                    <Threshold value="27.0" belongsTo="left" />
+                  </Thresholds>
+                  <Potential type="Table">
+                    <Variables>
+                      <Variable name="Death" timeSlice="0" />
+                    </Variables>
+                    <Values>0.999612398 3.87602E-4</Values>
+                  </Potential>
+                </Branch>
+                <Branch>
+                  <Thresholds>
+                    <Threshold value="27.0" belongsTo="left" />
+                    <Threshold value="28.0" belongsTo="left" />
+                  </Thresholds>
+                  <Potential type="Table">
+                    <Variables>
+                      <Variable name="Death" timeSlice="0" />
+                    </Variables>
+                    <Values>0.999599632 4.00368E-4</Values>
+                  </Potential>
+                </Branch>
+                <Branch>
+                  <Thresholds>
+                    <Threshold value="28.0" belongsTo="left" />
+                    <Threshold value="29.0" belongsTo="left" />
+                  </Thresholds>
+                  <Potential type="Table">
+                    <Variables>
+                      <Variable name="Death" timeSlice="0" />
+                    </Variables>
+                    <Values>0.999561684 4.38316E-4</Values>
+                  </Potential>
+                </Branch>
+                <Branch>
+                  <Thresholds>
+                    <Threshold value="29.0" belongsTo="left" />
+                    <Threshold value="30.0" belongsTo="left" />
+                  </Thresholds>
+                  <Potential type="Table">
+                    <Variables>
+                      <Variable name="Death" timeSlice="0" />
+                    </Variables>
+                    <Values>0.999520035 4.79965E-4</Values>
+                  </Potential>
+                </Branch>
+                <Branch>
+                  <Thresholds>
+                    <Threshold value="30.0" belongsTo="left" />
+                    <Threshold value="31.0" belongsTo="left" />
+                  </Thresholds>
+                  <Potential type="Table">
+                    <Variables>
+                      <Variable name="Death" timeSlice="0" />
+                    </Variables>
+                    <Values>0.99959663 4.0337E-4</Values>
+                  </Potential>
+                </Branch>
+                <Branch>
+                  <Thresholds>
+                    <Threshold value="31.0" belongsTo="left" />
+                    <Threshold value="32.0" belongsTo="left" />
+                  </Thresholds>
+                  <Potential type="Table">
+                    <Variables>
+                      <Variable name="Death" timeSlice="0" />
+                    </Variables>
+                    <Values>0.999513198 4.86802E-4</Values>
+                  </Potential>
+                </Branch>
+                <Branch>
+                  <Thresholds>
+                    <Threshold value="32.0" belongsTo="left" />
+                    <Threshold value="33.0" belongsTo="left" />
+                  </Thresholds>
+                  <Potential type="Table">
+                    <Variables>
+                      <Variable name="Death" timeSlice="0" />
+                    </Variables>
+                    <Values>0.999436 5.64E-4</Values>
+                  </Potential>
+                </Branch>
+                <Branch>
+                  <Thresholds>
+                    <Threshold value="33.0" belongsTo="left" />
+                    <Threshold value="34.0" belongsTo="left" />
+                  </Thresholds>
+                  <Potential type="Table">
+                    <Variables>
+                      <Variable name="Death" timeSlice="0" />
+                    </Variables>
+                    <Values>0.999378905 6.21095E-4</Values>
+                  </Potential>
+                </Branch>
+                <Branch>
+                  <Thresholds>
+                    <Threshold value="34.0" belongsTo="left" />
+                    <Threshold value="35.0" belongsTo="left" />
+                  </Thresholds>
+                  <Potential type="Table">
+                    <Variables>
+                      <Variable name="Death" timeSlice="0" />
+                    </Variables>
+                    <Values>0.999405605 5.94395E-4</Values>
+                  </Potential>
+                </Branch>
+                <Branch>
+                  <Thresholds>
+                    <Threshold value="35.0" belongsTo="left" />
+                    <Threshold value="36.0" belongsTo="left" />
+                  </Thresholds>
+                  <Potential type="Table">
+                    <Variables>
+                      <Variable name="Death" timeSlice="0" />
+                    </Variables>
+                    <Values>0.999330357 6.69643E-4</Values>
+                  </Potential>
+                </Branch>
+                <Branch>
+                  <Thresholds>
+                    <Threshold value="36.0" belongsTo="left" />
+                    <Threshold value="37.0" belongsTo="left" />
+                  </Thresholds>
+                  <Potential type="Table">
+                    <Variables>
+                      <Variable name="Death" timeSlice="0" />
+                    </Variables>
+                    <Values>0.999360326 6.39674E-4</Values>
+                  </Potential>
+                </Branch>
+                <Branch>
+                  <Thresholds>
+                    <Threshold value="37.0" belongsTo="left" />
+                    <Threshold value="38.0" belongsTo="left" />
+                  </Thresholds>
+                  <Potential type="Table">
+                    <Variables>
+                      <Variable name="Death" timeSlice="0" />
+                    </Variables>
+                    <Values>0.999282135 7.17865E-4</Values>
+                  </Potential>
+                </Branch>
+                <Branch>
+                  <Thresholds>
+                    <Threshold value="38.0" belongsTo="left" />
+                    <Threshold value="39.0" belongsTo="left" />
+                  </Thresholds>
+                  <Potential type="Table">
+                    <Variables>
+                      <Variable name="Death" timeSlice="0" />
+                    </Variables>
+                    <Values>0.999123524 8.76476E-4</Values>
+                  </Potential>
+                </Branch>
+                <Branch>
+                  <Thresholds>
+                    <Threshold value="39.0" belongsTo="left" />
+                    <Threshold value="40.0" belongsTo="left" />
+                  </Thresholds>
+                  <Potential type="Table">
+                    <Variables>
+                      <Variable name="Death" timeSlice="0" />
+                    </Variables>
+                    <Values>0.999113474 8.86526E-4</Values>
+                  </Potential>
+                </Branch>
+                <Branch>
+                  <Thresholds>
+                    <Threshold value="40.0" belongsTo="left" />
+                    <Threshold value="41.0" belongsTo="left" />
+                  </Thresholds>
+                  <Potential type="Table">
+                    <Variables>
+                      <Variable name="Death" timeSlice="0" />
+                    </Variables>
+                    <Values>0.998899989 0.001100011</Values>
+                  </Potential>
+                </Branch>
+                <Branch>
+                  <Thresholds>
+                    <Threshold value="41.0" belongsTo="left" />
+                    <Threshold value="42.0" belongsTo="left" />
+                  </Thresholds>
+                  <Potential type="Table">
+                    <Variables>
+                      <Variable name="Death" timeSlice="0" />
+                    </Variables>
+                    <Values>0.998667419 0.001332581</Values>
+                  </Potential>
+                </Branch>
+                <Branch>
+                  <Thresholds>
+                    <Threshold value="42.0" belongsTo="left" />
+                    <Threshold value="43.0" belongsTo="left" />
+                  </Thresholds>
+                  <Potential type="Table">
+                    <Variables>
+                      <Variable name="Death" timeSlice="0" />
+                    </Variables>
+                    <Values>0.998596431 0.001403569</Values>
+                  </Potential>
+                </Branch>
+                <Branch>
+                  <Thresholds>
+                    <Threshold value="43.0" belongsTo="left" />
+                    <Threshold value="44.0" belongsTo="left" />
+                  </Thresholds>
+                  <Potential type="Table">
+                    <Variables>
+                      <Variable name="Death" timeSlice="0" />
+                    </Variables>
+                    <Values>0.998375914 0.001624086</Values>
+                  </Potential>
+                </Branch>
+                <Branch>
+                  <Thresholds>
+                    <Threshold value="44.0" belongsTo="left" />
+                    <Threshold value="45.0" belongsTo="left" />
+                  </Thresholds>
+                  <Potential type="Table">
+                    <Variables>
+                      <Variable name="Death" timeSlice="0" />
+                    </Variables>
+                    <Values>0.998055955 0.001944045</Values>
+                  </Potential>
+                </Branch>
+                <Branch>
+                  <Thresholds>
+                    <Threshold value="45.0" belongsTo="left" />
+                    <Threshold value="46.0" belongsTo="left" />
+                  </Thresholds>
+                  <Potential type="Table">
+                    <Variables>
+                      <Variable name="Death" timeSlice="0" />
+                    </Variables>
+                    <Values>0.997893763 0.002106237</Values>
+                  </Potential>
+                </Branch>
+                <Branch>
+                  <Thresholds>
+                    <Threshold value="46.0" belongsTo="left" />
+                    <Threshold value="47.0" belongsTo="left" />
+                  </Thresholds>
+                  <Potential type="Table">
+                    <Variables>
+                      <Variable name="Death" timeSlice="0" />
+                    </Variables>
+                    <Values>0.997618119 0.002381881</Values>
+                  </Potential>
+                </Branch>
+                <Branch>
+                  <Thresholds>
+                    <Threshold value="47.0" belongsTo="left" />
+                    <Threshold value="48.0" belongsTo="left" />
+                  </Thresholds>
+                  <Potential type="Table">
+                    <Variables>
+                      <Variable name="Death" timeSlice="0" />
+                    </Variables>
+                    <Values>0.997357009 0.002642991</Values>
+                  </Potential>
+                </Branch>
+                <Branch>
+                  <Thresholds>
+                    <Threshold value="48.0" belongsTo="left" />
+                    <Threshold value="49.0" belongsTo="left" />
+                  </Thresholds>
+                  <Potential type="Table">
+                    <Variables>
+                      <Variable name="Death" timeSlice="0" />
+                    </Variables>
+                    <Values>0.996933458 0.003066542</Values>
+                  </Potential>
+                </Branch>
+                <Branch>
+                  <Thresholds>
+                    <Threshold value="49.0" belongsTo="left" />
+                    <Threshold value="50.0" belongsTo="left" />
+                  </Thresholds>
+                  <Potential type="Table">
+                    <Variables>
+                      <Variable name="Death" timeSlice="0" />
+                    </Variables>
+                    <Values>0.996673782 0.003326218</Values>
+                  </Potential>
+                </Branch>
+                <Branch>
+                  <Thresholds>
+                    <Threshold value="50.0" belongsTo="left" />
+                    <Threshold value="51.0" belongsTo="left" />
+                  </Thresholds>
+                  <Potential type="Table">
+                    <Variables>
+                      <Variable name="Death" timeSlice="0" />
+                    </Variables>
+                    <Values>0.99623649 0.00376351</Values>
+                  </Potential>
+                </Branch>
+                <Branch>
+                  <Thresholds>
+                    <Threshold value="51.0" belongsTo="left" />
+                    <Threshold value="52.0" belongsTo="left" />
+                  </Thresholds>
+                  <Potential type="Table">
+                    <Variables>
+                      <Variable name="Death" timeSlice="0" />
+                    </Variables>
+                    <Values>0.995679839 0.004320161</Values>
+                  </Potential>
+                </Branch>
+                <Branch>
+                  <Thresholds>
+                    <Threshold value="52.0" belongsTo="left" />
+                    <Threshold value="53.0" belongsTo="left" />
+                  </Thresholds>
+                  <Potential type="Table">
+                    <Variables>
+                      <Variable name="Death" timeSlice="0" />
+                    </Variables>
+                    <Values>0.995632549 0.004367451</Values>
+                  </Potential>
+                </Branch>
+                <Branch>
+                  <Thresholds>
+                    <Threshold value="53.0" belongsTo="left" />
+                    <Threshold value="54.0" belongsTo="left" />
+                  </Thresholds>
+                  <Potential type="Table">
+                    <Variables>
+                      <Variable name="Death" timeSlice="0" />
+                    </Variables>
+                    <Values>0.995087719 0.004912281</Values>
+                  </Potential>
+                </Branch>
+                <Branch>
+                  <Thresholds>
+                    <Threshold value="54.0" belongsTo="left" />
+                    <Threshold value="55.0" belongsTo="left" />
+                  </Thresholds>
+                  <Potential type="Table">
+                    <Variables>
+                      <Variable name="Death" timeSlice="0" />
+                    </Variables>
+                    <Values>0.994488327 0.005511673</Values>
+                  </Potential>
+                </Branch>
+                <Branch>
+                  <Thresholds>
+                    <Threshold value="55.0" belongsTo="left" />
+                    <Threshold value="56.0" belongsTo="left" />
+                  </Thresholds>
+                  <Potential type="Table">
+                    <Variables>
+                      <Variable name="Death" timeSlice="0" />
+                    </Variables>
+                    <Values>0.993851728 0.006148272</Values>
+                  </Potential>
+                </Branch>
+                <Branch>
+                  <Thresholds>
+                    <Threshold value="56.0" belongsTo="left" />
+                    <Threshold value="57.0" belongsTo="left" />
+                  </Thresholds>
+                  <Potential type="Table">
+                    <Variables>
+                      <Variable name="Death" timeSlice="0" />
+                    </Variables>
+                    <Values>0.993469795 0.006530205</Values>
+                  </Potential>
+                </Branch>
+                <Branch>
+                  <Thresholds>
+                    <Threshold value="57.0" belongsTo="left" />
+                    <Threshold value="58.0" belongsTo="left" />
+                  </Thresholds>
+                  <Potential type="Table">
+                    <Variables>
+                      <Variable name="Death" timeSlice="0" />
+                    </Variables>
+                    <Values>0.993059611 0.006940389</Values>
+                  </Potential>
+                </Branch>
+                <Branch>
+                  <Thresholds>
+                    <Threshold value="58.0" belongsTo="left" />
+                    <Threshold value="59.0" belongsTo="left" />
+                  </Thresholds>
+                  <Potential type="Table">
+                    <Variables>
+                      <Variable name="Death" timeSlice="0" />
+                    </Variables>
+                    <Values>0.992361234 0.007638766</Values>
+                  </Potential>
+                </Branch>
+                <Branch>
+                  <Thresholds>
+                    <Threshold value="59.0" belongsTo="left" />
+                    <Threshold value="60.0" belongsTo="left" />
+                  </Thresholds>
+                  <Potential type="Table">
+                    <Variables>
+                      <Variable name="Death" timeSlice="0" />
+                    </Variables>
+                    <Values>0.991320422 0.008679578</Values>
+                  </Potential>
+                </Branch>
+                <Branch>
+                  <Thresholds>
+                    <Threshold value="60.0" belongsTo="left" />
+                    <Threshold value="61.0" belongsTo="left" />
+                  </Thresholds>
+                  <Potential type="Table">
+                    <Variables>
+                      <Variable name="Death" timeSlice="0" />
+                    </Variables>
+                    <Values>0.990949998 0.009050002</Values>
+                  </Potential>
+                </Branch>
+                <Branch>
+                  <Thresholds>
+                    <Threshold value="61.0" belongsTo="left" />
+                    <Threshold value="62.0" belongsTo="left" />
+                  </Thresholds>
+                  <Potential type="Table">
+                    <Variables>
+                      <Variable name="Death" timeSlice="0" />
+                    </Variables>
+                    <Values>0.990464127 0.009535873</Values>
+                  </Potential>
+                </Branch>
+                <Branch>
+                  <Thresholds>
+                    <Threshold value="62.0" belongsTo="left" />
+                    <Threshold value="63.0" belongsTo="left" />
+                  </Thresholds>
+                  <Potential type="Table">
+                    <Variables>
+                      <Variable name="Death" timeSlice="0" />
+                    </Variables>
+                    <Values>0.988937565 0.011062435</Values>
+                  </Potential>
+                </Branch>
+                <Branch>
+                  <Thresholds>
+                    <Threshold value="63.0" belongsTo="left" />
+                    <Threshold value="64.0" belongsTo="left" />
+                  </Thresholds>
+                  <Potential type="Table">
+                    <Variables>
+                      <Variable name="Death" timeSlice="0" />
+                    </Variables>
+                    <Values>0.988058103 0.011941897</Values>
+                  </Potential>
+                </Branch>
+                <Branch>
+                  <Thresholds>
+                    <Threshold value="64.0" belongsTo="left" />
+                    <Threshold value="65.0" belongsTo="left" />
+                  </Thresholds>
+                  <Potential type="Table">
+                    <Variables>
+                      <Variable name="Death" timeSlice="0" />
+                    </Variables>
+                    <Values>0.986655481 0.013344519</Values>
+                  </Potential>
+                </Branch>
+                <Branch>
+                  <Thresholds>
+                    <Threshold value="65.0" belongsTo="left" />
+                    <Threshold value="66.0" belongsTo="left" />
+                  </Thresholds>
+                  <Potential type="Table">
+                    <Variables>
+                      <Variable name="Death" timeSlice="0" />
+                    </Variables>
+                    <Values>0.986711577 0.013288423</Values>
+                  </Potential>
+                </Branch>
+                <Branch>
+                  <Thresholds>
+                    <Threshold value="66.0" belongsTo="left" />
+                    <Threshold value="67.0" belongsTo="left" />
+                  </Thresholds>
+                  <Potential type="Table">
+                    <Variables>
+                      <Variable name="Death" timeSlice="0" />
+                    </Variables>
+                    <Values>0.985559492 0.014440508</Values>
+                  </Potential>
+                </Branch>
+                <Branch>
+                  <Thresholds>
+                    <Threshold value="67.0" belongsTo="left" />
+                    <Threshold value="68.0" belongsTo="left" />
+                  </Thresholds>
+                  <Potential type="Table">
+                    <Variables>
+                      <Variable name="Death" timeSlice="0" />
+                    </Variables>
+                    <Values>0.984503306 0.015496694</Values>
+                  </Potential>
+                </Branch>
+                <Branch>
+                  <Thresholds>
+                    <Threshold value="68.0" belongsTo="left" />
+                    <Threshold value="69.0" belongsTo="left" />
+                  </Thresholds>
+                  <Potential type="Table">
+                    <Variables>
+                      <Variable name="Death" timeSlice="0" />
+                    </Variables>
+                    <Values>0.982597108 0.017402892</Values>
+                  </Potential>
+                </Branch>
+                <Branch>
+                  <Thresholds>
+                    <Threshold value="69.0" belongsTo="left" />
+                    <Threshold value="70.0" belongsTo="left" />
+                  </Thresholds>
+                  <Potential type="Table">
+                    <Variables>
+                      <Variable name="Death" timeSlice="0" />
+                    </Variables>
+                    <Values>0.980311154 0.019688846</Values>
+                  </Potential>
+                </Branch>
+                <Branch>
+                  <Thresholds>
+                    <Threshold value="70.0" belongsTo="left" />
+                    <Threshold value="71.0" belongsTo="left" />
+                  </Thresholds>
+                  <Potential type="Table">
+                    <Variables>
+                      <Variable name="Death" timeSlice="0" />
+                    </Variables>
+                    <Values>0.980537861 0.019462139</Values>
+                  </Potential>
+                </Branch>
+                <Branch>
+                  <Thresholds>
+                    <Threshold value="71.0" belongsTo="left" />
+                    <Threshold value="72.0" belongsTo="left" />
+                  </Thresholds>
+                  <Potential type="Table">
+                    <Variables>
+                      <Variable name="Death" timeSlice="0" />
+                    </Variables>
+                    <Values>0.977799522 0.022200478</Values>
+                  </Potential>
+                </Branch>
+                <Branch>
+                  <Thresholds>
+                    <Threshold value="72.0" belongsTo="left" />
+                    <Threshold value="73.0" belongsTo="left" />
+                  </Thresholds>
+                  <Potential type="Table">
+                    <Variables>
+                      <Variable name="Death" timeSlice="0" />
+                    </Variables>
+                    <Values>0.974328999 0.025671001</Values>
+                  </Potential>
+                </Branch>
+                <Branch>
+                  <Thresholds>
+                    <Threshold value="73.0" belongsTo="left" />
+                    <Threshold value="74.0" belongsTo="left" />
+                  </Thresholds>
+                  <Potential type="Table">
+                    <Variables>
+                      <Variable name="Death" timeSlice="0" />
+                    </Variables>
+                    <Values>0.972088578 0.027911422</Values>
+                  </Potential>
+                </Branch>
+                <Branch>
+                  <Thresholds>
+                    <Threshold value="74.0" belongsTo="left" />
+                    <Threshold value="75.0" belongsTo="left" />
+                  </Thresholds>
+                  <Potential type="Table">
+                    <Variables>
+                      <Variable name="Death" timeSlice="0" />
+                    </Variables>
+                    <Values>0.968056479 0.031943521</Values>
+                  </Potential>
+                </Branch>
+                <Branch>
+                  <Thresholds>
+                    <Threshold value="75.0" belongsTo="left" />
+                    <Threshold value="76.0" belongsTo="left" />
+                  </Thresholds>
+                  <Potential type="Table">
+                    <Variables>
+                      <Variable name="Death" timeSlice="0" />
+                    </Variables>
+                    <Values>0.965985914 0.034014086</Values>
+                  </Potential>
+                </Branch>
+                <Branch>
+                  <Thresholds>
+                    <Threshold value="76.0" belongsTo="left" />
+                    <Threshold value="77.0" belongsTo="left" />
+                  </Thresholds>
+                  <Potential type="Table">
+                    <Variables>
+                      <Variable name="Death" timeSlice="0" />
+                    </Variables>
+                    <Values>0.961903983 0.038096017</Values>
+                  </Potential>
+                </Branch>
+                <Branch>
+                  <Thresholds>
+                    <Threshold value="77.0" belongsTo="left" />
+                    <Threshold value="78.0" belongsTo="left" />
+                  </Thresholds>
+                  <Potential type="Table">
+                    <Variables>
+                      <Variable name="Death" timeSlice="0" />
+                    </Variables>
+                    <Values>0.957750294 0.042249706</Values>
+                  </Potential>
+                </Branch>
+                <Branch>
+                  <Thresholds>
+                    <Threshold value="78.0" belongsTo="left" />
+                    <Threshold value="79.0" belongsTo="left" />
+                  </Thresholds>
+                  <Potential type="Table">
+                    <Variables>
+                      <Variable name="Death" timeSlice="0" />
+                    </Variables>
+                    <Values>0.951246328 0.048753672</Values>
+                  </Potential>
+                </Branch>
+                <Branch>
+                  <Thresholds>
+                    <Threshold value="79.0" belongsTo="left" />
+                    <Threshold value="80.0" belongsTo="left" />
+                  </Thresholds>
+                  <Potential type="Table">
+                    <Variables>
+                      <Variable name="Death" timeSlice="0" />
+                    </Variables>
+                    <Values>0.946149009 0.053850991</Values>
+                  </Potential>
+                </Branch>
+                <Branch>
+                  <Thresholds>
+                    <Threshold value="80.0" belongsTo="left" />
+                    <Threshold value="81.0" belongsTo="left" />
+                  </Thresholds>
+                  <Potential type="Table">
+                    <Variables>
+                      <Variable name="Death" timeSlice="0" />
+                    </Variables>
+                    <Values>0.940812145 0.059187855</Values>
+                  </Potential>
+                </Branch>
+                <Branch>
+                  <Thresholds>
+                    <Threshold value="81.0" belongsTo="left" />
+                    <Threshold value="82.0" belongsTo="left" />
+                  </Thresholds>
+                  <Potential type="Table">
+                    <Variables>
+                      <Variable name="Death" timeSlice="0" />
+                    </Variables>
+                    <Values>0.932006193 0.067993807</Values>
+                  </Potential>
+                </Branch>
+                <Branch>
+                  <Thresholds>
+                    <Threshold value="82.0" belongsTo="left" />
+                    <Threshold value="83.0" belongsTo="left" />
+                  </Thresholds>
+                  <Potential type="Table">
+                    <Variables>
+                      <Variable name="Death" timeSlice="0" />
+                    </Variables>
+                    <Values>0.922861165 0.077138835</Values>
+                  </Potential>
+                </Branch>
+                <Branch>
+                  <Thresholds>
+                    <Threshold value="83.0" belongsTo="left" />
+                    <Threshold value="84.0" belongsTo="left" />
+                  </Thresholds>
+                  <Potential type="Table">
+                    <Variables>
+                      <Variable name="Death" timeSlice="0" />
+                    </Variables>
+                    <Values>0.913096388 0.086903612</Values>
+                  </Potential>
+                </Branch>
+                <Branch>
+                  <Thresholds>
+                    <Threshold value="84.0" belongsTo="left" />
+                    <Threshold value="85.0" belongsTo="left" />
+                  </Thresholds>
+                  <Potential type="Table">
+                    <Variables>
+                      <Variable name="Death" timeSlice="0" />
+                    </Variables>
+                    <Values>0.902645094 0.097354906</Values>
+                  </Potential>
+                </Branch>
+                <Branch>
+                  <Thresholds>
+                    <Threshold value="85.0" belongsTo="left" />
+                    <Threshold value="86.0" belongsTo="left" />
+                  </Thresholds>
+                  <Potential type="Table">
+                    <Variables>
+                      <Variable name="Death" timeSlice="0" />
+                    </Variables>
+                    <Values>0.889192793 0.110807207</Values>
+                  </Potential>
+                </Branch>
+                <Branch>
+                  <Thresholds>
+                    <Threshold value="86.0" belongsTo="left" />
+                    <Threshold value="87.0" belongsTo="left" />
+                  </Thresholds>
+                  <Potential type="Table">
+                    <Variables>
+                      <Variable name="Death" timeSlice="0" />
+                    </Variables>
+                    <Values>0.877760791 0.122239209</Values>
+                  </Potential>
+                </Branch>
+                <Branch>
+                  <Thresholds>
+                    <Threshold value="87.0" belongsTo="left" />
+                    <Threshold value="88.0" belongsTo="left" />
+                  </Thresholds>
+                  <Potential type="Table">
+                    <Variables>
+                      <Variable name="Death" timeSlice="0" />
+                    </Variables>
+                    <Values>0.859513871 0.140486129</Values>
+                  </Potential>
+                </Branch>
+                <Branch>
+                  <Thresholds>
+                    <Threshold value="88.0" belongsTo="left" />
+                    <Threshold value="89.0" belongsTo="left" />
+                  </Thresholds>
+                  <Potential type="Table">
+                    <Variables>
+                      <Variable name="Death" timeSlice="0" />
+                    </Variables>
+                    <Values>0.846221476 0.153778524</Values>
+                  </Potential>
+                </Branch>
+                <Branch>
+                  <Thresholds>
+                    <Threshold value="89.0" belongsTo="left" />
+                    <Threshold value="90.0" belongsTo="left" />
+                  </Thresholds>
+                  <Potential type="Table">
+                    <Variables>
+                      <Variable name="Death" timeSlice="0" />
+                    </Variables>
+                    <Values>0.826403379 0.173596621</Values>
+                  </Potential>
+                </Branch>
+                <Branch>
+                  <Thresholds>
+                    <Threshold value="90.0" belongsTo="left" />
+                    <Threshold value="91.0" belongsTo="left" />
+                  </Thresholds>
+                  <Potential type="Table">
+                    <Variables>
+                      <Variable name="Death" timeSlice="0" />
+                    </Variables>
+                    <Values>0.813384618 0.186615382</Values>
+                  </Potential>
+                </Branch>
+                <Branch>
+                  <Thresholds>
+                    <Threshold value="91.0" belongsTo="left" />
+                    <Threshold value="92.0" belongsTo="left" />
+                  </Thresholds>
+                  <Potential type="Table">
+                    <Variables>
+                      <Variable name="Death" timeSlice="0" />
+                    </Variables>
+                    <Values>0.791878136 0.208121864</Values>
+                  </Potential>
+                </Branch>
+                <Branch>
+                  <Thresholds>
+                    <Threshold value="92.0" belongsTo="left" />
+                    <Threshold value="93.0" belongsTo="left" />
+                  </Thresholds>
+                  <Potential type="Table">
+                    <Variables>
+                      <Variable name="Death" timeSlice="0" />
+                    </Variables>
+                    <Values>0.776149368 0.223850632</Values>
+                  </Potential>
+                </Branch>
+                <Branch>
+                  <Thresholds>
+                    <Threshold value="93.0" belongsTo="left" />
+                    <Threshold value="94.0" belongsTo="left" />
+                  </Thresholds>
+                  <Potential type="Table">
+                    <Variables>
+                      <Variable name="Death" timeSlice="0" />
+                    </Variables>
+                    <Values>0.767422697 0.232577303</Values>
+                  </Potential>
+                </Branch>
+                <Branch>
+                  <Thresholds>
+                    <Threshold value="94.0" belongsTo="left" />
+                    <Threshold value="95.0" belongsTo="left" />
+                  </Thresholds>
+                  <Potential type="Table">
+                    <Variables>
+                      <Variable name="Death" timeSlice="0" />
+                    </Variables>
+                    <Values>0.73524117 0.26475883</Values>
+                  </Potential>
+                </Branch>
+                <Branch>
+                  <Thresholds>
+                    <Threshold value="95.0" belongsTo="left" />
+                    <Threshold value="96.0" belongsTo="left" />
+                  </Thresholds>
+                  <Potential type="Table">
+                    <Variables>
+                      <Variable name="Death" timeSlice="0" />
+                    </Variables>
+                    <Values>0.720743854 0.279256146</Values>
+                  </Potential>
+                </Branch>
+                <Branch>
+                  <Thresholds>
+                    <Threshold value="96.0" belongsTo="left" />
+                    <Threshold value="97.0" belongsTo="left" />
+                  </Thresholds>
+                  <Potential type="Table">
+                    <Variables>
+                      <Variable name="Death" timeSlice="0" />
+                    </Variables>
+                    <Values>0.701857385 0.298142615</Values>
+                  </Potential>
+                </Branch>
+                <Branch>
+                  <Thresholds>
+                    <Threshold value="97.0" belongsTo="left" />
+                    <Threshold value="98.0" belongsTo="left" />
+                  </Thresholds>
+                  <Potential type="Table">
+                    <Variables>
+                      <Variable name="Death" timeSlice="0" />
+                    </Variables>
+                    <Values>0.68650289 0.31349711</Values>
+                  </Potential>
+                </Branch>
+                <Branch>
+                  <Thresholds>
+                    <Threshold value="98.0" belongsTo="left" />
+                    <Threshold value="99.0" belongsTo="left" />
+                  </Thresholds>
+                  <Potential type="Table">
+                    <Variables>
+                      <Variable name="Death" timeSlice="0" />
+                    </Variables>
+                    <Values>0.682208925 0.317791075</Values>
+                  </Potential>
+                </Branch>
+                <Branch>
+                  <Thresholds>
+                    <Threshold value="99.0" belongsTo="left" />
+                    <Threshold value="150.0" belongsTo="left" />
+                  </Thresholds>
+                  <Potential type="Table">
+                    <Variables>
+                      <Variable name="Death" timeSlice="0" />
+                    </Variables>
+                    <Values>0.706988636 0.293011364</Values>
+                  </Potential>
+                </Branch>
+              </Branches>
+            </Potential>
+          </Branch>
+          <Branch>
+            <States>
+              <State name="female" />
+            </States>
+            <Potential type="Tree/ADD">
+              <Variables>
+                <Variable name="Death" timeSlice="0" />
+                <Variable name="Age" timeSlice="0" />
+              </Variables>
+              <TopVariable name="Age" timeSlice="0" />
+              <Branches>
+                <Branch>
+                  <Thresholds>
+                    <Threshold value="0.0" belongsTo="right" />
+                    <Threshold value="1.0" belongsTo="left" />
+                  </Thresholds>
+                  <Potential type="Table">
+                    <Variables>
+                      <Variable name="Death" timeSlice="0" />
+                    </Variables>
+                    <Values>0.999760015 2.39985E-4</Values>
+                  </Potential>
+                </Branch>
+                <Branch>
+                  <Thresholds>
+                    <Threshold value="1.0" belongsTo="left" />
+                    <Threshold value="2.0" belongsTo="left" />
+                  </Thresholds>
+                  <Potential type="Table">
+                    <Variables>
+                      <Variable name="Death" timeSlice="0" />
+                    </Variables>
+                    <Values>0.999839895 1.60105E-4</Values>
+                  </Potential>
+                </Branch>
+                <Branch>
+                  <Thresholds>
+                    <Threshold value="2.0" belongsTo="left" />
+                    <Threshold value="3.0" belongsTo="left" />
+                  </Thresholds>
+                  <Potential type="Table">
+                    <Variables>
+                      <Variable name="Death" timeSlice="0" />
+                    </Variables>
+                    <Values>0.99991917 8.083E-5</Values>
+                  </Potential>
+                </Branch>
+                <Branch>
+                  <Thresholds>
+                    <Threshold value="3.0" belongsTo="left" />
+                    <Threshold value="4.0" belongsTo="left" />
+                  </Thresholds>
+                  <Potential type="Table">
+                    <Variables>
+                      <Variable name="Death" timeSlice="0" />
+                    </Variables>
+                    <Values>0.999901665 9.8335E-5</Values>
+                  </Potential>
+                </Branch>
+                <Branch>
+                  <Thresholds>
+                    <Threshold value="4.0" belongsTo="left" />
+                    <Threshold value="5.0" belongsTo="left" />
+                  </Thresholds>
+                  <Potential type="Table">
+                    <Variables>
+                      <Variable name="Death" timeSlice="0" />
+                    </Variables>
+                    <Values>0.999926941 7.3059E-5</Values>
+                  </Potential>
+                </Branch>
+                <Branch>
+                  <Thresholds>
+                    <Threshold value="5.0" belongsTo="left" />
+                    <Threshold value="6.0" belongsTo="left" />
+                  </Thresholds>
+                  <Potential type="Table">
+                    <Variables>
+                      <Variable name="Death" timeSlice="0" />
+                    </Variables>
+                    <Values>0.999912927 8.7073E-5</Values>
+                  </Potential>
+                </Branch>
+                <Branch>
+                  <Thresholds>
+                    <Threshold value="6.0" belongsTo="left" />
+                    <Threshold value="7.0" belongsTo="left" />
+                  </Thresholds>
+                  <Potential type="Table">
+                    <Variables>
+                      <Variable name="Death" timeSlice="0" />
+                    </Variables>
+                    <Values>0.999899284 1.00716E-4</Values>
+                  </Potential>
+                </Branch>
+                <Branch>
+                  <Thresholds>
+                    <Threshold value="7.0" belongsTo="left" />
+                    <Threshold value="8.0" belongsTo="left" />
+                  </Thresholds>
+                  <Potential type="Table">
+                    <Variables>
+                      <Variable name="Death" timeSlice="0" />
+                    </Variables>
+                    <Values>0.999944603 5.5397E-5</Values>
+                  </Potential>
+                </Branch>
+                <Branch>
+                  <Thresholds>
+                    <Threshold value="8.0" belongsTo="left" />
+                    <Threshold value="9.0" belongsTo="left" />
+                  </Thresholds>
+                  <Potential type="Table">
+                    <Variables>
+                      <Variable name="Death" timeSlice="0" />
+                    </Variables>
+                    <Values>0.999905084 9.4916E-5</Values>
+                  </Potential>
+                </Branch>
+                <Branch>
+                  <Thresholds>
+                    <Threshold value="9.0" belongsTo="left" />
+                    <Threshold value="10.0" belongsTo="left" />
+                  </Thresholds>
+                  <Potential type="Table">
+                    <Variables>
+                      <Variable name="Death" timeSlice="0" />
+                    </Variables>
+                    <Values>0.999951239 4.8761E-5</Values>
+                  </Potential>
+                </Branch>
+                <Branch>
+                  <Thresholds>
+                    <Threshold value="10.0" belongsTo="left" />
+                    <Threshold value="11.0" belongsTo="left" />
+                  </Thresholds>
+                  <Potential type="Table">
+                    <Variables>
+                      <Variable name="Death" timeSlice="0" />
+                    </Variables>
+                    <Values>0.99992736 7.264E-5</Values>
+                  </Potential>
+                </Branch>
+                <Branch>
+                  <Thresholds>
+                    <Threshold value="11.0" belongsTo="left" />
+                    <Threshold value="12.0" belongsTo="left" />
+                  </Thresholds>
+                  <Potential type="Table">
+                    <Variables>
+                      <Variable name="Death" timeSlice="0" />
+                    </Variables>
+                    <Values>0.999917788 8.2212E-5</Values>
+                  </Potential>
+                </Branch>
+                <Branch>
+                  <Thresholds>
+                    <Threshold value="12.0" belongsTo="left" />
+                    <Threshold value="13.0" belongsTo="left" />
+                  </Thresholds>
+                  <Potential type="Table">
+                    <Variables>
+                      <Variable name="Death" timeSlice="0" />
+                    </Variables>
+                    <Values>0.999916715 8.3285E-5</Values>
+                  </Potential>
+                </Branch>
+                <Branch>
+                  <Thresholds>
+                    <Threshold value="13.0" belongsTo="left" />
+                    <Threshold value="14.0" belongsTo="left" />
+                  </Thresholds>
+                  <Potential type="Table">
+                    <Variables>
+                      <Variable name="Death" timeSlice="0" />
+                    </Variables>
+                    <Values>0.999904982 9.5018E-5</Values>
+                  </Potential>
+                </Branch>
+                <Branch>
+                  <Thresholds>
+                    <Threshold value="14.0" belongsTo="left" />
+                    <Threshold value="15.0" belongsTo="left" />
+                  </Thresholds>
+                  <Potential type="Table">
+                    <Variables>
+                      <Variable name="Death" timeSlice="0" />
+                    </Variables>
+                    <Values>0.99990376 9.624E-5</Values>
+                  </Potential>
+                </Branch>
+                <Branch>
+                  <Thresholds>
+                    <Threshold value="15.0" belongsTo="left" />
+                    <Threshold value="16.0" belongsTo="left" />
+                  </Thresholds>
+                  <Potential type="Table">
+                    <Variables>
+                      <Variable name="Death" timeSlice="0" />
+                    </Variables>
+                    <Values>0.999899119 1.00881E-4</Values>
+                  </Potential>
+                </Branch>
+                <Branch>
+                  <Thresholds>
+                    <Threshold value="16.0" belongsTo="left" />
+                    <Threshold value="17.0" belongsTo="left" />
+                  </Thresholds>
+                  <Potential type="Table">
+                    <Variables>
+                      <Variable name="Death" timeSlice="0" />
+                    </Variables>
+                    <Values>0.999888633 1.11367E-4</Values>
+                  </Potential>
+                </Branch>
+                <Branch>
+                  <Thresholds>
+                    <Threshold value="17.0" belongsTo="left" />
+                    <Threshold value="18.0" belongsTo="left" />
+                  </Thresholds>
+                  <Potential type="Table">
+                    <Variables>
+                      <Variable name="Death" timeSlice="0" />
+                    </Variables>
+                    <Values>0.999821833 1.78167E-4</Values>
+                  </Potential>
+                </Branch>
+                <Branch>
+                  <Thresholds>
+                    <Threshold value="18.0" belongsTo="left" />
+                    <Threshold value="19.0" belongsTo="left" />
+                  </Thresholds>
+                  <Potential type="Table">
+                    <Variables>
+                      <Variable name="Death" timeSlice="0" />
+                    </Variables>
+                    <Values>0.999906787 9.3213E-5</Values>
+                  </Potential>
+                </Branch>
+                <Branch>
+                  <Thresholds>
+                    <Threshold value="19.0" belongsTo="left" />
+                    <Threshold value="20.0" belongsTo="left" />
+                  </Thresholds>
+                  <Potential type="Table">
+                    <Variables>
+                      <Variable name="Death" timeSlice="0" />
+                    </Variables>
+                    <Values>0.99985323 1.4677E-4</Values>
+                  </Potential>
+                </Branch>
+                <Branch>
+                  <Thresholds>
+                    <Threshold value="20.0" belongsTo="left" />
+                    <Threshold value="21.0" belongsTo="left" />
+                  </Thresholds>
+                  <Potential type="Table">
+                    <Variables>
+                      <Variable name="Death" timeSlice="0" />
+                    </Variables>
+                    <Values>0.999856855 1.43145E-4</Values>
+                  </Potential>
+                </Branch>
+                <Branch>
+                  <Thresholds>
+                    <Threshold value="21.0" belongsTo="left" />
+                    <Threshold value="22.0" belongsTo="left" />
+                  </Thresholds>
+                  <Potential type="Table">
+                    <Variables>
+                      <Variable name="Death" timeSlice="0" />
+                    </Variables>
+                    <Values>0.999884957 1.15043E-4</Values>
+                  </Potential>
+                </Branch>
+                <Branch>
+                  <Thresholds>
+                    <Threshold value="22.0" belongsTo="left" />
+                    <Threshold value="23.0" belongsTo="left" />
+                  </Thresholds>
+                  <Potential type="Table">
+                    <Variables>
+                      <Variable name="Death" timeSlice="0" />
+                    </Variables>
+                    <Values>0.999872285 1.27715E-4</Values>
+                  </Potential>
+                </Branch>
+                <Branch>
+                  <Thresholds>
+                    <Threshold value="23.0" belongsTo="left" />
+                    <Threshold value="24.0" belongsTo="left" />
+                  </Thresholds>
+                  <Potential type="Table">
+                    <Variables>
+                      <Variable name="Death" timeSlice="0" />
+                    </Variables>
+                    <Values>0.999837053 1.62947E-4</Values>
+                  </Potential>
+                </Branch>
+                <Branch>
+                  <Thresholds>
+                    <Threshold value="24.0" belongsTo="left" />
+                    <Threshold value="25.0" belongsTo="left" />
+                  </Thresholds>
+                  <Potential type="Table">
+                    <Variables>
+                      <Variable name="Death" timeSlice="0" />
+                    </Variables>
+                    <Values>0.999838501 1.61499E-4</Values>
+                  </Potential>
+                </Branch>
+                <Branch>
+                  <Thresholds>
+                    <Threshold value="25.0" belongsTo="left" />
+                    <Threshold value="26.0" belongsTo="left" />
+                  </Thresholds>
+                  <Potential type="Table">
+                    <Variables>
+                      <Variable name="Death" timeSlice="0" />
+                    </Variables>
+                    <Values>0.999844009 1.55991E-4</Values>
+                  </Potential>
+                </Branch>
+                <Branch>
+                  <Thresholds>
+                    <Threshold value="26.0" belongsTo="left" />
+                    <Threshold value="27.0" belongsTo="left" />
+                  </Thresholds>
+                  <Potential type="Table">
+                    <Variables>
+                      <Variable name="Death" timeSlice="0" />
+                    </Variables>
+                    <Values>0.999796774 2.03226E-4</Values>
+                  </Potential>
+                </Branch>
+                <Branch>
+                  <Thresholds>
+                    <Threshold value="27.0" belongsTo="left" />
+                    <Threshold value="28.0" belongsTo="left" />
+                  </Thresholds>
+                  <Potential type="Table">
+                    <Variables>
+                      <Variable name="Death" timeSlice="0" />
+                    </Variables>
+                    <Values>0.999836015 1.63985E-4</Values>
+                  </Potential>
+                </Branch>
+                <Branch>
+                  <Thresholds>
+                    <Threshold value="28.0" belongsTo="left" />
+                    <Threshold value="29.0" belongsTo="left" />
+                  </Thresholds>
+                  <Potential type="Table">
+                    <Variables>
+                      <Variable name="Death" timeSlice="0" />
+                    </Variables>
+                    <Values>0.999796989 2.03011E-4</Values>
+                  </Potential>
+                </Branch>
+                <Branch>
+                  <Thresholds>
+                    <Threshold value="29.0" belongsTo="left" />
+                    <Threshold value="30.0" belongsTo="left" />
+                  </Thresholds>
+                  <Potential type="Table">
+                    <Variables>
+                      <Variable name="Death" timeSlice="0" />
+                    </Variables>
+                    <Values>0.999791119 2.08881E-4</Values>
+                  </Potential>
+                </Branch>
+                <Branch>
+                  <Thresholds>
+                    <Threshold value="30.0" belongsTo="left" />
+                    <Threshold value="31.0" belongsTo="left" />
+                  </Thresholds>
+                  <Potential type="Table">
+                    <Variables>
+                      <Variable name="Death" timeSlice="0" />
+                    </Variables>
+                    <Values>0.999765972 2.34028E-4</Values>
+                  </Potential>
+                </Branch>
+                <Branch>
+                  <Thresholds>
+                    <Threshold value="31.0" belongsTo="left" />
+                    <Threshold value="32.0" belongsTo="left" />
+                  </Thresholds>
+                  <Potential type="Table">
+                    <Variables>
+                      <Variable name="Death" timeSlice="0" />
+                    </Variables>
+                    <Values>0.999790826 2.09174E-4</Values>
+                  </Potential>
+                </Branch>
+                <Branch>
+                  <Thresholds>
+                    <Threshold value="32.0" belongsTo="left" />
+                    <Threshold value="33.0" belongsTo="left" />
+                  </Thresholds>
+                  <Potential type="Table">
+                    <Variables>
+                      <Variable name="Death" timeSlice="0" />
+                    </Variables>
+                    <Values>0.999747377 2.52623E-4</Values>
+                  </Potential>
+                </Branch>
+                <Branch>
+                  <Thresholds>
+                    <Threshold value="33.0" belongsTo="left" />
+                    <Threshold value="34.0" belongsTo="left" />
+                  </Thresholds>
+                  <Potential type="Table">
+                    <Variables>
+                      <Variable name="Death" timeSlice="0" />
+                    </Variables>
+                    <Values>0.999740589 2.59411E-4</Values>
+                  </Potential>
+                </Branch>
+                <Branch>
+                  <Thresholds>
+                    <Threshold value="34.0" belongsTo="left" />
+                    <Threshold value="35.0" belongsTo="left" />
+                  </Thresholds>
+                  <Potential type="Table">
+                    <Variables>
+                      <Variable name="Death" timeSlice="0" />
+                    </Variables>
+                    <Values>0.999667898 3.32102E-4</Values>
+                  </Potential>
+                </Branch>
+                <Branch>
+                  <Thresholds>
+                    <Threshold value="35.0" belongsTo="left" />
+                    <Threshold value="36.0" belongsTo="left" />
+                  </Thresholds>
+                  <Potential type="Table">
+                    <Variables>
+                      <Variable name="Death" timeSlice="0" />
+                    </Variables>
+                    <Values>0.999615321 3.84679E-4</Values>
+                  </Potential>
+                </Branch>
+                <Branch>
+                  <Thresholds>
+                    <Threshold value="36.0" belongsTo="left" />
+                    <Threshold value="37.0" belongsTo="left" />
+                  </Thresholds>
+                  <Potential type="Table">
+                    <Variables>
+                      <Variable name="Death" timeSlice="0" />
+                    </Variables>
+                    <Values>0.999529847 4.70153E-4</Values>
+                  </Potential>
+                </Branch>
+                <Branch>
+                  <Thresholds>
+                    <Threshold value="37.0" belongsTo="left" />
+                    <Threshold value="38.0" belongsTo="left" />
+                  </Thresholds>
+                  <Potential type="Table">
+                    <Variables>
+                      <Variable name="Death" timeSlice="0" />
+                    </Variables>
+                    <Values>0.999524117 4.75883E-4</Values>
+                  </Potential>
+                </Branch>
+                <Branch>
+                  <Thresholds>
+                    <Threshold value="38.0" belongsTo="left" />
+                    <Threshold value="39.0" belongsTo="left" />
+                  </Thresholds>
+                  <Potential type="Table">
+                    <Variables>
+                      <Variable name="Death" timeSlice="0" />
+                    </Variables>
+                    <Values>0.999434931 5.65069E-4</Values>
+                  </Potential>
+                </Branch>
+                <Branch>
+                  <Thresholds>
+                    <Threshold value="39.0" belongsTo="left" />
+                    <Threshold value="40.0" belongsTo="left" />
+                  </Thresholds>
+                  <Potential type="Table">
+                    <Variables>
+                      <Variable name="Death" timeSlice="0" />
+                    </Variables>
+                    <Values>0.999416245 5.83755E-4</Values>
+                  </Potential>
+                </Branch>
+                <Branch>
+                  <Thresholds>
+                    <Threshold value="40.0" belongsTo="left" />
+                    <Threshold value="41.0" belongsTo="left" />
+                  </Thresholds>
+                  <Potential type="Table">
+                    <Variables>
+                      <Variable name="Death" timeSlice="0" />
+                    </Variables>
+                    <Values>0.999384526 6.15474E-4</Values>
+                  </Potential>
+                </Branch>
+                <Branch>
+                  <Thresholds>
+                    <Threshold value="41.0" belongsTo="left" />
+                    <Threshold value="42.0" belongsTo="left" />
+                  </Thresholds>
+                  <Potential type="Table">
+                    <Variables>
+                      <Variable name="Death" timeSlice="0" />
+                    </Variables>
+                    <Values>0.999299088 7.00912E-4</Values>
+                  </Potential>
+                </Branch>
+                <Branch>
+                  <Thresholds>
+                    <Threshold value="42.0" belongsTo="left" />
+                    <Threshold value="43.0" belongsTo="left" />
+                  </Thresholds>
+                  <Potential type="Table">
+                    <Variables>
+                      <Variable name="Death" timeSlice="0" />
+                    </Variables>
+                    <Values>0.999225892 7.74108E-4</Values>
+                  </Potential>
+                </Branch>
+                <Branch>
+                  <Thresholds>
+                    <Threshold value="43.0" belongsTo="left" />
+                    <Threshold value="44.0" belongsTo="left" />
+                  </Thresholds>
+                  <Potential type="Table">
+                    <Variables>
+                      <Variable name="Death" timeSlice="0" />
+                    </Variables>
+                    <Values>0.999140317 8.59683E-4</Values>
+                  </Potential>
+                </Branch>
+                <Branch>
+                  <Thresholds>
+                    <Threshold value="44.0" belongsTo="left" />
+                    <Threshold value="45.0" belongsTo="left" />
+                  </Thresholds>
+                  <Potential type="Table">
+                    <Variables>
+                      <Variable name="Death" timeSlice="0" />
+                    </Variables>
+                    <Values>0.999000805 9.99195E-4</Values>
+                  </Potential>
+                </Branch>
+                <Branch>
+                  <Thresholds>
+                    <Threshold value="45.0" belongsTo="left" />
+                    <Threshold value="46.0" belongsTo="left" />
+                  </Thresholds>
+                  <Potential type="Table">
+                    <Variables>
+                      <Variable name="Death" timeSlice="0" />
+                    </Variables>
+                    <Values>0.998915726 0.001084274</Values>
+                  </Potential>
+                </Branch>
+                <Branch>
+                  <Thresholds>
+                    <Threshold value="46.0" belongsTo="left" />
+                    <Threshold value="47.0" belongsTo="left" />
+                  </Thresholds>
+                  <Potential type="Table">
+                    <Variables>
+                      <Variable name="Death" timeSlice="0" />
+                    </Variables>
+                    <Values>0.998703914 0.001296086</Values>
+                  </Potential>
+                </Branch>
+                <Branch>
+                  <Thresholds>
+                    <Threshold value="47.0" belongsTo="left" />
+                    <Threshold value="48.0" belongsTo="left" />
+                  </Thresholds>
+                  <Potential type="Table">
+                    <Variables>
+                      <Variable name="Death" timeSlice="0" />
+                    </Variables>
+                    <Values>0.998581664 0.001418336</Values>
+                  </Potential>
+                </Branch>
+                <Branch>
+                  <Thresholds>
+                    <Threshold value="48.0" belongsTo="left" />
+                    <Threshold value="49.0" belongsTo="left" />
+                  </Thresholds>
+                  <Potential type="Table">
+                    <Variables>
+                      <Variable name="Death" timeSlice="0" />
+                    </Variables>
+                    <Values>0.99847288 0.00152712</Values>
+                  </Potential>
+                </Branch>
+                <Branch>
+                  <Thresholds>
+                    <Threshold value="49.0" belongsTo="left" />
+                    <Threshold value="50.0" belongsTo="left" />
+                  </Thresholds>
+                  <Potential type="Table">
+                    <Variables>
+                      <Variable name="Death" timeSlice="0" />
+                    </Variables>
+                    <Values>0.998215189 0.001784811</Values>
+                  </Potential>
+                </Branch>
+                <Branch>
+                  <Thresholds>
+                    <Threshold value="50.0" belongsTo="left" />
+                    <Threshold value="51.0" belongsTo="left" />
+                  </Thresholds>
+                  <Potential type="Table">
+                    <Variables>
+                      <Variable name="Death" timeSlice="0" />
+                    </Variables>
+                    <Values>0.998194721 0.001805279</Values>
+                  </Potential>
+                </Branch>
+                <Branch>
+                  <Thresholds>
+                    <Threshold value="51.0" belongsTo="left" />
+                    <Threshold value="52.0" belongsTo="left" />
+                  </Thresholds>
+                  <Potential type="Table">
+                    <Variables>
+                      <Variable name="Death" timeSlice="0" />
+                    </Variables>
+                    <Values>0.998035597 0.001964403</Values>
+                  </Potential>
+                </Branch>
+                <Branch>
+                  <Thresholds>
+                    <Threshold value="52.0" belongsTo="left" />
+                    <Threshold value="53.0" belongsTo="left" />
+                  </Thresholds>
+                  <Potential type="Table">
+                    <Variables>
+                      <Variable name="Death" timeSlice="0" />
+                    </Variables>
+                    <Values>0.997666112 0.002333888</Values>
+                  </Potential>
+                </Branch>
+                <Branch>
+                  <Thresholds>
+                    <Threshold value="53.0" belongsTo="left" />
+                    <Threshold value="54.0" belongsTo="left" />
+                  </Thresholds>
+                  <Potential type="Table">
+                    <Variables>
+                      <Variable name="Death" timeSlice="0" />
+                    </Variables>
+                    <Values>0.997689068 0.002310932</Values>
+                  </Potential>
+                </Branch>
+                <Branch>
+                  <Thresholds>
+                    <Threshold value="54.0" belongsTo="left" />
+                    <Threshold value="55.0" belongsTo="left" />
+                  </Thresholds>
+                  <Potential type="Table">
+                    <Variables>
+                      <Variable name="Death" timeSlice="0" />
+                    </Variables>
+                    <Values>0.997480541 0.002519459</Values>
+                  </Potential>
+                </Branch>
+                <Branch>
+                  <Thresholds>
+                    <Threshold value="55.0" belongsTo="left" />
+                    <Threshold value="56.0" belongsTo="left" />
+                  </Thresholds>
+                  <Potential type="Table">
+                    <Variables>
+                      <Variable name="Death" timeSlice="0" />
+                    </Variables>
+                    <Values>0.997321294 0.002678706</Values>
+                  </Potential>
+                </Branch>
+                <Branch>
+                  <Thresholds>
+                    <Threshold value="56.0" belongsTo="left" />
+                    <Threshold value="57.0" belongsTo="left" />
+                  </Thresholds>
+                  <Potential type="Table">
+                    <Variables>
+                      <Variable name="Death" timeSlice="0" />
+                    </Variables>
+                    <Values>0.99710757 0.00289243</Values>
+                  </Potential>
+                </Branch>
+                <Branch>
+                  <Thresholds>
+                    <Threshold value="57.0" belongsTo="left" />
+                    <Threshold value="58.0" belongsTo="left" />
+                  </Thresholds>
+                  <Potential type="Table">
+                    <Variables>
+                      <Variable name="Death" timeSlice="0" />
+                    </Variables>
+                    <Values>0.996922797 0.003077203</Values>
+                  </Potential>
+                </Branch>
+                <Branch>
+                  <Thresholds>
+                    <Threshold value="58.0" belongsTo="left" />
+                    <Threshold value="59.0" belongsTo="left" />
+                  </Thresholds>
+                  <Potential type="Table">
+                    <Variables>
+                      <Variable name="Death" timeSlice="0" />
+                    </Variables>
+                    <Values>0.99666615 0.00333385</Values>
+                  </Potential>
+                </Branch>
+                <Branch>
+                  <Thresholds>
+                    <Threshold value="59.0" belongsTo="left" />
+                    <Threshold value="60.0" belongsTo="left" />
+                  </Thresholds>
+                  <Potential type="Table">
+                    <Variables>
+                      <Variable name="Death" timeSlice="0" />
+                    </Variables>
+                    <Values>0.996390545 0.003609455</Values>
+                  </Potential>
+                </Branch>
+                <Branch>
+                  <Thresholds>
+                    <Threshold value="60.0" belongsTo="left" />
+                    <Threshold value="61.0" belongsTo="left" />
+                  </Thresholds>
+                  <Potential type="Table">
+                    <Variables>
+                      <Variable name="Death" timeSlice="0" />
+                    </Variables>
+                    <Values>0.996247341 0.003752659</Values>
+                  </Potential>
+                </Branch>
+                <Branch>
+                  <Thresholds>
+                    <Threshold value="61.0" belongsTo="left" />
+                    <Threshold value="62.0" belongsTo="left" />
+                  </Thresholds>
+                  <Potential type="Table">
+                    <Variables>
+                      <Variable name="Death" timeSlice="0" />
+                    </Variables>
+                    <Values>0.995839689 0.004160311</Values>
+                  </Potential>
+                </Branch>
+                <Branch>
+                  <Thresholds>
+                    <Threshold value="62.0" belongsTo="left" />
+                    <Threshold value="63.0" belongsTo="left" />
+                  </Thresholds>
+                  <Potential type="Table">
+                    <Variables>
+                      <Variable name="Death" timeSlice="0" />
+                    </Variables>
+                    <Values>0.995781283 0.004218717</Values>
+                  </Potential>
+                </Branch>
+                <Branch>
+                  <Thresholds>
+                    <Threshold value="63.0" belongsTo="left" />
+                    <Threshold value="64.0" belongsTo="left" />
+                  </Thresholds>
+                  <Potential type="Table">
+                    <Variables>
+                      <Variable name="Death" timeSlice="0" />
+                    </Variables>
+                    <Values>0.9955049 0.0044951</Values>
+                  </Potential>
+                </Branch>
+                <Branch>
+                  <Thresholds>
+                    <Threshold value="64.0" belongsTo="left" />
+                    <Threshold value="65.0" belongsTo="left" />
+                  </Thresholds>
+                  <Potential type="Table">
+                    <Variables>
+                      <Variable name="Death" timeSlice="0" />
+                    </Variables>
+                    <Values>0.995029147 0.004970853</Values>
+                  </Potential>
+                </Branch>
+                <Branch>
+                  <Thresholds>
+                    <Threshold value="65.0" belongsTo="left" />
+                    <Threshold value="66.0" belongsTo="left" />
+                  </Thresholds>
+                  <Potential type="Table">
+                    <Variables>
+                      <Variable name="Death" timeSlice="0" />
+                    </Variables>
+                    <Values>0.994828946 0.005171054</Values>
+                  </Potential>
+                </Branch>
+                <Branch>
+                  <Thresholds>
+                    <Threshold value="66.0" belongsTo="left" />
+                    <Threshold value="67.0" belongsTo="left" />
+                  </Thresholds>
+                  <Potential type="Table">
+                    <Variables>
+                      <Variable name="Death" timeSlice="0" />
+                    </Variables>
+                    <Values>0.993889926 0.006110074</Values>
+                  </Potential>
+                </Branch>
+                <Branch>
+                  <Thresholds>
+                    <Threshold value="67.0" belongsTo="left" />
+                    <Threshold value="68.0" belongsTo="left" />
+                  </Thresholds>
+                  <Potential type="Table">
+                    <Variables>
+                      <Variable name="Death" timeSlice="0" />
+                    </Variables>
+                    <Values>0.993696351 0.006303649</Values>
+                  </Potential>
+                </Branch>
+                <Branch>
+                  <Thresholds>
+                    <Threshold value="68.0" belongsTo="left" />
+                    <Threshold value="69.0" belongsTo="left" />
+                  </Thresholds>
+                  <Potential type="Table">
+                    <Variables>
+                      <Variable name="Death" timeSlice="0" />
+                    </Variables>
+                    <Values>0.992220979 0.007779021</Values>
+                  </Potential>
+                </Branch>
+                <Branch>
+                  <Thresholds>
+                    <Threshold value="69.0" belongsTo="left" />
+                    <Threshold value="70.0" belongsTo="left" />
+                  </Thresholds>
+                  <Potential type="Table">
+                    <Variables>
+                      <Variable name="Death" timeSlice="0" />
+                    </Variables>
+                    <Values>0.991734139 0.008265861</Values>
+                  </Potential>
+                </Branch>
+                <Branch>
+                  <Thresholds>
+                    <Threshold value="70.0" belongsTo="left" />
+                    <Threshold value="71.0" belongsTo="left" />
+                  </Thresholds>
+                  <Potential type="Table">
+                    <Variables>
+                      <Variable name="Death" timeSlice="0" />
+                    </Variables>
+                    <Values>0.991371089 0.008628911</Values>
+                  </Potential>
+                </Branch>
+                <Branch>
+                  <Thresholds>
+                    <Threshold value="71.0" belongsTo="left" />
+                    <Threshold value="72.0" belongsTo="left" />
+                  </Thresholds>
+                  <Potential type="Table">
+                    <Variables>
+                      <Variable name="Death" timeSlice="0" />
+                    </Variables>
+                    <Values>0.990386301 0.009613699</Values>
+                  </Potential>
+                </Branch>
+                <Branch>
+                  <Thresholds>
+                    <Threshold value="72.0" belongsTo="left" />
+                    <Threshold value="73.0" belongsTo="left" />
+                  </Thresholds>
+                  <Potential type="Table">
+                    <Variables>
+                      <Variable name="Death" timeSlice="0" />
+                    </Variables>
+                    <Values>0.988377103 0.011622897</Values>
+                  </Potential>
+                </Branch>
+                <Branch>
+                  <Thresholds>
+                    <Threshold value="73.0" belongsTo="left" />
+                    <Threshold value="74.0" belongsTo="left" />
+                  </Thresholds>
+                  <Potential type="Table">
+                    <Variables>
+                      <Variable name="Death" timeSlice="0" />
+                    </Variables>
+                    <Values>0.986848956 0.013151044</Values>
+                  </Potential>
+                </Branch>
+                <Branch>
+                  <Thresholds>
+                    <Threshold value="74.0" belongsTo="left" />
+                    <Threshold value="75.0" belongsTo="left" />
+                  </Thresholds>
+                  <Potential type="Table">
+                    <Variables>
+                      <Variable name="Death" timeSlice="0" />
+                    </Variables>
+                    <Values>0.984999731 0.015000269</Values>
+                  </Potential>
+                </Branch>
+                <Branch>
+                  <Thresholds>
+                    <Threshold value="75.0" belongsTo="left" />
+                    <Threshold value="76.0" belongsTo="left" />
+                  </Thresholds>
+                  <Potential type="Table">
+                    <Variables>
+                      <Variable name="Death" timeSlice="0" />
+                    </Variables>
+                    <Values>0.982932844 0.017067156</Values>
+                  </Potential>
+                </Branch>
+                <Branch>
+                  <Thresholds>
+                    <Threshold value="76.0" belongsTo="left" />
+                    <Threshold value="77.0" belongsTo="left" />
+                  </Thresholds>
+                  <Potential type="Table">
+                    <Variables>
+                      <Variable name="Death" timeSlice="0" />
+                    </Variables>
+                    <Values>0.980690187 0.019309813</Values>
+                  </Potential>
+                </Branch>
+                <Branch>
+                  <Thresholds>
+                    <Threshold value="77.0" belongsTo="left" />
+                    <Threshold value="78.0" belongsTo="left" />
+                  </Thresholds>
+                  <Potential type="Table">
+                    <Variables>
+                      <Variable name="Death" timeSlice="0" />
+                    </Variables>
+                    <Values>0.97779257 0.02220743</Values>
+                  </Potential>
+                </Branch>
+                <Branch>
+                  <Thresholds>
+                    <Threshold value="78.0" belongsTo="left" />
+                    <Threshold value="79.0" belongsTo="left" />
+                  </Thresholds>
+                  <Potential type="Table">
+                    <Variables>
+                      <Variable name="Death" timeSlice="0" />
+                    </Variables>
+                    <Values>0.974025373 0.025974627</Values>
+                  </Potential>
+                </Branch>
+                <Branch>
+                  <Thresholds>
+                    <Threshold value="79.0" belongsTo="left" />
+                    <Threshold value="80.0" belongsTo="left" />
+                  </Thresholds>
+                  <Potential type="Table">
+                    <Variables>
+                      <Variable name="Death" timeSlice="0" />
+                    </Variables>
+                    <Values>0.969584693 0.030415307</Values>
+                  </Potential>
+                </Branch>
+                <Branch>
+                  <Thresholds>
+                    <Threshold value="80.0" belongsTo="left" />
+                    <Threshold value="81.0" belongsTo="left" />
+                  </Thresholds>
+                  <Potential type="Table">
+                    <Variables>
+                      <Variable name="Death" timeSlice="0" />
+                    </Variables>
+                    <Values>0.964592347 0.035407653</Values>
+                  </Potential>
+                </Branch>
+                <Branch>
+                  <Thresholds>
+                    <Threshold value="81.0" belongsTo="left" />
+                    <Threshold value="82.0" belongsTo="left" />
+                  </Thresholds>
+                  <Potential type="Table">
+                    <Variables>
+                      <Variable name="Death" timeSlice="0" />
+                    </Variables>
+                    <Values>0.958369785 0.041630215</Values>
+                  </Potential>
+                </Branch>
+                <Branch>
+                  <Thresholds>
+                    <Threshold value="82.0" belongsTo="left" />
+                    <Threshold value="83.0" belongsTo="left" />
+                  </Thresholds>
+                  <Potential type="Table">
+                    <Variables>
+                      <Variable name="Death" timeSlice="0" />
+                    </Variables>
+                    <Values>0.952323082 0.047676918</Values>
+                  </Potential>
+                </Branch>
+                <Branch>
+                  <Thresholds>
+                    <Threshold value="83.0" belongsTo="left" />
+                    <Threshold value="84.0" belongsTo="left" />
+                  </Thresholds>
+                  <Potential type="Table">
+                    <Variables>
+                      <Variable name="Death" timeSlice="0" />
+                    </Variables>
+                    <Values>0.944467655 0.055532345</Values>
+                  </Potential>
+                </Branch>
+                <Branch>
+                  <Thresholds>
+                    <Threshold value="84.0" belongsTo="left" />
+                    <Threshold value="85.0" belongsTo="left" />
+                  </Thresholds>
+                  <Potential type="Table">
+                    <Variables>
+                      <Variable name="Death" timeSlice="0" />
+                    </Variables>
+                    <Values>0.936198751 0.063801249</Values>
+                  </Potential>
+                </Branch>
+                <Branch>
+                  <Thresholds>
+                    <Threshold value="85.0" belongsTo="left" />
+                    <Threshold value="86.0" belongsTo="left" />
+                  </Thresholds>
+                  <Potential type="Table">
+                    <Variables>
+                      <Variable name="Death" timeSlice="0" />
+                    </Variables>
+                    <Values>0.923106811 0.076893189</Values>
+                  </Potential>
+                </Branch>
+                <Branch>
+                  <Thresholds>
+                    <Threshold value="86.0" belongsTo="left" />
+                    <Threshold value="87.0" belongsTo="left" />
+                  </Thresholds>
+                  <Potential type="Table">
+                    <Variables>
+                      <Variable name="Death" timeSlice="0" />
+                    </Variables>
+                    <Values>0.914781305 0.085218695</Values>
+                  </Potential>
+                </Branch>
+                <Branch>
+                  <Thresholds>
+                    <Threshold value="87.0" belongsTo="left" />
+                    <Threshold value="88.0" belongsTo="left" />
+                  </Thresholds>
+                  <Potential type="Table">
+                    <Variables>
+                      <Variable name="Death" timeSlice="0" />
+                    </Variables>
+                    <Values>0.897644931 0.102355069</Values>
+                  </Potential>
+                </Branch>
+                <Branch>
+                  <Thresholds>
+                    <Threshold value="88.0" belongsTo="left" />
+                    <Threshold value="89.0" belongsTo="left" />
+                  </Thresholds>
+                  <Potential type="Table">
+                    <Variables>
+                      <Variable name="Death" timeSlice="0" />
+                    </Variables>
+                    <Values>0.886799003 0.113200997</Values>
+                  </Potential>
+                </Branch>
+                <Branch>
+                  <Thresholds>
+                    <Threshold value="89.0" belongsTo="left" />
+                    <Threshold value="90.0" belongsTo="left" />
+                  </Thresholds>
+                  <Potential type="Table">
+                    <Variables>
+                      <Variable name="Death" timeSlice="0" />
+                    </Variables>
+                    <Values>0.868390509 0.131609491</Values>
+                  </Potential>
+                </Branch>
+                <Branch>
+                  <Thresholds>
+                    <Threshold value="90.0" belongsTo="left" />
+                    <Threshold value="91.0" belongsTo="left" />
+                  </Thresholds>
+                  <Potential type="Table">
+                    <Variables>
+                      <Variable name="Death" timeSlice="0" />
+                    </Variables>
+                    <Values>0.849633237 0.150366763</Values>
+                  </Potential>
+                </Branch>
+                <Branch>
+                  <Thresholds>
+                    <Threshold value="91.0" belongsTo="left" />
+                    <Threshold value="92.0" belongsTo="left" />
+                  </Thresholds>
+                  <Potential type="Table">
+                    <Variables>
+                      <Variable name="Death" timeSlice="0" />
+                    </Variables>
+                    <Values>0.832467422 0.167532578</Values>
+                  </Potential>
+                </Branch>
+                <Branch>
+                  <Thresholds>
+                    <Threshold value="92.0" belongsTo="left" />
+                    <Threshold value="93.0" belongsTo="left" />
+                  </Thresholds>
+                  <Potential type="Table">
+                    <Variables>
+                      <Variable name="Death" timeSlice="0" />
+                    </Variables>
+                    <Values>0.810819125 0.189180875</Values>
+                  </Potential>
+                </Branch>
+                <Branch>
+                  <Thresholds>
+                    <Threshold value="93.0" belongsTo="left" />
+                    <Threshold value="94.0" belongsTo="left" />
+                  </Thresholds>
+                  <Potential type="Table">
+                    <Variables>
+                      <Variable name="Death" timeSlice="0" />
+                    </Variables>
+                    <Values>0.796183104 0.203816896</Values>
+                  </Potential>
+                </Branch>
+                <Branch>
+                  <Thresholds>
+                    <Threshold value="94.0" belongsTo="left" />
+                    <Threshold value="95.0" belongsTo="left" />
+                  </Thresholds>
+                  <Potential type="Table">
+                    <Variables>
+                      <Variable name="Death" timeSlice="0" />
+                    </Variables>
+                    <Values>0.765093888 0.234906112</Values>
+                  </Potential>
+                </Branch>
+                <Branch>
+                  <Thresholds>
+                    <Threshold value="95.0" belongsTo="left" />
+                    <Threshold value="96.0" belongsTo="left" />
+                  </Thresholds>
+                  <Potential type="Table">
+                    <Variables>
+                      <Variable name="Death" timeSlice="0" />
+                    </Variables>
+                    <Values>0.74646562 0.25353438</Values>
+                  </Potential>
+                </Branch>
+                <Branch>
+                  <Thresholds>
+                    <Threshold value="96.0" belongsTo="left" />
+                    <Threshold value="97.0" belongsTo="left" />
+                  </Thresholds>
+                  <Potential type="Table">
+                    <Variables>
+                      <Variable name="Death" timeSlice="0" />
+                    </Variables>
+                    <Values>0.732384116 0.267615884</Values>
+                  </Potential>
+                </Branch>
+                <Branch>
+                  <Thresholds>
+                    <Threshold value="97.0" belongsTo="left" />
+                    <Threshold value="98.0" belongsTo="left" />
+                  </Thresholds>
+                  <Potential type="Table">
+                    <Variables>
+                      <Variable name="Death" timeSlice="0" />
+                    </Variables>
+                    <Values>0.713914212 0.286085788</Values>
+                  </Potential>
+                </Branch>
+                <Branch>
+                  <Thresholds>
+                    <Threshold value="98.0" belongsTo="left" />
+                    <Threshold value="99.0" belongsTo="left" />
+                  </Thresholds>
+                  <Potential type="Table">
+                    <Variables>
+                      <Variable name="Death" timeSlice="0" />
+                    </Variables>
+                    <Values>0.69666429 0.30333571</Values>
+                  </Potential>
+                </Branch>
+                <Branch>
+                  <Thresholds>
+                    <Threshold value="99.0" belongsTo="left" />
+                    <Threshold value="150.0" belongsTo="left" />
+                  </Thresholds>
+                  <Potential type="Table">
+                    <Variables>
+                      <Variable name="Death" timeSlice="0" />
+                    </Variables>
+                    <Values>0.681281846 0.318718154</Values>
+                  </Potential>
+                </Branch>
+              </Branches>
+            </Potential>
+          </Branch>
+        </Branches>
+      </Potential>
+      <Potential type="Delta" role="conditionalProbability">
+        <Variables>
+          <Variable name="Age" timeSlice="0" />
+        </Variables>
+        <NumericValue>1.0</NumericValue>
+      </Potential>
+      <Potential type="CycleLengthShift" role="conditionalProbability">
+        <Variables>
+          <Variable name="Age" timeSlice="1" />
+          <Variable name="Age" timeSlice="0" />
+        </Variables>
+      </Potential>
+      <Potential type="Delta" role="conditionalProbability">
+        <Variables>
+          <Variable name="Alive" timeSlice="0" />
+        </Variables>
+        <State>yes</State>
+      </Potential>
+      <Potential type="Tree/ADD" role="conditionalProbability">
+        <Variables>
+          <Variable name="Alive" timeSlice="1" />
+          <Variable name="Death" timeSlice="0" />
+          <Variable name="Alive" timeSlice="0" />
+          <Variable name="Surgery death" timeSlice="0" />
+        </Variables>
+        <TopVariable name="Alive" timeSlice="0" />
+        <Branches>
+          <Branch>
+            <States>
+              <State name="yes" />
+            </States>
+            <Potential type="Tree/ADD">
+              <Variables>
+                <Variable name="Alive" timeSlice="1" />
+                <Variable name="Death" timeSlice="0" />
+                <Variable name="Surgery death" timeSlice="0" />
+              </Variables>
+              <TopVariable name="Death" timeSlice="0" />
+              <Branches>
+                <Branch>
+                  <States>
+                    <State name="yes" />
+                  </States>
+                  <Potential type="Delta">
+                    <Variables>
+                      <Variable name="Alive" timeSlice="1" />
+                    </Variables>
+                    <State>no</State>
+                  </Potential>
+                </Branch>
+                <Branch>
+                  <States>
+                    <State name="no" />
+                  </States>
+                  <Potential type="Tree/ADD">
+                    <Variables>
+                      <Variable name="Alive" timeSlice="1" />
+                      <Variable name="Surgery death" timeSlice="0" />
+                    </Variables>
+                    <TopVariable name="Surgery death" timeSlice="0" />
+                    <Branches>
+                      <Branch>
+                        <States>
+                          <State name="yes" />
+                        </States>
+                        <Potential type="Delta">
+                          <Variables>
+                            <Variable name="Alive" timeSlice="1" />
+                          </Variables>
+                          <State>no</State>
+                        </Potential>
+                      </Branch>
+                      <Branch>
+                        <States>
+                          <State name="no" />
+                        </States>
+                        <Potential type="Delta">
+                          <Variables>
+                            <Variable name="Alive" timeSlice="1" />
+                          </Variables>
+                          <State>yes</State>
+                        </Potential>
+                      </Branch>
+                    </Branches>
+                  </Potential>
+                </Branch>
+              </Branches>
+            </Potential>
+          </Branch>
+          <Branch>
+            <States>
+              <State name="no" />
+            </States>
+            <Potential type="Delta">
+              <Variables>
+                <Variable name="Alive" timeSlice="1" />
+              </Variables>
+              <State>no</State>
+            </Potential>
+          </Branch>
+        </Branches>
+      </Potential>
+      <Potential type="Tree/ADD" role="conditionalProbability">
+        <Comment><![CDATA[<html>
+  <head>
+    
+  </head>
+  <body>
+    We have estimated that in developed countries the perioperative rate is 
+    less than 1/10,000 for children (Gonzalez et al. 2012, Anesthesia-related 
+    mortality in pediatric patients: A systematic review) and less than 
+    20/10,000 in adults (Braz et al. 2009, Mortality in anesthesia: A 
+    systematic review). This seems to be an overestimation for young and 
+    middle-age adults.
+  </body>
+</html>]]></Comment>
+        <Variables>
+          <Variable name="Surgery death" timeSlice="0" />
+          <Variable name="Revision surgery" timeSlice="0" />
+          <Variable name="Age" timeSlice="0" />
+        </Variables>
+        <TopVariable name="Revision surgery" timeSlice="0" />
+        <Branches>
+          <Branch>
+            <States>
+              <State name="yes" />
+            </States>
+            <Potential type="Tree/ADD">
+              <Variables>
+                <Variable name="Surgery death" timeSlice="0" />
+                <Variable name="Revision surgery" timeSlice="0" />
+                <Variable name="Age" timeSlice="0" />
+              </Variables>
+              <TopVariable name="Age" timeSlice="0" />
+              <Branches>
+                <Branch>
+                  <Thresholds>
+                    <Threshold value="0.0" belongsTo="right" />
+                    <Threshold value="18.0" belongsTo="right" />
+                  </Thresholds>
+                  <Potential type="Table">
+                    <Variables>
+                      <Variable name="Surgery death" timeSlice="0" />
+                    </Variables>
+                    <Values>0.9999 1.0E-4</Values>
+                    <UncertainValues>
+                      <Value distribution="Complement">1.0</Value>
+                      <Value distribution="Beta">0.01 99.99</Value>
+                    </UncertainValues>
+                  </Potential>
+                </Branch>
+                <Branch>
+                  <Thresholds>
+                    <Threshold value="18.0" belongsTo="right" />
+                    <Threshold value="Infinity" belongsTo="right" />
+                  </Thresholds>
+                  <Potential type="Table">
+                    <Variables>
+                      <Variable name="Surgery death" timeSlice="0" />
+                    </Variables>
+                    <Values>0.998 0.002</Values>
+                    <UncertainValues>
+                      <Value distribution="Complement">1.0</Value>
+                      <Value distribution="Beta">0.2 99.8</Value>
+                    </UncertainValues>
+                  </Potential>
+                </Branch>
+              </Branches>
+            </Potential>
+          </Branch>
+          <Branch>
+            <States>
+              <State name="no" />
+            </States>
+            <Potential type="Delta">
+              <Variables>
+                <Variable name="Surgery death" timeSlice="0" />
+              </Variables>
+              <State>no</State>
+            </Potential>
+          </Branch>
+        </Branches>
+      </Potential>
+      <Potential type="Tree/ADD" role="conditionalProbability">
+        <Variables>
+          <Variable name="Revision surgery" timeSlice="0" />
+          <Variable name="Major complic 2" timeSlice="0" />
+          <Variable name="Internal device 2 failure" timeSlice="0" />
+        </Variables>
+        <TopVariable name="Major complic 2" timeSlice="0" />
+        <Branches>
+          <Branch>
+            <States>
+              <State name="yes" />
+            </States>
+            <Potential type="Delta">
+              <Variables>
+                <Variable name="Revision surgery" timeSlice="0" />
+              </Variables>
+              <State>yes</State>
+            </Potential>
+          </Branch>
+          <Branch>
+            <States>
+              <State name="no" />
+            </States>
+            <Potential type="Tree/ADD">
+              <Variables>
+                <Variable name="Revision surgery" timeSlice="0" />
+                <Variable name="Major complic 2" timeSlice="0" />
+                <Variable name="Internal device 2 failure" timeSlice="0" />
+              </Variables>
+              <TopVariable name="Internal device 2 failure" timeSlice="0" />
+              <Branches>
+                <Branch>
+                  <States>
+                    <State name="yes" />
+                  </States>
+                  <Potential type="Delta">
+                    <Variables>
+                      <Variable name="Revision surgery" timeSlice="0" />
+                    </Variables>
+                    <State>yes</State>
+                  </Potential>
+                </Branch>
+                <Branch>
+                  <States>
+                    <State name="no" />
+                  </States>
+                  <Potential type="Delta">
+                    <Variables>
+                      <Variable name="Revision surgery" timeSlice="0" />
+                    </Variables>
+                    <State>no</State>
+                  </Potential>
+                </Branch>
+              </Branches>
+            </Potential>
+          </Branch>
+        </Branches>
+      </Potential>
+      <Potential type="Tree/ADD" role="conditionalProbability">
+        <Comment><![CDATA[<html>
+  <head>
+    
+  </head>
+  <body>
+    Sources: Bond et al. (2007); Summerfield et al. (2010)
+  </body>
+</html>]]></Comment>
+        <Variables>
+          <Variable name="Major complic 2" timeSlice="0" />
+          <Variable name="Implants used" timeSlice="0" />
+          <Variable name="Internal device 2 age" timeSlice="0" />
+        </Variables>
+        <TopVariable name="Implants used" timeSlice="0" />
+        <Branches>
+          <Branch>
+            <States>
+              <State name="only second implant" />
+              <State name="both implants" />
+            </States>
+            <Potential type="Tree/ADD">
+              <Variables>
+                <Variable name="Major complic 2" timeSlice="0" />
+                <Variable name="Internal device 2 age" timeSlice="0" />
+              </Variables>
+              <TopVariable name="Internal device 2 age" timeSlice="0" />
+              <Branches>
+                <Branch>
+                  <States>
+                    <State name="0" />
+                  </States>
+                  <Potential type="Table">
+                    <Variables>
+                      <Variable name="Major complic 2" timeSlice="0" />
+                    </Variables>
+                    <Values>0.959 0.040999999999999995</Values>
+                    <UncertainValues>
+                      <Value distribution="Complement">1.0</Value>
+                      <Value distribution="Beta">4.1 95.9</Value>
+                    </UncertainValues>
+                  </Potential>
+                </Branch>
+                <Branch>
+                  <States>
+                    <State name="1" />
+                    <State name="2" />
+                    <State name="3" />
+                    <State name="4" />
+                    <State name="5" />
+                    <State name="6" />
+                    <State name="7" />
+                    <State name="8" />
+                    <State name="9" />
+                    <State name="10+" />
+                  </States>
+                  <Potential type="Table">
+                    <Variables>
+                      <Variable name="Major complic 2" timeSlice="0" />
+                    </Variables>
+                    <Values>0.996 0.004</Values>
+                    <UncertainValues>
+                      <Value distribution="Complement">1.0</Value>
+                      <Value distribution="Beta">0.4 99.6</Value>
+                    </UncertainValues>
+                  </Potential>
+                </Branch>
+              </Branches>
+            </Potential>
+          </Branch>
+          <Branch>
+            <States>
+              <State name="none" />
+              <State name="only first implant" />
+            </States>
+            <Potential type="Delta">
+              <Variables>
+                <Variable name="Major complic 2" timeSlice="0" />
+              </Variables>
+              <State>no</State>
+            </Potential>
+          </Branch>
+        </Branches>
+      </Potential>
+      <Potential type="Table" role="utility">
+        <Comment><![CDATA[<html>
+  <head>
+    
+  </head>
+  <body>
+    We assume that cost of surgery is always covered by the health system. In 
+    a previous version of the model we assumed that when the revision is due 
+    to a failure of the internal component during the guarantee period, the 
+    surgical intervention was covered by the manufacturer; but this is not 
+    usually the case in Spain.
+  </body>
+</html>]]></Comment>
+        <UtilityVariable name="CS: Revision surgery" timeSlice="0" />
+        <Variables>
+          <Variable name="Revision surgery" timeSlice="0" />
+        </Variables>
+        <Values>0.0 4500.0</Values>
+        <UncertainValues>
+          <Value />
+          <Value distribution="Gamma-mv">4500.0 900.0</Value>
+        </UncertainValues>
+      </Potential>
+      <Potential type="Tree/ADD" role="conditionalProbability">
+        <Variables>
+          <Variable name="Implants used" timeSlice="0" />
+          <Variable name="Intervention decided" />
+        </Variables>
+        <TopVariable name="Intervention decided" />
+        <Branches>
+          <Branch>
+            <States>
+              <State name="BCI sequential" />
+              <State name="BCI simultaneous" />
+            </States>
+            <Potential type="Delta">
+              <Variables>
+                <Variable name="Implants used" timeSlice="0" />
+              </Variables>
+              <State>both implants</State>
+            </Potential>
+          </Branch>
+          <Branch>
+            <States>
+              <State name="Unilateral" />
+            </States>
+            <Potential type="Delta">
+              <Variables>
+                <Variable name="Implants used" timeSlice="0" />
+              </Variables>
+              <State>only first implant</State>
+            </Potential>
+          </Branch>
+        </Branches>
+      </Potential>
+      <Potential type="Tree/ADD" role="conditionalProbability">
+        <Variables>
+          <Variable name="Implants used" timeSlice="1" />
+          <Variable name="Alive" timeSlice="1" />
+          <Variable name="Implants used" timeSlice="0" />
+          <Variable name="Explant 2" timeSlice="0" />
+          <Variable name="Elective non use 2" />
+          <Variable name="Explant 1" timeSlice="0" />
+        </Variables>
+        <TopVariable name="Alive" timeSlice="1" />
+        <Branches>
+          <Branch>
+            <States>
+              <State name="no" />
+            </States>
+            <Potential type="Delta">
+              <Variables>
+                <Variable name="Implants used" timeSlice="1" />
+              </Variables>
+              <State>none</State>
+            </Potential>
+          </Branch>
+          <Branch>
+            <States>
+              <State name="yes" />
+            </States>
+            <Potential type="Tree/ADD">
+              <Variables>
+                <Variable name="Implants used" timeSlice="1" />
+                <Variable name="Implants used" timeSlice="0" />
+                <Variable name="Explant 2" timeSlice="0" />
+                <Variable name="Elective non use 2" />
+                <Variable name="Explant 1" timeSlice="0" />
+              </Variables>
+              <TopVariable name="Implants used" timeSlice="0" />
+              <Branches>
+                <Branch>
+                  <States>
+                    <State name="none" />
+                  </States>
+                  <Potential type="Delta">
+                    <Variables>
+                      <Variable name="Implants used" timeSlice="1" />
+                    </Variables>
+                    <State>none</State>
+                  </Potential>
+                </Branch>
+                <Branch>
+                  <States>
+                    <State name="both implants" />
+                  </States>
+                  <Potential type="Tree/ADD">
+                    <Variables>
+                      <Variable name="Implants used" timeSlice="1" />
+                      <Variable name="Explant 2" timeSlice="0" />
+                      <Variable name="Elective non use 2" />
+                      <Variable name="Explant 1" timeSlice="0" />
+                    </Variables>
+                    <TopVariable name="Explant 1" timeSlice="0" />
+                    <Branches>
+                      <Branch>
+                        <States>
+                          <State name="no" />
+                        </States>
+                        <Potential type="Tree/ADD">
+                          <Variables>
+                            <Variable name="Implants used" timeSlice="1" />
+                            <Variable name="Explant 2" timeSlice="0" />
+                            <Variable name="Elective non use 2" />
+                          </Variables>
+                          <TopVariable name="Explant 2" timeSlice="0" />
+                          <Branches>
+                            <Branch>
+                              <States>
+                                <State name="no" />
+                              </States>
+                              <Potential type="Tree/ADD">
+                                <Variables>
+                                  <Variable name="Implants used" timeSlice="1" />
+                                  <Variable name="Elective non use 2" />
+                                </Variables>
+                                <TopVariable name="Elective non use 2" />
+                                <Branches>
+                                  <Branch>
+                                    <States>
+                                      <State name="no" />
+                                    </States>
+                                    <Potential type="Delta">
+                                      <Variables>
+                                        <Variable name="Implants used" timeSlice="1" />
+                                      </Variables>
+                                      <State>both implants</State>
+                                    </Potential>
+                                  </Branch>
+                                  <Branch>
+                                    <States>
+                                      <State name="yes" />
+                                    </States>
+                                    <Potential type="Delta">
+                                      <Variables>
+                                        <Variable name="Implants used" timeSlice="1" />
+                                      </Variables>
+                                      <State>only first implant</State>
+                                    </Potential>
+                                  </Branch>
+                                </Branches>
+                              </Potential>
+                            </Branch>
+                            <Branch>
+                              <States>
+                                <State name="yes" />
+                              </States>
+                              <Potential type="Delta">
+                                <Variables>
+                                  <Variable name="Implants used" timeSlice="1" />
+                                </Variables>
+                                <State>only first implant</State>
+                              </Potential>
+                            </Branch>
+                          </Branches>
+                        </Potential>
+                      </Branch>
+                      <Branch>
+                        <States>
+                          <State name="yes" />
+                        </States>
+                        <Potential type="Tree/ADD">
+                          <Variables>
+                            <Variable name="Implants used" timeSlice="1" />
+                            <Variable name="Explant 2" timeSlice="0" />
+                            <Variable name="Elective non use 2" />
+                          </Variables>
+                          <TopVariable name="Explant 2" timeSlice="0" />
+                          <Branches>
+                            <Branch>
+                              <States>
+                                <State name="no" />
+                              </States>
+                              <Potential type="Delta">
+                                <Variables>
+                                  <Variable name="Implants used" timeSlice="1" />
+                                </Variables>
+                                <State>only second implant</State>
+                              </Potential>
+                            </Branch>
+                            <Branch>
+                              <States>
+                                <State name="yes" />
+                              </States>
+                              <Potential type="Delta">
+                                <Variables>
+                                  <Variable name="Implants used" timeSlice="1" />
+                                </Variables>
+                                <State>none</State>
+                              </Potential>
+                            </Branch>
+                          </Branches>
+                        </Potential>
+                      </Branch>
+                    </Branches>
+                  </Potential>
+                </Branch>
+                <Branch>
+                  <States>
+                    <State name="only first implant" />
+                  </States>
+                  <Potential type="Tree/ADD">
+                    <Variables>
+                      <Variable name="Implants used" timeSlice="1" />
+                      <Variable name="Explant 2" timeSlice="0" />
+                      <Variable name="Elective non use 2" />
+                      <Variable name="Explant 1" timeSlice="0" />
+                    </Variables>
+                    <TopVariable name="Explant 1" timeSlice="0" />
+                    <Branches>
+                      <Branch>
+                        <States>
+                          <State name="yes" />
+                        </States>
+                        <Potential type="Delta">
+                          <Variables>
+                            <Variable name="Implants used" timeSlice="1" />
+                          </Variables>
+                          <State>none</State>
+                        </Potential>
+                      </Branch>
+                      <Branch>
+                        <States>
+                          <State name="no" />
+                        </States>
+                        <Potential type="Delta">
+                          <Variables>
+                            <Variable name="Implants used" timeSlice="1" />
+                          </Variables>
+                          <State>only first implant</State>
+                        </Potential>
+                      </Branch>
+                    </Branches>
+                  </Potential>
+                </Branch>
+                <Branch>
+                  <States>
+                    <State name="only second implant" />
+                  </States>
+                  <Potential type="Tree/ADD">
+                    <Variables>
+                      <Variable name="Implants used" timeSlice="1" />
+                      <Variable name="Explant 2" timeSlice="0" />
+                      <Variable name="Elective non use 2" />
+                      <Variable name="Explant 1" timeSlice="0" />
+                    </Variables>
+                    <TopVariable name="Elective non use 2" />
+                    <Branches>
+                      <Branch>
+                        <States>
+                          <State name="yes" />
+                        </States>
+                        <Potential type="Delta">
+                          <Variables>
+                            <Variable name="Implants used" timeSlice="1" />
+                          </Variables>
+                          <State>none</State>
+                        </Potential>
+                      </Branch>
+                      <Branch>
+                        <States>
+                          <State name="no" />
+                        </States>
+                        <Potential type="Tree/ADD">
+                          <Variables>
+                            <Variable name="Implants used" timeSlice="1" />
+                            <Variable name="Explant 2" timeSlice="0" />
+                            <Variable name="Explant 1" timeSlice="0" />
+                          </Variables>
+                          <TopVariable name="Explant 2" timeSlice="0" />
+                          <Branches>
+                            <Branch>
+                              <States>
+                                <State name="yes" />
+                              </States>
+                              <Potential type="Delta">
+                                <Variables>
+                                  <Variable name="Implants used" timeSlice="1" />
+                                </Variables>
+                                <State>none</State>
+                              </Potential>
+                            </Branch>
+                            <Branch>
+                              <States>
+                                <State name="no" />
+                              </States>
+                              <Potential type="Delta">
+                                <Variables>
+                                  <Variable name="Implants used" timeSlice="1" />
+                                </Variables>
+                                <State>only second implant</State>
+                              </Potential>
+                            </Branch>
+                          </Branches>
+                        </Potential>
+                      </Branch>
+                    </Branches>
+                  </Potential>
+                </Branch>
+              </Branches>
+            </Potential>
+          </Branch>
+        </Branches>
+      </Potential>
+      <Potential type="Tree/ADD" role="conditionalProbability">
+        <Comment><![CDATA[<html>
+  <head>
+    
+  </head>
+  <body>
+    Source: Wang et al. (2014)
+  </body>
+</html>]]></Comment>
+        <Variables>
+          <Variable name="Explant 2" timeSlice="0" />
+          <Variable name="Major complic 2" timeSlice="0" />
+        </Variables>
+        <TopVariable name="Major complic 2" timeSlice="0" />
+        <Branches>
+          <Branch>
+            <States>
+              <State name="yes" />
+            </States>
+            <Potential type="Table">
+              <Comment><![CDATA[<html>
+  <head>
+    
+  </head>
+  <body>
+    Tbis probability is between 4.5 and 5% according with Wang et al. [2014].
+  </body>
+</html>]]></Comment>
+              <Variables>
+                <Variable name="Explant 2" timeSlice="0" />
+              </Variables>
+              <Values>0.9570000000000001 0.043</Values>
+              <UncertainValues>
+                <Value distribution="Complement">1.0</Value>
+                <Value distribution="Beta">4.3 95.7</Value>
+              </UncertainValues>
+            </Potential>
+          </Branch>
+          <Branch>
+            <States>
+              <State name="no" />
+            </States>
+            <Potential type="Delta">
+              <Variables>
+                <Variable name="Explant 2" timeSlice="0" />
+              </Variables>
+              <State>no</State>
+            </Potential>
+          </Branch>
+        </Branches>
+      </Potential>
+      <Potential type="Delta" role="conditionalProbability">
+        <Comment><![CDATA[<html>
+  <head>
+    
+  </head>
+  <body>
+    Source: Specialists
+  </body>
+</html>]]></Comment>
+        <Variables>
+          <Variable name="Elective non use 2" />
+        </Variables>
+        <State>no</State>
+      </Potential>
+      <Potential type="Tree/ADD" role="conditionalProbability">
+        <Comment><![CDATA[<html>
+  <head>
+    
+  </head>
+  <body>
+    Source: Bond et al. (2007)
+  </body>
+</html>]]></Comment>
+        <Variables>
+          <Variable name="External device 2 failure" timeSlice="0" />
+          <Variable name="Implants used" timeSlice="0" />
+          <Variable name="Processor 2 age" timeSlice="0" />
+        </Variables>
+        <TopVariable name="Implants used" timeSlice="0" />
+        <Branches>
+          <Branch>
+            <States>
+              <State name="only second implant" />
+              <State name="both implants" />
+            </States>
+            <Potential type="Tree/ADD">
+              <Variables>
+                <Variable name="External device 2 failure" timeSlice="0" />
+                <Variable name="Processor 2 age" timeSlice="0" />
+              </Variables>
+              <TopVariable name="Processor 2 age" timeSlice="0" />
+              <Branches>
+                <Branch>
+                  <States>
+                    <State name="5" />
+                    <State name="6" />
+                  </States>
+                  <Potential type="Table">
+                    <Variables>
+                      <Variable name="External device 2 failure" timeSlice="0" />
+                    </Variables>
+                    <Values>0.89604 0.10396</Values>
+                    <UncertainValues>
+                      <Value distribution="Complement">1.0</Value>
+                      <Value distribution="Beta">10.396 89.604</Value>
+                    </UncertainValues>
+                  </Potential>
+                </Branch>
+                <Branch>
+                  <States>
+                    <State name="7+" />
+                  </States>
+                  <Potential type="Table">
+                    <Variables>
+                      <Variable name="External device 2 failure" timeSlice="0" />
+                    </Variables>
+                    <Values>0.84 0.16</Values>
+                    <UncertainValues>
+                      <Value distribution="Complement">1.0</Value>
+                      <Value distribution="Beta">16.0 84.0</Value>
+                    </UncertainValues>
+                  </Potential>
+                </Branch>
+                <Branch>
+                  <States>
+                    <State name="1" />
+                  </States>
+                  <Potential type="Table">
+                    <Variables>
+                      <Variable name="External device 2 failure" timeSlice="0" />
+                    </Variables>
+                    <Values>0.885 0.115</Values>
+                    <UncertainValues>
+                      <Value distribution="Complement">1.0</Value>
+                      <Value distribution="Beta">11.5 88.5</Value>
+                    </UncertainValues>
+                  </Potential>
+                </Branch>
+                <Branch>
+                  <States>
+                    <State name="0" />
+                  </States>
+                  <Potential type="Table">
+                    <Variables>
+                      <Variable name="External device 2 failure" timeSlice="0" />
+                    </Variables>
+                    <Values>0.84 0.16</Values>
+                    <UncertainValues>
+                      <Value distribution="Complement">1.0</Value>
+                      <Value distribution="Beta">16.0 84.0</Value>
+                    </UncertainValues>
+                  </Potential>
+                </Branch>
+                <Branch>
+                  <States>
+                    <State name="2" />
+                    <State name="3" />
+                    <State name="4" />
+                  </States>
+                  <Potential type="Table">
+                    <Variables>
+                      <Variable name="External device 2 failure" timeSlice="0" />
+                    </Variables>
+                    <Values>0.905 0.095</Values>
+                    <UncertainValues>
+                      <Value distribution="Complement">1.0</Value>
+                      <Value distribution="Beta">9.5 90.5</Value>
+                    </UncertainValues>
+                  </Potential>
+                </Branch>
+              </Branches>
+            </Potential>
+          </Branch>
+          <Branch>
+            <States>
+              <State name="none" />
+              <State name="only first implant" />
+            </States>
+            <Potential type="Delta">
+              <Variables>
+                <Variable name="External device 2 failure" timeSlice="0" />
+              </Variables>
+              <State>no</State>
+            </Potential>
+          </Branch>
+        </Branches>
+      </Potential>
+      <Potential type="Delta" role="conditionalProbability">
+        <Variables>
+          <Variable name="Processor 2 age" timeSlice="0" />
+        </Variables>
+        <State>0</State>
+      </Potential>
+      <Potential type="Tree/ADD" role="conditionalProbability">
+        <Variables>
+          <Variable name="Processor 2 age" timeSlice="1" />
+          <Variable name="External device 2 failure" timeSlice="0" />
+          <Variable name="Processor 2 age" timeSlice="0" />
+        </Variables>
+        <TopVariable name="External device 2 failure" timeSlice="0" />
+        <Branches>
+          <Branch>
+            <States>
+              <State name="yes" />
+            </States>
+            <Potential type="Delta">
+              <Variables>
+                <Variable name="Processor 2 age" timeSlice="1" />
+              </Variables>
+              <State>0</State>
+            </Potential>
+          </Branch>
+          <Branch>
+            <States>
+              <State name="no" />
+            </States>
+            <Potential type="Table">
+              <Variables>
+                <Variable name="Processor 2 age" timeSlice="1" />
+                <Variable name="Processor 2 age" timeSlice="0" />
+              </Variables>
+              <Values>0.0 1.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 1.0</Values>
+            </Potential>
+          </Branch>
+        </Branches>
+      </Potential>
+      <Potential type="Tree/ADD" role="conditionalProbability">
+        <Variables>
+          <Variable name="Processor 2 age" timeSlice="1" />
+          <Variable name="External device 2 failure" timeSlice="0" />
+          <Variable name="Processor 2 age" timeSlice="0" />
+        </Variables>
+        <TopVariable name="External device 2 failure" timeSlice="0" />
+        <Branches>
+          <Branch>
+            <States>
+              <State name="yes" />
+            </States>
+            <Potential type="Delta">
+              <Variables>
+                <Variable name="Processor 2 age" timeSlice="1" />
+              </Variables>
+              <State>0</State>
+            </Potential>
+          </Branch>
+          <Branch>
+            <States>
+              <State name="no" />
+            </States>
+            <Potential type="Table">
+              <Variables>
+                <Variable name="Processor 2 age" timeSlice="1" />
+                <Variable name="Processor 2 age" timeSlice="0" />
+              </Variables>
+              <Values>0.0 1.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 1.0</Values>
+            </Potential>
+          </Branch>
+        </Branches>
+      </Potential>
+      <Potential type="Tree/ADD" role="utility">
+        <Comment><![CDATA[<html>
+  <head>
+    
+  </head>
+  <body>
+    Source: MED-EL
+  </body>
+</html>]]></Comment>
+        <UtilityVariable name="CS: Processor 2 replace" timeSlice="0" />
+        <Variables>
+          <Variable name="External device 2 failure" timeSlice="0" />
+          <Variable name="Processor 2 age" timeSlice="0" />
+        </Variables>
+        <TopVariable name="External device 2 failure" timeSlice="0" />
+        <Branches>
+          <Branch>
+            <States>
+              <State name="no" />
+            </States>
+            <Potential type="Table">
+              <UtilityVariable name="CS: Processor 2 replace" timeSlice="0" />
+              <Values>0.0</Values>
+            </Potential>
+          </Branch>
+          <Branch>
+            <States>
+              <State name="yes" />
+            </States>
+            <Potential type="Tree/ADD">
+              <UtilityVariable name="CS: Processor 2 replace" timeSlice="0" />
+              <Variables>
+                <Variable name="Processor 2 age" timeSlice="0" />
+                <Variable name="CS: Processor 2 replace" timeSlice="0" />
+              </Variables>
+              <TopVariable name="Processor 2 age" timeSlice="0" />
+              <Branches>
+                <Branch>
+                  <States>
+                    <State name="0" />
+                    <State name="1" />
+                    <State name="2" />
+                    <State name="3" />
+                    <State name="4" />
+                    <State name="5" />
+                    <State name="6" />
+                  </States>
+                  <Potential type="Table">
+                    <UtilityVariable name="CS: Processor 2 replace" timeSlice="0" />
+                    <Values>0.0</Values>
+                  </Potential>
+                </Branch>
+                <Branch>
+                  <States>
+                    <State name="7+" />
+                  </States>
+                  <Potential type="Table">
+                    <UtilityVariable name="CS: Processor 2 replace" timeSlice="0" />
+                    <Values>6300.0</Values>
+                    <UncertainValues>
+                      <Value distribution="Gamma-mv" name="processor2-replace">6300.0 1260.0</Value>
+                    </UncertainValues>
+                  </Potential>
+                </Branch>
+              </Branches>
+            </Potential>
+          </Branch>
+        </Branches>
+      </Potential>
+      <Potential type="Tree/ADD" role="conditionalProbability">
+        <Comment><![CDATA[<html>
+  <head>
+    
+  </head>
+  <body>
+    Source: Bond et al. (2007)
+  </body>
+</html>]]></Comment>
+        <Variables>
+          <Variable name="Internal device 2 failure" timeSlice="0" />
+          <Variable name="Implants used" timeSlice="0" />
+          <Variable name="Internal device 2 age" timeSlice="0" />
+        </Variables>
+        <TopVariable name="Implants used" timeSlice="0" />
+        <Branches>
+          <Branch>
+            <States>
+              <State name="only second implant" />
+              <State name="both implants" />
+            </States>
+            <Potential type="Tree/ADD">
+              <Variables>
+                <Variable name="Internal device 2 failure" timeSlice="0" />
+                <Variable name="Internal device 2 age" timeSlice="0" />
+              </Variables>
+              <TopVariable name="Internal device 2 age" timeSlice="0" />
+              <Branches>
+                <Branch>
+                  <States>
+                    <State name="9" />
+                    <State name="10+" />
+                  </States>
+                  <Potential type="Table">
+                    <Variables>
+                      <Variable name="Internal device 2 failure" timeSlice="0" />
+                    </Variables>
+                    <Values>0.9965 0.0034999999999999996</Values>
+                    <UncertainValues>
+                      <Value distribution="Complement">1.0</Value>
+                      <Value distribution="Beta">0.35 99.65</Value>
+                    </UncertainValues>
+                  </Potential>
+                </Branch>
+                <Branch>
+                  <States>
+                    <State name="0" />
+                    <State name="1" />
+                    <State name="2" />
+                    <State name="3" />
+                    <State name="4" />
+                    <State name="5" />
+                    <State name="6" />
+                    <State name="7" />
+                    <State name="8" />
+                  </States>
+                  <Potential type="Table">
+                    <Variables>
+                      <Variable name="Internal device 2 failure" timeSlice="0" />
+                    </Variables>
+                    <Values>0.9989999999999999 0.001</Values>
+                    <UncertainValues>
+                      <Value distribution="Complement">1.0</Value>
+                      <Value distribution="Beta">0.1 99.9</Value>
+                    </UncertainValues>
+                  </Potential>
+                </Branch>
+              </Branches>
+            </Potential>
+          </Branch>
+          <Branch>
+            <States>
+              <State name="none" />
+              <State name="only first implant" />
+            </States>
+            <Potential type="Delta">
+              <Variables>
+                <Variable name="Internal device 2 failure" timeSlice="0" />
+              </Variables>
+              <State>no</State>
+            </Potential>
+          </Branch>
+        </Branches>
+      </Potential>
+      <Potential type="Delta" role="conditionalProbability">
+        <Variables>
+          <Variable name="Internal device 2 age" timeSlice="0" />
+        </Variables>
+        <State>0</State>
+      </Potential>
+      <Potential type="Tree/ADD" role="conditionalProbability">
+        <Variables>
+          <Variable name="Internal device 2 age" timeSlice="1" />
+          <Variable name="Internal device 2 failure" timeSlice="0" />
+          <Variable name="Internal device 2 age" timeSlice="0" />
+        </Variables>
+        <TopVariable name="Internal device 2 failure" timeSlice="0" />
+        <Branches>
+          <Branch>
+            <States>
+              <State name="yes" />
+            </States>
+            <Potential type="Delta">
+              <Variables>
+                <Variable name="Internal device 2 age" timeSlice="1" />
+              </Variables>
+              <State>0</State>
+            </Potential>
+          </Branch>
+          <Branch>
+            <States>
+              <State name="no" />
+            </States>
+            <Potential type="Table">
+              <Variables>
+                <Variable name="Internal device 2 age" timeSlice="1" />
+                <Variable name="Internal device 2 age" timeSlice="0" />
+              </Variables>
+              <Values>0.0 1.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 1.0</Values>
+            </Potential>
+          </Branch>
+        </Branches>
+      </Potential>
+      <Potential type="Tree/ADD" role="conditionalProbability">
+        <Variables>
+          <Variable name="Internal device 2 age" timeSlice="1" />
+          <Variable name="Internal device 2 failure" timeSlice="0" />
+          <Variable name="Internal device 2 age" timeSlice="0" />
+        </Variables>
+        <TopVariable name="Internal device 2 failure" timeSlice="0" />
+        <Branches>
+          <Branch>
+            <States>
+              <State name="yes" />
+            </States>
+            <Potential type="Delta">
+              <Variables>
+                <Variable name="Internal device 2 age" timeSlice="1" />
+              </Variables>
+              <State>0</State>
+            </Potential>
+          </Branch>
+          <Branch>
+            <States>
+              <State name="no" />
+            </States>
+            <Potential type="Table">
+              <Variables>
+                <Variable name="Internal device 2 age" timeSlice="1" />
+                <Variable name="Internal device 2 age" timeSlice="0" />
+              </Variables>
+              <Values>0.0 1.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 1.0</Values>
+            </Potential>
+          </Branch>
+        </Branches>
+      </Potential>
+      <Potential type="Tree/ADD" role="utility">
+        <Comment><![CDATA[<html>
+  <head>
+    
+  </head>
+  <body>
+    Source: MED-EL
+  </body>
+</html>]]></Comment>
+        <UtilityVariable name="CS: Internal device 2 replace" timeSlice="0" />
+        <Variables>
+          <Variable name="Internal device 2 failure" timeSlice="0" />
+          <Variable name="Internal device 2 age" timeSlice="0" />
+        </Variables>
+        <TopVariable name="Internal device 2 failure" timeSlice="0" />
+        <Branches>
+          <Branch>
+            <States>
+              <State name="no" />
+            </States>
+            <Potential type="Table">
+              <UtilityVariable name="CS: Internal device 2 replace" timeSlice="0" />
+              <Values>0.0</Values>
+            </Potential>
+          </Branch>
+          <Branch>
+            <States>
+              <State name="yes" />
+            </States>
+            <Potential type="Tree/ADD">
+              <UtilityVariable name="CS: Internal device 2 replace" timeSlice="0" />
+              <Variables>
+                <Variable name="Internal device 2 age" timeSlice="0" />
+                <Variable name="CS: Internal device 2 replace" timeSlice="0" />
+              </Variables>
+              <TopVariable name="Internal device 2 age" timeSlice="0" />
+              <Branches>
+                <Branch>
+                  <States>
+                    <State name="0" />
+                    <State name="1" />
+                    <State name="2" />
+                    <State name="3" />
+                    <State name="4" />
+                    <State name="5" />
+                    <State name="6" />
+                    <State name="7" />
+                    <State name="8" />
+                    <State name="9" />
+                  </States>
+                  <Potential type="Table">
+                    <UtilityVariable name="CS: Internal device 2 replace" timeSlice="0" />
+                    <Values>0.0</Values>
+                  </Potential>
+                </Branch>
+                <Branch>
+                  <States>
+                    <State name="10+" />
+                  </States>
+                  <Potential type="Table">
+                    <UtilityVariable name="CS: Internal device 2 replace" timeSlice="0" />
+                    <Values>13000.0</Values>
+                    <UncertainValues>
+                      <Value distribution="Gamma-mv">13000.0 2600.0</Value>
+                    </UncertainValues>
+                  </Potential>
+                </Branch>
+              </Branches>
+            </Potential>
+          </Branch>
+        </Branches>
+      </Potential>
+      <Potential type="Tree/ADD" role="utility">
+        <Comment><![CDATA[<html>
+  <head>
+    
+  </head>
+  <body>
+    Source: 0.106 QALYs (Artaso &amp; D&#237;ez, 2015).
+  </body>
+</html>]]></Comment>
+        <UtilityVariable name="ΔQoL 1-&gt;2" timeSlice="0" />
+        <Variables>
+          <Variable name="Implants used" timeSlice="0" />
+        </Variables>
+        <TopVariable name="Implants used" timeSlice="0" />
+        <Branches>
+          <Branch>
+            <States>
+              <State name="none" />
+              <State name="only second implant" />
+              <State name="only first implant" />
+            </States>
+            <Potential type="Table">
+              <UtilityVariable name="ΔQoL 1-&gt;2" timeSlice="0" />
+              <Values>0.0</Values>
+            </Potential>
+          </Branch>
+          <Branch>
+            <States>
+              <State name="both implants" />
+            </States>
+            <Potential type="Table">
+              <Comment><![CDATA[<html>
+  <head>
+    
+  </head>
+  <body>
+    Source: Artaso &amp; D&#237;ez (2015)
+  </body>
+</html>]]></Comment>
+              <UtilityVariable name="ΔQoL 1-&gt;2" timeSlice="0" />
+              <Values>0.106</Values>
+              <UncertainValues>
+                <Value distribution="Gamma">22.83271 0.00459307</Value>
+              </UncertainValues>
+            </Potential>
+          </Branch>
+        </Branches>
+      </Potential>
+      <Potential type="Tree/ADD" role="utility">
+        <Comment><![CDATA[<html>
+  <head>
+    
+  </head>
+  <body>
+    Source: CIU survey conducted by CISIAD
+  </body>
+</html>]]></Comment>
+        <UtilityVariable name="CF: Mainteinance" timeSlice="0" />
+        <Variables>
+          <Variable name="Implants used" timeSlice="0" />
+          <Variable name="Age" timeSlice="0" />
+        </Variables>
+        <TopVariable name="Age" timeSlice="0" />
+        <Branches>
+          <Branch>
+            <Thresholds>
+              <Threshold value="0.0" belongsTo="right" />
+              <Threshold value="18.0" belongsTo="right" />
+            </Thresholds>
+            <Potential type="Tree/ADD">
+              <UtilityVariable name="CF: Mainteinance" timeSlice="0" />
+              <Variables>
+                <Variable name="Implants used" timeSlice="0" />
+                <Variable name="Age" timeSlice="0" />
+              </Variables>
+              <TopVariable name="Implants used" timeSlice="0" />
+              <Branches>
+                <Branch>
+                  <States>
+                    <State name="none" />
+                  </States>
+                  <Potential type="Table">
+                    <UtilityVariable name="CF: Mainteinance" timeSlice="0" />
+                    <Values>0.0</Values>
+                  </Potential>
+                </Branch>
+                <Branch>
+                  <States>
+                    <State name="only second implant" />
+                    <State name="only first implant" />
+                  </States>
+                  <Potential type="Table">
+                    <Comment><![CDATA[<html>
+  <head>
+    
+  </head>
+  <body>
+    Source: CIU survey conducted by CISIAD
+  </body>
+</html>]]></Comment>
+                    <UtilityVariable name="CF: Mainteinance" timeSlice="0" />
+                    <Values>674.9</Values>
+                    <UncertainValues>
+                      <Value distribution="Gamma">155.9608 4.314402</Value>
+                    </UncertainValues>
+                  </Potential>
+                </Branch>
+                <Branch>
+                  <States>
+                    <State name="both implants" />
+                  </States>
+                  <Potential type="Table">
+                    <Comment><![CDATA[<html>
+  <head>
+    
+  </head>
+  <body>
+    Source: CIU survey conducted by CISIAD
+  </body>
+</html>]]></Comment>
+                    <UtilityVariable name="CF: Mainteinance" timeSlice="0" />
+                    <Values>1349.7999999999997</Values>
+                    <UncertainValues>
+                      <Value distribution="Gamma-mv">1349.8 269.96</Value>
+                    </UncertainValues>
+                  </Potential>
+                </Branch>
+              </Branches>
+            </Potential>
+          </Branch>
+          <Branch>
+            <Thresholds>
+              <Threshold value="18.0" belongsTo="right" />
+              <Threshold value="Infinity" belongsTo="right" />
+            </Thresholds>
+            <Potential type="Tree/ADD">
+              <UtilityVariable name="CF: Mainteinance" timeSlice="0" />
+              <Variables>
+                <Variable name="Implants used" timeSlice="0" />
+                <Variable name="Age" timeSlice="0" />
+              </Variables>
+              <TopVariable name="Implants used" timeSlice="0" />
+              <Branches>
+                <Branch>
+                  <States>
+                    <State name="none" />
+                  </States>
+                  <Potential type="Table">
+                    <UtilityVariable name="CF: Mainteinance" timeSlice="0" />
+                    <Values>0.0</Values>
+                  </Potential>
+                </Branch>
+                <Branch>
+                  <States>
+                    <State name="only second implant" />
+                    <State name="only first implant" />
+                  </States>
+                  <Potential type="Table">
+                    <Comment><![CDATA[<html>
+  <head>
+    
+  </head>
+  <body>
+    Source: CIU survey conducted by CISIAD
+  </body>
+</html>]]></Comment>
+                    <UtilityVariable name="CF: Mainteinance" timeSlice="0" />
+                    <Values>372.9</Values>
+                    <UncertainValues>
+                      <Value distribution="Gamma">37.49123 9.865894</Value>
+                    </UncertainValues>
+                  </Potential>
+                </Branch>
+                <Branch>
+                  <States>
+                    <State name="both implants" />
+                  </States>
+                  <Potential type="Table">
+                    <Comment><![CDATA[<html>
+  <head>
+    
+  </head>
+  <body>
+    Source: CIU survey conducted by CISIAD
+  </body>
+</html>]]></Comment>
+                    <UtilityVariable name="CF: Mainteinance" timeSlice="0" />
+                    <Values>745.8</Values>
+                    <UncertainValues>
+                      <Value distribution="Gamma-mv">745.8 149.16</Value>
+                    </UncertainValues>
+                  </Potential>
+                </Branch>
+              </Branches>
+            </Potential>
+          </Branch>
+        </Branches>
+      </Potential>
+      <Potential type="Tree/ADD" role="utility">
+        <Comment><![CDATA[<html>
+  <head>
+    
+  </head>
+  <body>
+    <p style="margin-top: 0">
+      Sources: GAES 19,000 &#8364;/QALY; MED-EL 23,000 &#8364;/QALY (2015)
+    </p>
+  </body>
+</html>]]></Comment>
+        <UtilityVariable name="CS: Device" />
+        <Variables>
+          <Variable name="Intervention applied" />
+        </Variables>
+        <TopVariable name="Intervention applied" />
+        <Branches>
+          <Branch>
+            <States>
+              <State name="Unilateral" />
+            </States>
+            <Potential type="Table">
+              <UtilityVariable name="CS: Device" />
+              <Values>0.0</Values>
+            </Potential>
+          </Branch>
+          <Branch>
+            <States>
+              <State name="BCI simultaneous" />
+              <State name="BCI sequential" />
+            </States>
+            <Potential type="Table">
+              <Comment><![CDATA[<html>
+  <head>
+    
+  </head>
+  <body>
+    From the manufacturers. The standard deviation might less than 20%.
+  </body>
+</html>]]></Comment>
+              <UtilityVariable name="CS: Device" />
+              <Values>21000.0</Values>
+              <UncertainValues>
+                <Value distribution="Gamma-mv" name="device-price">21000.0 4200.0</Value>
+              </UncertainValues>
+            </Potential>
+          </Branch>
+        </Branches>
+      </Potential>
+      <Potential type="Tree/ADD" role="conditionalProbability">
+        <Comment><![CDATA[<html>
+  <head>
+    
+  </head>
+  <body>
+    Sources: Bond et al. (2007); Summerfield et al. (2010)
+  </body>
+</html>]]></Comment>
+        <Variables>
+          <Variable name="Major complic 1" timeSlice="0" />
+          <Variable name="Implants used" timeSlice="0" />
+          <Variable name="Internal device 1 age" timeSlice="0" />
+        </Variables>
+        <TopVariable name="Implants used" timeSlice="0" />
+        <Branches>
+          <Branch>
+            <States>
+              <State name="only first implant" />
+              <State name="both implants" />
+            </States>
+            <Potential type="Tree/ADD">
+              <Variables>
+                <Variable name="Major complic 1" timeSlice="0" />
+                <Variable name="Implants used" timeSlice="0" />
+                <Variable name="Internal device 1 age" timeSlice="0" />
+              </Variables>
+              <TopVariable name="Internal device 1 age" timeSlice="0" />
+              <Branches>
+                <Branch>
+                  <States>
+                    <State name="0" />
+                  </States>
+                  <Potential type="Table">
+                    <Variables>
+                      <Variable name="Major complic 1" timeSlice="0" />
+                    </Variables>
+                    <Values>0.959 0.041</Values>
+                    <UncertainValues>
+                      <Value distribution="Complement">1.0</Value>
+                      <Value distribution="Beta">4.1 95.9</Value>
+                    </UncertainValues>
+                  </Potential>
+                </Branch>
+                <Branch>
+                  <States>
+                    <State name="1+" />
+                  </States>
+                  <Potential type="Table">
+                    <Variables>
+                      <Variable name="Major complic 1" timeSlice="0" />
+                    </Variables>
+                    <Values>0.996 0.004</Values>
+                    <UncertainValues>
+                      <Value distribution="Complement">1.0</Value>
+                      <Value distribution="Beta">0.4 99.6</Value>
+                    </UncertainValues>
+                  </Potential>
+                </Branch>
+              </Branches>
+            </Potential>
+          </Branch>
+          <Branch>
+            <States>
+              <State name="only second implant" />
+            </States>
+            <Potential type="Delta">
+              <Variables>
+                <Variable name="Major complic 1" timeSlice="0" />
+              </Variables>
+              <State>no</State>
+            </Potential>
+          </Branch>
+          <Branch>
+            <States>
+              <State name="none" />
+            </States>
+            <Potential type="Delta">
+              <Variables>
+                <Variable name="Major complic 1" timeSlice="0" />
+              </Variables>
+              <State>no</State>
+            </Potential>
+          </Branch>
+        </Branches>
+      </Potential>
+      <Potential type="Tree/ADD" role="conditionalProbability">
+        <Comment><![CDATA[<html>
+  <head>
+    
+  </head>
+  <body>
+    Source: Wang et al. (2014)
+  </body>
+</html>]]></Comment>
+        <Variables>
+          <Variable name="Explant 1" timeSlice="0" />
+          <Variable name="Major complic 1" timeSlice="0" />
+        </Variables>
+        <TopVariable name="Major complic 1" timeSlice="0" />
+        <Branches>
+          <Branch>
+            <States>
+              <State name="yes" />
+            </States>
+            <Potential type="Table">
+              <Variables>
+                <Variable name="Explant 1" timeSlice="0" />
+              </Variables>
+              <Values>0.9570000000000001 0.043</Values>
+              <UncertainValues>
+                <Value distribution="Complement">1.0</Value>
+                <Value distribution="Beta">4.3 95.7</Value>
+              </UncertainValues>
+            </Potential>
+          </Branch>
+          <Branch>
+            <States>
+              <State name="no" />
+            </States>
+            <Potential type="Delta">
+              <Variables>
+                <Variable name="Explant 1" timeSlice="0" />
+              </Variables>
+              <State>no</State>
+            </Potential>
+          </Branch>
+        </Branches>
+      </Potential>
+      <Potential type="Delta" role="conditionalProbability">
+        <Variables>
+          <Variable name="Internal device 1 age" timeSlice="0" />
+        </Variables>
+        <State>0</State>
+      </Potential>
+      <Potential type="Table" role="conditionalProbability">
+        <Variables>
+          <Variable name="Internal device 1 age" timeSlice="1" />
+          <Variable name="Internal device 1 age" timeSlice="0" />
+        </Variables>
+        <Values>0.0 1.0 0.0 1.0</Values>
+      </Potential>
+      <Potential type="Table" role="utility">
+        <Comment><![CDATA[<html>
+  <head>
+    
+  </head>
+  <body>
+    Cost of surgery room (including personnel and materials): 229 &#8364;, the 
+    average of 169 &#8364;/h (Herranz Amo et al., 2006) and 289 &#8364;/h (Feliu Pala et 
+    al., 2003). According to (Smulders et al., 2016), simultaneous bilateral 
+    cochlear implantation takes 100 more minutes, which leads to a cost of 382 
+    &#8364;. The cost of sequential BCI is estimated from (de la Torre et al., 
+    2005): 1,000 &#8364; for the pre-surgical assessment (50% of the cost of 
+    selection and exploration) plus 3,500 &#8364; for the surgical intervention.
+  </body>
+</html>]]></Comment>
+        <UtilityVariable name="CS: Surgery" />
+        <Variables>
+          <Variable name="Intervention applied" />
+        </Variables>
+        <Values>0.0 382.0 4500.0</Values>
+        <UncertainValues>
+          <Value />
+          <Value distribution="Gamma-mv" name="surgery-simult">382.0 76.4</Value>
+          <Value distribution="Gamma-mv" name="surgery-sequential">4500.0 900.0</Value>
+        </UncertainValues>
+      </Potential>
+      <Potential type="Table" role="utility">
+        <Comment><![CDATA[<html>
+  <head>
+    
+  </head>
+  <body>
+    From de la Torre et al. (2005). We assume that the cost of habilitation 
+    for simultaneous BCI is the same as that of UCI.
+  </body>
+</html>]]></Comment>
+        <UtilityVariable name="CS: Habilitation" />
+        <Variables>
+          <Variable name="Intervention applied" />
+        </Variables>
+        <Values>0.0 0.0 600.0</Values>
+        <UncertainValues>
+          <Value />
+          <Value />
+          <Value distribution="Gamma-mv" name="habilitation-sequential">600.0 120.0</Value>
+        </UncertainValues>
+      </Potential>
+      <Potential type="Table" role="joinProbability">
+        <Comment><![CDATA[<html>
+  <head>
+    
+  </head>
+  <body>
+    We assigned these probabilities because in the 50 cases reported by 
+    Ramsden et al. (2009) it was always possible to put both implants in one 
+    surgery, as planned, but out of the 50 cases reported by Holland et al. 
+    (2012) it was possible only in 39 patients; in 10 cases the second ear has 
+    to be implanted later, usually because of otitis media in that ear at the 
+    moment of the first surgery, and one patient received only one implant for 
+    unknown reasons.
+  </body>
+</html>]]></Comment>
+        <Variables>
+          <Variable name="Intervention applied" />
+          <Variable name="Intervention decided" />
+        </Variables>
+        <Values>1.0 0.0 0.0 0.01 0.89 0.1 0.0 0.0 1.0</Values>
+      </Potential>
+      <Potential type="Tree/ADD" role="utility">
+        <Comment><![CDATA[<html>
+  <head>
+    
+  </head>
+  <body>
+    From (Summerfield et al., 2010)
+  </body>
+</html>]]></Comment>
+        <UtilityVariable name="ΔQoL 0-&gt;1" timeSlice="0" />
+        <Variables>
+          <Variable name="Implants used" timeSlice="0" />
+        </Variables>
+        <TopVariable name="Implants used" timeSlice="0" />
+        <Branches>
+          <Branch>
+            <States>
+              <State name="none" />
+            </States>
+            <Potential type="Table">
+              <UtilityVariable name="ΔQoL 0-&gt;1" timeSlice="0" />
+              <Values>0.0</Values>
+            </Potential>
+          </Branch>
+          <Branch>
+            <States>
+              <State name="only second implant" />
+              <State name="only first implant" />
+              <State name="both implants" />
+            </States>
+            <Potential type="Table">
+              <Comment><![CDATA[<html>
+  <head>
+    
+  </head>
+  <body>
+    From (Summerfield et al., 2010)
+  </body>
+</html>]]></Comment>
+              <UtilityVariable name="ΔQoL 0-&gt;1" timeSlice="0" />
+              <Values>0.1056</Values>
+              <UncertainValues>
+                <Value distribution="Normal">0.1056 0.1217</Value>
+              </UncertainValues>
+            </Potential>
+          </Branch>
+        </Branches>
+      </Potential>
+    </Potentials>
+  </ProbNet>
+  <InferenceOptions>
+    <MulticriteriaOptions>
+      <SelectedAnalysisType>COST_EFFECTIVENESS</SelectedAnalysisType>
+      <Unicriterion>
+        <Unit>€</Unit>
+        <Scales>
+          <Scale Criterion="Cost HCS" Value="-1.0" />
+          <Scale Criterion="Cost Family" Value="0.0" />
+          <Scale Criterion="Effectiveness" Value="30000.0" />
+        </Scales>
+      </Unicriterion>
+      <CostEffectiveness>
+        <Scales>
+          <Scale Criterion="Cost HCS" Value="1.0" />
+          <Scale Criterion="Cost Family" Value="0.0" />
+          <Scale Criterion="Effectiveness" Value="1.0" />
+        </Scales>
+        <CE_Criteria>
+          <CE_Criterion Criterion="Cost HCS" Value="Cost" />
+          <CE_Criterion Criterion="Cost Family" Value="Cost" />
+          <CE_Criterion Criterion="Effectiveness" Value="Effectiveness" />
+        </CE_Criteria>
+      </CostEffectiveness>
+    </MulticriteriaOptions>
+    <TemporalOptions>
+      <Slices>100</Slices>
+      <Transition>BEGINNING</Transition>
+      <DiscountRates>
+        <DiscountRate Criterion="Cost HCS" value="0.03" unit="YEAR" />
+        <DiscountRate Criterion="Cost Family" value="0.03" unit="YEAR" />
+        <DiscountRate Criterion="Effectiveness" value="0.03" unit="YEAR" />
+      </DiscountRates>
+    </TemporalOptions>
+  </InferenceOptions>
+  <Evidence>
+    <EvidenceCase>
+      <Finding variable="Age [0]" numericValue="1.0" />
+      <Finding variable="Processor 2 age [0]" state="0" />
+      <Finding variable="Internal device 2 age [0]" state="0" />
+      <Finding variable="Internal device 1 age [0]" state="0" />
+      <Finding variable="Alive [0]" state="yes" />
+    </EvidenceCase>
+  </Evidence>
+</ProbModelXML>

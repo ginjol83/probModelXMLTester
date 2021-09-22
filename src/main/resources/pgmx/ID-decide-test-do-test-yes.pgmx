@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ProbModelXML formatVersion="0.2.0">
+  <ProbNet type="InfluenceDiagram">
+    <DecisionCriteria>
+      <Criterion name="---" unit="---" />
+    </DecisionCriteria>
+    <Properties />
+    <Variables>
+      <Variable name="Disease" type="finiteStates" role="chance">
+        <Coordinates x="129" y="55" />
+        <States>
+          <State name="absent" />
+          <State name="present" />
+        </States>
+      </Variable>
+      <Variable name="Result of test" type="finiteStates" role="chance">
+        <Coordinates x="331" y="151" />
+        <States>
+          <State name="negative" />
+          <State name="positive" />
+        </States>
+      </Variable>
+      <Variable name="Therapy" type="finiteStates" role="decision">
+        <Coordinates x="413" y="259" />
+        <States>
+          <State name="no" />
+          <State name="yes" />
+        </States>
+      </Variable>
+      <Variable name="Health state" type="numeric" role="utility">
+        <Coordinates x="201" y="388" />
+        <Unit />
+        <Precision>2.0</Precision>
+        <Criterion name="---" />
+      </Variable>
+      <Variable name="Cost of test" type="numeric" role="utility">
+        <Coordinates x="703" y="392" />
+        <Unit />
+        <Precision>2.0</Precision>
+        <Criterion name="---" />
+      </Variable>
+      <Variable name="Cost of therapy" type="numeric" role="utility">
+        <Coordinates x="465" y="396" />
+        <Unit />
+        <Precision>0.01</Precision>
+        <Criterion name="---" />
+      </Variable>
+    </Variables>
+    <Links>
+      <Link directed="true">
+        <Variable name="Disease" />
+        <Variable name="Health state" />
+      </Link>
+      <Link directed="true">
+        <Variable name="Disease" />
+        <Variable name="Result of test" />
+      </Link>
+      <Link directed="true">
+        <Variable name="Result of test" />
+        <Variable name="Therapy" />
+      </Link>
+      <Link directed="true">
+        <Variable name="Therapy" />
+        <Variable name="Health state" />
+      </Link>
+      <Link directed="true">
+        <Variable name="Therapy" />
+        <Variable name="Cost of therapy" />
+      </Link>
+    </Links>
+    <Potentials>
+      <Potential type="Table" role="conditionalProbability">
+        <Variables>
+          <Variable name="Disease" />
+        </Variables>
+        <Values>0.86 0.14</Values>
+        <UncertainValues>
+          <Value distribution="Complement">1.0</Value>
+          <Value distribution="Beta" name="prevalence">14.0 86.0</Value>
+        </UncertainValues>
+      </Potential>
+      <Potential type="Table" role="conditionalProbability">
+        <Variables>
+          <Variable name="Result of test" />
+          <Variable name="Disease" />
+        </Variables>
+        <Values>0.97 0.03 0.09 0.91</Values>
+      </Potential>
+      <Potential type="Table" role="utility">
+        <UtilityVariable name="Health state" />
+        <Variables>
+          <Variable name="Disease" />
+          <Variable name="Therapy" />
+        </Variables>
+        <Values>10.0 4.0 9.0 8.0</Values>
+        <UncertainValues>
+          <Value />
+          <Value distribution="Triangular" name="utility non-treated disease">3.5 4.5 4.0</Value>
+          <Value distribution="Triangular" name="utility not treated">8.5 9.5 9.0</Value>
+          <Value distribution="Triangular" name="utility treated disease">7.5 8.5 8.0</Value>
+        </UncertainValues>
+      </Potential>
+      <Potential type="Table" role="utility">
+        <UtilityVariable name="Cost of test" />
+        <Values>-0.2</Values>
+      </Potential>
+      <Potential type="Table" role="utility">
+        <UtilityVariable name="Cost of therapy" />
+        <Variables>
+          <Variable name="Therapy" />
+        </Variables>
+        <Values>0.0 -0.75</Values>
+        <UncertainValues>
+          <Value />
+          <Value distribution="Triangular" name="cost of therapy">-0.8 -0.7 -0.75</Value>
+        </UncertainValues>
+      </Potential>
+    </Potentials>
+  </ProbNet>
+  <InferenceOptions>
+    <MulticriteriaOptions>
+      <SelectedAnalysisType>UNICRITERION</SelectedAnalysisType>
+      <Unicriterion>
+        <Scales>
+          <Scale Criterion="---" Value="1.0" />
+        </Scales>
+      </Unicriterion>
+      <CostEffectiveness>
+        <Scales>
+          <Scale Criterion="---" Value="1.0" />
+        </Scales>
+        <CE_Criteria>
+          <CE_Criterion Criterion="---" Value="Cost" />
+        </CE_Criteria>
+      </CostEffectiveness>
+    </MulticriteriaOptions>
+  </InferenceOptions>
+</ProbModelXML>

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ProbModelXML formatVersion="0.2.0">
+  <ProbNet type="DAN">
+    <Comment showWhenOpeningNetwork="false"><![CDATA[<<Double click to add/modify comment>>]]></Comment>
+    <DecisionCriteria>
+      <Criterion name="---" unit="---" />
+    </DecisionCriteria>
+    <Properties />
+    <Variables>
+      <Variable name="U0" type="numeric" role="utility">
+        <Coordinates x="922" y="265" />
+        <Unit />
+        <Precision>0.01</Precision>
+        <Criterion name="---" />
+      </Variable>
+      <Variable name="U1" type="numeric" role="utility">
+        <Coordinates x="786" y="166" />
+        <Unit />
+        <Precision>0.01</Precision>
+        <Criterion name="---" />
+      </Variable>
+      <Variable name="U2" type="numeric" role="utility">
+        <Coordinates x="1080" y="172" />
+        <Unit />
+        <Precision>0.01</Precision>
+        <Criterion name="---" />
+      </Variable>
+    </Variables>
+    <Links>
+      <Link directed="true">
+        <Variable name="U1" />
+        <Variable name="U0" />
+      </Link>
+      <Link directed="true">
+        <Variable name="U2" />
+        <Variable name="U0" />
+      </Link>
+    </Links>
+    <Potentials>
+      <Potential type="Sum" role="conditionalProbability">
+        <UtilityVariable name="U0" />
+        <Variables>
+          <Variable name="U1" />
+          <Variable name="U2" />
+        </Variables>
+      </Potential>
+      <Potential type="Table" role="conditionalProbability">
+        <UtilityVariable name="U1" />
+        <Values>2.0</Values>
+      </Potential>
+      <Potential type="Table" role="conditionalProbability">
+        <UtilityVariable name="U2" />
+        <Values>3.0</Values>
+      </Potential>
+    </Potentials>
+  </ProbNet>
+  <InferenceOptions>
+    <MulticriteriaOptions>
+      <SelectedAnalysisType>UNICRITERION</SelectedAnalysisType>
+      <Unicriterion>
+        <Scales>
+          <Scale Criterion="---" Value="1.0" />
+        </Scales>
+      </Unicriterion>
+      <CostEffectiveness>
+        <Scales>
+          <Scale Criterion="---" Value="1.0" />
+        </Scales>
+        <CE_Criteria>
+          <CE_Criterion Criterion="---" Value="Cost" />
+        </CE_Criteria>
+      </CostEffectiveness>
+    </MulticriteriaOptions>
+  </InferenceOptions>
+</ProbModelXML>

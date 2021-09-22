@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ProbModelXML formatVersion="0.2.0">
+  <ProbNet type="InfluenceDiagram">
+    <Comment showWhenOpeningNetwork="false"><![CDATA[<<Double click to add/modify comment>>]]></Comment>
+    <DecisionCriteria>
+      <Criterion name="---" unit="---" />
+    </DecisionCriteria>
+    <Properties />
+    <Variables>
+      <Variable name="D" type="finiteStates" role="decision">
+        <Coordinates x="373" y="245" />
+        <States>
+          <State name="no" />
+          <State name="yes" />
+        </States>
+      </Variable>
+      <Variable name="D1" type="finiteStates" role="decision">
+        <Coordinates x="671" y="249" />
+        <States>
+          <State name="no" />
+          <State name="yes" />
+        </States>
+      </Variable>
+      <Variable name="U" type="numeric" role="utility">
+        <Coordinates x="671" y="407" />
+        <Unit />
+        <Precision>0.01</Precision>
+        <Criterion name="---" />
+      </Variable>
+      <Variable name="D2" type="finiteStates" role="decision">
+        <Coordinates x="946" y="249" />
+        <States>
+          <State name="no" />
+          <State name="yes" />
+        </States>
+      </Variable>
+      <Variable name="U1" type="numeric" role="utility">
+        <Coordinates x="947" y="408" />
+        <Unit />
+        <Precision>0.01</Precision>
+        <Criterion name="---" />
+      </Variable>
+    </Variables>
+    <Links>
+      <Link directed="true">
+        <Variable name="D" />
+        <Variable name="D1" />
+      </Link>
+      <Link directed="true">
+        <Variable name="D1" />
+        <Variable name="U" />
+      </Link>
+      <Link directed="true">
+        <Variable name="D1" />
+        <Variable name="D2" />
+      </Link>
+      <Link directed="true">
+        <Variable name="D2" />
+        <Variable name="U1" />
+      </Link>
+    </Links>
+    <Potentials>
+      <Potential type="Table" role="conditionalProbability">
+        <UtilityVariable name="U" />
+        <Variables>
+          <Variable name="D1" />
+        </Variables>
+        <Values>1.0 2.0</Values>
+      </Potential>
+      <Potential type="Table" role="conditionalProbability">
+        <UtilityVariable name="U1" />
+        <Variables>
+          <Variable name="D2" />
+        </Variables>
+        <Values>3.0 0.0</Values>
+      </Potential>
+    </Potentials>
+  </ProbNet>
+  <InferenceOptions>
+    <MulticriteriaOptions>
+      <SelectedAnalysisType>UNICRITERION</SelectedAnalysisType>
+      <Unicriterion>
+        <Scales>
+          <Scale Criterion="---" Value="1.0" />
+        </Scales>
+      </Unicriterion>
+      <CostEffectiveness>
+        <Scales>
+          <Scale Criterion="---" Value="1.0" />
+        </Scales>
+        <CE_Criteria>
+          <CE_Criterion Criterion="---" Value="Cost" />
+        </CE_Criteria>
+      </CostEffectiveness>
+    </MulticriteriaOptions>
+  </InferenceOptions>
+  <Evidence>
+    <EvidenceCase />
+    <EvidenceCase>
+      <Finding variable="D2" state="no" />
+      <Finding variable="D1" state="yes" />
+    </EvidenceCase>
+  </Evidence>
+</ProbModelXML>

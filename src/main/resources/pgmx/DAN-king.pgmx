@@ -1,0 +1,686 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ProbModelXML formatVersion="0.2.0">
+  <ProbNet type="DAN">
+    <Comment showWhenOpeningNetwork="true"><![CDATA[<html>
+  <head>
+    
+  </head>
+  <body>
+    <p style="margin-top: 0">
+      &quot;The king's problem&quot;
+    </p>
+    <p style="margin-top: 0">
+      
+    </p>
+    <p style="margin-top: 0">
+      Proposed in:
+    </p>
+    <p style="margin-top: 0">
+      
+    </p>
+    <p style="margin-top: 0">
+      F. V. Jensen and M. Vomlelov&#225;, &quot;Unconstrained influence diagrams&quot;, in <i>Proceedings 
+      of the Eighteenth Annual Conference on Uncertainty in Artificial 
+      Intelligence (UAI'02)</i>, (San Francisco, CA), pp. 234&#8211;241, Morgan 
+      Kaufmann, 2002.
+    </p>
+    <p style="margin-top: 0">
+      
+    </p>
+    <p style="margin-top: 0">
+      It is described as follows:
+    </p>
+    <p style="margin-top: 0">
+      
+    </p>
+    <p style="margin-top: 0">
+      &quot;The beautiful princess in the kingdom Lovania has a wooer. It is rather 
+      convenient for the king as he considers retirement. Furthermore, in case 
+      he starts a war with the neighbor king, he needs a good general. As 
+      customary, the king shall confront the wooer with three tasks. One of 
+      the tasks shall be either to kill a unicorn or a dragon. Another task 
+      will be to spend a night in the royal tomb or in the haunted castle 
+      tower. The third type of task is to swim across the river or to climb 
+      the highest mountain in the kingdom.
+    </p>
+    <p style="margin-top: 0">
+      
+    </p>
+    <p style="margin-top: 0">
+      The king can decide to retire or to start a war at any time. However, he 
+      cannot start a war after retirement, and he cannot give his daughter to 
+      the wooer before he has been confronted with all three tasks.&quot;
+    </p>
+  </body>
+</html>]]></Comment>
+    <Variables>
+      <Variable name="Result 1" type="finiteStates" role="chance">
+        <Comment><![CDATA[<html>
+  <head>
+    
+  </head>
+  <body>
+    <p style="margin-top: 0">
+      Result of task 1.
+    </p>
+  </body>
+</html>]]></Comment>
+        <Coordinates x="245" y="78" />
+        <States>
+          <State name="fail" />
+          <State name="pass" />
+        </States>
+      </Variable>
+      <Variable name="Result 2" type="finiteStates" role="chance">
+        <Comment><![CDATA[<html>
+  <head>
+    
+  </head>
+  <body>
+    <p style="margin-top: 0">
+      Result of task 1.
+    </p>
+  </body>
+</html>]]></Comment>
+        <Coordinates x="245" y="176" />
+        <States>
+          <State name="fail" />
+          <State name="pass" />
+        </States>
+      </Variable>
+      <Variable name="Result 3" type="finiteStates" role="chance">
+        <Comment><![CDATA[<html>
+  <head>
+    
+  </head>
+  <body>
+    <p style="margin-top: 0">
+      Result of task 1.
+    </p>
+  </body>
+</html>]]></Comment>
+        <Coordinates x="245" y="269" />
+        <States>
+          <State name="fail" />
+          <State name="pass" />
+        </States>
+      </Variable>
+      <Variable name="Quality of wooer" type="finiteStates" role="chance">
+        <Comment><![CDATA[<html>
+  <head>
+    
+  </head>
+  <body>
+    <p style="margin-top: 0">
+      Represents the quality of the wooer.
+    </p>
+  </body>
+</html>]]></Comment>
+        <Coordinates x="497" y="32" />
+        <States>
+          <State name="bad" />
+          <State name="good" />
+        </States>
+      </Variable>
+      <Variable name="Wedding" type="finiteStates" role="chance">
+        <Coordinates x="592" y="217" />
+        <States>
+          <State name="no" />
+          <State name="yes" />
+        </States>
+      </Variable>
+      <Variable name="Quality of general" type="finiteStates" role="chance">
+        <Comment><![CDATA[<html>
+  <head>
+    
+  </head>
+  <body>
+    <p style="margin-top: 0">
+      Represents the quality of the wooer as a military general.
+    </p>
+  </body>
+</html>]]></Comment>
+        <Coordinates x="736" y="152" />
+        <States>
+          <State name="bad" />
+          <State name="good" />
+        </States>
+      </Variable>
+      <Variable name="Wealth" type="finiteStates" role="chance">
+        <Coordinates x="843" y="219" />
+        <States>
+          <State name="poor" />
+          <State name="wealthy" />
+        </States>
+      </Variable>
+      <Variable name="Offspring" type="finiteStates" role="chance">
+        <Coordinates x="719" y="219" />
+        <States>
+          <State name="no" />
+          <State name="yes" />
+        </States>
+      </Variable>
+      <Variable name="Noble descent" type="finiteStates" role="chance">
+        <Comment><![CDATA[<html>
+  <head>
+    
+  </head>
+  <body>
+    <p style="margin-top: 0">
+      Represents whether the wooer is of noble descent or not.
+    </p>
+  </body>
+</html>]]></Comment>
+        <Coordinates x="677" y="303" />
+        <AlwaysObserved />
+        <States>
+          <State name="no" />
+          <State name="yes" />
+        </States>
+      </Variable>
+      <Variable name="Task 1" type="finiteStates" role="decision">
+        <Comment><![CDATA[<html>
+  <head>
+    
+  </head>
+  <body>
+    <p style="margin-top: 0">
+      &quot;One of the tasks shall be either to kill a unicorn or a dragon.&quot;
+    </p>
+  </body>
+</html>]]></Comment>
+        <Coordinates x="105" y="78" />
+        <States>
+          <State name="kill dragon" />
+          <State name="kill unicorn" />
+        </States>
+      </Variable>
+      <Variable name="Task 2" type="finiteStates" role="decision">
+        <Comment><![CDATA[<html>
+  <head>
+    
+  </head>
+  <body>
+    <p style="margin-top: 0">
+      &quot;Another task will be to spend a night in the royal tomb or in the 
+      haunted castle tower.&quot;
+    </p>
+  </body>
+</html>]]></Comment>
+        <Coordinates x="105" y="176" />
+        <States>
+          <State name="night in tower" />
+          <State name="night in tomb" />
+        </States>
+      </Variable>
+      <Variable name="Task 3" type="finiteStates" role="decision">
+        <Comment><![CDATA[<html>
+  <head>
+    
+  </head>
+  <body>
+    <p style="margin-top: 0">
+      &quot;The third type of task is to swim across the river or to climb the 
+      highest mountain in the kingdom.&quot;
+    </p>
+  </body>
+</html>]]></Comment>
+        <Coordinates x="105" y="271" />
+        <States>
+          <State name="climb" />
+          <State name="swim" />
+        </States>
+      </Variable>
+      <Variable name="Marriage" type="finiteStates" role="decision">
+        <Comment><![CDATA[<html>
+  <head>
+    
+  </head>
+  <body>
+    <p style="margin-top: 0">
+      Represents the decision whether to marry the king's daughter with the 
+      wooer or not.
+    </p>
+  </body>
+</html>]]></Comment>
+        <Coordinates x="467" y="217" />
+        <States>
+          <State name="no" />
+          <State name="yes" />
+        </States>
+      </Variable>
+      <Variable name="War" type="finiteStates" role="decision">
+        <Comment><![CDATA[<html>
+  <head>
+    
+  </head>
+  <body>
+    <p style="margin-top: 0">
+      Represents the decision to go to war.
+    </p>
+  </body>
+</html>]]></Comment>
+        <Coordinates x="745" y="48" />
+        <States>
+          <State name="no" />
+          <State name="yes" />
+        </States>
+      </Variable>
+      <Variable name="Retire" type="finiteStates" role="decision">
+        <Comment><![CDATA[<html>
+  <head>
+    
+  </head>
+  <body>
+    <p style="margin-top: 0">
+      Represents the decision to abdicate.
+    </p>
+  </body>
+</html>]]></Comment>
+        <Coordinates x="871" y="122" />
+        <States>
+          <State name="no" />
+          <State name="yes" />
+        </States>
+      </Variable>
+      <Variable name="U1" type="numeric" role="utility">
+        <Coordinates x="511" y="122" />
+        <Unit />
+        <Precision>0.0</Precision>
+      </Variable>
+      <Variable name="U2" type="numeric" role="utility">
+        <Coordinates x="925" y="349" />
+        <Unit />
+        <Precision>0.0</Precision>
+      </Variable>
+      <Variable name="U3" type="numeric" role="utility">
+        <Coordinates x="989" y="122" />
+        <Unit />
+        <Precision>0.0</Precision>
+      </Variable>
+      <Variable name="Cost task 1" type="numeric" role="utility">
+        <Comment><![CDATA[<html>
+  <head>
+    
+  </head>
+  <body>
+    <p style="margin-top: 0">
+      Cost of task 1.
+    </p>
+  </body>
+</html>]]></Comment>
+        <Coordinates x="105" y="123" />
+        <Unit />
+        <Precision>0.0</Precision>
+      </Variable>
+      <Variable name="Cost task 2" type="numeric" role="utility">
+        <Comment><![CDATA[<html>
+  <head>
+    
+  </head>
+  <body>
+    <p style="margin-top: 0">
+      Cost of task 2.
+    </p>
+  </body>
+</html>]]></Comment>
+        <Coordinates x="105" y="220" />
+        <Unit />
+        <Precision>0.0</Precision>
+      </Variable>
+      <Variable name="Cost task 3" type="numeric" role="utility">
+        <Comment><![CDATA[<html>
+  <head>
+    
+  </head>
+  <body>
+    <p style="margin-top: 0">
+      Cost of task 3.
+    </p>
+  </body>
+</html>]]></Comment>
+        <Coordinates x="105" y="316" />
+        <Unit />
+        <Precision>0.0</Precision>
+      </Variable>
+      <Variable name="Cost marriage" type="numeric" role="utility">
+        <Comment><![CDATA[<html>
+  <head>
+    
+  </head>
+  <body>
+    <p style="margin-top: 0">
+      Cost of marriage.
+    </p>
+  </body>
+</html>]]></Comment>
+        <Coordinates x="469" y="271" />
+        <Unit />
+        <Precision>0.0</Precision>
+      </Variable>
+      <Variable name="Cost war" type="numeric" role="utility">
+        <Coordinates x="871" y="48" />
+        <Unit />
+        <Precision>0.0</Precision>
+      </Variable>
+      <Variable name="Cost retirement" type="numeric" role="utility">
+        <Comment><![CDATA[<html>
+  <head>
+    
+  </head>
+  <body>
+    <p style="margin-top: 0">
+      Cost of retirement
+    </p>
+  </body>
+</html>]]></Comment>
+        <Coordinates x="1004" y="214" />
+        <Unit />
+        <Precision>0.0</Precision>
+      </Variable>
+    </Variables>
+    <Links>
+      <Link directed="true">
+        <Variable name="Quality of wooer" />
+        <Variable name="Quality of general" />
+      </Link>
+      <Link directed="true">
+        <Variable name="Quality of wooer" />
+        <Variable name="Offspring" />
+      </Link>
+      <Link directed="true">
+        <Variable name="Quality of wooer" />
+        <Variable name="U1" />
+      </Link>
+      <Link directed="true">
+        <Variable name="Quality of wooer" />
+        <Variable name="Result 1" />
+      </Link>
+      <Link directed="true">
+        <Variable name="Quality of wooer" />
+        <Variable name="Result 2" />
+      </Link>
+      <Link directed="true">
+        <Variable name="Quality of wooer" />
+        <Variable name="Result 3" />
+      </Link>
+      <Link directed="true">
+        <Variable name="Wedding" />
+        <Variable name="Quality of general" />
+      </Link>
+      <Link directed="true">
+        <Variable name="Wedding" />
+        <Variable name="Offspring" />
+        <Potential type="Table" role="linkRestriction">
+          <Variables>
+            <Variable name="Wedding" />
+            <Variable name="Offspring" />
+          </Variables>
+          <Values>1.0 1.0 0.0 1.0</Values>
+        </Potential>
+        <RevelationCondition>
+          <State name="yes" />
+          <State name="no" />
+        </RevelationCondition>
+      </Link>
+      <Link directed="true">
+        <Variable name="Quality of general" />
+        <Variable name="Wealth" />
+      </Link>
+      <Link directed="true">
+        <Variable name="Wealth" />
+        <Variable name="U3" />
+      </Link>
+      <Link directed="true">
+        <Variable name="Offspring" />
+        <Variable name="U2" />
+      </Link>
+      <Link directed="true">
+        <Variable name="Offspring" />
+        <Variable name="Wealth" />
+      </Link>
+      <Link directed="true">
+        <Variable name="Noble descent" />
+        <Variable name="U2" />
+      </Link>
+      <Link directed="true">
+        <Variable name="Task 1" />
+        <Variable name="Cost task 1" />
+      </Link>
+      <Link directed="true">
+        <Variable name="Task 1" />
+        <Variable name="Marriage" />
+      </Link>
+      <Link directed="true">
+        <Variable name="Task 1" />
+        <Variable name="Result 1" />
+        <RevelationCondition>
+          <State name="kill unicorn" />
+          <State name="kill dragon" />
+        </RevelationCondition>
+      </Link>
+      <Link directed="true">
+        <Variable name="Task 2" />
+        <Variable name="Cost task 2" />
+      </Link>
+      <Link directed="true">
+        <Variable name="Task 2" />
+        <Variable name="Marriage" />
+      </Link>
+      <Link directed="true">
+        <Variable name="Task 2" />
+        <Variable name="Result 2" />
+        <RevelationCondition>
+          <State name="night in tomb" />
+          <State name="night in tower" />
+        </RevelationCondition>
+      </Link>
+      <Link directed="true">
+        <Variable name="Task 3" />
+        <Variable name="Cost task 3" />
+      </Link>
+      <Link directed="true">
+        <Variable name="Task 3" />
+        <Variable name="Marriage" />
+      </Link>
+      <Link directed="true">
+        <Variable name="Task 3" />
+        <Variable name="Result 3" />
+        <RevelationCondition>
+          <State name="swim" />
+          <State name="climb" />
+        </RevelationCondition>
+      </Link>
+      <Link directed="true">
+        <Variable name="Marriage" />
+        <Variable name="Wedding" />
+        <Potential type="Table" role="linkRestriction">
+          <Variables>
+            <Variable name="Marriage" />
+            <Variable name="Wedding" />
+          </Variables>
+          <Values>1.0 0.0 0.0 1.0</Values>
+        </Potential>
+        <RevelationCondition>
+          <State name="yes" />
+          <State name="no" />
+        </RevelationCondition>
+      </Link>
+      <Link directed="true">
+        <Variable name="Marriage" />
+        <Variable name="Cost marriage" />
+      </Link>
+      <Link directed="true">
+        <Variable name="Marriage" />
+        <Variable name="War" />
+      </Link>
+      <Link directed="true">
+        <Variable name="War" />
+        <Variable name="U3" />
+      </Link>
+      <Link directed="true">
+        <Variable name="War" />
+        <Variable name="Wealth" />
+        <RevelationCondition>
+          <State name="yes" />
+          <State name="no" />
+        </RevelationCondition>
+      </Link>
+      <Link directed="true">
+        <Variable name="War" />
+        <Variable name="Retire" />
+      </Link>
+      <Link directed="true">
+        <Variable name="War" />
+        <Variable name="Cost war" />
+      </Link>
+      <Link directed="true">
+        <Variable name="Retire" />
+        <Variable name="U2" />
+      </Link>
+      <Link directed="true">
+        <Variable name="Retire" />
+        <Variable name="U3" />
+      </Link>
+      <Link directed="true">
+        <Variable name="Retire" />
+        <Variable name="Cost retirement" />
+      </Link>
+    </Links>
+    <Potentials>
+      <Potential type="Table" role="conditionalProbability">
+        <Variables>
+          <Variable name="Result 1" />
+          <Variable name="Quality of wooer" />
+          <Variable name="Task 1" />
+        </Variables>
+        <Values>0.97 0.03 0.75 0.25 0.75 0.25 0.25 0.75</Values>
+      </Potential>
+      <Potential type="Table" role="conditionalProbability">
+        <Variables>
+          <Variable name="Result 2" />
+          <Variable name="Quality of wooer" />
+          <Variable name="Task 2" />
+        </Variables>
+        <Values>0.9 0.1 0.2 0.8 0.75 0.25 0.25 0.75</Values>
+      </Potential>
+      <Potential type="Table" role="conditionalProbability">
+        <Variables>
+          <Variable name="Result 3" />
+          <Variable name="Quality of wooer" />
+          <Variable name="Task 3" />
+        </Variables>
+        <Values>0.6 0.4 0.4 0.6 0.55 0.45 0.45 0.55</Values>
+      </Potential>
+      <Potential type="Uniform" role="conditionalProbability">
+        <Variables>
+          <Variable name="Quality of wooer" />
+        </Variables>
+      </Potential>
+      <Potential type="Table" role="conditionalProbability">
+        <Variables>
+          <Variable name="Wedding" />
+          <Variable name="Marriage" />
+        </Variables>
+        <Values>1.0 0.0 0.0 1.0</Values>
+      </Potential>
+      <Potential type="Uniform" role="conditionalProbability">
+        <Variables>
+          <Variable name="Quality of general" />
+          <Variable name="Quality of wooer" />
+          <Variable name="Wedding" />
+        </Variables>
+      </Potential>
+      <Potential type="Table" role="conditionalProbability">
+        <Variables>
+          <Variable name="Wealth" />
+          <Variable name="Quality of general" />
+          <Variable name="War" />
+          <Variable name="Offspring" />
+        </Variables>
+        <Values>0.5 0.5 0.5 0.5 0.85 0.15 0.15 0.85 0.6 0.4 0.6 0.4 0.9 0.1 0.2 0.8</Values>
+      </Potential>
+      <Potential type="Table" role="conditionalProbability">
+        <Variables>
+          <Variable name="Offspring" />
+          <Variable name="Quality of wooer" />
+          <Variable name="Wedding" />
+        </Variables>
+        <Values>1.0 0.0 1.0 0.0 0.6 0.4 0.2 0.8</Values>
+      </Potential>
+      <Potential type="Uniform" role="conditionalProbability">
+        <Variables>
+          <Variable name="Noble descent" />
+        </Variables>
+      </Potential>
+      <Potential type="Table" role="utility">
+        <UtilityVariable name="U1" />
+        <Variables>
+          <Variable name="Quality of wooer" />
+        </Variables>
+        <Values>0.0 0.0</Values>
+      </Potential>
+      <Potential type="Table" role="utility">
+        <UtilityVariable name="U2" />
+        <Variables>
+          <Variable name="Noble descent" />
+          <Variable name="Offspring" />
+          <Variable name="Retire" />
+        </Variables>
+        <Values>0.0 0.0 2.0 3.0 1.0 3.0 4.0 7.0</Values>
+      </Potential>
+      <Potential type="Table" role="utility">
+        <UtilityVariable name="U3" />
+        <Variables>
+          <Variable name="Retire" />
+          <Variable name="War" />
+          <Variable name="Wealth" />
+        </Variables>
+        <Values>0.0 1.0 2.0 3.0 6.0 8.0 7.0 10.0</Values>
+      </Potential>
+      <Potential type="Table" role="utility">
+        <UtilityVariable name="Cost task 1" />
+        <Variables>
+          <Variable name="Task 1" />
+        </Variables>
+        <Values>-1.0 -0.2</Values>
+      </Potential>
+      <Potential type="Table" role="utility">
+        <UtilityVariable name="Cost task 2" />
+        <Variables>
+          <Variable name="Task 2" />
+        </Variables>
+        <Values>-0.5 -0.2</Values>
+      </Potential>
+      <Potential type="Table" role="utility">
+        <UtilityVariable name="Cost task 3" />
+        <Variables>
+          <Variable name="Task 3" />
+        </Variables>
+        <Values>-0.1 -0.05</Values>
+      </Potential>
+      <Potential type="Table" role="utility">
+        <UtilityVariable name="Cost marriage" />
+        <Variables>
+          <Variable name="Marriage" />
+        </Variables>
+        <Values>0.0 0.0</Values>
+      </Potential>
+      <Potential type="Table" role="utility">
+        <UtilityVariable name="Cost war" />
+        <Variables>
+          <Variable name="War" />
+        </Variables>
+        <Values>0.0 -5.0</Values>
+      </Potential>
+      <Potential type="Table" role="utility">
+        <UtilityVariable name="Cost retirement" />
+        <Variables>
+          <Variable name="Retire" />
+        </Variables>
+        <Values>0.0 0.0</Values>
+      </Potential>
+    </Potentials>
+    <AdditionalProperties />
+  </ProbNet>
+</ProbModelXML>

@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ProbModelXML formatVersion="0.2.0">
+  <ProbNet type="DAN">
+    <Comment showWhenOpeningNetwork="true"><![CDATA[<html>
+  <head>
+    
+  </head>
+  <body>
+    <p style="margin-top: 0">
+      &quot;The dating problem&quot;, proposed in:
+    </p>
+    <p style="margin-top: 0">
+      
+    </p>
+    <p style="margin-top: 0">
+      T. D. Nielsen and F. Jensen, &quot;Representing and solving asymmetric 
+      bayesian decision problems,&quot; in <i>Proceedings of the 16th Annual 
+      Conference on Uncertainty in Artificial Intelligence</i> (UAI-2000), (S 
+      an Francisco, CA), pp. 416&#8211;425, Morgan Kaufmann, 2000.
+    </p>
+    <p style="margin-top: 0">
+      
+    </p>
+    <p style="margin-top: 0">
+      It is described as follows:
+    </p>
+    <p style="margin-top: 0">
+      &quot;Joe has to decide whether or not to ask a girl he has recently met on a 
+      date. If Joe decides ot to ask her out he can choose either to stay at 
+      home and watch TV or visit a night club; before taking that decision Joe 
+      observes what programs will be on TV that night. The pleasure of staying 
+      at home is influenced by his liking of the program watched, whereas the 
+      pleasure of going to a night club is dependent on the comfort of going 
+      to that night club and the entrance fee; comfort is dependent on whether 
+      Joe likes the night club and whether he meets any friends there.
+    </p>
+    <p style="margin-top: 0">
+      
+    </p>
+    <p style="margin-top: 0">
+      If Joe decides to ask her out her response will depend on her feelings 
+      towards him. If she declunes the date, Joe can decide to go to a night 
+      club or stay at home and watch TV; we assume that the two &quot;staying at 
+      home scenarios are the same&quot;. If she accepts to go on a date with him, 
+      Joe will ask her whether she wants to go to a restaurant or to the 
+      movies. The choice of movie (decided by Joe) may influence her mood 
+      which in turn may influence Joe's satisfaction concerning the evening. 
+      Similarly, the choice of the menu (decided by Joe) might influence Joe's 
+      satisfaction.&quot;
+    </p>
+  </body>
+</html>]]></Comment>
+    <DecisionCriteria>
+      <Criterion name="---" unit="---" />
+    </DecisionCriteria>
+    <Properties />
+    <Variables>
+      <Variable name="Club" type="finiteStates" role="chance">
+        <Comment><![CDATA[<html>
+  <head>
+    
+  </head>
+  <body>
+    <p style="margin-top: 0">
+      Whether Joe likes the night club he visits.
+    </p>
+  </body>
+</html>]]></Comment>
+        <Coordinates x="578" y="154" />
+        <States>
+          <State name="negative" />
+          <State name="positive" />
+        </States>
+      </Variable>
+      <Variable name="MeetFr" type="finiteStates" role="chance">
+        <Comment><![CDATA[<html>
+  <head>
+    
+  </head>
+  <body>
+    <p style="margin-top: 0">
+      Whether Joe meets his friends at the night club.
+    </p>
+  </body>
+</html>]]></Comment>
+        <Coordinates x="583" y="216" />
+        <States>
+          <State name="negative" />
+          <State name="positive" />
+        </States>
+      </Variable>
+      <Variable name="NCExp" type="finiteStates" role="chance">
+        <Comment><![CDATA[<html>
+  <head>
+    
+  </head>
+  <body>
+    <p style="margin-top: 0">
+      Whether Joe enjoys or not going to a night club.
+    </p>
+  </body>
+</html>]]></Comment>
+        <Coordinates x="720" y="179" />
+        <States>
+          <State name="negative" />
+          <State name="positive" />
+        </States>
+      </Variable>
+      <Variable name="NClub?" type="finiteStates" role="decision">
+        <Comment><![CDATA[<html>
+  <head>
+    
+  </head>
+  <body>
+    <p style="margin-top: 0">
+      Decision of visiting a night club or not (and therefore staying at home).
+    </p>
+  </body>
+</html>]]></Comment>
+        <Coordinates x="370" y="176" />
+        <States>
+          <State name="no" />
+          <State name="yes" />
+        </States>
+      </Variable>
+      <Variable name="U NCExp" type="numeric" role="utility">
+        <Comment><![CDATA[<html>
+  <head>
+    
+  </head>
+  <body>
+    <p style="margin-top: 0">
+      Fun at the night club.
+    </p>
+  </body>
+</html>]]></Comment>
+        <Coordinates x="864" y="181" />
+        <Unit />
+        <Precision>0.01</Precision>
+        <Criterion name="---" />
+      </Variable>
+    </Variables>
+    <Links>
+      <Link directed="true">
+        <Variable name="Club" />
+        <Variable name="NCExp" />
+      </Link>
+      <Link directed="true">
+        <Variable name="MeetFr" />
+        <Variable name="NCExp" />
+      </Link>
+      <Link directed="true">
+        <Variable name="NCExp" />
+        <Variable name="U NCExp" />
+      </Link>
+      <Link directed="true">
+        <Variable name="NClub?" />
+        <Variable name="Club" />
+        <Potential type="Table" role="linkRestriction">
+          <Variables>
+            <Variable name="NClub?" />
+            <Variable name="Club" />
+          </Variables>
+          <Values>0.0 1.0 0.0 1.0</Values>
+        </Potential>
+        <RevelationCondition>
+          <State name="yes" />
+        </RevelationCondition>
+      </Link>
+      <Link directed="true">
+        <Variable name="NClub?" />
+        <Variable name="MeetFr" />
+        <Potential type="Table" role="linkRestriction">
+          <Variables>
+            <Variable name="NClub?" />
+            <Variable name="MeetFr" />
+          </Variables>
+          <Values>0.0 1.0 0.0 1.0</Values>
+        </Potential>
+        <RevelationCondition>
+          <State name="yes" />
+        </RevelationCondition>
+      </Link>
+    </Links>
+    <Potentials>
+      <Potential type="Table" role="conditionalProbability">
+        <Variables>
+          <Variable name="Club" />
+          <Variable name="NClub?" />
+        </Variables>
+        <Values>0.0 0.0 0.22 0.78</Values>
+      </Potential>
+      <Potential type="Table" role="conditionalProbability">
+        <Variables>
+          <Variable name="MeetFr" />
+          <Variable name="NClub?" />
+        </Variables>
+        <Values>0.0 0.0 0.16 0.84</Values>
+      </Potential>
+      <Potential type="ICIModel" role="conditionalProbability">
+        <Variables>
+          <Variable name="NCExp" />
+          <Variable name="MeetFr" />
+          <Variable name="Club" />
+        </Variables>
+        <Model>OR / MAX</Model>
+        <Subpotentials>
+          <Potential type="Table">
+            <Variables>
+              <Variable name="NCExp" />
+              <Variable name="MeetFr" />
+            </Variables>
+            <Values>1.0 0.0 0.0 1.0</Values>
+          </Potential>
+          <Potential type="Table">
+            <Variables>
+              <Variable name="NCExp" />
+              <Variable name="Club" />
+            </Variables>
+            <Values>1.0 0.0 0.0 1.0</Values>
+          </Potential>
+          <Potential type="Table">
+            <Variables>
+              <Variable name="NCExp" />
+            </Variables>
+            <Values>0.99 0.01</Values>
+          </Potential>
+        </Subpotentials>
+      </Potential>
+      <Potential type="Table" role="utility">
+        <UtilityVariable name="U NCExp" />
+        <Variables>
+          <Variable name="NCExp" />
+        </Variables>
+        <Values>-10.0 10.0</Values>
+      </Potential>
+    </Potentials>
+  </ProbNet>
+  <InferenceOptions>
+    <MulticriteriaOptions>
+      <SelectedAnalysisType>UNICRITERION</SelectedAnalysisType>
+      <Unicriterion>
+        <Scales>
+          <Scale Criterion="---" Value="1.0" />
+        </Scales>
+      </Unicriterion>
+      <CostEffectiveness>
+        <Scales>
+          <Scale Criterion="---" Value="1.0" />
+        </Scales>
+        <CE_Criteria>
+          <CE_Criterion Criterion="---" Value="Cost" />
+        </CE_Criteria>
+      </CostEffectiveness>
+    </MulticriteriaOptions>
+  </InferenceOptions>
+</ProbModelXML>

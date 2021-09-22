@@ -1,0 +1,3191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ProbModelXML formatVersion="0.2.0">
+  <ProbNet type="BayesianNetwork">
+    <Variables>
+      <Variable name="av_sin_catar" type="finiteStates" role="chance" isInput="false">
+        <Comment><![CDATA[Disminución agudeza por causas distintas de la catarata]]></Comment>
+        <Coordinates x="723" y="157" />
+        <AdditionalProperties>
+          <Property name="Relevance" value="9.0" />
+        </AdditionalProperties>
+        <Precision>0.01</Precision>
+        <States>
+          <State name="[0,0.15]" />
+          <State name="(0.15,0.4]" />
+          <State name="(0.4,0.7]" />
+          <State name="(0.7,1]" />
+        </States>
+      </Variable>
+      <Variable name="camara_estrecha" type="finiteStates" role="chance" isInput="false">
+        <Coordinates x="75" y="143" />
+        <Precision>0.01</Precision>
+        <States>
+          <State name="no" />
+          <State name="si" />
+        </States>
+      </Variable>
+      <Variable name="ojo_hundido" type="finiteStates" role="chance" isInput="false">
+        <Coordinates x="224" y="144" />
+        <Precision>0.01</Precision>
+        <States>
+          <State name="no" />
+          <State name="si" />
+        </States>
+      </Variable>
+      <Variable name="miopia_magna" type="finiteStates" role="chance" isInput="false">
+        <Coordinates x="155" y="85" />
+        <Precision>0.01</Precision>
+        <States>
+          <State name="no" />
+          <State name="si" />
+        </States>
+      </Variable>
+      <Variable name="pupila_estrecha" type="finiteStates" role="chance" isInput="false">
+        <Coordinates x="257" y="270" />
+        <Precision>0.01</Precision>
+        <States>
+          <State name="no" />
+          <State name="si" />
+        </States>
+      </Variable>
+      <Variable name="pseudoexfoliacion" type="finiteStates" role="chance" isInput="false">
+        <Coordinates x="160" y="318" />
+        <Precision>0.01</Precision>
+        <States>
+          <State name="no" />
+          <State name="si" />
+        </States>
+      </Variable>
+      <Variable name="tipo_catarata" type="finiteStates" role="chance" isInput="false">
+        <Coordinates x="502" y="93" />
+        <AdditionalProperties>
+          <Property name="Relevance" value="10.0" />
+        </AdditionalProperties>
+        <Precision>0.01</Precision>
+        <States>
+          <State name="leve" />
+          <State name="moderada" />
+          <State name="blanca" />
+          <State name="brunescente" />
+          <State name="polar posterior" />
+        </States>
+      </Variable>
+      <Variable name="ojo_vitrectomizado" type="finiteStates" role="chance" isInput="false">
+        <Coordinates x="319" y="321" />
+        <Precision>0.01</Precision>
+        <States>
+          <State name="no" />
+          <State name="si" />
+        </States>
+      </Variable>
+      <Variable name="mala_colaboracion" type="finiteStates" role="chance" isInput="false">
+        <Comment><![CDATA[Prevista]]></Comment>
+        <Coordinates x="346" y="373" />
+        <Precision>0.01</Precision>
+        <States>
+          <State name="no" />
+          <State name="si" />
+        </States>
+      </Variable>
+      <Variable name="retinopatia_diabetic" type="finiteStates" role="chance" isInput="false">
+        <Coordinates x="107" y="27" />
+        <AdditionalProperties>
+          <Property name="Relevance" value="7.0" />
+        </AdditionalProperties>
+        <Precision>0.01</Precision>
+        <States>
+          <State name="ausente" />
+          <State name="no proliferativa" />
+          <State name="proliferativa" />
+        </States>
+      </Variable>
+      <Variable name="retinopatia_nd" type="finiteStates" role="chance" isInput="false">
+        <Comment><![CDATA[No diabetica]]></Comment>
+        <Coordinates x="304" y="94" />
+        <AdditionalProperties>
+          <Property name="Relevance" value="6.0" />
+        </AdditionalProperties>
+        <Precision>0.01</Precision>
+        <States>
+          <State name="no" />
+          <State name="si" />
+        </States>
+      </Variable>
+      <Variable name="maculopatias" type="finiteStates" role="chance" isInput="false">
+        <Coordinates x="377" y="31" />
+        <AdditionalProperties>
+          <Property name="Relevance" value="6.0" />
+        </AdditionalProperties>
+        <Precision>0.01</Precision>
+        <States>
+          <State name="no" />
+          <State name="si" />
+        </States>
+      </Variable>
+      <Variable name="neuropatias" type="finiteStates" role="chance" isInput="false">
+        <Coordinates x="737" y="30" />
+        <AdditionalProperties>
+          <Property name="Relevance" value="6.0" />
+        </AdditionalProperties>
+        <Precision>0.01</Precision>
+        <States>
+          <State name="no" />
+          <State name="si" />
+        </States>
+      </Variable>
+      <Variable name="ambliopia" type="finiteStates" role="chance" isInput="false">
+        <Coordinates x="580" y="21" />
+        <AdditionalProperties>
+          <Property name="Relevance" value="6.0" />
+        </AdditionalProperties>
+        <Precision>0.01</Precision>
+        <States>
+          <State name="no" />
+          <State name="si" />
+        </States>
+      </Variable>
+      <Variable name="opac_corneales" type="finiteStates" role="chance" isInput="false">
+        <Coordinates x="1072" y="35" />
+        <AdditionalProperties>
+          <Property name="Relevance" value="6.0" />
+        </AdditionalProperties>
+        <Precision>0.01</Precision>
+        <States>
+          <State name="no" />
+          <State name="si" />
+        </States>
+      </Variable>
+      <Variable name="distrofia_fuchs" type="finiteStates" role="chance" isInput="false">
+        <Coordinates x="884" y="25" />
+        <AdditionalProperties>
+          <Property name="Relevance" value="6.0" />
+        </AdditionalProperties>
+        <Precision>0.01</Precision>
+        <States>
+          <State name="ausente" />
+          <State name="leve" />
+          <State name="moderada" />
+          <State name="severa" />
+        </States>
+      </Variable>
+      <Variable name="av_complic" type="finiteStates" role="chance" isInput="false">
+        <Comment><![CDATA[largo plazo]]></Comment>
+        <Coordinates x="54" y="723" />
+        <AdditionalProperties>
+          <Property name="Relevance" value="7.0" />
+        </AdditionalProperties>
+        <Precision>0.01</Precision>
+        <States>
+          <State name="[0,0.15]" />
+          <State name="(0.15,0.4]" />
+          <State name="(0.4,0.7]" />
+          <State name="(0.7,1]" />
+        </States>
+      </Variable>
+      <Variable name="alter_incision" type="finiteStates" role="chance" isInput="false">
+        <Comment><![CDATA[perioperatoria]]></Comment>
+        <Coordinates x="67" y="643" />
+        <AdditionalProperties>
+          <Property name="Relevance" value="6.0" />
+        </AdditionalProperties>
+        <Precision>0.01</Precision>
+        <States>
+          <State name="no" />
+          <State name="si" />
+        </States>
+      </Variable>
+      <Variable name="endoftalmitis" type="finiteStates" role="chance" isInput="false">
+        <Comment><![CDATA[a largo plazo]]></Comment>
+        <Coordinates x="248" y="622" />
+        <AdditionalProperties>
+          <Property name="Relevance" value="6.0" />
+        </AdditionalProperties>
+        <Precision>0.01</Precision>
+        <States>
+          <State name="no" />
+          <State name="si" />
+        </States>
+      </Variable>
+      <Variable name="edema_corneal" type="finiteStates" role="chance" isInput="false">
+        <Comment><![CDATA[a largo plazo]]></Comment>
+        <Coordinates x="493" y="645" />
+        <AdditionalProperties>
+          <Property name="Relevance" value="6.0" />
+        </AdditionalProperties>
+        <Precision>0.01</Precision>
+        <States>
+          <State name="no" />
+          <State name="si" />
+        </States>
+      </Variable>
+      <Variable name="edema_mac_cist" type="finiteStates" role="chance" isInput="false">
+        <Comment><![CDATA[clínico, a largo plazo]]></Comment>
+        <Coordinates x="335" y="668" />
+        <AdditionalProperties>
+          <Property name="Relevance" value="6.0" />
+        </AdditionalProperties>
+        <Precision>0.01</Precision>
+        <States>
+          <State name="no" />
+          <State name="si" />
+        </States>
+      </Variable>
+      <Variable name="mecha_vitrea" type="finiteStates" role="chance" isInput="false">
+        <Comment><![CDATA[perioperatoria]]></Comment>
+        <Coordinates x="356" y="562" />
+        <AdditionalProperties>
+          <Property name="Relevance" value="6.0" />
+        </AdditionalProperties>
+        <Precision>0.01</Precision>
+        <States>
+          <State name="no" />
+          <State name="si" />
+        </States>
+      </Variable>
+      <Variable name="ruptura_caps_post" type="finiteStates" role="chance" isInput="false">
+        <Coordinates x="183" y="574" />
+        <Precision>0.01</Precision>
+        <States>
+          <State name="no" />
+          <State name="si" />
+        </States>
+      </Variable>
+      <Variable name="av_pre" type="finiteStates" role="chance" isInput="false">
+        <Comment><![CDATA[Corregida]]></Comment>
+        <Coordinates x="870" y="269" />
+        <AdditionalProperties>
+          <Property name="Relevance" value="10.0" />
+        </AdditionalProperties>
+        <Precision>0.01</Precision>
+        <States>
+          <State name="[0, 0.15]" />
+          <State name="(0.15, 0.4]" />
+          <State name="(0.4, 0.7]" />
+          <State name="(0.7, 1]" />
+        </States>
+      </Variable>
+      <Variable name="av_post" type="finiteStates" role="chance" isInput="false">
+        <Comment><![CDATA[Agudeza visual  post-intervención,  corregida]]></Comment>
+        <Coordinates x="156" y="765" />
+        <AdditionalProperties>
+          <Property name="Relevance" value="9.0" />
+        </AdditionalProperties>
+        <Precision>0.01</Precision>
+        <States>
+          <State name="[0, 0.15]" />
+          <State name="(0.15, 0.4]" />
+          <State name="(0.4, 0.7]" />
+          <State name="(0.7, 1]" />
+        </States>
+      </Variable>
+      <Variable name="fvnd_pre_catar" type="finiteStates" role="chance" isInput="false">
+        <Coordinates x="760" y="479" />
+        <AdditionalProperties>
+          <Property name="Relevance" value="6.0" />
+        </AdditionalProperties>
+        <Precision>0.01</Precision>
+        <States>
+          <State name="sin-limit" />
+          <State name="limit-ocio" />
+          <State name="limit-diaria" />
+        </States>
+      </Variable>
+      <Variable name="otros_trast_fv" type="finiteStates" role="chance" isInput="false">
+        <Comment><![CDATA[Otros trastornos (distintos pérdida agudeza y deslu) no debidos a cataratas: brillo, contraste, campo, color, 3D...]]></Comment>
+        <Coordinates x="935" y="473" />
+        <Precision>0.01</Precision>
+        <States>
+          <State name="sin-limit" />
+          <State name="limit-ocio" />
+          <State name="limit-diaria" />
+        </States>
+      </Variable>
+      <Variable name="fvnd_pre" type="finiteStates" role="chance" isInput="false">
+        <Coordinates x="849" y="553" />
+        <AdditionalProperties>
+          <Property name="Relevance" value="6.0" />
+        </AdditionalProperties>
+        <Precision>0.01</Precision>
+        <States>
+          <State name="sin-limit" />
+          <State name="limit-ocio" />
+          <State name="limit-diaria" />
+        </States>
+      </Variable>
+      <Variable name="otros_trast_fvnd_complic" type="finiteStates" role="chance" isInput="false">
+        <Comment><![CDATA[Otros trastornos FV largo plazo (distintos agudeza y deslu) debidos a complicaciones operacion]]></Comment>
+        <Coordinates x="462" y="708" />
+        <AdditionalProperties>
+          <Property name="Relevance" value="6.0" />
+        </AdditionalProperties>
+        <Precision>0.01</Precision>
+        <States>
+          <State name="sin-limit" />
+          <State name="limit-ocio" />
+          <State name="limit-diaria" />
+        </States>
+      </Variable>
+      <Variable name="fvnd_post" type="finiteStates" role="chance" isInput="false">
+        <Coordinates x="764" y="688" />
+        <AdditionalProperties>
+          <Property name="Relevance" value="6.0" />
+        </AdditionalProperties>
+        <Precision>0.01</Precision>
+        <States>
+          <State name="sin-limit" />
+          <State name="limit-ocio" />
+          <State name="limit-diaria" />
+        </States>
+      </Variable>
+      <Variable name="av_contral" type="finiteStates" role="chance" isInput="false">
+        <Comment><![CDATA[Corregida]]></Comment>
+        <Coordinates x="1077" y="319" />
+        <Precision>0.01</Precision>
+        <States>
+          <State name="[0, 0.15]" />
+          <State name="(0.15, 0.4]" />
+          <State name="(0.4, 0.7]" />
+          <State name="(0.7, 1]" />
+        </States>
+      </Variable>
+      <Variable name="fvnd_contral" type="finiteStates" role="chance" isInput="false">
+        <Comment><![CDATA[Otros trastornos (distintos pérdida agudeza) no debidos a cataratas: brillo, contraste, campo, color, 3D...]]></Comment>
+        <Coordinates x="1070" y="441" />
+        <AdditionalProperties>
+          <Property name="Relevance" value="6.0" />
+        </AdditionalProperties>
+        <Precision>0.01</Precision>
+        <States>
+          <State name="sin-limit" />
+          <State name="limit-ocio" />
+          <State name="limit-diaria" />
+        </States>
+      </Variable>
+      <Variable name="fvnd_global_pre" type="finiteStates" role="chance" isInput="false">
+        <Coordinates x="1104" y="610" />
+        <AdditionalProperties>
+          <Property name="Relevance" value="6.0" />
+        </AdditionalProperties>
+        <Precision>0.01</Precision>
+        <States>
+          <State name="sin-limit" />
+          <State name="limit-ocio" />
+          <State name="limit-diaria" />
+        </States>
+      </Variable>
+      <Variable name="fvnd_global_post" type="finiteStates" role="chance" isInput="false">
+        <Coordinates x="942" y="703" />
+        <AdditionalProperties>
+          <Property name="Relevance" value="6.0" />
+        </AdditionalProperties>
+        <Precision>0.01</Precision>
+        <States>
+          <State name="sin-limit" />
+          <State name="limit-ocio" />
+          <State name="limit-diaria" />
+        </States>
+      </Variable>
+      <Variable name="despr_retina" type="finiteStates" role="chance" isInput="false">
+        <Comment><![CDATA[largo plazo]]></Comment>
+        <Coordinates x="547" y="591" />
+        <AdditionalProperties>
+          <Property name="Relevance" value="6.0" />
+        </AdditionalProperties>
+        <Precision>0.01</Precision>
+        <States>
+          <State name="no" />
+          <State name="si" />
+        </States>
+      </Variable>
+      <Variable name="fibrosis_c_ant" type="finiteStates" role="chance" isInput="false">
+        <Comment><![CDATA[Fibrosis de capsula]]></Comment>
+        <Coordinates x="291" y="472" />
+        <Precision>0.01</Precision>
+        <States>
+          <State name="no" />
+          <State name="si" />
+        </States>
+      </Variable>
+      <Variable name="sinequias_post" type="finiteStates" role="chance" isInput="false">
+        <Coordinates x="389" y="199" />
+        <Precision>0.01</Precision>
+        <States>
+          <State name="no" />
+          <State name="si" />
+        </States>
+      </Variable>
+      <Variable name="sublux_cristalino" type="finiteStates" role="chance" isInput="false">
+        <Comment><![CDATA[subluxación del cristalino]]></Comment>
+        <Coordinates x="129" y="448" />
+        <Precision>0.01</Precision>
+        <States>
+          <State name="no" />
+          <State name="si" />
+        </States>
+      </Variable>
+      <Variable name="despr_coroideo" type="finiteStates" role="chance" isInput="false">
+        <Comment><![CDATA[a largo plazo]]></Comment>
+        <Coordinates x="184" y="674" />
+        <AdditionalProperties>
+          <Property name="Relevance" value="6.0" />
+        </AdditionalProperties>
+        <Precision>0.01</Precision>
+        <States>
+          <State name="no" />
+          <State name="si" />
+        </States>
+      </Variable>
+      <Variable name="deslu_complic" type="finiteStates" role="chance" isInput="false">
+        <Coordinates x="624" y="677" />
+        <AdditionalProperties>
+          <Property name="Relevance" value="7.0" />
+        </AdditionalProperties>
+        <Precision>0.01</Precision>
+        <States>
+          <State name="no" />
+          <State name="si" />
+        </States>
+      </Variable>
+      <Variable name="deslu_pre_no_catar" type="finiteStates" role="chance" isInput="false">
+        <Coordinates x="715" y="401" />
+        <AdditionalProperties>
+          <Property name="Relevance" value="6.0" />
+        </AdditionalProperties>
+        <Precision>0.01</Precision>
+        <States>
+          <State name="no" />
+          <State name="si" />
+        </States>
+      </Variable>
+      <Variable name="deslu_contral" type="finiteStates" role="chance" isInput="false">
+        <Coordinates x="994" y="535" />
+        <AdditionalProperties>
+          <Property name="Relevance" value="6.0" />
+        </AdditionalProperties>
+        <Precision>0.01</Precision>
+        <States>
+          <State name="no" />
+          <State name="si" />
+        </States>
+      </Variable>
+      <Variable name="deslu_catar" type="finiteStates" role="chance" isInput="false">
+        <Coordinates x="537" y="333" />
+        <AdditionalProperties>
+          <Property name="Relevance" value="7.0" />
+        </AdditionalProperties>
+        <Precision>0.01</Precision>
+        <States>
+          <State name="no" />
+          <State name="si" />
+        </States>
+      </Variable>
+      <Variable name="deslu_pre" type="finiteStates" role="chance" isInput="false">
+        <Coordinates x="573" y="466" />
+        <AdditionalProperties>
+          <Property name="Relevance" value="8.0" />
+        </AdditionalProperties>
+        <Precision>0.01</Precision>
+        <States>
+          <State name="no" />
+          <State name="si" />
+        </States>
+      </Variable>
+      <Variable name="deslu_post" type="finiteStates" role="chance" isInput="false">
+        <Coordinates x="670" y="737" />
+        <AdditionalProperties>
+          <Property name="Relevance" value="8.0" />
+        </AdditionalProperties>
+        <Precision>0.01</Precision>
+        <States>
+          <State name="no" />
+          <State name="si" />
+        </States>
+      </Variable>
+      <Variable name="fv_global_post" type="finiteStates" role="chance" isInput="false">
+        <Coordinates x="849" y="756" />
+        <AdditionalProperties>
+          <Property name="Relevance" value="6.0" />
+        </AdditionalProperties>
+        <Precision>0.01</Precision>
+        <States>
+          <State name="sin-limit" />
+          <State name="limit-ocio" />
+          <State name="limit-diaria" />
+        </States>
+      </Variable>
+      <Variable name="fv_global_pre" type="finiteStates" role="chance" isInput="false">
+        <Coordinates x="1078" y="672" />
+        <AdditionalProperties>
+          <Property name="Relevance" value="10.0" />
+        </AdditionalProperties>
+        <Precision>0.01</Precision>
+        <States>
+          <State name="sin-limit" />
+          <State name="limit-ocio" />
+          <State name="limit-diaria" />
+        </States>
+      </Variable>
+      <Variable name="catarata_contral" type="finiteStates" role="chance" isInput="false">
+        <Coordinates x="1102" y="182" />
+        <AdditionalProperties>
+          <Property name="Relevance" value="7.0" />
+        </AdditionalProperties>
+        <Precision>0.01</Precision>
+        <States>
+          <State name="ausente" />
+          <State name="leve" />
+          <State name="moderada" />
+          <State name="blanca" />
+          <State name="brunescente" />
+          <State name="polar posterior" />
+        </States>
+      </Variable>
+      <Variable name="deslu_global_pre" type="finiteStates" role="chance" isInput="false">
+        <Coordinates x="732" y="611" />
+        <Precision>0.01</Precision>
+        <States>
+          <State name="ausente" />
+          <State name="no sabe" />
+          <State name="ambos" />
+          <State name="ojo contral" />
+          <State name="ojo operar" />
+        </States>
+      </Variable>
+      <Variable name="deslu_global_post" type="finiteStates" role="chance" isInput="false">
+        <Coordinates x="755" y="788" />
+        <AdditionalProperties>
+          <Property name="Relevance" value="6.0" />
+        </AdditionalProperties>
+        <Precision>0.01</Precision>
+        <States>
+          <State name="ausente" />
+          <State name="no sabe" />
+          <State name="ambos" />
+          <State name="ojo contral" />
+          <State name="ojo operado" />
+        </States>
+      </Variable>
+      <Variable name="contrala_RAND" type="finiteStates" role="chance" isInput="false">
+        <Coordinates x="1117" y="380" />
+        <AdditionalProperties>
+          <Property name="Relevance" value="4.0" />
+        </AdditionalProperties>
+        <Precision>0.01</Precision>
+        <States>
+          <State name="=&lt;0,1" />
+          <State name="0,2_0,4" />
+          <State name="&gt;=0,5" />
+        </States>
+      </Variable>
+      <Variable name="agudepre_RAND" type="finiteStates" role="chance" isInput="false">
+        <Coordinates x="920" y="356" />
+        <AdditionalProperties>
+          <Property name="Relevance" value="4.0" />
+        </AdditionalProperties>
+        <Precision>0.01</Precision>
+        <States>
+          <State name="=&lt;0,1" />
+          <State name="0,2_0,4" />
+          <State name="&gt;=0,5" />
+        </States>
+      </Variable>
+      <Variable name="agudepos_RAND" type="finiteStates" role="chance" isInput="false">
+        <Coordinates x="681" y="284" />
+        <AdditionalProperties>
+          <Property name="Relevance" value="4.0" />
+        </AdditionalProperties>
+        <Precision>0.01</Precision>
+        <States>
+          <State name="=&lt;0,1" />
+          <State name="0,2_0,4" />
+          <State name="&gt;=0,5" />
+        </States>
+      </Variable>
+      <Variable name="patolo_RAND" type="finiteStates" role="chance" isInput="false">
+        <Coordinates x="1122" y="84" />
+        <AdditionalProperties>
+          <Property name="Relevance" value="4.0" />
+        </AdditionalProperties>
+        <Precision>0.01</Precision>
+        <States>
+          <State name="catarata simple" />
+          <State name="asoc retinop diab" />
+          <State name="asoc otra patol" />
+          <State name="imposible" />
+          <State name="asoc distrof corn" />
+        </States>
+      </Variable>
+      <Variable name="laterali_RAND" type="finiteStates" role="chance" isInput="false">
+        <Coordinates x="1133" y="493" />
+        <Precision>0.01</Precision>
+        <States>
+          <State name="unilateral" />
+          <State name="bilateral" />
+        </States>
+      </Variable>
+      <Variable name="comtec_baja_RAND" type="finiteStates" role="chance" isInput="false">
+        <Coordinates x="72" y="260" />
+        <AdditionalProperties>
+          <Property name="Relevance" value="4.0" />
+        </AdditionalProperties>
+        <Precision>0.01</Precision>
+        <States>
+          <State name="0-1 leves" />
+          <State name="&gt;2 leves" />
+        </States>
+      </Variable>
+      <Variable name="comtec_med_RAND" type="finiteStates" role="chance" isInput="false">
+        <Coordinates x="81" y="386" />
+        <AdditionalProperties>
+          <Property name="Relevance" value="4.0" />
+        </AdditionalProperties>
+        <Precision>0.01</Precision>
+        <States>
+          <State name="ninguna mod" />
+          <State name="1 mod" />
+          <State name="&gt;2 mod" />
+        </States>
+      </Variable>
+      <Variable name="comtec_alta_RAND" type="finiteStates" role="chance" isInput="false">
+        <Coordinates x="81" y="513" />
+        <AdditionalProperties>
+          <Property name="Relevance" value="4.0" />
+        </AdditionalProperties>
+        <Precision>0.01</Precision>
+        <States>
+          <State name="nula/baja/mod" />
+          <State name="alta" />
+        </States>
+      </Variable>
+      <Variable name="funcion_RAND" type="finiteStates" role="chance" isInput="false">
+        <Coordinates x="1091" y="737" />
+        <AdditionalProperties>
+          <Property name="Relevance" value="4.0" />
+        </AdditionalProperties>
+        <Precision>0.01</Precision>
+        <States>
+          <State name="sin-limit" />
+          <State name="deslu" />
+          <State name="limit-ocio" />
+          <State name="limit-diaria" />
+        </States>
+      </Variable>
+      <Variable name="funcion_post" type="finiteStates" role="chance" isInput="false">
+        <Coordinates x="1009" y="787" />
+        <AdditionalProperties>
+          <Property name="Relevance" value="9.0" />
+        </AdditionalProperties>
+        <Precision>0.01</Precision>
+        <States>
+          <State name="sin-limit" />
+          <State name="deslu" />
+          <State name="limit-ocio" />
+          <State name="limit-diaria" />
+        </States>
+      </Variable>
+      <Variable name="ganancia_av" type="finiteStates" role="chance" isInput="false">
+        <Coordinates x="302" y="782" />
+        <AdditionalProperties>
+          <Property name="Relevance" value="10.0" />
+        </AdditionalProperties>
+        <Precision>0.01</Precision>
+        <States>
+          <State name="g-3" />
+          <State name="g-2" />
+          <State name="g-1" />
+          <State name="g0" />
+          <State name="g1" />
+          <State name="g2" />
+          <State name="g3" />
+        </States>
+      </Variable>
+      <Variable name="ganancia_deslu" type="finiteStates" role="chance" isInput="false">
+        <Comment><![CDATA[Indica si la intervencion ha eliminado o añadido deslu.]]></Comment>
+        <Coordinates x="473" y="771" />
+        <AdditionalProperties>
+          <Property name="Relevance" value="10.0" />
+        </AdditionalProperties>
+        <Precision>0.01</Precision>
+        <States>
+          <State name="añadido" />
+          <State name="igual" />
+          <State name="eliminado" />
+        </States>
+      </Variable>
+      <Variable name="fv_deslu_pre" type="finiteStates" role="chance" isInput="false">
+        <Coordinates x="871" y="613" />
+        <AdditionalProperties>
+          <Property name="Relevance" value="7.0" />
+        </AdditionalProperties>
+        <Precision>0.01</Precision>
+        <States>
+          <State name="sin-limit" />
+          <State name="limit-ocio" />
+          <State name="limit-diaria" />
+        </States>
+      </Variable>
+      <Variable name="ncelu_RAND" type="finiteStates" role="chance" isInput="false">
+        <Coordinates x="919" y="134" />
+        <Precision>0.01</Precision>
+        <States>
+          <State name="adecuado" />
+          <State name="escaso" />
+        </States>
+      </Variable>
+      <Variable name="v_ganancia_deslu" type="finiteStates" role="chance" isInput="false">
+        <Coordinates x="637" y="812" />
+        <AdditionalProperties>
+          <Property name="Relevance" value="3.0" />
+        </AdditionalProperties>
+        <Precision>0.01</Precision>
+        <States>
+          <State name="sin-lim-añadido" />
+          <State name="lim-ocio-añadido" />
+          <State name="lim-diaria-añadido" />
+          <State name="igual" />
+          <State name="sin-lim-eliminado" />
+          <State name="lim-ocio-eliminado" />
+          <State name="lim-diaria-eliminado" />
+        </States>
+      </Variable>
+    </Variables>
+    <Links>
+      <Link directed="true">
+        <Variable name="av_sin_catar" />
+        <Variable name="agudepos_RAND" />
+      </Link>
+      <Link directed="true">
+        <Variable name="av_sin_catar" />
+        <Variable name="av_post" />
+      </Link>
+      <Link directed="true">
+        <Variable name="av_sin_catar" />
+        <Variable name="av_pre" />
+      </Link>
+      <Link directed="true">
+        <Variable name="camara_estrecha" />
+        <Variable name="alter_incision" />
+      </Link>
+      <Link directed="true">
+        <Variable name="camara_estrecha" />
+        <Variable name="comtec_baja_RAND" />
+      </Link>
+      <Link directed="true">
+        <Variable name="camara_estrecha" />
+        <Variable name="despr_coroideo" />
+      </Link>
+      <Link directed="true">
+        <Variable name="camara_estrecha" />
+        <Variable name="edema_corneal" />
+      </Link>
+      <Link directed="true">
+        <Variable name="camara_estrecha" />
+        <Variable name="ruptura_caps_post" />
+      </Link>
+      <Link directed="true">
+        <Variable name="ojo_hundido" />
+        <Variable name="alter_incision" />
+      </Link>
+      <Link directed="true">
+        <Variable name="ojo_hundido" />
+        <Variable name="comtec_baja_RAND" />
+      </Link>
+      <Link directed="true">
+        <Variable name="ojo_hundido" />
+        <Variable name="edema_corneal" />
+      </Link>
+      <Link directed="true">
+        <Variable name="ojo_hundido" />
+        <Variable name="ruptura_caps_post" />
+      </Link>
+      <Link directed="true">
+        <Variable name="miopia_magna" />
+        <Variable name="alter_incision" />
+      </Link>
+      <Link directed="true">
+        <Variable name="miopia_magna" />
+        <Variable name="comtec_baja_RAND" />
+      </Link>
+      <Link directed="true">
+        <Variable name="miopia_magna" />
+        <Variable name="deslu_pre_no_catar" />
+      </Link>
+      <Link directed="true">
+        <Variable name="miopia_magna" />
+        <Variable name="despr_coroideo" />
+      </Link>
+      <Link directed="true">
+        <Variable name="miopia_magna" />
+        <Variable name="despr_retina" />
+      </Link>
+      <Link directed="true">
+        <Variable name="miopia_magna" />
+        <Variable name="maculopatias" />
+      </Link>
+      <Link directed="true">
+        <Variable name="miopia_magna" />
+        <Variable name="mecha_vitrea" />
+      </Link>
+      <Link directed="true">
+        <Variable name="pupila_estrecha" />
+        <Variable name="alter_incision" />
+      </Link>
+      <Link directed="true">
+        <Variable name="pupila_estrecha" />
+        <Variable name="comtec_baja_RAND" />
+      </Link>
+      <Link directed="true">
+        <Variable name="pupila_estrecha" />
+        <Variable name="mecha_vitrea" />
+      </Link>
+      <Link directed="true">
+        <Variable name="pupila_estrecha" />
+        <Variable name="ruptura_caps_post" />
+      </Link>
+      <Link directed="true">
+        <Variable name="pseudoexfoliacion" />
+        <Variable name="alter_incision" />
+      </Link>
+      <Link directed="true">
+        <Variable name="pseudoexfoliacion" />
+        <Variable name="comtec_med_RAND" />
+      </Link>
+      <Link directed="true">
+        <Variable name="pseudoexfoliacion" />
+        <Variable name="edema_mac_cist" />
+      </Link>
+      <Link directed="true">
+        <Variable name="pseudoexfoliacion" />
+        <Variable name="mecha_vitrea" />
+      </Link>
+      <Link directed="true">
+        <Variable name="pseudoexfoliacion" />
+        <Variable name="pupila_estrecha" />
+      </Link>
+      <Link directed="true">
+        <Variable name="pseudoexfoliacion" />
+        <Variable name="ruptura_caps_post" />
+      </Link>
+      <Link directed="true">
+        <Variable name="tipo_catarata" />
+        <Variable name="alter_incision" />
+      </Link>
+      <Link directed="true">
+        <Variable name="tipo_catarata" />
+        <Variable name="av_pre" />
+      </Link>
+      <Link directed="true">
+        <Variable name="tipo_catarata" />
+        <Variable name="comtec_alta_RAND" />
+      </Link>
+      <Link directed="true">
+        <Variable name="tipo_catarata" />
+        <Variable name="comtec_med_RAND" />
+      </Link>
+      <Link directed="true">
+        <Variable name="tipo_catarata" />
+        <Variable name="deslu_catar" />
+      </Link>
+      <Link directed="true">
+        <Variable name="tipo_catarata" />
+        <Variable name="edema_corneal" />
+      </Link>
+      <Link directed="true">
+        <Variable name="tipo_catarata" />
+        <Variable name="fvnd_pre_catar" />
+      </Link>
+      <Link directed="true">
+        <Variable name="tipo_catarata" />
+        <Variable name="ruptura_caps_post" />
+      </Link>
+      <Link directed="true">
+        <Variable name="ojo_vitrectomizado" />
+        <Variable name="comtec_med_RAND" />
+      </Link>
+      <Link directed="true">
+        <Variable name="ojo_vitrectomizado" />
+        <Variable name="pupila_estrecha" />
+      </Link>
+      <Link directed="true">
+        <Variable name="ojo_vitrectomizado" />
+        <Variable name="ruptura_caps_post" />
+      </Link>
+      <Link directed="true">
+        <Variable name="mala_colaboracion" />
+        <Variable name="alter_incision" />
+      </Link>
+      <Link directed="true">
+        <Variable name="mala_colaboracion" />
+        <Variable name="comtec_med_RAND" />
+      </Link>
+      <Link directed="true">
+        <Variable name="mala_colaboracion" />
+        <Variable name="despr_coroideo" />
+      </Link>
+      <Link directed="true">
+        <Variable name="mala_colaboracion" />
+        <Variable name="ruptura_caps_post" />
+      </Link>
+      <Link directed="true">
+        <Variable name="retinopatia_diabetic" />
+        <Variable name="av_sin_catar" />
+      </Link>
+      <Link directed="true">
+        <Variable name="retinopatia_diabetic" />
+        <Variable name="edema_mac_cist" />
+      </Link>
+      <Link directed="true">
+        <Variable name="retinopatia_diabetic" />
+        <Variable name="maculopatias" />
+      </Link>
+      <Link directed="true">
+        <Variable name="retinopatia_diabetic" />
+        <Variable name="otros_trast_fv" />
+      </Link>
+      <Link directed="true">
+        <Variable name="retinopatia_diabetic" />
+        <Variable name="patolo_RAND" />
+      </Link>
+      <Link directed="true">
+        <Variable name="retinopatia_diabetic" />
+        <Variable name="pupila_estrecha" />
+      </Link>
+      <Link directed="true">
+        <Variable name="retinopatia_nd" />
+        <Variable name="av_sin_catar" />
+      </Link>
+      <Link directed="true">
+        <Variable name="retinopatia_nd" />
+        <Variable name="despr_retina" />
+      </Link>
+      <Link directed="true">
+        <Variable name="retinopatia_nd" />
+        <Variable name="edema_mac_cist" />
+      </Link>
+      <Link directed="true">
+        <Variable name="retinopatia_nd" />
+        <Variable name="otros_trast_fv" />
+      </Link>
+      <Link directed="true">
+        <Variable name="retinopatia_nd" />
+        <Variable name="patolo_RAND" />
+      </Link>
+      <Link directed="true">
+        <Variable name="maculopatias" />
+        <Variable name="av_sin_catar" />
+      </Link>
+      <Link directed="true">
+        <Variable name="maculopatias" />
+        <Variable name="deslu_pre_no_catar" />
+      </Link>
+      <Link directed="true">
+        <Variable name="maculopatias" />
+        <Variable name="otros_trast_fv" />
+      </Link>
+      <Link directed="true">
+        <Variable name="maculopatias" />
+        <Variable name="patolo_RAND" />
+      </Link>
+      <Link directed="true">
+        <Variable name="neuropatias" />
+        <Variable name="av_sin_catar" />
+      </Link>
+      <Link directed="true">
+        <Variable name="neuropatias" />
+        <Variable name="patolo_RAND" />
+      </Link>
+      <Link directed="true">
+        <Variable name="ambliopia" />
+        <Variable name="av_sin_catar" />
+      </Link>
+      <Link directed="true">
+        <Variable name="ambliopia" />
+        <Variable name="patolo_RAND" />
+      </Link>
+      <Link directed="true">
+        <Variable name="opac_corneales" />
+        <Variable name="av_sin_catar" />
+      </Link>
+      <Link directed="true">
+        <Variable name="opac_corneales" />
+        <Variable name="deslu_pre_no_catar" />
+      </Link>
+      <Link directed="true">
+        <Variable name="opac_corneales" />
+        <Variable name="otros_trast_fv" />
+      </Link>
+      <Link directed="true">
+        <Variable name="opac_corneales" />
+        <Variable name="patolo_RAND" />
+      </Link>
+      <Link directed="true">
+        <Variable name="distrofia_fuchs" />
+        <Variable name="av_sin_catar" />
+      </Link>
+      <Link directed="true">
+        <Variable name="distrofia_fuchs" />
+        <Variable name="deslu_pre_no_catar" />
+      </Link>
+      <Link directed="true">
+        <Variable name="distrofia_fuchs" />
+        <Variable name="edema_corneal" />
+      </Link>
+      <Link directed="true">
+        <Variable name="distrofia_fuchs" />
+        <Variable name="ncelu_RAND" />
+      </Link>
+      <Link directed="true">
+        <Variable name="distrofia_fuchs" />
+        <Variable name="opac_corneales" />
+      </Link>
+      <Link directed="true">
+        <Variable name="distrofia_fuchs" />
+        <Variable name="otros_trast_fv" />
+      </Link>
+      <Link directed="true">
+        <Variable name="distrofia_fuchs" />
+        <Variable name="patolo_RAND" />
+      </Link>
+      <Link directed="true">
+        <Variable name="av_complic" />
+        <Variable name="av_post" />
+      </Link>
+      <Link directed="true">
+        <Variable name="alter_incision" />
+        <Variable name="despr_coroideo" />
+      </Link>
+      <Link directed="true">
+        <Variable name="alter_incision" />
+        <Variable name="edema_mac_cist" />
+      </Link>
+      <Link directed="true">
+        <Variable name="alter_incision" />
+        <Variable name="endoftalmitis" />
+      </Link>
+      <Link directed="true">
+        <Variable name="endoftalmitis" />
+        <Variable name="av_complic" />
+      </Link>
+      <Link directed="true">
+        <Variable name="endoftalmitis" />
+        <Variable name="edema_corneal" />
+      </Link>
+      <Link directed="true">
+        <Variable name="endoftalmitis" />
+        <Variable name="edema_mac_cist" />
+      </Link>
+      <Link directed="true">
+        <Variable name="edema_corneal" />
+        <Variable name="av_complic" />
+      </Link>
+      <Link directed="true">
+        <Variable name="edema_corneal" />
+        <Variable name="deslu_complic" />
+      </Link>
+      <Link directed="true">
+        <Variable name="edema_corneal" />
+        <Variable name="otros_trast_fvnd_complic" />
+      </Link>
+      <Link directed="true">
+        <Variable name="edema_mac_cist" />
+        <Variable name="av_complic" />
+      </Link>
+      <Link directed="true">
+        <Variable name="edema_mac_cist" />
+        <Variable name="deslu_complic" />
+      </Link>
+      <Link directed="true">
+        <Variable name="edema_mac_cist" />
+        <Variable name="otros_trast_fvnd_complic" />
+      </Link>
+      <Link directed="true">
+        <Variable name="mecha_vitrea" />
+        <Variable name="alter_incision" />
+      </Link>
+      <Link directed="true">
+        <Variable name="mecha_vitrea" />
+        <Variable name="despr_retina" />
+      </Link>
+      <Link directed="true">
+        <Variable name="mecha_vitrea" />
+        <Variable name="edema_mac_cist" />
+      </Link>
+      <Link directed="true">
+        <Variable name="mecha_vitrea" />
+        <Variable name="endoftalmitis" />
+      </Link>
+      <Link directed="true">
+        <Variable name="ruptura_caps_post" />
+        <Variable name="despr_coroideo" />
+      </Link>
+      <Link directed="true">
+        <Variable name="ruptura_caps_post" />
+        <Variable name="edema_mac_cist" />
+      </Link>
+      <Link directed="true">
+        <Variable name="ruptura_caps_post" />
+        <Variable name="endoftalmitis" />
+      </Link>
+      <Link directed="true">
+        <Variable name="ruptura_caps_post" />
+        <Variable name="mecha_vitrea" />
+      </Link>
+      <Link directed="true">
+        <Variable name="av_pre" />
+        <Variable name="agudepre_RAND" />
+      </Link>
+      <Link directed="true">
+        <Variable name="av_pre" />
+        <Variable name="fvnd_pre_catar" />
+      </Link>
+      <Link directed="true">
+        <Variable name="av_pre" />
+        <Variable name="ganancia_av" />
+      </Link>
+      <Link directed="true">
+        <Variable name="av_post" />
+        <Variable name="fvnd_post" />
+      </Link>
+      <Link directed="true">
+        <Variable name="av_post" />
+        <Variable name="ganancia_av" />
+      </Link>
+      <Link directed="true">
+        <Variable name="fvnd_pre_catar" />
+        <Variable name="fvnd_pre" />
+      </Link>
+      <Link directed="true">
+        <Variable name="otros_trast_fv" />
+        <Variable name="fvnd_post" />
+      </Link>
+      <Link directed="true">
+        <Variable name="otros_trast_fv" />
+        <Variable name="fvnd_pre" />
+      </Link>
+      <Link directed="true">
+        <Variable name="fvnd_pre" />
+        <Variable name="fvnd_global_pre" />
+      </Link>
+      <Link directed="true">
+        <Variable name="otros_trast_fvnd_complic" />
+        <Variable name="fvnd_post" />
+      </Link>
+      <Link directed="true">
+        <Variable name="fvnd_post" />
+        <Variable name="fvnd_global_post" />
+      </Link>
+      <Link directed="true">
+        <Variable name="av_contral" />
+        <Variable name="contrala_RAND" />
+      </Link>
+      <Link directed="true">
+        <Variable name="av_contral" />
+        <Variable name="fvnd_contral" />
+      </Link>
+      <Link directed="true">
+        <Variable name="fvnd_contral" />
+        <Variable name="fvnd_global_post" />
+      </Link>
+      <Link directed="true">
+        <Variable name="fvnd_contral" />
+        <Variable name="fvnd_global_pre" />
+      </Link>
+      <Link directed="true">
+        <Variable name="fvnd_global_pre" />
+        <Variable name="fv_global_pre" />
+      </Link>
+      <Link directed="true">
+        <Variable name="fvnd_global_post" />
+        <Variable name="fv_global_post" />
+      </Link>
+      <Link directed="true">
+        <Variable name="despr_retina" />
+        <Variable name="av_complic" />
+      </Link>
+      <Link directed="true">
+        <Variable name="despr_retina" />
+        <Variable name="otros_trast_fvnd_complic" />
+      </Link>
+      <Link directed="true">
+        <Variable name="fibrosis_c_ant" />
+        <Variable name="comtec_alta_RAND" />
+      </Link>
+      <Link directed="true">
+        <Variable name="fibrosis_c_ant" />
+        <Variable name="ruptura_caps_post" />
+      </Link>
+      <Link directed="true">
+        <Variable name="sinequias_post" />
+        <Variable name="comtec_baja_RAND" />
+      </Link>
+      <Link directed="true">
+        <Variable name="sinequias_post" />
+        <Variable name="pupila_estrecha" />
+      </Link>
+      <Link directed="true">
+        <Variable name="sublux_cristalino" />
+        <Variable name="comtec_alta_RAND" />
+      </Link>
+      <Link directed="true">
+        <Variable name="sublux_cristalino" />
+        <Variable name="mecha_vitrea" />
+      </Link>
+      <Link directed="true">
+        <Variable name="despr_coroideo" />
+        <Variable name="av_complic" />
+      </Link>
+      <Link directed="true">
+        <Variable name="despr_coroideo" />
+        <Variable name="despr_retina" />
+      </Link>
+      <Link directed="true">
+        <Variable name="despr_coroideo" />
+        <Variable name="otros_trast_fvnd_complic" />
+      </Link>
+      <Link directed="true">
+        <Variable name="deslu_complic" />
+        <Variable name="deslu_post" />
+      </Link>
+      <Link directed="true">
+        <Variable name="deslu_pre_no_catar" />
+        <Variable name="deslu_post" />
+      </Link>
+      <Link directed="true">
+        <Variable name="deslu_pre_no_catar" />
+        <Variable name="deslu_pre" />
+      </Link>
+      <Link directed="true">
+        <Variable name="deslu_contral" />
+        <Variable name="deslu_global_post" />
+      </Link>
+      <Link directed="true">
+        <Variable name="deslu_contral" />
+        <Variable name="deslu_global_pre" />
+      </Link>
+      <Link directed="true">
+        <Variable name="deslu_contral" />
+        <Variable name="fv_deslu_pre" />
+      </Link>
+      <Link directed="true">
+        <Variable name="deslu_contral" />
+        <Variable name="fv_global_post" />
+      </Link>
+      <Link directed="true">
+        <Variable name="deslu_catar" />
+        <Variable name="deslu_pre" />
+      </Link>
+      <Link directed="true">
+        <Variable name="deslu_pre" />
+        <Variable name="deslu_global_pre" />
+      </Link>
+      <Link directed="true">
+        <Variable name="deslu_pre" />
+        <Variable name="fv_deslu_pre" />
+      </Link>
+      <Link directed="true">
+        <Variable name="deslu_pre" />
+        <Variable name="ganancia_deslu" />
+      </Link>
+      <Link directed="true">
+        <Variable name="deslu_post" />
+        <Variable name="deslu_global_post" />
+      </Link>
+      <Link directed="true">
+        <Variable name="deslu_post" />
+        <Variable name="fv_global_post" />
+      </Link>
+      <Link directed="true">
+        <Variable name="deslu_post" />
+        <Variable name="ganancia_deslu" />
+      </Link>
+      <Link directed="true">
+        <Variable name="fv_global_post" />
+        <Variable name="funcion_post" />
+      </Link>
+      <Link directed="true">
+        <Variable name="fv_global_pre" />
+        <Variable name="funcion_RAND" />
+      </Link>
+      <Link directed="true">
+        <Variable name="catarata_contral" />
+        <Variable name="av_contral" />
+      </Link>
+      <Link directed="true">
+        <Variable name="catarata_contral" />
+        <Variable name="deslu_contral" />
+      </Link>
+      <Link directed="true">
+        <Variable name="catarata_contral" />
+        <Variable name="laterali_RAND" />
+      </Link>
+      <Link directed="true">
+        <Variable name="deslu_global_pre" />
+        <Variable name="funcion_RAND" />
+      </Link>
+      <Link directed="true">
+        <Variable name="deslu_global_post" />
+        <Variable name="funcion_post" />
+      </Link>
+      <Link directed="true">
+        <Variable name="comtec_baja_RAND" />
+        <Variable name="comtec_med_RAND" />
+      </Link>
+      <Link directed="true">
+        <Variable name="comtec_med_RAND" />
+        <Variable name="comtec_alta_RAND" />
+      </Link>
+      <Link directed="true">
+        <Variable name="ganancia_deslu" />
+        <Variable name="v_ganancia_deslu" />
+      </Link>
+      <Link directed="true">
+        <Variable name="fv_deslu_pre" />
+        <Variable name="fv_global_pre" />
+      </Link>
+      <Link directed="true">
+        <Variable name="fv_deslu_pre" />
+        <Variable name="v_ganancia_deslu" />
+      </Link>
+    </Links>
+    <Potentials>
+      <Potential type="ICIModel" role="conditionalProbability">
+        <Variables>
+          <Variable name="av_sin_catar" />
+          <Variable name="ambliopia" />
+          <Variable name="distrofia_fuchs" />
+          <Variable name="maculopatias" />
+          <Variable name="neuropatias" />
+          <Variable name="opac_corneales" />
+          <Variable name="retinopatia_diabetic" />
+          <Variable name="retinopatia_nd" />
+        </Variables>
+        <Model>AND / MIN</Model>
+        <Variables>
+          <Variable name="av_sin_catar" />
+          <Variable name="ambliopia" />
+          <Variable name="distrofia_fuchs" />
+          <Variable name="maculopatias" />
+          <Variable name="neuropatias" />
+          <Variable name="opac_corneales" />
+          <Variable name="retinopatia_diabetic" />
+          <Variable name="retinopatia_nd" />
+        </Variables>
+        <Subpotentials>
+          <Potential type="Table">
+            <Variables>
+              <Variable name="av_sin_catar" />
+              <Variable name="ambliopia" />
+            </Variables>
+            <Values>0.0 0.0 0.0 1.0 0.05 0.15 0.65 0.15</Values>
+          </Potential>
+          <Potential type="Table">
+            <Variables>
+              <Variable name="av_sin_catar" />
+              <Variable name="distrofia_fuchs" />
+            </Variables>
+            <Values>0.0 0.0 0.0 1.0 0.035 0.035 0.03 0.9 0.099 0.65 0.25 0.001 0.7049 0.28 0.015 1.0E-4</Values>
+          </Potential>
+          <Potential type="Table">
+            <Variables>
+              <Variable name="av_sin_catar" />
+              <Variable name="maculopatias" />
+            </Variables>
+            <Values>0.0 0.0 0.0 1.0 0.15 0.8 0.04 0.01</Values>
+          </Potential>
+          <Potential type="Table">
+            <Variables>
+              <Variable name="av_sin_catar" />
+              <Variable name="neuropatias" />
+            </Variables>
+            <Values>0.0 0.0 0.0 1.0 0.35 0.5 0.1 0.05</Values>
+          </Potential>
+          <Potential type="Table">
+            <Variables>
+              <Variable name="av_sin_catar" />
+              <Variable name="opac_corneales" />
+            </Variables>
+            <Values>0.0 0.0 0.0 1.0 0.05 0.05 0.6 0.3</Values>
+          </Potential>
+          <Potential type="Table">
+            <Variables>
+              <Variable name="av_sin_catar" />
+              <Variable name="retinopatia_diabetic" />
+            </Variables>
+            <Values>0.0 0.0 0.0 1.0 0.05 0.15 0.7 0.1 0.1 0.74 0.15 0.01</Values>
+          </Potential>
+          <Potential type="Table">
+            <Variables>
+              <Variable name="av_sin_catar" />
+              <Variable name="retinopatia_nd" />
+            </Variables>
+            <Values>0.0 0.0 0.0 1.0 0.1 0.5 0.3 0.1</Values>
+          </Potential>
+          <Potential type="Table">
+            <Variables>
+              <Variable name="av_sin_catar" />
+            </Variables>
+            <Values>1.0E-4 0.0099 0.02 0.97</Values>
+          </Potential>
+        </Subpotentials>
+      </Potential>
+      <Potential type="Table" role="conditionalProbability">
+        <Variables>
+          <Variable name="camara_estrecha" />
+        </Variables>
+        <Values>0.98 0.02</Values>
+      </Potential>
+      <Potential type="Table" role="conditionalProbability">
+        <Variables>
+          <Variable name="ojo_hundido" />
+        </Variables>
+        <Values>0.98 0.02</Values>
+      </Potential>
+      <Potential type="Table" role="conditionalProbability">
+        <Variables>
+          <Variable name="miopia_magna" />
+        </Variables>
+        <Values>0.95 0.05</Values>
+      </Potential>
+      <Potential type="ICIModel" role="conditionalProbability">
+        <Variables>
+          <Variable name="pupila_estrecha" />
+          <Variable name="ojo_vitrectomizado" />
+          <Variable name="pseudoexfoliacion" />
+          <Variable name="retinopatia_diabetic" />
+          <Variable name="sinequias_post" />
+        </Variables>
+        <Model>OR / MAX</Model>
+        <Variables>
+          <Variable name="pupila_estrecha" />
+          <Variable name="ojo_vitrectomizado" />
+          <Variable name="pseudoexfoliacion" />
+          <Variable name="retinopatia_diabetic" />
+          <Variable name="sinequias_post" />
+        </Variables>
+        <Subpotentials>
+          <Potential type="Table">
+            <Variables>
+              <Variable name="pupila_estrecha" />
+              <Variable name="ojo_vitrectomizado" />
+            </Variables>
+            <Values>1.0 0.0 0.6 0.4</Values>
+          </Potential>
+          <Potential type="Table">
+            <Variables>
+              <Variable name="pupila_estrecha" />
+              <Variable name="pseudoexfoliacion" />
+            </Variables>
+            <Values>1.0 0.0 0.6 0.4</Values>
+          </Potential>
+          <Potential type="Table">
+            <Variables>
+              <Variable name="pupila_estrecha" />
+              <Variable name="retinopatia_diabetic" />
+            </Variables>
+            <Values>1.0 0.0 0.4 0.6 0.35 0.65</Values>
+          </Potential>
+          <Potential type="Table">
+            <Variables>
+              <Variable name="pupila_estrecha" />
+              <Variable name="sinequias_post" />
+            </Variables>
+            <Values>1.0 0.0 0.2 0.8</Values>
+          </Potential>
+          <Potential type="Table">
+            <Variables>
+              <Variable name="pupila_estrecha" />
+            </Variables>
+            <Values>0.985 0.015</Values>
+          </Potential>
+        </Subpotentials>
+      </Potential>
+      <Potential type="Table" role="conditionalProbability">
+        <Variables>
+          <Variable name="pseudoexfoliacion" />
+        </Variables>
+        <Values>0.9 0.1</Values>
+      </Potential>
+      <Potential type="Table" role="conditionalProbability">
+        <Variables>
+          <Variable name="tipo_catarata" />
+        </Variables>
+        <Values>0.12 0.8 0.03 0.03 0.02</Values>
+      </Potential>
+      <Potential type="Table" role="conditionalProbability">
+        <Variables>
+          <Variable name="ojo_vitrectomizado" />
+        </Variables>
+        <Values>0.97 0.03</Values>
+      </Potential>
+      <Potential type="Table" role="conditionalProbability">
+        <Variables>
+          <Variable name="mala_colaboracion" />
+        </Variables>
+        <Values>0.97 0.03</Values>
+      </Potential>
+      <Potential type="Table" role="conditionalProbability">
+        <Variables>
+          <Variable name="retinopatia_diabetic" />
+        </Variables>
+        <Values>0.9705 0.028 0.0015</Values>
+      </Potential>
+      <Potential type="Table" role="conditionalProbability">
+        <Variables>
+          <Variable name="retinopatia_nd" />
+        </Variables>
+        <Values>0.957 0.043</Values>
+      </Potential>
+      <Potential type="ICIModel" role="conditionalProbability">
+        <Variables>
+          <Variable name="maculopatias" />
+          <Variable name="miopia_magna" />
+          <Variable name="retinopatia_diabetic" />
+        </Variables>
+        <Model>OR / MAX</Model>
+        <Variables>
+          <Variable name="maculopatias" />
+          <Variable name="miopia_magna" />
+          <Variable name="retinopatia_diabetic" />
+        </Variables>
+        <Subpotentials>
+          <Potential type="Table">
+            <Variables>
+              <Variable name="maculopatias" />
+              <Variable name="miopia_magna" />
+            </Variables>
+            <Values>1.0 0.0 0.95 0.05</Values>
+          </Potential>
+          <Potential type="Table">
+            <Variables>
+              <Variable name="maculopatias" />
+              <Variable name="retinopatia_diabetic" />
+            </Variables>
+            <Values>1.0 0.0 0.7 0.3 0.3 0.7</Values>
+          </Potential>
+          <Potential type="Table">
+            <Variables>
+              <Variable name="maculopatias" />
+            </Variables>
+            <Values>0.96 0.04</Values>
+          </Potential>
+        </Subpotentials>
+      </Potential>
+      <Potential type="Table" role="conditionalProbability">
+        <Variables>
+          <Variable name="neuropatias" />
+        </Variables>
+        <Values>0.97 0.03</Values>
+      </Potential>
+      <Potential type="Table" role="conditionalProbability">
+        <Variables>
+          <Variable name="ambliopia" />
+        </Variables>
+        <Values>0.971 0.029</Values>
+      </Potential>
+      <Potential type="ICIModel" role="conditionalProbability">
+        <Variables>
+          <Variable name="opac_corneales" />
+          <Variable name="distrofia_fuchs" />
+        </Variables>
+        <Model>OR / MAX</Model>
+        <Variables>
+          <Variable name="opac_corneales" />
+          <Variable name="distrofia_fuchs" />
+        </Variables>
+        <Subpotentials>
+          <Potential type="Table">
+            <Variables>
+              <Variable name="opac_corneales" />
+              <Variable name="distrofia_fuchs" />
+            </Variables>
+            <Values>1.0 0.0 0.9 0.1 0.4 0.6 0.01 0.99</Values>
+          </Potential>
+          <Potential type="Table">
+            <Variables>
+              <Variable name="opac_corneales" />
+            </Variables>
+            <Values>0.97 0.03</Values>
+          </Potential>
+        </Subpotentials>
+      </Potential>
+      <Potential type="Table" role="conditionalProbability">
+        <Variables>
+          <Variable name="distrofia_fuchs" />
+        </Variables>
+        <Values>0.9983 0.001 4.0E-4 3.0E-4</Values>
+      </Potential>
+      <Potential type="ICIModel" role="conditionalProbability">
+        <Variables>
+          <Variable name="av_complic" />
+          <Variable name="despr_coroideo" />
+          <Variable name="despr_retina" />
+          <Variable name="edema_corneal" />
+          <Variable name="edema_mac_cist" />
+          <Variable name="endoftalmitis" />
+        </Variables>
+        <Model>AND / MIN</Model>
+        <Variables>
+          <Variable name="av_complic" />
+          <Variable name="despr_coroideo" />
+          <Variable name="despr_retina" />
+          <Variable name="edema_corneal" />
+          <Variable name="edema_mac_cist" />
+          <Variable name="endoftalmitis" />
+        </Variables>
+        <Subpotentials>
+          <Potential type="Table">
+            <Variables>
+              <Variable name="av_complic" />
+              <Variable name="despr_coroideo" />
+            </Variables>
+            <Values>0.0 0.0 0.0 1.0 0.1 0.3 0.4 0.2</Values>
+          </Potential>
+          <Potential type="Table">
+            <Variables>
+              <Variable name="av_complic" />
+              <Variable name="despr_retina" />
+            </Variables>
+            <Values>0.0 0.0 0.0 1.0 0.19 0.65 0.15 0.01</Values>
+          </Potential>
+          <Potential type="Table">
+            <Variables>
+              <Variable name="av_complic" />
+              <Variable name="edema_corneal" />
+            </Variables>
+            <Values>0.0 0.0 0.0 1.0 0.2 0.4 0.35 0.05</Values>
+          </Potential>
+          <Potential type="Table">
+            <Variables>
+              <Variable name="av_complic" />
+              <Variable name="edema_mac_cist" />
+            </Variables>
+            <Values>0.0 0.0 0.0 1.0 0.25 0.7 0.05 0.0</Values>
+          </Potential>
+          <Potential type="Table">
+            <Variables>
+              <Variable name="av_complic" />
+              <Variable name="endoftalmitis" />
+            </Variables>
+            <Values>0.0 0.0 0.0 1.0 0.99 0.01 0.0 0.0</Values>
+          </Potential>
+          <Potential type="Table">
+            <Variables>
+              <Variable name="av_complic" />
+            </Variables>
+            <Values>0.0 0.0 1.0E-5 0.99999</Values>
+          </Potential>
+        </Subpotentials>
+      </Potential>
+      <Potential type="ICIModel" role="conditionalProbability">
+        <Variables>
+          <Variable name="alter_incision" />
+          <Variable name="camara_estrecha" />
+          <Variable name="mala_colaboracion" />
+          <Variable name="mecha_vitrea" />
+          <Variable name="miopia_magna" />
+          <Variable name="ojo_hundido" />
+          <Variable name="pseudoexfoliacion" />
+          <Variable name="pupila_estrecha" />
+          <Variable name="tipo_catarata" />
+        </Variables>
+        <Model>OR / MAX</Model>
+        <Variables>
+          <Variable name="alter_incision" />
+          <Variable name="camara_estrecha" />
+          <Variable name="mala_colaboracion" />
+          <Variable name="mecha_vitrea" />
+          <Variable name="miopia_magna" />
+          <Variable name="ojo_hundido" />
+          <Variable name="pseudoexfoliacion" />
+          <Variable name="pupila_estrecha" />
+          <Variable name="tipo_catarata" />
+        </Variables>
+        <Subpotentials>
+          <Potential type="Table">
+            <Variables>
+              <Variable name="alter_incision" />
+              <Variable name="camara_estrecha" />
+            </Variables>
+            <Values>1.0 0.0 0.95 0.05</Values>
+          </Potential>
+          <Potential type="Table">
+            <Variables>
+              <Variable name="alter_incision" />
+              <Variable name="mala_colaboracion" />
+            </Variables>
+            <Values>1.0 0.0 0.92 0.08</Values>
+          </Potential>
+          <Potential type="Table">
+            <Variables>
+              <Variable name="alter_incision" />
+              <Variable name="mecha_vitrea" />
+            </Variables>
+            <Values>1.0 0.0 0.91 0.09</Values>
+          </Potential>
+          <Potential type="Table">
+            <Variables>
+              <Variable name="alter_incision" />
+              <Variable name="miopia_magna" />
+            </Variables>
+            <Values>1.0 0.0 0.95 0.05</Values>
+          </Potential>
+          <Potential type="Table">
+            <Variables>
+              <Variable name="alter_incision" />
+              <Variable name="ojo_hundido" />
+            </Variables>
+            <Values>1.0 0.0 0.9 0.1</Values>
+          </Potential>
+          <Potential type="Table">
+            <Variables>
+              <Variable name="alter_incision" />
+              <Variable name="pseudoexfoliacion" />
+            </Variables>
+            <Values>1.0 0.0 0.96 0.04</Values>
+          </Potential>
+          <Potential type="Table">
+            <Variables>
+              <Variable name="alter_incision" />
+              <Variable name="pupila_estrecha" />
+            </Variables>
+            <Values>1.0 0.0 0.9 0.1</Values>
+          </Potential>
+          <Potential type="Table">
+            <Variables>
+              <Variable name="alter_incision" />
+              <Variable name="tipo_catarata" />
+            </Variables>
+            <Values>1.0 0.0 0.99 0.01 0.89 0.11 0.88 0.12 1.0 0.0</Values>
+          </Potential>
+          <Potential type="Table">
+            <Variables>
+              <Variable name="alter_incision" />
+            </Variables>
+            <Values>1.0 0.0</Values>
+          </Potential>
+        </Subpotentials>
+      </Potential>
+      <Potential type="ICIModel" role="conditionalProbability">
+        <Variables>
+          <Variable name="endoftalmitis" />
+          <Variable name="alter_incision" />
+          <Variable name="mecha_vitrea" />
+          <Variable name="ruptura_caps_post" />
+        </Variables>
+        <Model>OR / MAX</Model>
+        <Variables>
+          <Variable name="endoftalmitis" />
+          <Variable name="alter_incision" />
+          <Variable name="mecha_vitrea" />
+          <Variable name="ruptura_caps_post" />
+        </Variables>
+        <Subpotentials>
+          <Potential type="Table">
+            <Variables>
+              <Variable name="endoftalmitis" />
+              <Variable name="alter_incision" />
+            </Variables>
+            <Values>1.0 0.0 0.99 0.01</Values>
+          </Potential>
+          <Potential type="Table">
+            <Variables>
+              <Variable name="endoftalmitis" />
+              <Variable name="mecha_vitrea" />
+            </Variables>
+            <Values>1.0 0.0 0.999 0.001</Values>
+          </Potential>
+          <Potential type="Table">
+            <Variables>
+              <Variable name="endoftalmitis" />
+              <Variable name="ruptura_caps_post" />
+            </Variables>
+            <Values>1.0 0.0 0.999 0.001</Values>
+          </Potential>
+          <Potential type="Table">
+            <Variables>
+              <Variable name="endoftalmitis" />
+            </Variables>
+            <Values>0.99999 1.0E-5</Values>
+          </Potential>
+        </Subpotentials>
+      </Potential>
+      <Potential type="ICIModel" role="conditionalProbability">
+        <Variables>
+          <Variable name="edema_corneal" />
+          <Variable name="camara_estrecha" />
+          <Variable name="distrofia_fuchs" />
+          <Variable name="endoftalmitis" />
+          <Variable name="ojo_hundido" />
+          <Variable name="tipo_catarata" />
+        </Variables>
+        <Model>OR / MAX</Model>
+        <Variables>
+          <Variable name="edema_corneal" />
+          <Variable name="camara_estrecha" />
+          <Variable name="distrofia_fuchs" />
+          <Variable name="endoftalmitis" />
+          <Variable name="ojo_hundido" />
+          <Variable name="tipo_catarata" />
+        </Variables>
+        <Subpotentials>
+          <Potential type="Table">
+            <Variables>
+              <Variable name="edema_corneal" />
+              <Variable name="camara_estrecha" />
+            </Variables>
+            <Values>1.0 0.0 0.999 0.001</Values>
+          </Potential>
+          <Potential type="Table">
+            <Variables>
+              <Variable name="edema_corneal" />
+              <Variable name="distrofia_fuchs" />
+            </Variables>
+            <Values>1.0 0.0 0.99 0.01 0.4 0.6 0.01 0.99</Values>
+          </Potential>
+          <Potential type="Table">
+            <Variables>
+              <Variable name="edema_corneal" />
+              <Variable name="endoftalmitis" />
+            </Variables>
+            <Values>1.0 0.0 0.2 0.8</Values>
+          </Potential>
+          <Potential type="Table">
+            <Variables>
+              <Variable name="edema_corneal" />
+              <Variable name="ojo_hundido" />
+            </Variables>
+            <Values>1.0 0.0 0.95 0.05</Values>
+          </Potential>
+          <Potential type="Table">
+            <Variables>
+              <Variable name="edema_corneal" />
+              <Variable name="tipo_catarata" />
+            </Variables>
+            <Values>1.0 0.0 0.9999 1.0E-4 0.96 0.04 0.96 0.04 0.9999 1.0E-4</Values>
+          </Potential>
+          <Potential type="Table">
+            <Variables>
+              <Variable name="edema_corneal" />
+            </Variables>
+            <Values>0.99999 1.0E-5</Values>
+          </Potential>
+        </Subpotentials>
+      </Potential>
+      <Potential type="ICIModel" role="conditionalProbability">
+        <Variables>
+          <Variable name="edema_mac_cist" />
+          <Variable name="alter_incision" />
+          <Variable name="endoftalmitis" />
+          <Variable name="mecha_vitrea" />
+          <Variable name="pseudoexfoliacion" />
+          <Variable name="retinopatia_diabetic" />
+          <Variable name="retinopatia_nd" />
+          <Variable name="ruptura_caps_post" />
+        </Variables>
+        <Model>OR / MAX</Model>
+        <Variables>
+          <Variable name="edema_mac_cist" />
+          <Variable name="alter_incision" />
+          <Variable name="endoftalmitis" />
+          <Variable name="mecha_vitrea" />
+          <Variable name="pseudoexfoliacion" />
+          <Variable name="retinopatia_diabetic" />
+          <Variable name="retinopatia_nd" />
+          <Variable name="ruptura_caps_post" />
+        </Variables>
+        <Subpotentials>
+          <Potential type="Table">
+            <Variables>
+              <Variable name="edema_mac_cist" />
+              <Variable name="alter_incision" />
+            </Variables>
+            <Values>1.0 0.0 0.96 0.04</Values>
+          </Potential>
+          <Potential type="Table">
+            <Variables>
+              <Variable name="edema_mac_cist" />
+              <Variable name="endoftalmitis" />
+            </Variables>
+            <Values>1.0 0.0 0.05 0.95</Values>
+          </Potential>
+          <Potential type="Table">
+            <Variables>
+              <Variable name="edema_mac_cist" />
+              <Variable name="mecha_vitrea" />
+            </Variables>
+            <Values>1.0 0.0 0.95 0.05</Values>
+          </Potential>
+          <Potential type="Table">
+            <Variables>
+              <Variable name="edema_mac_cist" />
+              <Variable name="pseudoexfoliacion" />
+            </Variables>
+            <Values>1.0 0.0 0.96 0.04</Values>
+          </Potential>
+          <Potential type="Table">
+            <Variables>
+              <Variable name="edema_mac_cist" />
+              <Variable name="retinopatia_diabetic" />
+            </Variables>
+            <Values>1.0 0.0 0.9 0.1 0.65 0.35</Values>
+          </Potential>
+          <Potential type="Table">
+            <Variables>
+              <Variable name="edema_mac_cist" />
+              <Variable name="retinopatia_nd" />
+            </Variables>
+            <Values>1.0 0.0 0.99 0.01</Values>
+          </Potential>
+          <Potential type="Table">
+            <Variables>
+              <Variable name="edema_mac_cist" />
+              <Variable name="ruptura_caps_post" />
+            </Variables>
+            <Values>1.0 0.0 0.98 0.02</Values>
+          </Potential>
+          <Potential type="Table">
+            <Variables>
+              <Variable name="edema_mac_cist" />
+            </Variables>
+            <Values>0.9999 1.0E-4</Values>
+          </Potential>
+        </Subpotentials>
+      </Potential>
+      <Potential type="ICIModel" role="conditionalProbability">
+        <Variables>
+          <Variable name="mecha_vitrea" />
+          <Variable name="miopia_magna" />
+          <Variable name="pseudoexfoliacion" />
+          <Variable name="pupila_estrecha" />
+          <Variable name="ruptura_caps_post" />
+          <Variable name="sublux_cristalino" />
+        </Variables>
+        <Model>OR / MAX</Model>
+        <Variables>
+          <Variable name="mecha_vitrea" />
+          <Variable name="miopia_magna" />
+          <Variable name="pseudoexfoliacion" />
+          <Variable name="pupila_estrecha" />
+          <Variable name="ruptura_caps_post" />
+          <Variable name="sublux_cristalino" />
+        </Variables>
+        <Subpotentials>
+          <Potential type="Table">
+            <Variables>
+              <Variable name="mecha_vitrea" />
+              <Variable name="miopia_magna" />
+            </Variables>
+            <Values>1.0 0.0 0.95 0.05</Values>
+          </Potential>
+          <Potential type="Table">
+            <Variables>
+              <Variable name="mecha_vitrea" />
+              <Variable name="pseudoexfoliacion" />
+            </Variables>
+            <Values>1.0 0.0 0.97 0.03</Values>
+          </Potential>
+          <Potential type="Table">
+            <Variables>
+              <Variable name="mecha_vitrea" />
+              <Variable name="pupila_estrecha" />
+            </Variables>
+            <Values>1.0 0.0 0.98 0.02</Values>
+          </Potential>
+          <Potential type="Table">
+            <Variables>
+              <Variable name="mecha_vitrea" />
+              <Variable name="ruptura_caps_post" />
+            </Variables>
+            <Values>1.0 0.0 0.35 0.65</Values>
+          </Potential>
+          <Potential type="Table">
+            <Variables>
+              <Variable name="mecha_vitrea" />
+              <Variable name="sublux_cristalino" />
+            </Variables>
+            <Values>1.0 0.0 0.55 0.45</Values>
+          </Potential>
+          <Potential type="Table">
+            <Variables>
+              <Variable name="mecha_vitrea" />
+            </Variables>
+            <Values>0.998 0.002</Values>
+          </Potential>
+        </Subpotentials>
+      </Potential>
+      <Potential type="ICIModel" role="conditionalProbability">
+        <Variables>
+          <Variable name="ruptura_caps_post" />
+          <Variable name="fibrosis_c_ant" />
+          <Variable name="camara_estrecha" />
+          <Variable name="mala_colaboracion" />
+          <Variable name="ojo_hundido" />
+          <Variable name="ojo_vitrectomizado" />
+          <Variable name="pseudoexfoliacion" />
+          <Variable name="pupila_estrecha" />
+          <Variable name="tipo_catarata" />
+        </Variables>
+        <Model>OR / MAX</Model>
+        <Variables>
+          <Variable name="ruptura_caps_post" />
+          <Variable name="fibrosis_c_ant" />
+          <Variable name="camara_estrecha" />
+          <Variable name="mala_colaboracion" />
+          <Variable name="ojo_hundido" />
+          <Variable name="ojo_vitrectomizado" />
+          <Variable name="pseudoexfoliacion" />
+          <Variable name="pupila_estrecha" />
+          <Variable name="tipo_catarata" />
+        </Variables>
+        <Subpotentials>
+          <Potential type="Table">
+            <Variables>
+              <Variable name="ruptura_caps_post" />
+              <Variable name="fibrosis_c_ant" />
+            </Variables>
+            <Values>1.0 0.0 0.8 0.2</Values>
+          </Potential>
+          <Potential type="Table">
+            <Variables>
+              <Variable name="ruptura_caps_post" />
+              <Variable name="camara_estrecha" />
+            </Variables>
+            <Values>1.0 0.0 0.98 0.02</Values>
+          </Potential>
+          <Potential type="Table">
+            <Variables>
+              <Variable name="ruptura_caps_post" />
+              <Variable name="mala_colaboracion" />
+            </Variables>
+            <Values>1.0 0.0 0.8 0.2</Values>
+          </Potential>
+          <Potential type="Table">
+            <Variables>
+              <Variable name="ruptura_caps_post" />
+              <Variable name="ojo_hundido" />
+            </Variables>
+            <Values>1.0 0.0 0.9 0.1</Values>
+          </Potential>
+          <Potential type="Table">
+            <Variables>
+              <Variable name="ruptura_caps_post" />
+              <Variable name="ojo_vitrectomizado" />
+            </Variables>
+            <Values>1.0 0.0 0.91 0.09</Values>
+          </Potential>
+          <Potential type="Table">
+            <Variables>
+              <Variable name="ruptura_caps_post" />
+              <Variable name="pseudoexfoliacion" />
+            </Variables>
+            <Values>1.0 0.0 0.9 0.1</Values>
+          </Potential>
+          <Potential type="Table">
+            <Variables>
+              <Variable name="ruptura_caps_post" />
+              <Variable name="pupila_estrecha" />
+            </Variables>
+            <Values>1.0 0.0 0.8 0.2</Values>
+          </Potential>
+          <Potential type="Table">
+            <Variables>
+              <Variable name="ruptura_caps_post" />
+              <Variable name="tipo_catarata" />
+            </Variables>
+            <Values>1.0 0.0 0.96 0.04 0.85 0.15 0.8 0.2 0.5 0.5</Values>
+          </Potential>
+          <Potential type="Table">
+            <Variables>
+              <Variable name="ruptura_caps_post" />
+            </Variables>
+            <Values>0.991 0.009</Values>
+          </Potential>
+        </Subpotentials>
+      </Potential>
+      <Potential type="ICIModel" role="conditionalProbability">
+        <Variables>
+          <Variable name="av_pre" />
+          <Variable name="av_sin_catar" />
+          <Variable name="tipo_catarata" />
+        </Variables>
+        <Model>AND / MIN</Model>
+        <Variables>
+          <Variable name="av_pre" />
+          <Variable name="av_sin_catar" />
+          <Variable name="tipo_catarata" />
+        </Variables>
+        <Subpotentials>
+          <Potential type="Table">
+            <Variables>
+              <Variable name="av_pre" />
+              <Variable name="av_sin_catar" />
+            </Variables>
+            <Values>1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0</Values>
+          </Potential>
+          <Potential type="Table">
+            <Variables>
+              <Variable name="av_pre" />
+              <Variable name="tipo_catarata" />
+            </Variables>
+            <Values>0.0 0.0 0.001 0.999 0.01 0.19 0.6 0.2 0.68 0.3 0.01 0.01 0.54 0.3 0.15 0.01 0.25 0.4 0.25 0.1</Values>
+          </Potential>
+          <Potential type="Table">
+            <Variables>
+              <Variable name="av_pre" />
+            </Variables>
+            <Values>0.0 0.0 0.0 1.0</Values>
+          </Potential>
+        </Subpotentials>
+      </Potential>
+      <Potential type="ICIModel" role="conditionalProbability">
+        <Variables>
+          <Variable name="av_post" />
+          <Variable name="av_sin_catar" />
+          <Variable name="av_complic" />
+        </Variables>
+        <Model>AND / MIN</Model>
+        <Variables>
+          <Variable name="av_post" />
+          <Variable name="av_sin_catar" />
+          <Variable name="av_complic" />
+        </Variables>
+        <Subpotentials>
+          <Potential type="Table">
+            <Variables>
+              <Variable name="av_post" />
+              <Variable name="av_sin_catar" />
+            </Variables>
+            <Values>1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0</Values>
+          </Potential>
+          <Potential type="Table">
+            <Variables>
+              <Variable name="av_post" />
+              <Variable name="av_complic" />
+            </Variables>
+            <Values>1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0</Values>
+          </Potential>
+          <Potential type="Table">
+            <Variables>
+              <Variable name="av_post" />
+            </Variables>
+            <Values>0.0 0.0 0.0 1.0</Values>
+          </Potential>
+        </Subpotentials>
+      </Potential>
+      <Potential type="ICIModel" role="conditionalProbability">
+        <Variables>
+          <Variable name="fvnd_pre_catar" />
+          <Variable name="av_pre" />
+          <Variable name="tipo_catarata" />
+        </Variables>
+        <Model>OR / MAX</Model>
+        <Variables>
+          <Variable name="fvnd_pre_catar" />
+          <Variable name="av_pre" />
+          <Variable name="tipo_catarata" />
+        </Variables>
+        <Subpotentials>
+          <Potential type="Table">
+            <Variables>
+              <Variable name="fvnd_pre_catar" />
+              <Variable name="av_pre" />
+            </Variables>
+            <Values>0.0 0.05 0.95 0.3 0.4 0.3 0.7 0.2 0.1 0.945 0.05 0.005</Values>
+          </Potential>
+          <Potential type="Table">
+            <Variables>
+              <Variable name="fvnd_pre_catar" />
+              <Variable name="tipo_catarata" />
+            </Variables>
+            <Values>1.0 0.0 0.0 0.95 0.05 0.0 0.45 0.4 0.15 0.45 0.4 0.15 0.997 0.002 0.001</Values>
+          </Potential>
+          <Potential type="Table">
+            <Variables>
+              <Variable name="fvnd_pre_catar" />
+            </Variables>
+            <Values>1.0 0.0 0.0</Values>
+          </Potential>
+        </Subpotentials>
+      </Potential>
+      <Potential type="ICIModel" role="conditionalProbability">
+        <Variables>
+          <Variable name="otros_trast_fv" />
+          <Variable name="distrofia_fuchs" />
+          <Variable name="maculopatias" />
+          <Variable name="opac_corneales" />
+          <Variable name="retinopatia_diabetic" />
+          <Variable name="retinopatia_nd" />
+        </Variables>
+        <Model>OR / MAX</Model>
+        <Variables>
+          <Variable name="otros_trast_fv" />
+          <Variable name="distrofia_fuchs" />
+          <Variable name="maculopatias" />
+          <Variable name="opac_corneales" />
+          <Variable name="retinopatia_diabetic" />
+          <Variable name="retinopatia_nd" />
+        </Variables>
+        <Subpotentials>
+          <Potential type="Table">
+            <Variables>
+              <Variable name="otros_trast_fv" />
+              <Variable name="distrofia_fuchs" />
+            </Variables>
+            <Values>1.0 0.0 0.0 0.99 0.01 0.0 0.4495 0.55 5.0E-4 0.249 0.75 0.001</Values>
+          </Potential>
+          <Potential type="Table">
+            <Variables>
+              <Variable name="otros_trast_fv" />
+              <Variable name="maculopatias" />
+            </Variables>
+            <Values>1.0 0.0 0.0 0.8 0.15 0.05</Values>
+          </Potential>
+          <Potential type="Table">
+            <Variables>
+              <Variable name="otros_trast_fv" />
+              <Variable name="opac_corneales" />
+            </Variables>
+            <Values>1.0 0.0 0.0 0.85 0.1 0.05</Values>
+          </Potential>
+          <Potential type="Table">
+            <Variables>
+              <Variable name="otros_trast_fv" />
+              <Variable name="retinopatia_diabetic" />
+            </Variables>
+            <Values>1.0 0.0 0.0 0.64 0.26 0.1 0.1 0.65 0.25</Values>
+          </Potential>
+          <Potential type="Table">
+            <Variables>
+              <Variable name="otros_trast_fv" />
+              <Variable name="retinopatia_nd" />
+            </Variables>
+            <Values>1.0 0.0 0.0 0.85 0.15 0.0</Values>
+          </Potential>
+          <Potential type="Table">
+            <Variables>
+              <Variable name="otros_trast_fv" />
+            </Variables>
+            <Values>0.9989 0.001 1.0E-4</Values>
+          </Potential>
+        </Subpotentials>
+      </Potential>
+      <Potential type="ICIModel" role="conditionalProbability">
+        <Variables>
+          <Variable name="fvnd_pre" />
+          <Variable name="otros_trast_fv" />
+          <Variable name="fvnd_pre_catar" />
+        </Variables>
+        <Model>OR / MAX</Model>
+        <Variables>
+          <Variable name="fvnd_pre" />
+          <Variable name="otros_trast_fv" />
+          <Variable name="fvnd_pre_catar" />
+        </Variables>
+        <Subpotentials>
+          <Potential type="Table">
+            <Variables>
+              <Variable name="fvnd_pre" />
+              <Variable name="otros_trast_fv" />
+            </Variables>
+            <Values>1.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 1.0</Values>
+          </Potential>
+          <Potential type="Table">
+            <Variables>
+              <Variable name="fvnd_pre" />
+              <Variable name="fvnd_pre_catar" />
+            </Variables>
+            <Values>1.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 1.0</Values>
+          </Potential>
+          <Potential type="Table">
+            <Variables>
+              <Variable name="fvnd_pre" />
+            </Variables>
+            <Values>1.0 0.0 0.0</Values>
+          </Potential>
+        </Subpotentials>
+      </Potential>
+      <Potential type="ICIModel" role="conditionalProbability">
+        <Variables>
+          <Variable name="otros_trast_fvnd_complic" />
+          <Variable name="despr_coroideo" />
+          <Variable name="despr_retina" />
+          <Variable name="edema_corneal" />
+          <Variable name="edema_mac_cist" />
+        </Variables>
+        <Model>OR / MAX</Model>
+        <Variables>
+          <Variable name="otros_trast_fvnd_complic" />
+          <Variable name="despr_coroideo" />
+          <Variable name="despr_retina" />
+          <Variable name="edema_corneal" />
+          <Variable name="edema_mac_cist" />
+        </Variables>
+        <Subpotentials>
+          <Potential type="Table">
+            <Variables>
+              <Variable name="otros_trast_fvnd_complic" />
+              <Variable name="despr_coroideo" />
+            </Variables>
+            <Values>1.0 0.0 0.0 0.989 0.01 0.001</Values>
+          </Potential>
+          <Potential type="Table">
+            <Variables>
+              <Variable name="otros_trast_fvnd_complic" />
+              <Variable name="despr_retina" />
+            </Variables>
+            <Values>1.0 0.0 0.0 0.989 0.01 0.001</Values>
+          </Potential>
+          <Potential type="Table">
+            <Variables>
+              <Variable name="otros_trast_fvnd_complic" />
+              <Variable name="edema_corneal" />
+            </Variables>
+            <Values>1.0 0.0 0.0 0.99 0.01 0.0</Values>
+          </Potential>
+          <Potential type="Table">
+            <Variables>
+              <Variable name="otros_trast_fvnd_complic" />
+              <Variable name="edema_mac_cist" />
+            </Variables>
+            <Values>1.0 0.0 0.0 0.99 0.01 0.0</Values>
+          </Potential>
+          <Potential type="Table">
+            <Variables>
+              <Variable name="otros_trast_fvnd_complic" />
+            </Variables>
+            <Values>1.0 0.0 0.0</Values>
+          </Potential>
+        </Subpotentials>
+      </Potential>
+      <Potential type="ICIModel" role="conditionalProbability">
+        <Variables>
+          <Variable name="fvnd_post" />
+          <Variable name="av_post" />
+          <Variable name="otros_trast_fv" />
+          <Variable name="otros_trast_fvnd_complic" />
+        </Variables>
+        <Model>OR / MAX</Model>
+        <Variables>
+          <Variable name="fvnd_post" />
+          <Variable name="av_post" />
+          <Variable name="otros_trast_fv" />
+          <Variable name="otros_trast_fvnd_complic" />
+        </Variables>
+        <Subpotentials>
+          <Potential type="Table">
+            <Variables>
+              <Variable name="fvnd_post" />
+              <Variable name="av_post" />
+            </Variables>
+            <Values>0.0 0.05 0.95 0.3 0.4 0.3 0.7 0.2 0.1 0.945 0.05 0.005</Values>
+          </Potential>
+          <Potential type="Table">
+            <Variables>
+              <Variable name="fvnd_post" />
+              <Variable name="otros_trast_fv" />
+            </Variables>
+            <Values>1.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 1.0</Values>
+          </Potential>
+          <Potential type="Table">
+            <Variables>
+              <Variable name="fvnd_post" />
+              <Variable name="otros_trast_fvnd_complic" />
+            </Variables>
+            <Values>1.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 1.0</Values>
+          </Potential>
+          <Potential type="Table">
+            <Variables>
+              <Variable name="fvnd_post" />
+            </Variables>
+            <Values>1.0 0.0 0.0</Values>
+          </Potential>
+        </Subpotentials>
+      </Potential>
+      <Potential type="ICIModel" role="conditionalProbability">
+        <Variables>
+          <Variable name="av_contral" />
+          <Variable name="catarata_contral" />
+        </Variables>
+        <Model>AND / MIN</Model>
+        <Variables>
+          <Variable name="av_contral" />
+          <Variable name="catarata_contral" />
+        </Variables>
+        <Subpotentials>
+          <Potential type="Table">
+            <Variables>
+              <Variable name="av_contral" />
+              <Variable name="catarata_contral" />
+            </Variables>
+            <Values>0.0 0.0 0.0 1.0 0.0 0.0 0.001 0.999 0.01 0.19 0.6 0.2 0.68 0.3 0.01 0.01 0.54 0.3 0.15 0.01 0.25 0.4 0.25 0.1</Values>
+          </Potential>
+          <Potential type="Table">
+            <Variables>
+              <Variable name="av_contral" />
+            </Variables>
+            <Values>0.03 0.07 0.1 0.8</Values>
+          </Potential>
+        </Subpotentials>
+      </Potential>
+      <Potential type="ICIModel" role="conditionalProbability">
+        <Variables>
+          <Variable name="fvnd_contral" />
+          <Variable name="av_contral" />
+        </Variables>
+        <Model>OR / MAX</Model>
+        <Variables>
+          <Variable name="fvnd_contral" />
+          <Variable name="av_contral" />
+        </Variables>
+        <Subpotentials>
+          <Potential type="Table">
+            <Variables>
+              <Variable name="fvnd_contral" />
+              <Variable name="av_contral" />
+            </Variables>
+            <Values>0.0 0.05 0.95 0.3 0.4 0.3 0.7 0.2 0.1 0.945 0.05 0.005</Values>
+          </Potential>
+          <Potential type="Table">
+            <Variables>
+              <Variable name="fvnd_contral" />
+            </Variables>
+            <Values>0.98 0.01 0.01</Values>
+          </Potential>
+        </Subpotentials>
+      </Potential>
+      <Potential type="ICIModel" role="conditionalProbability">
+        <Variables>
+          <Variable name="fvnd_global_pre" />
+          <Variable name="fvnd_contral" />
+          <Variable name="fvnd_pre" />
+        </Variables>
+        <Model>AND / MIN</Model>
+        <Variables>
+          <Variable name="fvnd_global_pre" />
+          <Variable name="fvnd_contral" />
+          <Variable name="fvnd_pre" />
+        </Variables>
+        <Subpotentials>
+          <Potential type="Table">
+            <Variables>
+              <Variable name="fvnd_global_pre" />
+              <Variable name="fvnd_contral" />
+            </Variables>
+            <Values>1.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 1.0</Values>
+          </Potential>
+          <Potential type="Table">
+            <Variables>
+              <Variable name="fvnd_global_pre" />
+              <Variable name="fvnd_pre" />
+            </Variables>
+            <Values>1.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 1.0</Values>
+          </Potential>
+          <Potential type="Table">
+            <Variables>
+              <Variable name="fvnd_global_pre" />
+            </Variables>
+            <Values>0.0 0.0 1.0</Values>
+          </Potential>
+        </Subpotentials>
+      </Potential>
+      <Potential type="ICIModel" role="conditionalProbability">
+        <Variables>
+          <Variable name="fvnd_global_post" />
+          <Variable name="fvnd_contral" />
+          <Variable name="fvnd_post" />
+        </Variables>
+        <Model>AND / MIN</Model>
+        <Variables>
+          <Variable name="fvnd_global_post" />
+          <Variable name="fvnd_contral" />
+          <Variable name="fvnd_post" />
+        </Variables>
+        <Subpotentials>
+          <Potential type="Table">
+            <Variables>
+              <Variable name="fvnd_global_post" />
+              <Variable name="fvnd_contral" />
+            </Variables>
+            <Values>1.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 1.0</Values>
+          </Potential>
+          <Potential type="Table">
+            <Variables>
+              <Variable name="fvnd_global_post" />
+              <Variable name="fvnd_post" />
+            </Variables>
+            <Values>1.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 1.0</Values>
+          </Potential>
+          <Potential type="Table">
+            <Variables>
+              <Variable name="fvnd_global_post" />
+            </Variables>
+            <Values>0.0 0.0 1.0</Values>
+          </Potential>
+        </Subpotentials>
+      </Potential>
+      <Potential type="ICIModel" role="conditionalProbability">
+        <Variables>
+          <Variable name="despr_retina" />
+          <Variable name="despr_coroideo" />
+          <Variable name="mecha_vitrea" />
+          <Variable name="miopia_magna" />
+          <Variable name="retinopatia_nd" />
+        </Variables>
+        <Model>OR / MAX</Model>
+        <Variables>
+          <Variable name="despr_retina" />
+          <Variable name="despr_coroideo" />
+          <Variable name="mecha_vitrea" />
+          <Variable name="miopia_magna" />
+          <Variable name="retinopatia_nd" />
+        </Variables>
+        <Subpotentials>
+          <Potential type="Table">
+            <Variables>
+              <Variable name="despr_retina" />
+              <Variable name="despr_coroideo" />
+            </Variables>
+            <Values>1.0 0.0 0.8 0.2</Values>
+          </Potential>
+          <Potential type="Table">
+            <Variables>
+              <Variable name="despr_retina" />
+              <Variable name="mecha_vitrea" />
+            </Variables>
+            <Values>1.0 0.0 0.93 0.07</Values>
+          </Potential>
+          <Potential type="Table">
+            <Variables>
+              <Variable name="despr_retina" />
+              <Variable name="miopia_magna" />
+            </Variables>
+            <Values>1.0 0.0 0.93 0.07</Values>
+          </Potential>
+          <Potential type="Table">
+            <Variables>
+              <Variable name="despr_retina" />
+              <Variable name="retinopatia_nd" />
+            </Variables>
+            <Values>1.0 0.0 0.98 0.02</Values>
+          </Potential>
+          <Potential type="Table">
+            <Variables>
+              <Variable name="despr_retina" />
+            </Variables>
+            <Values>0.9995 5.0E-4</Values>
+          </Potential>
+        </Subpotentials>
+      </Potential>
+      <Potential type="Table" role="conditionalProbability">
+        <Variables>
+          <Variable name="fibrosis_c_ant" />
+        </Variables>
+        <Values>0.997 0.003</Values>
+      </Potential>
+      <Potential type="Table" role="conditionalProbability">
+        <Variables>
+          <Variable name="sinequias_post" />
+        </Variables>
+        <Values>0.992 0.008</Values>
+      </Potential>
+      <Potential type="Table" role="conditionalProbability">
+        <Variables>
+          <Variable name="sublux_cristalino" />
+        </Variables>
+        <Values>0.999 0.001</Values>
+      </Potential>
+      <Potential type="ICIModel" role="conditionalProbability">
+        <Variables>
+          <Variable name="despr_coroideo" />
+          <Variable name="alter_incision" />
+          <Variable name="camara_estrecha" />
+          <Variable name="mala_colaboracion" />
+          <Variable name="miopia_magna" />
+          <Variable name="ruptura_caps_post" />
+        </Variables>
+        <Model>OR / MAX</Model>
+        <Variables>
+          <Variable name="despr_coroideo" />
+          <Variable name="alter_incision" />
+          <Variable name="camara_estrecha" />
+          <Variable name="mala_colaboracion" />
+          <Variable name="miopia_magna" />
+          <Variable name="ruptura_caps_post" />
+        </Variables>
+        <Subpotentials>
+          <Potential type="Table">
+            <Variables>
+              <Variable name="despr_coroideo" />
+              <Variable name="alter_incision" />
+            </Variables>
+            <Values>1.0 0.0 0.9998 2.0E-4</Values>
+          </Potential>
+          <Potential type="Table">
+            <Variables>
+              <Variable name="despr_coroideo" />
+              <Variable name="camara_estrecha" />
+            </Variables>
+            <Values>1.0 0.0 0.99985 1.5E-4</Values>
+          </Potential>
+          <Potential type="Table">
+            <Variables>
+              <Variable name="despr_coroideo" />
+              <Variable name="mala_colaboracion" />
+            </Variables>
+            <Values>1.0 0.0 0.99975 2.5E-4</Values>
+          </Potential>
+          <Potential type="Table">
+            <Variables>
+              <Variable name="despr_coroideo" />
+              <Variable name="miopia_magna" />
+            </Variables>
+            <Values>1.0 0.0 0.9992 8.0E-4</Values>
+          </Potential>
+          <Potential type="Table">
+            <Variables>
+              <Variable name="despr_coroideo" />
+              <Variable name="ruptura_caps_post" />
+            </Variables>
+            <Values>1.0 0.0 0.99975 2.5E-4</Values>
+          </Potential>
+          <Potential type="Table">
+            <Variables>
+              <Variable name="despr_coroideo" />
+            </Variables>
+            <Values>1.0 0.0</Values>
+          </Potential>
+        </Subpotentials>
+      </Potential>
+      <Potential type="ICIModel" role="conditionalProbability">
+        <Variables>
+          <Variable name="deslu_complic" />
+          <Variable name="edema_corneal" />
+          <Variable name="edema_mac_cist" />
+        </Variables>
+        <Model>OR / MAX</Model>
+        <Variables>
+          <Variable name="deslu_complic" />
+          <Variable name="edema_corneal" />
+          <Variable name="edema_mac_cist" />
+        </Variables>
+        <Subpotentials>
+          <Potential type="Table">
+            <Variables>
+              <Variable name="deslu_complic" />
+              <Variable name="edema_corneal" />
+            </Variables>
+            <Values>1.0 0.0 0.001 0.999</Values>
+          </Potential>
+          <Potential type="Table">
+            <Variables>
+              <Variable name="deslu_complic" />
+              <Variable name="edema_mac_cist" />
+            </Variables>
+            <Values>1.0 0.0 0.3 0.7</Values>
+          </Potential>
+          <Potential type="Table">
+            <Variables>
+              <Variable name="deslu_complic" />
+            </Variables>
+            <Values>0.9999 1.0E-4</Values>
+          </Potential>
+        </Subpotentials>
+      </Potential>
+      <Potential type="ICIModel" role="conditionalProbability">
+        <Variables>
+          <Variable name="deslu_pre_no_catar" />
+          <Variable name="distrofia_fuchs" />
+          <Variable name="maculopatias" />
+          <Variable name="miopia_magna" />
+          <Variable name="opac_corneales" />
+        </Variables>
+        <Model>OR / MAX</Model>
+        <Variables>
+          <Variable name="deslu_pre_no_catar" />
+          <Variable name="distrofia_fuchs" />
+          <Variable name="maculopatias" />
+          <Variable name="miopia_magna" />
+          <Variable name="opac_corneales" />
+        </Variables>
+        <Subpotentials>
+          <Potential type="Table">
+            <Variables>
+              <Variable name="deslu_pre_no_catar" />
+              <Variable name="distrofia_fuchs" />
+            </Variables>
+            <Values>1.0 0.0 0.1 0.9 0.002 0.998 0.001 0.999</Values>
+          </Potential>
+          <Potential type="Table">
+            <Variables>
+              <Variable name="deslu_pre_no_catar" />
+              <Variable name="maculopatias" />
+            </Variables>
+            <Values>1.0 0.0 0.3 0.7</Values>
+          </Potential>
+          <Potential type="Table">
+            <Variables>
+              <Variable name="deslu_pre_no_catar" />
+              <Variable name="miopia_magna" />
+            </Variables>
+            <Values>1.0 0.0 0.5 0.5</Values>
+          </Potential>
+          <Potential type="Table">
+            <Variables>
+              <Variable name="deslu_pre_no_catar" />
+              <Variable name="opac_corneales" />
+            </Variables>
+            <Values>1.0 0.0 0.3 0.7</Values>
+          </Potential>
+          <Potential type="Table">
+            <Variables>
+              <Variable name="deslu_pre_no_catar" />
+            </Variables>
+            <Values>0.9995 5.0E-4</Values>
+          </Potential>
+        </Subpotentials>
+      </Potential>
+      <Potential type="Table" role="conditionalProbability">
+        <Variables>
+          <Variable name="deslu_contral" />
+          <Variable name="catarata_contral" />
+        </Variables>
+        <Values>0.999 0.001 0.95 0.05 0.6 0.4 0.15 0.85 0.1 0.9 0.001 0.999</Values>
+      </Potential>
+      <Potential type="Table" role="conditionalProbability">
+        <Variables>
+          <Variable name="deslu_catar" />
+          <Variable name="tipo_catarata" />
+        </Variables>
+        <Values>0.95 0.05 0.6 0.4 0.15 0.85 0.1 0.9 0.001 0.999</Values>
+      </Potential>
+      <Potential type="ICIModel" role="conditionalProbability">
+        <Variables>
+          <Variable name="deslu_pre" />
+          <Variable name="deslu_catar" />
+          <Variable name="deslu_pre_no_catar" />
+        </Variables>
+        <Model>OR / MAX</Model>
+        <Variables>
+          <Variable name="deslu_pre" />
+          <Variable name="deslu_catar" />
+          <Variable name="deslu_pre_no_catar" />
+        </Variables>
+        <Subpotentials>
+          <Potential type="Table">
+            <Variables>
+              <Variable name="deslu_pre" />
+              <Variable name="deslu_catar" />
+            </Variables>
+            <Values>1.0 0.0 0.0 1.0</Values>
+          </Potential>
+          <Potential type="Table">
+            <Variables>
+              <Variable name="deslu_pre" />
+              <Variable name="deslu_pre_no_catar" />
+            </Variables>
+            <Values>1.0 0.0 0.0 1.0</Values>
+          </Potential>
+          <Potential type="Table">
+            <Variables>
+              <Variable name="deslu_pre" />
+            </Variables>
+            <Values>1.0 0.0</Values>
+          </Potential>
+        </Subpotentials>
+      </Potential>
+      <Potential type="ICIModel" role="conditionalProbability">
+        <Variables>
+          <Variable name="deslu_post" />
+          <Variable name="deslu_complic" />
+          <Variable name="deslu_pre_no_catar" />
+        </Variables>
+        <Model>OR / MAX</Model>
+        <Variables>
+          <Variable name="deslu_post" />
+          <Variable name="deslu_complic" />
+          <Variable name="deslu_pre_no_catar" />
+        </Variables>
+        <Subpotentials>
+          <Potential type="Table">
+            <Variables>
+              <Variable name="deslu_post" />
+              <Variable name="deslu_complic" />
+            </Variables>
+            <Values>1.0 0.0 0.0 1.0</Values>
+          </Potential>
+          <Potential type="Table">
+            <Variables>
+              <Variable name="deslu_post" />
+              <Variable name="deslu_pre_no_catar" />
+            </Variables>
+            <Values>1.0 0.0 0.0 1.0</Values>
+          </Potential>
+          <Potential type="Table">
+            <Variables>
+              <Variable name="deslu_post" />
+            </Variables>
+            <Values>1.0 0.0</Values>
+          </Potential>
+        </Subpotentials>
+      </Potential>
+      <Potential type="ICIModel" role="conditionalProbability">
+        <Variables>
+          <Variable name="fv_global_post" />
+          <Variable name="deslu_contral" />
+          <Variable name="deslu_post" />
+          <Variable name="fvnd_global_post" />
+        </Variables>
+        <Model>OR / MAX</Model>
+        <Variables>
+          <Variable name="fv_global_post" />
+          <Variable name="deslu_contral" />
+          <Variable name="deslu_post" />
+          <Variable name="fvnd_global_post" />
+        </Variables>
+        <Subpotentials>
+          <Potential type="Table">
+            <Variables>
+              <Variable name="fv_global_post" />
+              <Variable name="deslu_contral" />
+            </Variables>
+            <Values>1.0 0.0 0.0 0.05 0.9 0.05</Values>
+          </Potential>
+          <Potential type="Table">
+            <Variables>
+              <Variable name="fv_global_post" />
+              <Variable name="deslu_post" />
+            </Variables>
+            <Values>1.0 0.0 0.0 0.05 0.9 0.05</Values>
+          </Potential>
+          <Potential type="Table">
+            <Variables>
+              <Variable name="fv_global_post" />
+              <Variable name="fvnd_global_post" />
+            </Variables>
+            <Values>1.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 1.0</Values>
+          </Potential>
+          <Potential type="Table">
+            <Variables>
+              <Variable name="fv_global_post" />
+            </Variables>
+            <Values>1.0 0.0 0.0</Values>
+          </Potential>
+        </Subpotentials>
+      </Potential>
+      <Potential type="ICIModel" role="conditionalProbability">
+        <Variables>
+          <Variable name="fv_global_pre" />
+          <Variable name="fv_deslu_pre" />
+          <Variable name="fvnd_global_pre" />
+        </Variables>
+        <Model>OR / MAX</Model>
+        <Variables>
+          <Variable name="fv_global_pre" />
+          <Variable name="fv_deslu_pre" />
+          <Variable name="fvnd_global_pre" />
+        </Variables>
+        <Subpotentials>
+          <Potential type="Table">
+            <Variables>
+              <Variable name="fv_global_pre" />
+              <Variable name="fv_deslu_pre" />
+            </Variables>
+            <Values>1.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 1.0</Values>
+          </Potential>
+          <Potential type="Table">
+            <Variables>
+              <Variable name="fv_global_pre" />
+              <Variable name="fvnd_global_pre" />
+            </Variables>
+            <Values>1.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 1.0</Values>
+          </Potential>
+          <Potential type="Table">
+            <Variables>
+              <Variable name="fv_global_pre" />
+            </Variables>
+            <Values>1.0 0.0 0.0</Values>
+          </Potential>
+        </Subpotentials>
+      </Potential>
+      <Potential type="Table" role="conditionalProbability">
+        <Variables>
+          <Variable name="catarata_contral" />
+        </Variables>
+        <Values>0.5 0.182 0.3 0.004 0.004 0.01</Values>
+      </Potential>
+      <Potential type="Table" role="conditionalProbability">
+        <Variables>
+          <Variable name="deslu_global_pre" />
+          <Variable name="deslu_pre" />
+          <Variable name="deslu_contral" />
+        </Variables>
+        <Values>1.0 0.0 0.0 0.0 0.0 0.0 0.149 0.05 0.001 0.8 0.0 0.149 0.05 0.8 0.001 0.0 0.2 0.7 0.05 0.05</Values>
+      </Potential>
+      <Potential type="Table" role="conditionalProbability">
+        <Variables>
+          <Variable name="deslu_global_post" />
+          <Variable name="deslu_post" />
+          <Variable name="deslu_contral" />
+        </Variables>
+        <Values>1.0 0.0 0.0 0.0 0.0 0.0 0.149 0.05 0.001 0.8 0.0 0.149 0.05 0.8 0.001 0.0 0.2 0.7 0.05 0.05</Values>
+      </Potential>
+      <Potential type="Table" role="conditionalProbability">
+        <Variables>
+          <Variable name="contrala_RAND" />
+          <Variable name="av_contral" />
+        </Variables>
+        <Values>1.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 1.0 0.0 0.0 1.0</Values>
+      </Potential>
+      <Potential type="Table" role="conditionalProbability">
+        <Variables>
+          <Variable name="agudepre_RAND" />
+          <Variable name="av_pre" />
+        </Variables>
+        <Values>1.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 1.0 0.0 0.0 1.0</Values>
+      </Potential>
+      <Potential type="Table" role="conditionalProbability">
+        <Variables>
+          <Variable name="agudepos_RAND" />
+          <Variable name="av_sin_catar" />
+        </Variables>
+        <Values>1.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 1.0 0.0 0.0 1.0</Values>
+      </Potential>
+      <Potential type="Table" role="conditionalProbability">
+        <Variables>
+          <Variable name="patolo_RAND" />
+          <Variable name="retinopatia_diabetic" />
+          <Variable name="retinopatia_nd" />
+          <Variable name="distrofia_fuchs" />
+          <Variable name="ambliopia" />
+          <Variable name="maculopatias" />
+          <Variable name="neuropatias" />
+          <Variable name="opac_corneales" />
+        </Variables>
+        <Values>1.0 0.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0</Values>
+      </Potential>
+      <Potential type="Table" role="conditionalProbability">
+        <Variables>
+          <Variable name="laterali_RAND" />
+          <Variable name="catarata_contral" />
+        </Variables>
+        <Values>1.0 0.0 0.0 1.0 0.0 1.0 0.0 1.0 0.0 1.0 0.0 1.0</Values>
+      </Potential>
+      <Potential type="Table" role="conditionalProbability">
+        <Variables>
+          <Variable name="comtec_baja_RAND" />
+          <Variable name="camara_estrecha" />
+          <Variable name="miopia_magna" />
+          <Variable name="ojo_hundido" />
+          <Variable name="pupila_estrecha" />
+          <Variable name="sinequias_post" />
+        </Variables>
+        <Values>1.0 0.0 1.0 0.0 1.0 0.0 0.0 1.0 1.0 0.0 0.0 1.0 0.0 1.0 0.0 1.0 1.0 0.0 0.0 1.0 0.0 1.0 0.0 1.0 0.0 1.0 0.0 1.0 0.0 1.0 0.0 1.0 1.0 0.0 0.0 1.0 0.0 1.0 0.0 1.0 0.0 1.0 0.0 1.0 0.0 1.0 0.0 1.0 0.0 1.0 0.0 1.0 0.0 1.0 0.0 1.0 0.0 1.0 0.0 1.0 0.0 1.0 0.0 1.0</Values>
+      </Potential>
+      <Potential type="Table" role="conditionalProbability">
+        <Variables>
+          <Variable name="comtec_med_RAND" />
+          <Variable name="tipo_catarata" />
+          <Variable name="mala_colaboracion" />
+          <Variable name="ojo_vitrectomizado" />
+          <Variable name="pseudoexfoliacion" />
+          <Variable name="comtec_baja_RAND" />
+        </Variables>
+        <Values>1.0 0.0 0.0 1.0 0.0 0.0 0.0 1.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 0.0 1.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 0.0 1.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 0.0 1.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 0.0 1.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0</Values>
+      </Potential>
+      <Potential type="ICIModel" role="conditionalProbability">
+        <Variables>
+          <Variable name="comtec_alta_RAND" />
+          <Variable name="comtec_med_RAND" />
+          <Variable name="fibrosis_c_ant" />
+          <Variable name="sublux_cristalino" />
+          <Variable name="tipo_catarata" />
+        </Variables>
+        <Model>OR / MAX</Model>
+        <Variables>
+          <Variable name="comtec_alta_RAND" />
+          <Variable name="comtec_med_RAND" />
+          <Variable name="fibrosis_c_ant" />
+          <Variable name="sublux_cristalino" />
+          <Variable name="tipo_catarata" />
+        </Variables>
+        <Subpotentials>
+          <Potential type="Table">
+            <Variables>
+              <Variable name="comtec_alta_RAND" />
+              <Variable name="comtec_med_RAND" />
+            </Variables>
+            <Values>1.0 0.0 1.0 0.0 0.0 1.0</Values>
+          </Potential>
+          <Potential type="Table">
+            <Variables>
+              <Variable name="comtec_alta_RAND" />
+              <Variable name="fibrosis_c_ant" />
+            </Variables>
+            <Values>1.0 0.0 0.0 1.0</Values>
+          </Potential>
+          <Potential type="Table">
+            <Variables>
+              <Variable name="comtec_alta_RAND" />
+              <Variable name="sublux_cristalino" />
+            </Variables>
+            <Values>1.0 0.0 0.0 1.0</Values>
+          </Potential>
+          <Potential type="Table">
+            <Variables>
+              <Variable name="comtec_alta_RAND" />
+              <Variable name="tipo_catarata" />
+            </Variables>
+            <Values>1.0 0.0 1.0 0.0 1.0 0.0 0.0 1.0 0.0 1.0</Values>
+          </Potential>
+          <Potential type="Table">
+            <Variables>
+              <Variable name="comtec_alta_RAND" />
+            </Variables>
+            <Values>1.0 0.0</Values>
+          </Potential>
+        </Subpotentials>
+      </Potential>
+      <Potential type="ICIModel" role="conditionalProbability">
+        <Variables>
+          <Variable name="funcion_RAND" />
+          <Variable name="deslu_global_pre" />
+          <Variable name="fv_global_pre" />
+        </Variables>
+        <Model>OR / MAX</Model>
+        <Variables>
+          <Variable name="funcion_RAND" />
+          <Variable name="deslu_global_pre" />
+          <Variable name="fv_global_pre" />
+        </Variables>
+        <Subpotentials>
+          <Potential type="Table">
+            <Variables>
+              <Variable name="funcion_RAND" />
+              <Variable name="deslu_global_pre" />
+            </Variables>
+            <Values>1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 1.0 0.0 0.0</Values>
+          </Potential>
+          <Potential type="Table">
+            <Variables>
+              <Variable name="funcion_RAND" />
+              <Variable name="fv_global_pre" />
+            </Variables>
+            <Values>1.0 0.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0</Values>
+          </Potential>
+          <Potential type="Table">
+            <Variables>
+              <Variable name="funcion_RAND" />
+            </Variables>
+            <Values>1.0 0.0 0.0 0.0</Values>
+          </Potential>
+        </Subpotentials>
+      </Potential>
+      <Potential type="ICIModel" role="conditionalProbability">
+        <Variables>
+          <Variable name="funcion_post" />
+          <Variable name="deslu_global_post" />
+          <Variable name="fv_global_post" />
+        </Variables>
+        <Model>OR / MAX</Model>
+        <Variables>
+          <Variable name="funcion_post" />
+          <Variable name="deslu_global_post" />
+          <Variable name="fv_global_post" />
+        </Variables>
+        <Subpotentials>
+          <Potential type="Table">
+            <Variables>
+              <Variable name="funcion_post" />
+              <Variable name="deslu_global_post" />
+            </Variables>
+            <Values>1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 1.0 0.0 0.0</Values>
+          </Potential>
+          <Potential type="Table">
+            <Variables>
+              <Variable name="funcion_post" />
+              <Variable name="fv_global_post" />
+            </Variables>
+            <Values>1.0 0.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0</Values>
+          </Potential>
+          <Potential type="Table">
+            <Variables>
+              <Variable name="funcion_post" />
+            </Variables>
+            <Values>1.0 0.0 0.0 0.0</Values>
+          </Potential>
+        </Subpotentials>
+      </Potential>
+      <Potential type="Table" role="conditionalProbability">
+        <Variables>
+          <Variable name="ganancia_av" />
+          <Variable name="av_pre" />
+          <Variable name="av_post" />
+        </Variables>
+        <Values>0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0</Values>
+      </Potential>
+      <Potential type="Table" role="conditionalProbability">
+        <Variables>
+          <Variable name="ganancia_deslu" />
+          <Variable name="deslu_pre" />
+          <Variable name="deslu_post" />
+        </Variables>
+        <Values>0.0 1.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 1.0 0.0</Values>
+      </Potential>
+      <Potential type="ICIModel" role="conditionalProbability">
+        <Variables>
+          <Variable name="fv_deslu_pre" />
+          <Variable name="deslu_pre" />
+          <Variable name="deslu_contral" />
+        </Variables>
+        <Model>OR / MAX</Model>
+        <Variables>
+          <Variable name="fv_deslu_pre" />
+          <Variable name="deslu_pre" />
+          <Variable name="deslu_contral" />
+        </Variables>
+        <Subpotentials>
+          <Potential type="Table">
+            <Variables>
+              <Variable name="fv_deslu_pre" />
+              <Variable name="deslu_pre" />
+            </Variables>
+            <Values>1.0 0.0 0.0 0.45 0.5 0.05</Values>
+          </Potential>
+          <Potential type="Table">
+            <Variables>
+              <Variable name="fv_deslu_pre" />
+              <Variable name="deslu_contral" />
+            </Variables>
+            <Values>1.0 0.0 0.0 0.45 0.5 0.05</Values>
+          </Potential>
+          <Potential type="Table">
+            <Variables>
+              <Variable name="fv_deslu_pre" />
+            </Variables>
+            <Values>1.0 0.0 0.0</Values>
+          </Potential>
+        </Subpotentials>
+      </Potential>
+      <Potential type="Table" role="conditionalProbability">
+        <Variables>
+          <Variable name="ncelu_RAND" />
+          <Variable name="distrofia_fuchs" />
+        </Variables>
+        <Values>1.0 0.0 1.0 0.0 0.0 1.0 0.0 1.0</Values>
+      </Potential>
+      <Potential type="Table" role="conditionalProbability">
+        <Variables>
+          <Variable name="v_ganancia_deslu" />
+          <Variable name="ganancia_deslu" />
+          <Variable name="fv_deslu_pre" />
+        </Variables>
+        <Values>1.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 1.0</Values>
+      </Potential>
+    </Potentials>
+    <AdditionalProperties>
+      <Property name="VisualPrecision" value="0.0" />
+      <Property name="KindOfGraph" value="mixed" />
+      <Property name="Version" value="1.0" />
+    </AdditionalProperties>
+  </ProbNet>
+</ProbModelXML>

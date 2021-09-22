@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ProbModelXML formatVersion="0.2.0">
+  <ProbNet type="BayesianNetwork">
+    <Comment showWhenOpeningNetwork="false"><![CDATA[<<Double click to add/modify comment>>]]></Comment>
+    <AdditionalProperties />
+    <Variables>
+      <Variable name="A" type="finiteStates" role="chance">
+        <Coordinates x="305" y="90" />
+        <States>
+          <State name="absent" />
+          <State name="mild" />
+          <State name="moderate" />
+          <State name="severe" />
+        </States>
+      </Variable>
+      <Variable name="B" type="discretized" role="chance">
+        <Coordinates x="373" y="100" />
+        <Unit />
+        <Precision>0.01</Precision>
+        <States>
+          <State name="yes" />
+          <State name="its possible" />
+          <State name="maybe not" />
+          <State name="no" />
+        </States>
+        <Thresholds>
+          <Threshold value="-Infinity" belongsTo="left" />
+          <Threshold value="0.0" belongsTo="right" />
+          <Threshold value="0.01" belongsTo="right" />
+          <Threshold value="0.02" belongsTo="right" />
+          <Threshold value="Infinity" belongsTo="right" />
+        </Thresholds>
+      </Variable>
+      <Variable name="C" type="finiteStates" role="chance">
+        <Coordinates x="362" y="151" />
+        <States>
+          <State name="absent" />
+          <State name="present" />
+        </States>
+      </Variable>
+    </Variables>
+    <Links>
+      <Link directed="true">
+        <Variable name="A" />
+        <Variable name="B" />
+      </Link>
+      <Link directed="true">
+        <Variable name="A" />
+        <Variable name="C" />
+      </Link>
+    </Links>
+    <Potentials>
+      <Potential type="Uniform" role="conditionalProbability">
+        <Variables>
+          <Variable name="A" />
+        </Variables>
+      </Potential>
+      <Potential type="Table" role="conditionalProbability">
+        <Variables>
+          <Variable name="B" />
+          <Variable name="A" />
+        </Variables>
+        <Values>0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25</Values>
+      </Potential>
+      <Potential type="Uniform" role="conditionalProbability">
+        <Variables>
+          <Variable name="C" />
+          <Variable name="A" />
+        </Variables>
+      </Potential>
+    </Potentials>
+  </ProbNet>
+  <InferenceOptions>
+    <MulticriteriaOptions>
+      <SelectedAnalysisType>UNICRITERION</SelectedAnalysisType>
+    </MulticriteriaOptions>
+  </InferenceOptions>
+</ProbModelXML>

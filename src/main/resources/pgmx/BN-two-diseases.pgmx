@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ProbModelXML formatVersion="0.2.0">
+  <ProbNet type="BayesianNetwork">
+    <Comment showWhenOpeningNetwork="true"><![CDATA[<html>
+  <head>
+    
+  </head>
+  <body>
+    <p style="margin-top: 0">
+      A Bayesian network for the differential diagnosis of two hypothetical 
+      diseases.
+    </p>
+  </body>
+</html>]]></Comment>
+    <AdditionalProperties />
+    <Variables>
+      <Variable name="Virus A" type="finiteStates" role="chance">
+        <Coordinates x="135" y="82" />
+        <AdditionalProperties>
+          <Property name="Purpose" value="Disease" />
+          <Property name="Relevance" value="9.0" />
+          <Property name="Title" value="A" />
+        </AdditionalProperties>
+        <States>
+          <State name="absent" />
+          <State name="present" />
+        </States>
+      </Variable>
+      <Variable name="Virus B" type="finiteStates" role="chance">
+        <Coordinates x="346" y="83" />
+        <AdditionalProperties>
+          <Property name="Purpose" value="Disease" />
+          <Property name="Relevance" value="9.0" />
+          <Property name="Title" value="B" />
+        </AdditionalProperties>
+        <States>
+          <State name="absent" />
+          <State name="present" />
+        </States>
+      </Variable>
+      <Variable name="Disease 1" type="finiteStates" role="chance">
+        <Coordinates x="244" y="212" />
+        <AdditionalProperties>
+          <Property name="Purpose" value="Disease" />
+          <Property name="Relevance" value="10.0" />
+          <Property name="Title" value="C" />
+        </AdditionalProperties>
+        <States>
+          <State name="absent" />
+          <State name="present" />
+        </States>
+      </Variable>
+      <Variable name="Disease 2" type="finiteStates" role="chance">
+        <Coordinates x="556" y="216" />
+        <AdditionalProperties>
+          <Property name="Purpose" value="Disease" />
+          <Property name="Relevance" value="10.0" />
+          <Property name="Title" value="D" />
+        </AdditionalProperties>
+        <States>
+          <State name="absent" />
+          <State name="present" />
+        </States>
+      </Variable>
+      <Variable name="Symptom" type="finiteStates" role="chance">
+        <Coordinates x="384" y="329" />
+        <AdditionalProperties>
+          <Property name="Purpose" value="Symptom" />
+          <Property name="Relevance" value="7.0" />
+          <Property name="Title" value="E" />
+        </AdditionalProperties>
+        <States>
+          <State name="absent" />
+          <State name="present" />
+        </States>
+      </Variable>
+      <Variable name="Sign" type="finiteStates" role="chance">
+        <Coordinates x="163" y="446" />
+        <AdditionalProperties>
+          <Property name="Purpose" value="Sign" />
+          <Property name="Relevance" value="7.0" />
+          <Property name="Title" value="F" />
+        </AdditionalProperties>
+        <States>
+          <State name="absent" />
+          <State name="present" />
+        </States>
+      </Variable>
+      <Variable name="X-ray" type="finiteStates" role="chance">
+        <Coordinates x="566" y="452" />
+        <AdditionalProperties>
+          <Property name="Purpose" value="Test" />
+          <Property name="Relevance" value="7.0" />
+          <Property name="Title" value="H" />
+        </AdditionalProperties>
+        <States>
+          <State name="negative" />
+          <State name="positive" />
+        </States>
+      </Variable>
+      <Variable name="Ecography" type="finiteStates" role="chance">
+        <Coordinates x="795" y="452" />
+        <AdditionalProperties>
+          <Property name="Purpose" value="Test" />
+          <Property name="Relevance" value="7.0" />
+          <Property name="Title" value="I" />
+        </AdditionalProperties>
+        <States>
+          <State name="negative" />
+          <State name="positive" />
+        </States>
+      </Variable>
+      <Variable name="Vaccination" type="finiteStates" role="chance">
+        <Coordinates x="595" y="82" />
+        <AdditionalProperties>
+          <Property name="Purpose" value="Factor_de_riesgo" />
+          <Property name="Relevance" value="7.0" />
+          <Property name="Title" value="J" />
+        </AdditionalProperties>
+        <States>
+          <State name="no" />
+          <State name="yes" />
+        </States>
+      </Variable>
+      <Variable name="Anomaly" type="finiteStates" role="chance">
+        <Coordinates x="664" y="330" />
+        <AdditionalProperties>
+          <Property name="Relevance" value="6.0" />
+          <Property name="Title" value="G" />
+        </AdditionalProperties>
+        <States>
+          <State name="absent" />
+          <State name="present" />
+        </States>
+      </Variable>
+    </Variables>
+    <Links>
+      <Link directed="true">
+        <Variable name="Virus A" />
+        <Variable name="Disease 1" />
+      </Link>
+      <Link directed="true">
+        <Variable name="Virus B" />
+        <Variable name="Disease 1" />
+      </Link>
+      <Link directed="true">
+        <Variable name="Disease 1" />
+        <Variable name="Symptom" />
+      </Link>
+      <Link directed="true">
+        <Variable name="Disease 1" />
+        <Variable name="Sign" />
+      </Link>
+      <Link directed="true">
+        <Variable name="Disease 2" />
+        <Variable name="Symptom" />
+      </Link>
+      <Link directed="true">
+        <Variable name="Disease 2" />
+        <Variable name="Anomaly" />
+      </Link>
+      <Link directed="true">
+        <Variable name="Vaccination" />
+        <Variable name="Disease 2" />
+      </Link>
+      <Link directed="true">
+        <Variable name="Anomaly" />
+        <Variable name="X-ray" />
+      </Link>
+      <Link directed="true">
+        <Variable name="Anomaly" />
+        <Variable name="Ecography" />
+      </Link>
+    </Links>
+    <Potentials>
+      <Potential type="Table" role="conditionalProbability">
+        <Variables>
+          <Variable name="Virus A" />
+        </Variables>
+        <Values>0.98 0.02</Values>
+      </Potential>
+      <Potential type="Table" role="conditionalProbability">
+        <Variables>
+          <Variable name="Virus B" />
+        </Variables>
+        <Values>0.99 0.01</Values>
+      </Potential>
+      <Potential type="Table" role="conditionalProbability">
+        <Variables>
+          <Variable name="Disease 1" />
+          <Variable name="Virus A" />
+          <Variable name="Virus B" />
+        </Variables>
+        <Values>1.0 0.0 0.1 0.9 0.1 0.9 0.01 0.99</Values>
+      </Potential>
+      <Potential type="Table" role="conditionalProbability">
+        <Variables>
+          <Variable name="Disease 2" />
+          <Variable name="Vaccination" />
+        </Variables>
+        <Values>0.95 0.05 0.99 0.01</Values>
+      </Potential>
+      <Potential type="ICIModel" role="conditionalProbability">
+        <Variables>
+          <Variable name="Symptom" />
+          <Variable name="Disease 1" />
+          <Variable name="Disease 2" />
+        </Variables>
+        <Model>OR / MAX</Model>
+        <Subpotentials>
+          <Potential type="Table">
+            <Variables>
+              <Variable name="Symptom" />
+              <Variable name="Disease 1" />
+            </Variables>
+            <Values>1.0 0.0 0.04 0.96</Values>
+          </Potential>
+          <Potential type="Table">
+            <Variables>
+              <Variable name="Symptom" />
+              <Variable name="Disease 2" />
+            </Variables>
+            <Values>1.0 0.0 0.07 0.93</Values>
+          </Potential>
+          <Potential type="Table">
+            <Variables>
+              <Variable name="Symptom" />
+            </Variables>
+            <Values>0.99 0.01</Values>
+          </Potential>
+        </Subpotentials>
+      </Potential>
+      <Potential type="Table" role="conditionalProbability">
+        <Variables>
+          <Variable name="Sign" />
+          <Variable name="Disease 1" />
+        </Variables>
+        <Values>0.99 0.01 0.3 0.7</Values>
+      </Potential>
+      <Potential type="Table" role="conditionalProbability">
+        <Variables>
+          <Variable name="X-ray" />
+          <Variable name="Anomaly" />
+        </Variables>
+        <Values>0.98 0.02 0.2 0.8</Values>
+      </Potential>
+      <Potential type="Table" role="conditionalProbability">
+        <Variables>
+          <Variable name="Ecography" />
+          <Variable name="Anomaly" />
+        </Variables>
+        <Values>0.95 0.05 0.14 0.86</Values>
+      </Potential>
+      <Potential type="Table" role="conditionalProbability">
+        <Variables>
+          <Variable name="Vaccination" />
+        </Variables>
+        <Values>0.2 0.8</Values>
+      </Potential>
+      <Potential type="Table" role="conditionalProbability">
+        <Variables>
+          <Variable name="Anomaly" />
+          <Variable name="Disease 2" />
+        </Variables>
+        <Values>0.99 0.01 0.02 0.98</Values>
+      </Potential>
+    </Potentials>
+  </ProbNet>
+  <InferenceOptions>
+    <MulticriteriaOptions>
+      <SelectedAnalysisType>UNICRITERION</SelectedAnalysisType>
+    </MulticriteriaOptions>
+  </InferenceOptions>
+</ProbModelXML>

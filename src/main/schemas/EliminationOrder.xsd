@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema attributeFormDefault="unqualified"
+	elementFormDefault="qualified"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	
+	<xs:include schemaLocation="Variable.xsd" />
+	
+	<!-- complexType definition -->
+	<xs:complexType name="EliminationOrder">
+		<xs:sequence>
+			<xs:element name="Variable" minOccurs="1" maxOccurs="unbounded" type="Variable"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>
+

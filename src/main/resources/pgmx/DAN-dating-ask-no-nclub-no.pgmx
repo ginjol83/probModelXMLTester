@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ProbModelXML formatVersion="0.2.0">
+  <ProbNet type="DAN">
+    <Comment showWhenOpeningNetwork="true"><![CDATA[<html>
+  <head>
+    
+  </head>
+  <body>
+    <p style="margin-top: 0">
+      &quot;The dating problem&quot;, proposed in:
+    </p>
+    <p style="margin-top: 0">
+      
+    </p>
+    <p style="margin-top: 0">
+      T. D. Nielsen and F. Jensen, &quot;Representing and solving asymmetric 
+      bayesian decision problems,&quot; in <i>Proceedings of the 16th Annual 
+      Conference on Uncertainty in Artificial Intelligence</i> (UAI-2000), (S 
+      an Francisco, CA), pp. 416&#8211;425, Morgan Kaufmann, 2000.
+    </p>
+    <p style="margin-top: 0">
+      
+    </p>
+    <p style="margin-top: 0">
+      It is described as follows:
+    </p>
+    <p style="margin-top: 0">
+      &quot;Joe has to decide whether or not to ask a girl he has recently met on a 
+      date. If Joe decides ot to ask her out he can choose either to stay at 
+      home and watch TV or visit a night club; before taking that decision Joe 
+      observes what programs will be on TV that night. The pleasure of staying 
+      at home is influenced by his liking of the program watched, whereas the 
+      pleasure of going to a night club is dependent on the comfort of going 
+      to that night club and the entrance fee; comfort is dependent on whether 
+      Joe likes the night club and whether he meets any friends there.
+    </p>
+    <p style="margin-top: 0">
+      
+    </p>
+    <p style="margin-top: 0">
+      If Joe decides to ask her out her response will depend on her feelings 
+      towards him. If she declunes the date, Joe can decide to go to a night 
+      club or stay at home and watch TV; we assume that the two &quot;staying at 
+      home scenarios are the same&quot;. If she accepts to go on a date with him, 
+      Joe will ask her whether she wants to go to a restaurant or to the 
+      movies. The choice of movie (decided by Joe) may influence her mood 
+      which in turn may influence Joe's satisfaction concerning the evening. 
+      Similarly, the choice of the menu (decided by Joe) might influence Joe's 
+      satisfaction.&quot;
+    </p>
+  </body>
+</html>]]></Comment>
+    <DecisionCriteria>
+      <Criterion name="---" unit="---" />
+    </DecisionCriteria>
+    <Properties />
+    <Variables>
+      <Variable name="TV" type="finiteStates" role="chance">
+        <Comment><![CDATA[<html>
+  <head>
+    
+  </head>
+  <body>
+    <p style="margin-top: 0">
+      Whether Joe likes the TV programme. (Liking it does not imply watching 
+      it.)
+    </p>
+  </body>
+</html>]]></Comment>
+        <Coordinates x="415" y="30" />
+        <States>
+          <State name="good" />
+          <State name="bad" />
+        </States>
+      </Variable>
+      <Variable name="TVExp" type="finiteStates" role="chance">
+        <Comment><![CDATA[<html>
+  <head>
+    
+  </head>
+  <body>
+    <p style="margin-top: 0">
+      Whether Joe enjoys watching the TV programme. (He might not enjoy it 
+      either because he doesn't like it or because he doesn't watch it.)
+    </p>
+  </body>
+</html>]]></Comment>
+        <Coordinates x="581" y="73" />
+        <States>
+          <State name="negative" />
+          <State name="positive" />
+        </States>
+      </Variable>
+      <Variable name="U TVExp" type="numeric" role="utility">
+        <Comment><![CDATA[<html>
+  <head>
+    
+  </head>
+  <body>
+    <p style="margin-top: 0">
+      Pleasure of watching TV.
+    </p>
+  </body>
+</html>]]></Comment>
+        <Coordinates x="861" y="73" />
+        <Unit />
+        <Precision>0.01</Precision>
+        <Criterion name="---" />
+      </Variable>
+    </Variables>
+    <Links>
+      <Link directed="true">
+        <Variable name="TV" />
+        <Variable name="TVExp" />
+      </Link>
+      <Link directed="true">
+        <Variable name="TVExp" />
+        <Variable name="U TVExp" />
+      </Link>
+    </Links>
+    <Potentials>
+      <Potential type="Table" role="conditionalProbability">
+        <Variables>
+          <Variable name="TV" />
+        </Variables>
+        <Values>0.15 0.85</Values>
+      </Potential>
+      <Potential type="Table" role="conditionalProbability">
+        <Variables>
+          <Variable name="TVExp" />
+          <Variable name="TV" />
+        </Variables>
+        <Values>0.0 1.0 1.0 0.0</Values>
+      </Potential>
+      <Potential type="Table" role="utility">
+        <UtilityVariable name="U TVExp" />
+        <Variables>
+          <Variable name="TVExp" />
+        </Variables>
+        <Values>-10.0 10.0</Values>
+      </Potential>
+    </Potentials>
+  </ProbNet>
+  <InferenceOptions>
+    <MulticriteriaOptions>
+      <SelectedAnalysisType>UNICRITERION</SelectedAnalysisType>
+      <Unicriterion>
+        <Scales>
+          <Scale Criterion="---" Value="1.0" />
+        </Scales>
+      </Unicriterion>
+      <CostEffectiveness>
+        <Scales>
+          <Scale Criterion="---" Value="1.0" />
+        </Scales>
+        <CE_Criteria>
+          <CE_Criterion Criterion="---" Value="Cost" />
+        </CE_Criteria>
+      </CostEffectiveness>
+    </MulticriteriaOptions>
+  </InferenceOptions>
+</ProbModelXML>
