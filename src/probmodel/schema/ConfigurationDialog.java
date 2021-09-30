@@ -1,4 +1,4 @@
-package probmodel.schema;
+package schema;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -49,8 +49,8 @@ public class ConfigurationDialog extends javax.swing.JDialog {
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         URL url = getClass().getResource("configurations/config.properties");
-        File file = new File(url.getPath());
-    	Properties properties = new Properties();
+        final File file = new File(url.getPath());
+    	final Properties properties = new Properties();
 
 		try {
 			properties.load(new FileInputStream(file));

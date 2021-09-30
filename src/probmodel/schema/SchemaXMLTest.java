@@ -1,3 +1,5 @@
+package schema;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -109,7 +111,6 @@ public class SchemaXMLTest extends javax.swing.JFrame {
 		selectPathButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/download.png"))); 
 		selectPathButton.setToolTipText("");
 		selectPathButton.addActionListener(new ActionListener() {
-			@Override
 			public void actionPerformed(ActionEvent e) {
 				openFileChooserDialog();
 			}
@@ -130,7 +131,6 @@ public class SchemaXMLTest extends javax.swing.JFrame {
 
 		runTestButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/play-green.png"))); 
 		runTestButton.addActionListener(new ActionListener() {
-			@Override
 			public void actionPerformed(ActionEvent e) {
 				String content = executeTest().toString();
 				textComponent.setText(content);
@@ -142,7 +142,6 @@ public class SchemaXMLTest extends javax.swing.JFrame {
 
 		configButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/manage.png"))); 
 		configButton.addActionListener(new ActionListener() {
-			@Override
 			public void actionPerformed(ActionEvent e) {
 				ConfigurationDialog configurationForm = new ConfigurationDialog(null, true);
 				configurationForm.setVisible(true);
@@ -154,7 +153,6 @@ public class SchemaXMLTest extends javax.swing.JFrame {
 
 		helpButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/question.png"))); 
 		helpButton.addActionListener(new ActionListener() {
-			@Override
 			public void actionPerformed(ActionEvent e) {
 				JOptionPane.showMessageDialog(null,
 						"App: SchemaXMLTest 1.0\ndeveloped By: Andrés Giménez\n Version:1.0", "SchemaXMLTest 1.0 Help",
@@ -167,7 +165,6 @@ public class SchemaXMLTest extends javax.swing.JFrame {
 
 		closeTestButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/log-out.png"))); // NOI18N
 		closeTestButton.addActionListener(new ActionListener() {
-			@Override
 			public void actionPerformed(ActionEvent e) {
 				System.exit(0);
 			}

@@ -1,3 +1,16 @@
+package schema;
+
+import java.io.File;
+import java.io.IOException;
+import java.util.ArrayList;
+
+import javax.xml.bind.JAXBException;
+import javax.xml.transform.stream.StreamSource;
+import javax.xml.validation.Schema;
+import javax.xml.validation.SchemaFactory;
+import javax.xml.validation.Validator;
+
+import org.xml.sax.SAXException;
 
 /**
  * @author Andrés Giménez Perales
@@ -9,7 +22,7 @@ public class PGMXSchemaValidator {
 	 * exists, returning a list of files on the directory
 	 *
 	 * @param folder <code>String</code> path.
-	 * @return <code>ArrayList<String></code> list of files in path
+	 * @return <code>ArrayList<String></code> list of filpublic es in path
 	 */
 	ArrayList<String> readFolderFiles(String folder) {
 		ArrayList<String> resultado = new ArrayList<String>();
